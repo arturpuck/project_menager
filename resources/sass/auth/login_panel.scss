@@ -1,0 +1,96 @@
+@import '~sass/basic';
+@import '~sass/fonts';
+@import '~sass/components/decoration/icon_error_cross';
+
+.login-panel-body{
+    background:#c4c4c5;
+}
+
+.login-form-container{
+    width:20vw;
+    min-width:300px;
+    display: block;
+    margin:calc(40px + 5vw) auto;
+}
+
+.login-form{
+    background: white;
+    border-radius:10px;
+    padding:15px;
+    border: 1px solid #ccd0d4;
+}
+
+.login-form-label{
+    display:block;
+    padding:5px 0;
+    text-align:center;
+    @include responsive-font(1.4vw, 20px);
+}
+
+.login-form-input{
+    display: block;
+    width: 100%;
+    @include responsive-font(1.4vw, 22px);
+    padding: 4px;
+    outline:none;
+    border:1px solid #7e8993;
+    &:focus{
+        border:1px solid #007cba;
+    }
+    border-radius: 8px;
+}
+
+.login-button
+{
+	background: #007cba;
+	padding:5px;
+	color:white;
+	display:block;
+	width: 100%;
+	margin:7px auto;
+	border-radius: 5px;
+    font-weight:bold;
+    border: none;
+    cursor:pointer;
+    &:hover{
+        background:#ef0244;
+    }
+    @include responsive-font(1.5vw, 19px);
+}
+
+.error-message-box{
+    width: 30vw;
+    min-width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 3vw auto;
+    background: #c11c1c;
+    text-align: center;
+    color: white;
+    @include responsive-font(1.5vw, 21px);
+}
+
+
+.error-header{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;
+    background: rgba(0,0,0,0.9);
+    padding: 7px;
+}
+
+.error-information-container{
+    border-radius: 9px;
+    overflow: hidden;
+    box-shadow: 2px 2px 4px 3px black;
+    border: 2px solid #ef0244;
+    margin: calc(25px + 1.6vw) auto;
+    text-align: center;
+    color: white;
+    display: table;
+    position:relative;
+    max-width:75%;
+    min-width:310px;
+    @include responsive-font;
+}

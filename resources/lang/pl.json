@@ -1,0 +1,16 @@
+{
+  "imaggo_project_manager_register_panel" : "Menager projektów firmy Imaggo - panel logowania",
+  "login_panel_description" : "Zaloguj się do menagera projektów firmy Imaggo",
+  "login" : "Login",
+  "password" : "Hasło",
+  "log_in" : "Zaloguj",
+  "incorrect_login_data" : "Niepoprawne dane logowania",
+  "projects" : "Projekty",
+  "team" : "Team",
+  "payouts" : "Wypłaty",
+  "income" : "Przychód",
+  "cashflow" : "Cashflow",
+  "gantt" : "Gantt",
+  "uploader" : "Uploader",
+  "logout" : "Wyloguj"
+}

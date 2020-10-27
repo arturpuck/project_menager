@@ -1,0 +1,200 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.icon-error-close {
+  display: inline-block;
+  background: white;
+  width: 65%;
+  height: 65%;
+  position: absolute;
+  font-size: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+          clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+}
+
+.icon-error-cross-container {
+  position: relative;
+  background: #ef0244;
+  border-radius: 50%;
+  border: 3px solid #ef0244;
+  font-size: 0;
+  min-width: 30px;
+  min-height: 30px;
+  width: 2.3vw;
+  height: 2.3vw;
+  display: inline-block;
+}
+
+.login-panel-body {
+  background: #c4c4c5;
+}
+
+.login-form-container {
+  width: 20vw;
+  min-width: 300px;
+  display: block;
+  margin: calc(40px + 5vw) auto;
+}
+
+.login-form {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  border: 1px solid #ccd0d4;
+}
+
+.login-form-label {
+  display: block;
+  padding: 5px 0;
+  text-align: center;
+  font-size: 1.4vw;
+  font-family: "Exo 2", sans-serif;
+}
+@media (max-width: 1200px) {
+  .login-form-label {
+    font-size: 20px;
+  }
+}
+
+.login-form-input {
+  display: block;
+  width: 100%;
+  font-size: 1.4vw;
+  font-family: "Exo 2", sans-serif;
+  padding: 4px;
+  outline: none;
+  border: 1px solid #7e8993;
+  border-radius: 8px;
+}
+@media (max-width: 1200px) {
+  .login-form-input {
+    font-size: 22px;
+  }
+}
+.login-form-input:focus {
+  border: 1px solid #007cba;
+}
+
+.login-button {
+  background: #007cba;
+  padding: 5px;
+  color: white;
+  display: block;
+  width: 100%;
+  margin: 7px auto;
+  border-radius: 5px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5vw;
+  font-family: "Exo 2", sans-serif;
+}
+.login-button:hover {
+  background: #ef0244;
+}
+@media (max-width: 1200px) {
+  .login-button {
+    font-size: 19px;
+  }
+}
+
+.error-message-box {
+  width: 30vw;
+  min-width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 3vw auto;
+  background: #c11c1c;
+  text-align: center;
+  color: white;
+  font-size: 1.5vw;
+  font-family: "Exo 2", sans-serif;
+}
+@media (max-width: 1200px) {
+  .error-message-box {
+    font-size: 21px;
+  }
+}
+
+.error-header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: nowrap;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 7px;
+}
+
+.error-information-container {
+  border-radius: 9px;
+  overflow: hidden;
+  box-shadow: 2px 2px 4px 3px black;
+  border: 2px solid #ef0244;
+  margin: calc(25px + 1.6vw) auto;
+  text-align: center;
+  color: white;
+  display: table;
+  position: relative;
+  max-width: 75%;
+  min-width: 310px;
+  font-size: 1.2vw;
+  font-family: "Exo 2", sans-serif;
+}
+@media (max-width: 1200px) {
+  .error-information-container {
+    font-size: 16px;
+  }
+}
