@@ -12,5 +12,7 @@
   "cashflow" : "Cashflow",
   "gantt" : "Gantt",
   "uploader" : "Uploader",
-  "logout" : "Wyloguj"
+  "logout" : "Wyloguj",
+  "projects_list_description" : "Lista dostępnych projektów firmy Imaggo",
+  "add_project" : "Dodaj projekt"
 }

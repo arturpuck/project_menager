@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['guest'])->group(function(){
 
-    Route::get('/', 'MainPageController@showLoginPanel');
+    Route::get('/', 'MainPageController@showLoginPanel')->name('login.panel');
 
 });
 
@@ -28,7 +28,7 @@ Route::namespace('Auth')->name('auth.')->group(function(){
 
 Route::middleware(['auth'])->group(function(){
 
-    Route::get('/projects', 'MainPanelController@showProjects')
+    Route::get('/projects', 'ProjectsController@showProjects')
           ->name('projects');
 
     Route::get('/team', 'MainPanelController@showTeam')
@@ -37,11 +37,14 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/payouts', 'MainPanelController@showPayouts')
           ->name('payouts');
 
-          Route::get('/cashflow', 'MainPanelController@showCashFlow')
-          ->name('payouts');
+    Route::get('/cashflow', 'MainPanelController@showCashFlow')
+          ->name('cashflow');
     
     Route::get('/gantt', 'MainPanelController@showGantt')
           ->name('gantt');
+
+    Route::get('/income', 'MainPanelController@showIncome')
+          ->name('income');
 
     Route::get('/uploader', 'MainPanelController@uploader')
           ->name('uploader');

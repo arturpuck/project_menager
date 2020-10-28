@@ -51,6 +51,12 @@ table {
   border-spacing: 0;
 }
 
+.body {
+  min-height: 100vh;
+  border-top: 1px solid transparent;
+  background: #d4cccf;
+}
+
 .icon-error-close {
   display: inline-block;
   background: white;

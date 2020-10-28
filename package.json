@@ -16,6 +16,14 @@
         "lodash": "^4.17.19",
         "resolve-url-loader": "^3.1.0",
         "sass": "^1.27.0",
-        "sass-loader": "^8.0.2"
+        "sass-loader": "^8.0.2",
+        "ts-loader": "^8.0.7",
+        "vue": "^2.6.12",
+        "vue-template-compiler": "^2.6.12"
+    },
+    "dependencies": {
+        "typescript": "^4.0.5",
+        "vue-property-decorator": "^9.0.0",
+        "vue-class-component": "^7.2.6"
     }
 }

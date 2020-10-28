@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "noImplicitAny": false,
+    "allowSyntheticDefaultImports" : true,
+    "esModuleInterop" :true,
+    "sourceMap": true,
+    "baseUrl": "./",
+    "experimentalDecorators":true,
+    "paths" : {
+      "@js/*" : ["js/*"],
+      "@jscomponents/*" : ["resources/js/components/*"],
+      "@jscomponents-decoration/*" : ["resources/js/components/decoration/*"],
+      "@jscomponents-form-controls/*" : ["resources/js/components/form_controls/*"],
+      "@interfaces/*" : ["resources/js/interfaces/*"],
+      "@jsmodules/*" : ["resources/js/modules/*"]
+    }
+  },
+  "include": ["resources/js/**/*"],
+  
+}
