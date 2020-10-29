@@ -3,9 +3,9 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\ProjectStatus;
+use App\Models\PaymentStatus;
 
-class CreateProjectsStatusesTable extends Migration
+class CreatePaymentStatusesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,19 +14,17 @@ class CreateProjectsStatusesTable extends Migration
      */
     public function up()
     {
-        Schema::create('project_statuses', function (Blueprint $table) {
+        Schema::create('payment_statuses', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
             $table->engine = 'InnoDB';
         });
 
-        ProjectStatus::insert([
-            ['name' => 'programming_in_progress'],
+        PaymentStatus::insert([
             ['name' => 'awaits'],
-            ['name' => 'done'],
-            ['name' => 'canceled'],
-            ['name' => 'graphical_design_in_progress'],
-            ['name' => 'UX_model_in_progress']
+            ['name' => 'sent_to_client'],
+            ['name' => 'to_be_issued'],
+            ['name' => 'paid']
         ]);
     }
 
@@ -37,6 +35,6 @@ class CreateProjectsStatusesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('projects_statuses');
+        Schema::dropIfExists('payment_statuses');
     }
 }

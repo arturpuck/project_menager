@@ -20,12 +20,14 @@ class CreateProjectsTable extends Migration
             $table->foreign('status_id')->references('id')->on('project_statuses');
             $table->string('comments');
             $table->date('finished_at');
-            $table->float('valuation');
             $table->unsignedBigInteger('client_id');
             $table->foreign('client_id')->references('id')->on('clients');
             $table->unsignedBigInteger('project_manager_id');
-            $table->foreign('project_manager_id')->references('id')->on('project_managers');
+            $table->foreign('project_manager_id')->references('id')->on('employees');
+            $table->unsignedFloat('estimated_cost');
+            $table->unsignedFloat('estimated_time_of_work');
             $table->timestamps();
+            $table->engine = 'InnoDB';
         });
     }
 

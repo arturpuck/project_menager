@@ -13,14 +13,19 @@ const translations:object = {
 
         project_form : {
             client_data : "Dane klienta",
-            client_name_and_second_name : "Imię i nazwisko",
+            client_contact_person : "Osoba do kontaktu",
             client_phone_number : "Telefon kontaktowy",
             client_email : "Email",
             close : "Zamknij",
             invoice_data : "Dane do faktury",
             company_name : "Nazwa firmy",
             tax_identification_number : "NIP",
-            addres : "Adres"
+            addres : "Adres",
+            client : "Klient",
+            project_basic_data : "Projekt - postawowe dane",
+            name : "Nazwa",
+            project_menager : "Project menager",
+            work_range : "Zakres prac"
         }
     }
 };
