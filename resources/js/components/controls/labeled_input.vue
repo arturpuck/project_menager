@@ -2,7 +2,7 @@
  <div ref="container" class="labeled-input-container">
   <label ref="label" class="labeled-input-value-label">
      <span class="text-input-description"><slot></slot></span>
-     <input v-bind:disabled="isDisabled" ref="text_input" v-bind:name="name" :required="inputIsRequired" class="labeled-input-value" v-bind:type="inputType">
+     <input v-bind:disabled="isDisabled" ref="text_input" v-bind:name="name" :required="inputIsRequired" class="labeled-input-value"  v-bind:type="inputType">
   </label>
 </div>
 </template>
@@ -35,6 +35,19 @@
             required: false,
             default: 'text'
     }) readonly inputType: string;
+
+     @Prop({
+            type: Number,
+            required: false,
+            default: 0.5
+    }) readonly step: string;
+
+    mounted(){
+
+       if(this.inputType == "number"){
+           (<HTMLInputElement>this.$refs.text_input).setAttribute('step',this.step);
+       }
+    }
 
  
   }

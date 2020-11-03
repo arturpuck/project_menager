@@ -17,7 +17,8 @@ class ProjectsController extends Controller
             'clients' => $data['clients'],
             'projects' => $data['projects'],
             'projectMenagers' => $data['projectMenagers'],
-            'tasks' => $data['tasks']
+            'tasks' => $data['tasks'],
+            'employees' => $data['employees']
         ]);
     }
 }

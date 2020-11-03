@@ -25,7 +25,21 @@ const translations:object = {
             project_basic_data : "Projekt - postawowe dane",
             name : "Nazwa",
             project_menager : "Project menager",
-            work_range : "Zakres prac"
+            work_range : "Zakres prac",
+            choose_range : "Wybierz zakres",
+            engaged_persons : "Zaangażowane osoby",
+            choose_persons : "Wybierz osoby",
+            work_stages : "Etapy prac",
+            add_work_stage : "Dodaj etap pracy",
+            engaged_person : "Zaangażowana osoba",
+            estimated_number_of_hours : "Estymacja(godziny)",
+            estimated_ammount_of_money : "Wycena(PLN)",
+            start_at : "Data rozpoczęcia",
+            deadline : "Deadline",
+            payment_stages : "Etapy płatności",
+            ammount : "Kwota",
+            estimated_date_of_invoice : "Przewidywana data wystawienia faktury",
+            status : "Status"
         }
     }
 };

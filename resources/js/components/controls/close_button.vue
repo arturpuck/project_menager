@@ -51,8 +51,8 @@
     border-radius:50%;
     border:3px solid #ef0244;
     font-size: 0;
-    min-width: 30px;
-    min-height: 30px;
+    min-width: 20px;
+    min-height: 20px;
     width: 2.3vw;
     height: 2.3vw;
     cursor: pointer;
