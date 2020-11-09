@@ -37,9 +37,17 @@ const translations:object = {
             start_at : "Data rozpoczęcia",
             deadline : "Deadline",
             payment_stages : "Etapy płatności",
-            ammount : "Kwota",
+            ammount : "Kwota(PLN)",
             estimated_date_of_invoice : "Przewidywana data wystawienia faktury",
-            status : "Status"
+            status : "Status",
+            remove_work_stage : "Usuń etap pracy",
+            remove_payment_stage : "Usuń etap płatności",
+            add_payment_stage : "Dodaj etap płatności",
+            summary : "Podsumowanie",
+            valuation : "Wycena",
+            total_cost : "Całkowity koszt",
+            current_currency : "PLN",
+            finish_date : "Data zakończenia"
         }
     }
 };

@@ -110,11 +110,6 @@ __webpack_require__.r(__webpack_exports__);
       "default": close,
       type: String
     }
-  },
-  methods: {
-    buttonClicked: function buttonClicked() {
-      this.$emit('buttonClicked');
-    }
   }
 });
 
@@ -267,7 +262,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".datepicker-description {\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n@media (max-width: 1200px) {\n.datepicker-description {\n    font-size: 16px;\n}\n}\n.datepicker-wrapper {\n  padding: 4px;\n  background: #242229;\n  border-radius: 5px;\n  display: inline-flex;\n  flex-wrap: nowrap;\n  align-items: baseline;\n}\n.calendar-input {\n  background: #242229;\n  color: white;\n  padding: 4px;\n  border: none;\n}\n.work-stage-list-element {\n  border: 2px solid gray;\n  margin: 4px 0;\n}\n.work-stages-list {\n  list-style-type: none;\n  padding: 4px;\n  margin: 0;\n}\n.add-work-stage-button {\n  margin: 5px;\n  display: block;\n}\n.remove-rectangular-element-icon {\n  width: 1.8vw;\n  height: 1.8vw;\n}\n.rectangular-elements-list {\n  list-style-type: none;\n  padding: 4px;\n  margin: 0;\n}\n.rectangular-list-element {\n  padding: 5px;\n  display: inline-block;\n  margin: 5px;\n  background: black;\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n@media (max-width: 1200px) {\n.rectangular-list-element {\n    font-size: 16px;\n}\n}\n.project-form-caption {\n  font-size: 1.5vw;\n  font-family: \"Exo 2\", sans-serif;\n  color: black;\n  display: block;\n  padding: 5px 0 5px 10px;\n  text-align: left;\n}\n@media (max-width: 1200px) {\n.project-form-caption {\n    font-size: 22px;\n}\n}\n.project-form-fieldset {\n  border: 2px solid black;\n  border-radius: 5px;\n  margin: 5px 0;\n}\n.project-form {\n  padding: 5px;\n  position: fixed;\n  top: 0;\n  width: 100%;\n  left: 0;\n  overflow-y: auto;\n  background: #fbffff;\n  max-height: 100vh;\n}\n.close-bar {\n  text-align: right;\n  padding: 5px;\n  background: black;\n}", ""]);
+exports.push([module.i, ".payment-summary-container {\n  display: inline-block;\n  padding: 6px;\n  background: #242229;\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n  border-radius: 4px;\n  margin: 4px;\n}\n@media (max-width: 1200px) {\n.payment-summary-container {\n    font-size: 16px;\n}\n}\n.datepicker-description {\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n@media (max-width: 1200px) {\n.datepicker-description {\n    font-size: 16px;\n}\n}\n.datepicker-wrapper {\n  padding: 4px;\n  background: #242229;\n  border-radius: 5px;\n  display: inline-flex;\n  flex-wrap: nowrap;\n  align-items: baseline;\n}\n.calendar-input {\n  background: #242229;\n  color: white;\n  padding: 4px;\n  border: none;\n}\n.stage-list-element {\n  border: 2px solid gray;\n  margin: 4px 0;\n}\n.stages-list {\n  list-style-type: none;\n  padding: 4px;\n  margin: 0;\n}\n.add-stage-button {\n  margin: 5px;\n  display: block;\n}\n.remove-rectangular-element-icon {\n  width: 1.8vw;\n  height: 1.8vw;\n}\n.rectangular-elements-list {\n  list-style-type: none;\n  padding: 4px;\n  margin: 0;\n}\n.rectangular-list-element {\n  padding: 5px;\n  display: inline-block;\n  margin: 5px;\n  background: black;\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n@media (max-width: 1200px) {\n.rectangular-list-element {\n    font-size: 16px;\n}\n}\n.project-form-caption {\n  font-size: 1.5vw;\n  font-family: \"Exo 2\", sans-serif;\n  color: black;\n  display: block;\n  padding: 5px 0 5px 10px;\n  text-align: left;\n}\n@media (max-width: 1200px) {\n.project-form-caption {\n    font-size: 22px;\n}\n}\n.project-form-fieldset {\n  border: 2px solid black;\n  border-radius: 5px;\n  margin: 5px 0;\n}\n.project-form {\n  padding: 5px;\n  position: fixed;\n  top: 0;\n  width: 100%;\n  left: 0;\n  overflow-y: auto;\n  background: #fbffff;\n  max-height: 100vh;\n}\n.close-bar {\n  text-align: right;\n  padding: 5px;\n  background: black;\n}", ""]);
 
 // exports
 
@@ -1583,9 +1578,12 @@ var LabeledInput = /** @class */ (function (_super) {
     function LabeledInput() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
+    LabeledInput.prototype.modifyModel = function (event) {
+        this.$emit('input', event.target.value);
+    };
     LabeledInput.prototype.mounted = function () {
         if (this.inputType == "number") {
-            this.$refs.text_input.setAttribute('step', this.step);
+            this.$refs.text_input.setAttribute('step', String(this.step));
         }
     };
     __decorate([
@@ -1622,6 +1620,13 @@ var LabeledInput = /** @class */ (function (_super) {
             default: 0.5
         })
     ], LabeledInput.prototype, "step", void 0);
+    __decorate([
+        vue_property_decorator_1.Prop({
+            type: [Number, String],
+            required: false,
+            default: 0.5
+        })
+    ], LabeledInput.prototype, "value", void 0);
     LabeledInput = __decorate([
         vue_property_decorator_1.Component
     ], LabeledInput);
@@ -1667,6 +1672,9 @@ var LabeledSelect = /** @class */ (function (_super) {
     function LabeledSelect() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
+    LabeledSelect.prototype.emitData = function (event) {
+        this.$emit('input', event.target.value);
+    };
     __decorate([
         vue_property_decorator_1.Prop({
             type: Array,
@@ -1686,6 +1694,13 @@ var LabeledSelect = /** @class */ (function (_super) {
             required: true,
         })
     ], LabeledSelect.prototype, "name", void 0);
+    __decorate([
+        vue_property_decorator_1.Prop({
+            type: [String, Number],
+            required: false,
+            default: 0
+        })
+    ], LabeledSelect.prototype, "value", void 0);
     LabeledSelect = __decorate([
         vue_property_decorator_1.Component
     ], LabeledSelect);
@@ -1864,11 +1879,20 @@ var ProjectForm = /** @class */ (function (_super) {
         _this.selectedWorkRangeOptions = [];
         _this.chosenTasksList = [];
         _this.chosenEmployeesList = [];
-        _this.ammountOfWorkStages = 0;
+        _this.engagedPersons = {};
+        _this.workStageIndex = 0;
         _this.workStages = [];
-        _this.startDates = [new Date()];
-        _this.deadLineDates = [new Date()];
-        _this.paymentStageDates = [new Date()];
+        _this.startDates = {};
+        _this.deadLineDates = {};
+        _this.workRangeValues = {};
+        _this.estimatedHours = {};
+        _this.estimatedCosts = {};
+        _this.workStageEngagedPersons = {};
+        _this.paymentStageIndex = 0;
+        _this.paymentStageDates = {};
+        _this.paymentStagesMoneyAmmount = {};
+        _this.paymentStages = [];
+        _this.paymentSummary = 0;
         return _this;
     }
     ProjectForm.prototype.logout = function () {
@@ -1894,11 +1918,42 @@ var ProjectForm = /** @class */ (function (_super) {
         this.chosenEmployeesList = this.chosenEmployeesList.filter(function (element) { return element != employee; });
     };
     ProjectForm.prototype.addWorkStage = function () {
-        ++this.ammountOfWorkStages;
-        this.deadLineDates[this.ammountOfWorkStages] = new Date();
-        this.startDates[this.ammountOfWorkStages] = new Date();
-        this.paymentStageDates[this.ammountOfWorkStages] = new Date();
-        this.workStages.push(this.ammountOfWorkStages);
+        ++this.workStageIndex;
+        this.deadLineDates[this.workStageIndex] = new Date();
+        this.startDates[this.workStageIndex] = new Date();
+        this.workRangeValues[this.workStageIndex] = 0;
+        this.estimatedHours[this.workStageIndex] = 0;
+        this.estimatedCosts[this.workStageIndex] = 0;
+        this.workStageEngagedPersons[this.workStageIndex] = 0;
+        this.workStages.push(this.workStageIndex);
+    };
+    ProjectForm.prototype.addPaymentStage = function () {
+        ++this.paymentStageIndex;
+        this.paymentStageDates[this.paymentStageIndex] = new Date();
+        this.paymentStagesMoneyAmmount[this.paymentStageIndex] = 0;
+        this.paymentStages.push(this.paymentStageIndex);
+    };
+    ProjectForm.prototype.removeWorkStage = function (workStageID) {
+        this.workStages = this.workStages.filter(function (value) { return value != workStageID; });
+        delete this.deadLineDates[workStageID];
+        delete this.startDates[workStageID];
+        delete this.workRangeValues[workStageID];
+        delete this.estimatedHours[workStageID];
+        delete this.estimatedCosts[workStageID];
+        delete this.workStageEngagedPersons[workStageID];
+    };
+    ProjectForm.prototype.removePaymentStage = function (paymentStageID) {
+        this.paymentStages = this.paymentStages.filter(function (value) { return value != paymentStageID; });
+        delete this.paymentStageDates[paymentStageID];
+    };
+    ProjectForm.prototype.setPaymentStageMoneyAmmount = function (paymentStageID, event) {
+        this.paymentStagesMoneyAmmount[paymentStageID] = event;
+        this.updatePaymentSummary();
+    };
+    ProjectForm.prototype.updatePaymentSummary = function () {
+        var totalCost = 0;
+        Object.values(this.paymentStagesMoneyAmmount).forEach(function (cost) { return totalCost += parseFloat(cost); });
+        this.paymentSummary = totalCost;
     };
     ProjectForm.prototype.created = function () {
         this.csrfToken = document.getElementById('csrf-token').content;
@@ -2332,8 +2387,7 @@ var render = function() {
     {
       ref: "container",
       staticClass: "button-close-container",
-      attrs: { type: "button" },
-      on: { click: _vm.buttonClicked }
+      attrs: { type: "button" }
     },
     [
       _c("div", { staticClass: "button-close" }),
@@ -2387,7 +2441,9 @@ var render = function() {
             name: _vm.name,
             required: _vm.inputIsRequired,
             type: _vm.inputType
-          }
+          },
+          domProps: { value: _vm.value },
+          on: { input: _vm.modifyModel }
         })
       ])
     ]
@@ -2424,7 +2480,9 @@ var render = function() {
         {
           ref: "select_value",
           staticClass: "described-select",
-          attrs: { name: _vm.name }
+          attrs: { name: _vm.name },
+          domProps: { value: _vm.value },
+          on: { input: _vm.emitData }
         },
         [
           _vm._l(_vm.displayedValues, function(value, index) {
@@ -2437,9 +2495,11 @@ var render = function() {
           _vm._v(" "),
           _vm._l(_vm.displayedValues, function(value, index) {
             return !_vm.values
-              ? _c("option", { domProps: { value: _vm.displayedValues } }, [
-                  _vm._v(_vm._s(value))
-                ])
+              ? _c(
+                  "option",
+                  { domProps: { value: _vm.displayedValues[index] } },
+                  [_vm._v(_vm._s(value))]
+                )
               : _vm._e()
           })
         ],
@@ -2836,7 +2896,7 @@ var render = function() {
         _c(
           "positive-button",
           {
-            staticClass: "add-work-stage-button",
+            staticClass: "add-stage-button",
             nativeOn: {
               click: function($event) {
                 return _vm.addWorkStage($event)
@@ -2854,11 +2914,11 @@ var render = function() {
         _vm._v(" "),
         _c(
           "ul",
-          { staticClass: "work-stages-list" },
-          _vm._l(_vm.workStages, function(workStage, key) {
+          { staticClass: "stages-list" },
+          _vm._l(_vm.workStages, function(workStage) {
             return _c(
               "li",
-              { staticClass: "work-stage-list-element" },
+              { staticClass: "stage-list-element" },
               [
                 _c(
                   "labeled-select",
@@ -2866,6 +2926,13 @@ var render = function() {
                     attrs: {
                       name: "work_stages[]",
                       "displayed-values": _vm.tasks
+                    },
+                    model: {
+                      value: _vm.workRangeValues[workStage],
+                      callback: function($$v) {
+                        _vm.$set(_vm.workRangeValues, workStage, $$v)
+                      },
+                      expression: "workRangeValues[workStage]"
                     }
                   },
                   [
@@ -2883,6 +2950,13 @@ var render = function() {
                     attrs: {
                       name: "engaged_persons[]",
                       "displayed-values": _vm.employees
+                    },
+                    model: {
+                      value: _vm.workStageEngagedPersons[workStage],
+                      callback: function($$v) {
+                        _vm.$set(_vm.workStageEngagedPersons, workStage, $$v)
+                      },
+                      expression: "workStageEngagedPersons[workStage]"
                     }
                   },
                   [
@@ -2900,6 +2974,13 @@ var render = function() {
                     attrs: {
                       "input-type": "number",
                       name: "estimated_number_of_hours[]"
+                    },
+                    model: {
+                      value: _vm.estimatedHours[workStage],
+                      callback: function($$v) {
+                        _vm.$set(_vm.estimatedHours, workStage, $$v)
+                      },
+                      expression: "estimatedHours[workStage]"
                     }
                   },
                   [
@@ -2917,6 +2998,13 @@ var render = function() {
                       "input-type": "number",
                       step: 0.1,
                       name: "estimated_ammount_of_money[]"
+                    },
+                    model: {
+                      value: _vm.estimatedCosts[workStage],
+                      callback: function($$v) {
+                        _vm.$set(_vm.estimatedCosts, workStage, $$v)
+                      },
+                      expression: "estimatedCosts[workStage]"
                     }
                   },
                   [
@@ -2945,11 +3033,11 @@ var render = function() {
                         name: "date_start[]"
                       },
                       model: {
-                        value: _vm.startDates[key],
+                        value: _vm.startDates[workStage],
                         callback: function($$v) {
-                          _vm.$set(_vm.startDates, key, $$v)
+                          _vm.$set(_vm.startDates, workStage, $$v)
                         },
-                        expression: "startDates[key]"
+                        expression: "startDates[workStage]"
                       }
                     })
                   ],
@@ -2974,16 +3062,25 @@ var render = function() {
                         name: "dead_line_date[]"
                       },
                       model: {
-                        value: _vm.deadLineDates[key],
+                        value: _vm.deadLineDates[workStage],
                         callback: function($$v) {
-                          _vm.$set(_vm.deadLineDates, key, $$v)
+                          _vm.$set(_vm.deadLineDates, workStage, $$v)
                         },
-                        expression: "deadLineDates[key]"
+                        expression: "deadLineDates[workStage]"
                       }
                     })
                   ],
                   1
-                )
+                ),
+                _vm._v(" "),
+                _c("close-button", {
+                  attrs: { description: "translations['remove_work_stage']" },
+                  nativeOn: {
+                    click: function($event) {
+                      return _vm.removeWorkStage(workStage)
+                    }
+                  }
+                })
               ],
               1
             )
@@ -3004,68 +3101,127 @@ var render = function() {
         }),
         _vm._v(" "),
         _c(
-          "labeled-input",
-          { attrs: { "input-type": "text", name: "payment_stage_names[]" } },
-          [_vm._v(_vm._s(_vm.translations["name"]) + " : ")]
-        ),
-        _vm._v(" "),
-        _c(
-          "labeled-input",
+          "positive-button",
           {
-            attrs: {
-              "input-type": "number",
-              step: 0.5,
-              name: "payment_ammounts[]"
+            staticClass: "add-stage-button",
+            nativeOn: {
+              click: function($event) {
+                return _vm.addPaymentStage($event)
+              }
             }
           },
-          [_vm._v(_vm._s(_vm.translations["ammount"]) + " : ")]
+          [
+            _vm._v(
+              "\n             " +
+                _vm._s(_vm.translations["add_payment_stage"]) +
+                "\n         "
+            )
+          ]
         ),
         _vm._v(" "),
         _c(
-          "span",
-          { staticClass: "datepicker-wrapper" },
-          [
-            _c("span", { staticClass: "datepicker-description" }, [
-              _vm._v(
-                "\n               " +
-                  _vm._s(_vm.translations["estimated_date_of_invoice"]) +
-                  " :\n           "
-              )
-            ]),
-            _vm._v(" "),
-            _c("datepicker", {
-              attrs: {
-                "input-class": "calendar-input",
-                name: "paymentStageDates[]"
-              },
-              model: {
-                value: _vm.paymentStageDates[_vm.key],
-                callback: function($$v) {
-                  _vm.$set(_vm.paymentStageDates, _vm.key, $$v)
-                },
-                expression: "paymentStageDates[key]"
-              }
-            }),
-            _vm._v(" "),
-            _c(
-              "labeled-select",
-              {
-                attrs: {
-                  name: "payment_status[]",
-                  "displayed-values": _vm.paymentStatusesValues,
-                  values: _vm.paymentStatusesIds
-                }
-              },
+          "ul",
+          { staticClass: "stages-list" },
+          _vm._l(_vm.paymentStages, function(paymentStage) {
+            return _c(
+              "li",
+              { staticClass: "stage-list-element" },
               [
-                _vm._v(
-                  "\n             " +
-                    _vm._s(_vm.translations["status"]) +
-                    " : \n           "
-                )
-              ]
+                _c(
+                  "labeled-input",
+                  {
+                    attrs: {
+                      "input-type": "text",
+                      name: "payment_stage_names[]"
+                    }
+                  },
+                  [_vm._v(_vm._s(_vm.translations["name"]) + " : ")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "labeled-input",
+                  {
+                    attrs: {
+                      "input-type": "number",
+                      step: 0.5,
+                      name: "payment_ammounts[]"
+                    },
+                    on: {
+                      input: function($event) {
+                        return _vm.setPaymentStageMoneyAmmount(
+                          paymentStage,
+                          $event
+                        )
+                      }
+                    }
+                  },
+                  [_vm._v(_vm._s(_vm.translations["ammount"]) + " : ")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "span",
+                  { staticClass: "datepicker-wrapper" },
+                  [
+                    _c("span", { staticClass: "datepicker-description" }, [
+                      _vm._v(
+                        "\n                   " +
+                          _vm._s(
+                            _vm.translations["estimated_date_of_invoice"]
+                          ) +
+                          " :\n               "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("datepicker", {
+                      attrs: {
+                        "input-class": "calendar-input",
+                        name: "paymentStageDates[]"
+                      },
+                      model: {
+                        value: _vm.paymentStageDates[paymentStage],
+                        callback: function($$v) {
+                          _vm.$set(_vm.paymentStageDates, paymentStage, $$v)
+                        },
+                        expression: "paymentStageDates[paymentStage]"
+                      }
+                    })
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "labeled-select",
+                  {
+                    attrs: {
+                      name: "payment_status[]",
+                      "displayed-values": _vm.paymentStatusesValues,
+                      values: _vm.paymentStatusesIds
+                    }
+                  },
+                  [
+                    _vm._v(
+                      "\n               " +
+                        _vm._s(_vm.translations["status"]) +
+                        " : \n           "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("close-button", {
+                  attrs: {
+                    description: "translations['remove_payment_stage']"
+                  },
+                  nativeOn: {
+                    click: function($event) {
+                      return _vm.removePaymentStage(paymentStage)
+                    }
+                  }
+                })
+              ],
+              1
             )
-          ],
-          1
+          }),
+          0
         )
       ],
       1
@@ -3084,13 +3240,17 @@ var render = function() {
           _vm._v(_vm._s(_vm.translations["client_contact_person"]) + " : ")
         ]),
         _vm._v(" "),
-        _c("labeled-input", { attrs: { name: "client_phone_number" } }, [
-          _vm._v(_vm._s(_vm.translations["client_phone_number"]) + " : ")
-        ]),
+        _c(
+          "labeled-input",
+          { attrs: { "input-type": "tel", name: "client_phone_number" } },
+          [_vm._v(_vm._s(_vm.translations["client_phone_number"]) + " : ")]
+        ),
         _vm._v(" "),
-        _c("labeled-input", { attrs: { name: "email" } }, [
-          _vm._v(_vm._s(_vm.translations["client_email"]) + " : ")
-        ]),
+        _c(
+          "labeled-input",
+          { attrs: { "input-type": "email", name: "email" } },
+          [_vm._v(_vm._s(_vm.translations["client_email"]) + " : ")]
+        ),
         _vm._v(" "),
         _c(
           "labeled-select",
@@ -3133,7 +3293,47 @@ var render = function() {
         ])
       ],
       1
-    )
+    ),
+    _vm._v(" "),
+    _c("fieldset", { staticClass: "project-form-fieldset" }, [
+      _c("caption", {
+        staticClass: "project-form-caption",
+        domProps: { textContent: _vm._s(_vm.translations["summary"]) }
+      }),
+      _vm._v(" "),
+      _c("span", { staticClass: "payment-summary-container" }, [
+        _c("span", {
+          domProps: { textContent: _vm._s(_vm.translations["total_cost"]) }
+        }),
+        _vm._v(" : \n         "),
+        _c("span", { domProps: { textContent: _vm._s(_vm.paymentSummary) } }),
+        _vm._v(" "),
+        _c("span", {
+          domProps: {
+            textContent: _vm._s(_vm.translations["current_currency"])
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c(
+        "span",
+        { staticClass: "datepicker-wrapper" },
+        [
+          _c("span", { staticClass: "datepicker-description" }, [
+            _vm._v(
+              "\n               " +
+                _vm._s(_vm.translations["finish_date"]) +
+                " :\n           "
+            )
+          ]),
+          _vm._v(" "),
+          _c("datepicker", {
+            attrs: { "input-class": "calendar-input", name: "finish_date" }
+          })
+        ],
+        1
+      )
+    ])
   ])
 }
 var staticRenderFns = []
@@ -18742,9 +18942,17 @@ var translations = {
             start_at: "Data rozpoczęcia",
             deadline: "Deadline",
             payment_stages: "Etapy płatności",
-            ammount: "Kwota",
+            ammount: "Kwota(PLN)",
             estimated_date_of_invoice: "Przewidywana data wystawienia faktury",
-            status: "Status"
+            status: "Status",
+            remove_work_stage: "Usuń etap pracy",
+            remove_payment_stage: "Usuń etap płatności",
+            add_payment_stage: "Dodaj etap płatności",
+            summary: "Podsumowanie",
+            valuation: "Wycena",
+            total_cost: "Całkowity koszt",
+            current_currency: "PLN",
+            finish_date: "Data zakończenia"
         }
     }
 };

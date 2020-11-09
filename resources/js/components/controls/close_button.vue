@@ -1,5 +1,5 @@
 <template>
-<button ref="container" v-on:click="buttonClicked" type="button" class="button-close-container">
+<button ref="container" type="button" class="button-close-container">
     <div class="button-close"></div>
     <span v-text="description" class="button-description"></span>
 </button>
@@ -14,12 +14,6 @@
                 required: false,
                 default:close,
                 type: String
-            }
-        },
-
-        methods : {
-            buttonClicked(){
-                this.$emit('buttonClicked');
             }
         }
 

@@ -14,6 +14,8 @@
       v-bind:project-menager-ids="{{json_encode($projectMenagers->pluck('id'), true)}}"
       v-bind:work-range-options="{{json_encode($tasks->pluck('name'), true)}}"
       v-bind:work-range-ids="{{json_encode($tasks->pluck('id'), true)}}"
+      v-bind:payment-statuses-ids="{{json_encode($paymentStatuses->pluck('id'), true)}}"
+      v-bind:payment-statuses-values="{{json_encode($paymentStatuses->pluck('name'), true)}}"
       v-on:close="closeProjectForm"
       v-show="projectFormIsVisible"></project-form>
    
