@@ -9,6 +9,7 @@ use App\Repositories\EmployeesRepository;
 use App\Models\Task;
 use App\Models\Employee;
 use App\Models\PaymentStatus;
+use App\Models\ProjectStatus;
 
 Class ProjectsListHandler {
 
@@ -27,12 +28,13 @@ Class ProjectsListHandler {
         $tasks = Task::all();
         $employees = Employee::all();
         $paymentStatuses = PaymentStatus::all();
+        $projectStatuses = ProjectStatus::all();
 
         $projectMenagers = $this->employeesRepository
                           ->select(['full_name'])
                           ->filterByStatus('project menager')
                           ->get();
 
-        return compact('clients', 'projects', 'projectMenagers', 'tasks', 'paymentStatuses', 'employees');
+        return compact('clients', 'projects', 'projectMenagers', 'tasks', 'paymentStatuses', 'employees', 'projectStatuses');
     }
 }

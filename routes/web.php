@@ -28,8 +28,17 @@ Route::namespace('Auth')->name('auth.')->group(function(){
 
 Route::middleware(['auth'])->group(function(){
 
-    Route::get('/projects', 'ProjectsController@showProjects')
-          ->name('projects');
+   Route::name('projects.')->group(function(){
+
+      Route::get('/projects', 'ProjectsController@showProjects')
+          ->name('mainpage');
+      
+      Route::post('/add-project', 'ProjectsController@addProject')
+             ->name('add');
+
+   });
+
+    
 
     Route::get('/team', 'MainPanelController@showTeam')
           ->name('team');

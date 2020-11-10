@@ -1,8 +1,8 @@
 <template>
- <form action="" class="project-form">
+ <form method="POST" action="/add-project" class="project-form">
     <input v-bind:value="csrfToken" type="hidden" name="_token">
     <div class="close-bar">
-        <close-button v-bind:description="translations['close']" v-on:buttonClicked="closeForm" />
+        <close-button v-bind:description="translations['close']" v-on:click.native="closeForm" />
     </div>
 
     <fieldset class="project-form-fieldset">
@@ -18,10 +18,11 @@
          <ul class="rectangular-elements-list">
             <li v-for="task in chosenTasksList" class="rectangular-list-element">
                 {{task}}
-                <close-button class="remove-rectangular-element-icon" v-bind:description="translations['close']" v-on:click.native="removeTaskFromList(task)" /> 
+                <close-button class="remove-rectangular-element-icon" v-bind:description="translations['close']" v-on:click.native="removeTaskFromList(task)" />
+                <input type="hidden" v-bind:value="getTaskId(task)" name="tasks_ids[]">
             </li>
          </ul>
-         <multiselect v-on:added="addItemToTasksList" v-bind:values="tasks" >{{translations['choose_range']}}</multiselect> 
+         <multiselect v-on:added="addItemToTasksList" v-bind:values="tasksNames" >{{translations['choose_range']}}</multiselect> 
     </fieldset>
 
     <fieldset class="project-form-fieldset">
@@ -30,9 +31,10 @@
             <li v-for="employee in chosenEmployeesList" class="rectangular-list-element">
                 {{employee}}
                 <close-button class="remove-rectangular-element-icon" v-bind:description="translations['close']" v-on:click.native="removeEmployeeFromList(employee)" /> 
+                <input type="hidden" v-bind:value="getEmployeeId(employee)" name="employees_ids[]">
             </li>
          </ul>
-         <multiselect v-on:added="addItemToEmployeesList" v-bind:values="employees" >{{translations['choose_persons']}}</multiselect> 
+         <multiselect v-on:added="addItemToEmployeesList" v-bind:values="employeesNames" >{{translations['choose_persons']}}</multiselect> 
     </fieldset>
 
     <fieldset class="project-form-fieldset">
@@ -42,25 +44,25 @@
           </positive-button>
           <ul class="stages-list">
               <li v-for="workStage in workStages"  class="stage-list-element">
-                 <labeled-select name="work_stages[]" v-model="workRangeValues[workStage]" v-bind:displayed-values="tasks" >
+                 <labeled-select name="work_stages[]" v-model="workRangeValues[workStage]" v-bind:displayed-values="tasksNames" >
                     {{translations['work_range']}} : 
                  </labeled-select>
-                 <labeled-select name="engaged_persons[]" v-model="workStageEngagedPersons[workStage]" v-bind:displayed-values="employees" >
+                 <labeled-select name="work_stage_engaged_persons[]" v-model="workStageEngagedPersons[workStage]" v-bind:displayed-values="Names" >
                     {{translations['engaged_person']}} : 
                  </labeled-select>
-                 <labeled-input input-type="number" v-model="estimatedHours[workStage]" name="estimated_number_of_hours[]">{{translations['estimated_number_of_hours']}} : </labeled-input>
-                 <labeled-input input-type="number" v-model="estimatedCosts[workStage]" v-bind:step="0.1" name="estimated_ammount_of_money[]">{{translations['estimated_ammount_of_money']}} : </labeled-input>
+                 <labeled-input input-type="number" v-model="estimatedHours[workStage]" name="work_stage_estimated_number_of_hours[]">{{translations['estimated_number_of_hours']}} : </labeled-input>
+                 <labeled-input input-type="number" v-model="estimatedCosts[workStage]" v-bind:step="0.1" name="work_stage_estimated_ammount_of_money[]">{{translations['estimated_ammount_of_money']}} : </labeled-input>
                  <span class="datepicker-wrapper">
                      <span class="datepicker-description">
                          {{translations['start_at']}} :
                      </span>
-                     <datepicker input-class="calendar-input" v-model="startDates[workStage]" name="date_start[]"></datepicker>
+                     <datepicker input-class="calendar-input" v-model="startDates[workStage]" name="work_stage_date_start[]"></datepicker>
                  </span>
                  <span class="datepicker-wrapper">
                      <span class="datepicker-description">
                          {{translations['deadline']}} :
                      </span>
-                     <datepicker input-class="calendar-input" v-model="deadLineDates[workStage]" name="dead_line_date[]"></datepicker>
+                     <datepicker input-class="calendar-input" v-model="deadLineDates[workStage]" name="work_stage_dead_line_date[]"></datepicker>
                  </span>
                  <close-button description="translations['remove_work_stage']" v-on:click.native="removeWorkStage(workStage)">
                  </close-button>
@@ -75,15 +77,15 @@
           </positive-button>
         <ul class="stages-list">
           <li v-for="paymentStage in paymentStages"  class="stage-list-element">
-            <labeled-input input-type="text" name="payment_stage_names[]">{{translations['name']}} : </labeled-input>
-            <labeled-input input-type="number" v-on:input="setPaymentStageMoneyAmmount(paymentStage, $event)" v-bind:step="0.5" name="payment_ammounts[]">{{translations['ammount']}} : </labeled-input>
+            <labeled-input v-model="paymentStageNames[paymentStage]" input-type="text" name="payment_stage_names[]">{{translations['name']}} : </labeled-input>
+            <labeled-input input-type="number" v-on:aditional="updatePaymentSummary" v-model="paymentStagesMoneyAmmount[paymentStage]" v-bind:step="0.5" name="payment_ammounts[]">{{translations['ammount']}} : </labeled-input>
             <span class="datepicker-wrapper">
                 <span class="datepicker-description">
                     {{translations['estimated_date_of_invoice']}} :
                 </span>
-                <datepicker input-class="calendar-input" v-model="paymentStageDates[paymentStage]" name="paymentStageDates[]"></datepicker>
+                <datepicker input-class="calendar-input" v-model="paymentStageDates[paymentStage]" name="payment_stage_dates[]"></datepicker>
             </span>
-            <labeled-select name="payment_status[]" v-bind:displayed-values="paymentStatusesValues" v-bind:values="paymentStatusesIds">
+            <labeled-select name="payment_status[]" v-model="paymentStageStatuses[paymentStage]" v-bind:displayed-values="paymentStatusesValues" v-bind:values="paymentStatusesIds">
                 {{translations['status']}} : 
             </labeled-select>
             <close-button description="translations['remove_payment_stage']" v-on:click.native="removePaymentStage(paymentStage)">
@@ -96,7 +98,7 @@
        <caption v-text="translations['client_data']" class="project-form-caption"></caption>
        <labeled-input name="client_contact_person">{{translations['client_contact_person']}} : </labeled-input>
        <labeled-input input-type="tel" name="client_phone_number">{{translations['client_phone_number']}} : </labeled-input>
-       <labeled-input input-type="email"  name="email">{{translations['client_email']}} : </labeled-input>
+       <labeled-input input-type="email"  name="client_email">{{translations['client_email']}} : </labeled-input>
        <labeled-select name="client_id" v-bind:displayed-values="clientNames" v-bind:values="clientIds">
           {{translations['client']}} : 
        </labeled-select>
@@ -104,8 +106,8 @@
 
     <fieldset class="project-form-fieldset">
        <caption v-text="translations['invoice_data']" class="project-form-caption"></caption>
-       <labeled-input name="addres">{{translations['addres']}} : </labeled-input>
-       <labeled-input name="company_name">{{translations['company_name']}} : </labeled-input>
+       <labeled-input name="invoice_addres">{{translations['addres']}} : </labeled-input>
+       <labeled-input name="invoice_company_name">{{translations['company_name']}} : </labeled-input>
        <labeled-input name="tax_identification_number">{{translations['tax_identification_number']}} : </labeled-input>
     </fieldset>
 
@@ -121,7 +123,13 @@
             </span>
             <datepicker input-class="calendar-input"  name="finish_date"></datepicker>
         </span>
+        <labeled-select name="project_status" v-bind:displayed-values="projectStatusesValues" v-bind:values="projectStatusesIds">
+          {{translations['project_status']}} : 
+       </labeled-select>
+          <label for="project-comment" v-text="translations['project_comment']" class="textarea-label"></label>
+          <textarea name="project_comment" id="project-comment" class="nice-textarea" cols="30" rows="10"></textarea>
     </fieldset>
+    <button class="positive-button" v-text="translations['save']" type="submit"></button>
  </form>
 </template>
 
@@ -173,12 +181,32 @@
     @Prop({
             type: Array,
             required: true,
-    }) readonly tasks: string[];
+    }) readonly projectStatusesIds: string[];
 
     @Prop({
             type: Array,
             required: true,
-    }) readonly employees: string[];
+    }) readonly projectStatusesValues: string[];
+
+    @Prop({
+            type: Array,
+            required: true,
+    }) readonly tasksNames: string[];
+
+    @Prop({
+            type: Array,
+            required: true,
+    }) readonly tasksIds: number[];
+
+    @Prop({
+            type: Array,
+            required: true,
+    }) readonly employeesNames: string[];
+
+    @Prop({
+            type: Array,
+            required: true,
+    }) readonly employeesIds: number[];
 
     @Prop({
             type: Array,
@@ -206,19 +234,31 @@
     private estimatedCosts:object = {};
     private workStageEngagedPersons:object = {};
     
-
     private paymentStageIndex:number = 0;
     private paymentStageDates:object = {};
     private paymentStagesMoneyAmmount:object = {};
     private paymentStages: Array<number> = [];
+    private paymentStageNames:object = {};
+    private paymentStageStatuses:object = {};
+
     private paymentSummary:number = 0;
 
     logout(){
       (<HTMLFormElement>this.$refs.logout_form).submit();
     }
 
+    getTaskId(task:string):number{
+        const index = this.tasksNames.findIndex( name => name == task);
+        return this.tasksIds[index];
+    }
+
+    getEmployeeId(employeeName):number{
+        const index = this.employeesNames.findIndex( name => name == employeeName);
+        return this.employeesIds[index];
+    }
+
     closeForm(){
-        this.$emit('close');
+        this.$root.$emit('closeProjectForm');
     }
 
     addItemToTasksList(task:string){
@@ -260,6 +300,8 @@
         ++this.paymentStageIndex;
         this.paymentStageDates[this.paymentStageIndex] = new Date();
         this.paymentStagesMoneyAmmount[this.paymentStageIndex] = 0;
+        this.paymentStageNames[this.paymentStageIndex] = '';
+        this.paymentStageStatuses[this.paymentStageIndex] = 0;
         this.paymentStages.push(this.paymentStageIndex);
     }
 
@@ -276,12 +318,10 @@
     removePaymentStage(paymentStageID:number){
         this.paymentStages = this.paymentStages.filter(value => value != paymentStageID);
         delete this.paymentStageDates[paymentStageID];
-    }
-
-
-    setPaymentStageMoneyAmmount(paymentStageID, event){
-          this.paymentStagesMoneyAmmount[paymentStageID] = event;
-          this.updatePaymentSummary();
+        delete this.paymentStagesMoneyAmmount[paymentStageID];
+        delete this.paymentStageNames[paymentStageID];
+        delete this.paymentStageStatuses[paymentStageID];
+        this.updatePaymentSummary();
     }
 
     updatePaymentSummary(){
@@ -300,6 +340,25 @@
 <style lang="scss" >
 
 @import '~sass/fonts';
+
+.textarea-label{
+    text-align: center;
+    color:black;
+}
+
+.textarea-label, .nice-textarea{
+  display:block;
+  width:95%;
+  margin:0 auto;
+  @include responsive-font();
+}
+
+.nice-textarea{
+    border-radius:5px;
+    background:#242229;
+    color:white;
+    margin-bottom: 5px;
+}
 
 .payment-summary-container{
     display:inline-block;
@@ -323,6 +382,7 @@
     display:inline-flex;
     flex-wrap:nowrap;
     align-items: baseline;
+    margin: 4px;
 }
 
 .calendar-input{

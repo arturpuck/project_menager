@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Navbar from '@jscomponents/navbar.vue';
 import PositiveButton from '@jscomponents/controls/positive_button.vue';
 import ProjectForm from '@jscomponents/projects/project_form.vue';
+import { createDebuggerStatement } from 'typescript';
 
 Vue.component('positive-button', PositiveButton);
 Vue.component('navbar', Navbar);
@@ -22,11 +23,11 @@ new Vue({
        showProjectForm(){
           this.projectFormIsVisible = true;
        },
-
-       closeProjectForm(){
-           this.projectFormIsVisible = false;
-       }
         
+   },
+
+   created(){
+       this.$root.$on('closeProjectForm', () => this.projectFormIsVisible = false);
    }
    
 });

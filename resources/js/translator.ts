@@ -47,7 +47,10 @@ const translations:object = {
             valuation : "Wycena",
             total_cost : "Całkowity koszt",
             current_currency : "PLN",
-            finish_date : "Data zakończenia"
+            finish_date : "Data zakończenia",
+            project_status : "Status projektu",
+            project_comment : "Komentarz do projektu",
+            save : "Zapisz"
         }
     }
 };

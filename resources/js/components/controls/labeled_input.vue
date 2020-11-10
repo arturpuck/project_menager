@@ -45,11 +45,12 @@
      @Prop({
             type: [Number, String],
             required: false,
-            default: 0.5
+            default: undefined
     }) readonly value: number|string;
 
     modifyModel(event){
       this.$emit('input', event.target.value);
+      this.$emit('aditional', event.target.value);
     }
 
     mounted(){

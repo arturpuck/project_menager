@@ -212,10 +212,10 @@ exports.push([module.i, ".fa-plus[data-v-49f9dc67] {\n  position: absolute;\n  r
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/controls/positive_button.vue?vue&type=style&index=0&id=4cb74aac&lang=scss&scoped=true&":
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/controls/positive_button.vue?vue&type=style&index=0&id=4cb74aac&lang=scss&scoped=true& ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/controls/positive_button.vue?vue&type=style&index=0&lang=scss&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/controls/positive_button.vue?vue&type=style&index=0&lang=scss& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -224,7 +224,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".positive-button[data-v-4cb74aac] {\n  background: linear-gradient(#0fe00b, #054004);\n  padding: 5px;\n  color: white;\n  width: 15vw;\n  min-width: 200px;\n  border-radius: 5px;\n  font-weight: bold;\n  border: none;\n  cursor: pointer;\n  font-size: 1.5vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n.positive-button[data-v-4cb74aac]:hover {\n  background: #ef0244;\n}\n@media (max-width: 1200px) {\n.positive-button[data-v-4cb74aac] {\n    font-size: 19px;\n}\n}", ""]);
+exports.push([module.i, ".positive-button {\n  background: linear-gradient(#0fe00b, #054004);\n  padding: 5px;\n  color: white;\n  width: 15vw;\n  min-width: 200px;\n  border-radius: 5px;\n  font-weight: bold;\n  border: none;\n  cursor: pointer;\n  font-size: 1.5vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n.positive-button:hover {\n  background: #ef0244;\n}\n@media (max-width: 1200px) {\n.positive-button {\n    font-size: 19px;\n}\n}", ""]);
 
 // exports
 
@@ -262,7 +262,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".payment-summary-container {\n  display: inline-block;\n  padding: 6px;\n  background: #242229;\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n  border-radius: 4px;\n  margin: 4px;\n}\n@media (max-width: 1200px) {\n.payment-summary-container {\n    font-size: 16px;\n}\n}\n.datepicker-description {\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n@media (max-width: 1200px) {\n.datepicker-description {\n    font-size: 16px;\n}\n}\n.datepicker-wrapper {\n  padding: 4px;\n  background: #242229;\n  border-radius: 5px;\n  display: inline-flex;\n  flex-wrap: nowrap;\n  align-items: baseline;\n}\n.calendar-input {\n  background: #242229;\n  color: white;\n  padding: 4px;\n  border: none;\n}\n.stage-list-element {\n  border: 2px solid gray;\n  margin: 4px 0;\n}\n.stages-list {\n  list-style-type: none;\n  padding: 4px;\n  margin: 0;\n}\n.add-stage-button {\n  margin: 5px;\n  display: block;\n}\n.remove-rectangular-element-icon {\n  width: 1.8vw;\n  height: 1.8vw;\n}\n.rectangular-elements-list {\n  list-style-type: none;\n  padding: 4px;\n  margin: 0;\n}\n.rectangular-list-element {\n  padding: 5px;\n  display: inline-block;\n  margin: 5px;\n  background: black;\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n@media (max-width: 1200px) {\n.rectangular-list-element {\n    font-size: 16px;\n}\n}\n.project-form-caption {\n  font-size: 1.5vw;\n  font-family: \"Exo 2\", sans-serif;\n  color: black;\n  display: block;\n  padding: 5px 0 5px 10px;\n  text-align: left;\n}\n@media (max-width: 1200px) {\n.project-form-caption {\n    font-size: 22px;\n}\n}\n.project-form-fieldset {\n  border: 2px solid black;\n  border-radius: 5px;\n  margin: 5px 0;\n}\n.project-form {\n  padding: 5px;\n  position: fixed;\n  top: 0;\n  width: 100%;\n  left: 0;\n  overflow-y: auto;\n  background: #fbffff;\n  max-height: 100vh;\n}\n.close-bar {\n  text-align: right;\n  padding: 5px;\n  background: black;\n}", ""]);
+exports.push([module.i, ".textarea-label {\n  text-align: center;\n  color: black;\n}\n.textarea-label, .nice-textarea {\n  display: block;\n  width: 95%;\n  margin: 0 auto;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n@media (max-width: 1200px) {\n.textarea-label, .nice-textarea {\n    font-size: 16px;\n}\n}\n.nice-textarea {\n  border-radius: 5px;\n  background: #242229;\n  color: white;\n  margin-bottom: 5px;\n}\n.payment-summary-container {\n  display: inline-block;\n  padding: 6px;\n  background: #242229;\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n  border-radius: 4px;\n  margin: 4px;\n}\n@media (max-width: 1200px) {\n.payment-summary-container {\n    font-size: 16px;\n}\n}\n.datepicker-description {\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n@media (max-width: 1200px) {\n.datepicker-description {\n    font-size: 16px;\n}\n}\n.datepicker-wrapper {\n  padding: 4px;\n  background: #242229;\n  border-radius: 5px;\n  display: inline-flex;\n  flex-wrap: nowrap;\n  align-items: baseline;\n  margin: 4px;\n}\n.calendar-input {\n  background: #242229;\n  color: white;\n  padding: 4px;\n  border: none;\n}\n.stage-list-element {\n  border: 2px solid gray;\n  margin: 4px 0;\n}\n.stages-list {\n  list-style-type: none;\n  padding: 4px;\n  margin: 0;\n}\n.add-stage-button {\n  margin: 5px;\n  display: block;\n}\n.remove-rectangular-element-icon {\n  width: 1.8vw;\n  height: 1.8vw;\n}\n.rectangular-elements-list {\n  list-style-type: none;\n  padding: 4px;\n  margin: 0;\n}\n.rectangular-list-element {\n  padding: 5px;\n  display: inline-block;\n  margin: 5px;\n  background: black;\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n@media (max-width: 1200px) {\n.rectangular-list-element {\n    font-size: 16px;\n}\n}\n.project-form-caption {\n  font-size: 1.5vw;\n  font-family: \"Exo 2\", sans-serif;\n  color: black;\n  display: block;\n  padding: 5px 0 5px 10px;\n  text-align: left;\n}\n@media (max-width: 1200px) {\n.project-form-caption {\n    font-size: 22px;\n}\n}\n.project-form-fieldset {\n  border: 2px solid black;\n  border-radius: 5px;\n  margin: 5px 0;\n}\n.project-form {\n  padding: 5px;\n  position: fixed;\n  top: 0;\n  width: 100%;\n  left: 0;\n  overflow-y: auto;\n  background: #fbffff;\n  max-height: 100vh;\n}\n.close-bar {\n  text-align: right;\n  padding: 5px;\n  background: black;\n}", ""]);
 
 // exports
 
@@ -869,15 +869,15 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/controls/positive_button.vue?vue&type=style&index=0&id=4cb74aac&lang=scss&scoped=true&":
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/controls/positive_button.vue?vue&type=style&index=0&id=4cb74aac&lang=scss&scoped=true& ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/controls/positive_button.vue?vue&type=style&index=0&lang=scss&":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/controls/positive_button.vue?vue&type=style&index=0&lang=scss& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--8-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./positive_button.vue?vue&type=style&index=0&id=4cb74aac&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/controls/positive_button.vue?vue&type=style&index=0&id=4cb74aac&lang=scss&scoped=true&");
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--8-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./positive_button.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/controls/positive_button.vue?vue&type=style&index=0&lang=scss&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -1580,6 +1580,7 @@ var LabeledInput = /** @class */ (function (_super) {
     }
     LabeledInput.prototype.modifyModel = function (event) {
         this.$emit('input', event.target.value);
+        this.$emit('aditional', event.target.value);
     };
     LabeledInput.prototype.mounted = function () {
         if (this.inputType == "number") {
@@ -1624,7 +1625,7 @@ var LabeledInput = /** @class */ (function (_super) {
         vue_property_decorator_1.Prop({
             type: [Number, String],
             required: false,
-            default: 0.5
+            default: undefined
         })
     ], LabeledInput.prototype, "value", void 0);
     LabeledInput = __decorate([
@@ -1892,14 +1893,24 @@ var ProjectForm = /** @class */ (function (_super) {
         _this.paymentStageDates = {};
         _this.paymentStagesMoneyAmmount = {};
         _this.paymentStages = [];
+        _this.paymentStageNames = {};
+        _this.paymentStageStatuses = {};
         _this.paymentSummary = 0;
         return _this;
     }
     ProjectForm.prototype.logout = function () {
         this.$refs.logout_form.submit();
     };
+    ProjectForm.prototype.getTaskId = function (task) {
+        var index = this.tasksNames.findIndex(function (name) { return name == task; });
+        return this.tasksIds[index];
+    };
+    ProjectForm.prototype.getEmployeeId = function (employeeName) {
+        var index = this.employeesNames.findIndex(function (name) { return name == employeeName; });
+        return this.employeesIds[index];
+    };
     ProjectForm.prototype.closeForm = function () {
-        this.$emit('close');
+        this.$root.$emit('closeProjectForm');
     };
     ProjectForm.prototype.addItemToTasksList = function (task) {
         if (!this.chosenTasksList.includes(task)) {
@@ -1931,6 +1942,8 @@ var ProjectForm = /** @class */ (function (_super) {
         ++this.paymentStageIndex;
         this.paymentStageDates[this.paymentStageIndex] = new Date();
         this.paymentStagesMoneyAmmount[this.paymentStageIndex] = 0;
+        this.paymentStageNames[this.paymentStageIndex] = '';
+        this.paymentStageStatuses[this.paymentStageIndex] = 0;
         this.paymentStages.push(this.paymentStageIndex);
     };
     ProjectForm.prototype.removeWorkStage = function (workStageID) {
@@ -1945,9 +1958,9 @@ var ProjectForm = /** @class */ (function (_super) {
     ProjectForm.prototype.removePaymentStage = function (paymentStageID) {
         this.paymentStages = this.paymentStages.filter(function (value) { return value != paymentStageID; });
         delete this.paymentStageDates[paymentStageID];
-    };
-    ProjectForm.prototype.setPaymentStageMoneyAmmount = function (paymentStageID, event) {
-        this.paymentStagesMoneyAmmount[paymentStageID] = event;
+        delete this.paymentStagesMoneyAmmount[paymentStageID];
+        delete this.paymentStageNames[paymentStageID];
+        delete this.paymentStageStatuses[paymentStageID];
         this.updatePaymentSummary();
     };
     ProjectForm.prototype.updatePaymentSummary = function () {
@@ -1999,13 +2012,37 @@ var ProjectForm = /** @class */ (function (_super) {
             type: Array,
             required: true,
         })
-    ], ProjectForm.prototype, "tasks", void 0);
+    ], ProjectForm.prototype, "projectStatusesIds", void 0);
     __decorate([
         vue_property_decorator_1.Prop({
             type: Array,
             required: true,
         })
-    ], ProjectForm.prototype, "employees", void 0);
+    ], ProjectForm.prototype, "projectStatusesValues", void 0);
+    __decorate([
+        vue_property_decorator_1.Prop({
+            type: Array,
+            required: true,
+        })
+    ], ProjectForm.prototype, "tasksNames", void 0);
+    __decorate([
+        vue_property_decorator_1.Prop({
+            type: Array,
+            required: true,
+        })
+    ], ProjectForm.prototype, "tasksIds", void 0);
+    __decorate([
+        vue_property_decorator_1.Prop({
+            type: Array,
+            required: true,
+        })
+    ], ProjectForm.prototype, "employeesNames", void 0);
+    __decorate([
+        vue_property_decorator_1.Prop({
+            type: Array,
+            required: true,
+        })
+    ], ProjectForm.prototype, "employeesIds", void 0);
     __decorate([
         vue_property_decorator_1.Prop({
             type: Array,
@@ -2588,10 +2625,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/controls/positive_button.vue?vue&type=template&id=4cb74aac&scoped=true&":
-/*!***************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/controls/positive_button.vue?vue&type=template&id=4cb74aac&scoped=true& ***!
-  \***************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/controls/positive_button.vue?vue&type=template&id=4cb74aac&":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/controls/positive_button.vue?vue&type=template&id=4cb74aac& ***!
+  \***************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2734,607 +2771,707 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("form", { staticClass: "project-form", attrs: { action: "" } }, [
-    _c("input", {
-      attrs: { type: "hidden", name: "_token" },
-      domProps: { value: _vm.csrfToken }
-    }),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "close-bar" },
-      [
-        _c("close-button", {
-          attrs: { description: _vm.translations["close"] },
-          on: { buttonClicked: _vm.closeForm }
-        })
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "fieldset",
-      { staticClass: "project-form-fieldset" },
-      [
-        _c("caption", {
-          staticClass: "project-form-caption",
-          domProps: {
-            textContent: _vm._s(_vm.translations["project_basic_data"])
-          }
-        }),
-        _vm._v(" "),
-        _c("labeled-input", { attrs: { name: "project_name" } }, [
-          _vm._v(_vm._s(_vm.translations["name"]) + " : ")
-        ]),
-        _vm._v(" "),
-        _c(
-          "labeled-select",
-          {
-            attrs: {
-              name: "project_menager_id",
-              "displayed-values": _vm.projectMenagerNames,
-              values: _vm.projectMenagerIds
-            }
-          },
-          [
-            _vm._v(
-              "\n         " +
-                _vm._s(_vm.translations["project_menager"]) +
-                " : \n      "
-            )
-          ]
-        )
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "fieldset",
-      { staticClass: "project-form-fieldset" },
-      [
-        _c("caption", {
-          staticClass: "project-form-caption",
-          domProps: { textContent: _vm._s(_vm.translations["work_range"]) }
-        }),
-        _vm._v(" "),
-        _c(
-          "ul",
-          { staticClass: "rectangular-elements-list" },
-          _vm._l(_vm.chosenTasksList, function(task) {
-            return _c(
-              "li",
-              { staticClass: "rectangular-list-element" },
-              [
-                _vm._v(
-                  "\n               " + _vm._s(task) + "\n               "
-                ),
-                _c("close-button", {
-                  staticClass: "remove-rectangular-element-icon",
-                  attrs: { description: _vm.translations["close"] },
-                  nativeOn: {
-                    click: function($event) {
-                      return _vm.removeTaskFromList(task)
-                    }
-                  }
-                })
-              ],
-              1
-            )
-          }),
-          0
-        ),
-        _vm._v(" "),
-        _c(
-          "multiselect",
-          {
-            attrs: { values: _vm.tasks },
-            on: { added: _vm.addItemToTasksList }
-          },
-          [_vm._v(_vm._s(_vm.translations["choose_range"]))]
-        )
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "fieldset",
-      { staticClass: "project-form-fieldset" },
-      [
-        _c("caption", {
-          staticClass: "project-form-caption",
-          domProps: { textContent: _vm._s(_vm.translations["engaged_persons"]) }
-        }),
-        _vm._v(" "),
-        _c(
-          "ul",
-          { staticClass: "rectangular-elements-list" },
-          _vm._l(_vm.chosenEmployeesList, function(employee) {
-            return _c(
-              "li",
-              { staticClass: "rectangular-list-element" },
-              [
-                _vm._v(
-                  "\n               " + _vm._s(employee) + "\n               "
-                ),
-                _c("close-button", {
-                  staticClass: "remove-rectangular-element-icon",
-                  attrs: { description: _vm.translations["close"] },
-                  nativeOn: {
-                    click: function($event) {
-                      return _vm.removeEmployeeFromList(employee)
-                    }
-                  }
-                })
-              ],
-              1
-            )
-          }),
-          0
-        ),
-        _vm._v(" "),
-        _c(
-          "multiselect",
-          {
-            attrs: { values: _vm.employees },
-            on: { added: _vm.addItemToEmployeesList }
-          },
-          [_vm._v(_vm._s(_vm.translations["choose_persons"]))]
-        )
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "fieldset",
-      { staticClass: "project-form-fieldset" },
-      [
-        _c("caption", {
-          staticClass: "project-form-caption",
-          domProps: { textContent: _vm._s(_vm.translations["work_stages"]) }
-        }),
-        _vm._v(" "),
-        _c(
-          "positive-button",
-          {
-            staticClass: "add-stage-button",
-            nativeOn: {
-              click: function($event) {
-                return _vm.addWorkStage($event)
-              }
-            }
-          },
-          [
-            _vm._v(
-              "\n             " +
-                _vm._s(_vm.translations["add_work_stage"]) +
-                "\n         "
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "ul",
-          { staticClass: "stages-list" },
-          _vm._l(_vm.workStages, function(workStage) {
-            return _c(
-              "li",
-              { staticClass: "stage-list-element" },
-              [
-                _c(
-                  "labeled-select",
-                  {
-                    attrs: {
-                      name: "work_stages[]",
-                      "displayed-values": _vm.tasks
-                    },
-                    model: {
-                      value: _vm.workRangeValues[workStage],
-                      callback: function($$v) {
-                        _vm.$set(_vm.workRangeValues, workStage, $$v)
-                      },
-                      expression: "workRangeValues[workStage]"
-                    }
-                  },
-                  [
-                    _vm._v(
-                      "\n                   " +
-                        _vm._s(_vm.translations["work_range"]) +
-                        " : \n                "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "labeled-select",
-                  {
-                    attrs: {
-                      name: "engaged_persons[]",
-                      "displayed-values": _vm.employees
-                    },
-                    model: {
-                      value: _vm.workStageEngagedPersons[workStage],
-                      callback: function($$v) {
-                        _vm.$set(_vm.workStageEngagedPersons, workStage, $$v)
-                      },
-                      expression: "workStageEngagedPersons[workStage]"
-                    }
-                  },
-                  [
-                    _vm._v(
-                      "\n                   " +
-                        _vm._s(_vm.translations["engaged_person"]) +
-                        " : \n                "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "labeled-input",
-                  {
-                    attrs: {
-                      "input-type": "number",
-                      name: "estimated_number_of_hours[]"
-                    },
-                    model: {
-                      value: _vm.estimatedHours[workStage],
-                      callback: function($$v) {
-                        _vm.$set(_vm.estimatedHours, workStage, $$v)
-                      },
-                      expression: "estimatedHours[workStage]"
-                    }
-                  },
-                  [
-                    _vm._v(
-                      _vm._s(_vm.translations["estimated_number_of_hours"]) +
-                        " : "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "labeled-input",
-                  {
-                    attrs: {
-                      "input-type": "number",
-                      step: 0.1,
-                      name: "estimated_ammount_of_money[]"
-                    },
-                    model: {
-                      value: _vm.estimatedCosts[workStage],
-                      callback: function($$v) {
-                        _vm.$set(_vm.estimatedCosts, workStage, $$v)
-                      },
-                      expression: "estimatedCosts[workStage]"
-                    }
-                  },
-                  [
-                    _vm._v(
-                      _vm._s(_vm.translations["estimated_ammount_of_money"]) +
-                        " : "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  { staticClass: "datepicker-wrapper" },
-                  [
-                    _c("span", { staticClass: "datepicker-description" }, [
-                      _vm._v(
-                        "\n                        " +
-                          _vm._s(_vm.translations["start_at"]) +
-                          " :\n                    "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("datepicker", {
-                      attrs: {
-                        "input-class": "calendar-input",
-                        name: "date_start[]"
-                      },
-                      model: {
-                        value: _vm.startDates[workStage],
-                        callback: function($$v) {
-                          _vm.$set(_vm.startDates, workStage, $$v)
-                        },
-                        expression: "startDates[workStage]"
-                      }
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  { staticClass: "datepicker-wrapper" },
-                  [
-                    _c("span", { staticClass: "datepicker-description" }, [
-                      _vm._v(
-                        "\n                        " +
-                          _vm._s(_vm.translations["deadline"]) +
-                          " :\n                    "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("datepicker", {
-                      attrs: {
-                        "input-class": "calendar-input",
-                        name: "dead_line_date[]"
-                      },
-                      model: {
-                        value: _vm.deadLineDates[workStage],
-                        callback: function($$v) {
-                          _vm.$set(_vm.deadLineDates, workStage, $$v)
-                        },
-                        expression: "deadLineDates[workStage]"
-                      }
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c("close-button", {
-                  attrs: { description: "translations['remove_work_stage']" },
-                  nativeOn: {
-                    click: function($event) {
-                      return _vm.removeWorkStage(workStage)
-                    }
-                  }
-                })
-              ],
-              1
-            )
-          }),
-          0
-        )
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "fieldset",
-      { staticClass: "project-form-fieldset" },
-      [
-        _c("caption", {
-          staticClass: "project-form-caption",
-          domProps: { textContent: _vm._s(_vm.translations["payment_stages"]) }
-        }),
-        _vm._v(" "),
-        _c(
-          "positive-button",
-          {
-            staticClass: "add-stage-button",
-            nativeOn: {
-              click: function($event) {
-                return _vm.addPaymentStage($event)
-              }
-            }
-          },
-          [
-            _vm._v(
-              "\n             " +
-                _vm._s(_vm.translations["add_payment_stage"]) +
-                "\n         "
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "ul",
-          { staticClass: "stages-list" },
-          _vm._l(_vm.paymentStages, function(paymentStage) {
-            return _c(
-              "li",
-              { staticClass: "stage-list-element" },
-              [
-                _c(
-                  "labeled-input",
-                  {
-                    attrs: {
-                      "input-type": "text",
-                      name: "payment_stage_names[]"
-                    }
-                  },
-                  [_vm._v(_vm._s(_vm.translations["name"]) + " : ")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "labeled-input",
-                  {
-                    attrs: {
-                      "input-type": "number",
-                      step: 0.5,
-                      name: "payment_ammounts[]"
-                    },
-                    on: {
-                      input: function($event) {
-                        return _vm.setPaymentStageMoneyAmmount(
-                          paymentStage,
-                          $event
-                        )
-                      }
-                    }
-                  },
-                  [_vm._v(_vm._s(_vm.translations["ammount"]) + " : ")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  { staticClass: "datepicker-wrapper" },
-                  [
-                    _c("span", { staticClass: "datepicker-description" }, [
-                      _vm._v(
-                        "\n                   " +
-                          _vm._s(
-                            _vm.translations["estimated_date_of_invoice"]
-                          ) +
-                          " :\n               "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("datepicker", {
-                      attrs: {
-                        "input-class": "calendar-input",
-                        name: "paymentStageDates[]"
-                      },
-                      model: {
-                        value: _vm.paymentStageDates[paymentStage],
-                        callback: function($$v) {
-                          _vm.$set(_vm.paymentStageDates, paymentStage, $$v)
-                        },
-                        expression: "paymentStageDates[paymentStage]"
-                      }
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "labeled-select",
-                  {
-                    attrs: {
-                      name: "payment_status[]",
-                      "displayed-values": _vm.paymentStatusesValues,
-                      values: _vm.paymentStatusesIds
-                    }
-                  },
-                  [
-                    _vm._v(
-                      "\n               " +
-                        _vm._s(_vm.translations["status"]) +
-                        " : \n           "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("close-button", {
-                  attrs: {
-                    description: "translations['remove_payment_stage']"
-                  },
-                  nativeOn: {
-                    click: function($event) {
-                      return _vm.removePaymentStage(paymentStage)
-                    }
-                  }
-                })
-              ],
-              1
-            )
-          }),
-          0
-        )
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "fieldset",
-      { staticClass: "project-form-fieldset" },
-      [
-        _c("caption", {
-          staticClass: "project-form-caption",
-          domProps: { textContent: _vm._s(_vm.translations["client_data"]) }
-        }),
-        _vm._v(" "),
-        _c("labeled-input", { attrs: { name: "client_contact_person" } }, [
-          _vm._v(_vm._s(_vm.translations["client_contact_person"]) + " : ")
-        ]),
-        _vm._v(" "),
-        _c(
-          "labeled-input",
-          { attrs: { "input-type": "tel", name: "client_phone_number" } },
-          [_vm._v(_vm._s(_vm.translations["client_phone_number"]) + " : ")]
-        ),
-        _vm._v(" "),
-        _c(
-          "labeled-input",
-          { attrs: { "input-type": "email", name: "email" } },
-          [_vm._v(_vm._s(_vm.translations["client_email"]) + " : ")]
-        ),
-        _vm._v(" "),
-        _c(
-          "labeled-select",
-          {
-            attrs: {
-              name: "client_id",
-              "displayed-values": _vm.clientNames,
-              values: _vm.clientIds
-            }
-          },
-          [
-            _vm._v(
-              "\n         " + _vm._s(_vm.translations["client"]) + " : \n      "
-            )
-          ]
-        )
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "fieldset",
-      { staticClass: "project-form-fieldset" },
-      [
-        _c("caption", {
-          staticClass: "project-form-caption",
-          domProps: { textContent: _vm._s(_vm.translations["invoice_data"]) }
-        }),
-        _vm._v(" "),
-        _c("labeled-input", { attrs: { name: "addres" } }, [
-          _vm._v(_vm._s(_vm.translations["addres"]) + " : ")
-        ]),
-        _vm._v(" "),
-        _c("labeled-input", { attrs: { name: "company_name" } }, [
-          _vm._v(_vm._s(_vm.translations["company_name"]) + " : ")
-        ]),
-        _vm._v(" "),
-        _c("labeled-input", { attrs: { name: "tax_identification_number" } }, [
-          _vm._v(_vm._s(_vm.translations["tax_identification_number"]) + " : ")
-        ])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c("fieldset", { staticClass: "project-form-fieldset" }, [
-      _c("caption", {
-        staticClass: "project-form-caption",
-        domProps: { textContent: _vm._s(_vm.translations["summary"]) }
+  return _c(
+    "form",
+    {
+      staticClass: "project-form",
+      attrs: { method: "POST", action: "/add-project" }
+    },
+    [
+      _c("input", {
+        attrs: { type: "hidden", name: "_token" },
+        domProps: { value: _vm.csrfToken }
       }),
       _vm._v(" "),
-      _c("span", { staticClass: "payment-summary-container" }, [
-        _c("span", {
-          domProps: { textContent: _vm._s(_vm.translations["total_cost"]) }
-        }),
-        _vm._v(" : \n         "),
-        _c("span", { domProps: { textContent: _vm._s(_vm.paymentSummary) } }),
-        _vm._v(" "),
-        _c("span", {
-          domProps: {
-            textContent: _vm._s(_vm.translations["current_currency"])
-          }
-        })
-      ]),
-      _vm._v(" "),
       _c(
-        "span",
-        { staticClass: "datepicker-wrapper" },
+        "div",
+        { staticClass: "close-bar" },
         [
-          _c("span", { staticClass: "datepicker-description" }, [
-            _vm._v(
-              "\n               " +
-                _vm._s(_vm.translations["finish_date"]) +
-                " :\n           "
-            )
-          ]),
-          _vm._v(" "),
-          _c("datepicker", {
-            attrs: { "input-class": "calendar-input", name: "finish_date" }
+          _c("close-button", {
+            attrs: { description: _vm.translations["close"] },
+            nativeOn: {
+              click: function($event) {
+                return _vm.closeForm($event)
+              }
+            }
           })
         ],
         1
-      )
-    ])
-  ])
+      ),
+      _vm._v(" "),
+      _c(
+        "fieldset",
+        { staticClass: "project-form-fieldset" },
+        [
+          _c("caption", {
+            staticClass: "project-form-caption",
+            domProps: {
+              textContent: _vm._s(_vm.translations["project_basic_data"])
+            }
+          }),
+          _vm._v(" "),
+          _c("labeled-input", { attrs: { name: "project_name" } }, [
+            _vm._v(_vm._s(_vm.translations["name"]) + " : ")
+          ]),
+          _vm._v(" "),
+          _c(
+            "labeled-select",
+            {
+              attrs: {
+                name: "project_menager_id",
+                "displayed-values": _vm.projectMenagerNames,
+                values: _vm.projectMenagerIds
+              }
+            },
+            [
+              _vm._v(
+                "\n         " +
+                  _vm._s(_vm.translations["project_menager"]) +
+                  " : \n      "
+              )
+            ]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "fieldset",
+        { staticClass: "project-form-fieldset" },
+        [
+          _c("caption", {
+            staticClass: "project-form-caption",
+            domProps: { textContent: _vm._s(_vm.translations["work_range"]) }
+          }),
+          _vm._v(" "),
+          _c(
+            "ul",
+            { staticClass: "rectangular-elements-list" },
+            _vm._l(_vm.chosenTasksList, function(task) {
+              return _c(
+                "li",
+                { staticClass: "rectangular-list-element" },
+                [
+                  _vm._v(
+                    "\n               " + _vm._s(task) + "\n               "
+                  ),
+                  _c("close-button", {
+                    staticClass: "remove-rectangular-element-icon",
+                    attrs: { description: _vm.translations["close"] },
+                    nativeOn: {
+                      click: function($event) {
+                        return _vm.removeTaskFromList(task)
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    attrs: { type: "hidden", name: "tasks_ids[]" },
+                    domProps: { value: _vm.getTaskId(task) }
+                  })
+                ],
+                1
+              )
+            }),
+            0
+          ),
+          _vm._v(" "),
+          _c(
+            "multiselect",
+            {
+              attrs: { values: _vm.tasksNames },
+              on: { added: _vm.addItemToTasksList }
+            },
+            [_vm._v(_vm._s(_vm.translations["choose_range"]))]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "fieldset",
+        { staticClass: "project-form-fieldset" },
+        [
+          _c("caption", {
+            staticClass: "project-form-caption",
+            domProps: {
+              textContent: _vm._s(_vm.translations["engaged_persons"])
+            }
+          }),
+          _vm._v(" "),
+          _c(
+            "ul",
+            { staticClass: "rectangular-elements-list" },
+            _vm._l(_vm.chosenEmployeesList, function(employee) {
+              return _c(
+                "li",
+                { staticClass: "rectangular-list-element" },
+                [
+                  _vm._v(
+                    "\n               " + _vm._s(employee) + "\n               "
+                  ),
+                  _c("close-button", {
+                    staticClass: "remove-rectangular-element-icon",
+                    attrs: { description: _vm.translations["close"] },
+                    nativeOn: {
+                      click: function($event) {
+                        return _vm.removeEmployeeFromList(employee)
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    attrs: { type: "hidden", name: "employees_ids[]" },
+                    domProps: { value: _vm.getEmployeeId(employee) }
+                  })
+                ],
+                1
+              )
+            }),
+            0
+          ),
+          _vm._v(" "),
+          _c(
+            "multiselect",
+            {
+              attrs: { values: _vm.employeesNames },
+              on: { added: _vm.addItemToEmployeesList }
+            },
+            [_vm._v(_vm._s(_vm.translations["choose_persons"]))]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "fieldset",
+        { staticClass: "project-form-fieldset" },
+        [
+          _c("caption", {
+            staticClass: "project-form-caption",
+            domProps: { textContent: _vm._s(_vm.translations["work_stages"]) }
+          }),
+          _vm._v(" "),
+          _c(
+            "positive-button",
+            {
+              staticClass: "add-stage-button",
+              nativeOn: {
+                click: function($event) {
+                  return _vm.addWorkStage($event)
+                }
+              }
+            },
+            [
+              _vm._v(
+                "\n             " +
+                  _vm._s(_vm.translations["add_work_stage"]) +
+                  "\n         "
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "ul",
+            { staticClass: "stages-list" },
+            _vm._l(_vm.workStages, function(workStage) {
+              return _c(
+                "li",
+                { staticClass: "stage-list-element" },
+                [
+                  _c(
+                    "labeled-select",
+                    {
+                      attrs: {
+                        name: "work_stages[]",
+                        "displayed-values": _vm.tasksNames
+                      },
+                      model: {
+                        value: _vm.workRangeValues[workStage],
+                        callback: function($$v) {
+                          _vm.$set(_vm.workRangeValues, workStage, $$v)
+                        },
+                        expression: "workRangeValues[workStage]"
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                   " +
+                          _vm._s(_vm.translations["work_range"]) +
+                          " : \n                "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "labeled-select",
+                    {
+                      attrs: {
+                        name: "work_stage_engaged_persons[]",
+                        "displayed-values": _vm.Names
+                      },
+                      model: {
+                        value: _vm.workStageEngagedPersons[workStage],
+                        callback: function($$v) {
+                          _vm.$set(_vm.workStageEngagedPersons, workStage, $$v)
+                        },
+                        expression: "workStageEngagedPersons[workStage]"
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                   " +
+                          _vm._s(_vm.translations["engaged_person"]) +
+                          " : \n                "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "labeled-input",
+                    {
+                      attrs: {
+                        "input-type": "number",
+                        name: "work_stage_estimated_number_of_hours[]"
+                      },
+                      model: {
+                        value: _vm.estimatedHours[workStage],
+                        callback: function($$v) {
+                          _vm.$set(_vm.estimatedHours, workStage, $$v)
+                        },
+                        expression: "estimatedHours[workStage]"
+                      }
+                    },
+                    [
+                      _vm._v(
+                        _vm._s(_vm.translations["estimated_number_of_hours"]) +
+                          " : "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "labeled-input",
+                    {
+                      attrs: {
+                        "input-type": "number",
+                        step: 0.1,
+                        name: "work_stage_estimated_ammount_of_money[]"
+                      },
+                      model: {
+                        value: _vm.estimatedCosts[workStage],
+                        callback: function($$v) {
+                          _vm.$set(_vm.estimatedCosts, workStage, $$v)
+                        },
+                        expression: "estimatedCosts[workStage]"
+                      }
+                    },
+                    [
+                      _vm._v(
+                        _vm._s(_vm.translations["estimated_ammount_of_money"]) +
+                          " : "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    { staticClass: "datepicker-wrapper" },
+                    [
+                      _c("span", { staticClass: "datepicker-description" }, [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(_vm.translations["start_at"]) +
+                            " :\n                    "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("datepicker", {
+                        attrs: {
+                          "input-class": "calendar-input",
+                          name: "work_stage_date_start[]"
+                        },
+                        model: {
+                          value: _vm.startDates[workStage],
+                          callback: function($$v) {
+                            _vm.$set(_vm.startDates, workStage, $$v)
+                          },
+                          expression: "startDates[workStage]"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    { staticClass: "datepicker-wrapper" },
+                    [
+                      _c("span", { staticClass: "datepicker-description" }, [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(_vm.translations["deadline"]) +
+                            " :\n                    "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("datepicker", {
+                        attrs: {
+                          "input-class": "calendar-input",
+                          name: "work_stage_dead_line_date[]"
+                        },
+                        model: {
+                          value: _vm.deadLineDates[workStage],
+                          callback: function($$v) {
+                            _vm.$set(_vm.deadLineDates, workStage, $$v)
+                          },
+                          expression: "deadLineDates[workStage]"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("close-button", {
+                    attrs: { description: "translations['remove_work_stage']" },
+                    nativeOn: {
+                      click: function($event) {
+                        return _vm.removeWorkStage(workStage)
+                      }
+                    }
+                  })
+                ],
+                1
+              )
+            }),
+            0
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "fieldset",
+        { staticClass: "project-form-fieldset" },
+        [
+          _c("caption", {
+            staticClass: "project-form-caption",
+            domProps: {
+              textContent: _vm._s(_vm.translations["payment_stages"])
+            }
+          }),
+          _vm._v(" "),
+          _c(
+            "positive-button",
+            {
+              staticClass: "add-stage-button",
+              nativeOn: {
+                click: function($event) {
+                  return _vm.addPaymentStage($event)
+                }
+              }
+            },
+            [
+              _vm._v(
+                "\n             " +
+                  _vm._s(_vm.translations["add_payment_stage"]) +
+                  "\n         "
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "ul",
+            { staticClass: "stages-list" },
+            _vm._l(_vm.paymentStages, function(paymentStage) {
+              return _c(
+                "li",
+                { staticClass: "stage-list-element" },
+                [
+                  _c(
+                    "labeled-input",
+                    {
+                      attrs: {
+                        "input-type": "text",
+                        name: "payment_stage_names[]"
+                      },
+                      model: {
+                        value: _vm.paymentStageNames[paymentStage],
+                        callback: function($$v) {
+                          _vm.$set(_vm.paymentStageNames, paymentStage, $$v)
+                        },
+                        expression: "paymentStageNames[paymentStage]"
+                      }
+                    },
+                    [_vm._v(_vm._s(_vm.translations["name"]) + " : ")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "labeled-input",
+                    {
+                      attrs: {
+                        "input-type": "number",
+                        step: 0.5,
+                        name: "payment_ammounts[]"
+                      },
+                      on: { aditional: _vm.updatePaymentSummary },
+                      model: {
+                        value: _vm.paymentStagesMoneyAmmount[paymentStage],
+                        callback: function($$v) {
+                          _vm.$set(
+                            _vm.paymentStagesMoneyAmmount,
+                            paymentStage,
+                            $$v
+                          )
+                        },
+                        expression: "paymentStagesMoneyAmmount[paymentStage]"
+                      }
+                    },
+                    [_vm._v(_vm._s(_vm.translations["ammount"]) + " : ")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    { staticClass: "datepicker-wrapper" },
+                    [
+                      _c("span", { staticClass: "datepicker-description" }, [
+                        _vm._v(
+                          "\n                   " +
+                            _vm._s(
+                              _vm.translations["estimated_date_of_invoice"]
+                            ) +
+                            " :\n               "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("datepicker", {
+                        attrs: {
+                          "input-class": "calendar-input",
+                          name: "payment_stage_dates[]"
+                        },
+                        model: {
+                          value: _vm.paymentStageDates[paymentStage],
+                          callback: function($$v) {
+                            _vm.$set(_vm.paymentStageDates, paymentStage, $$v)
+                          },
+                          expression: "paymentStageDates[paymentStage]"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "labeled-select",
+                    {
+                      attrs: {
+                        name: "payment_status[]",
+                        "displayed-values": _vm.paymentStatusesValues,
+                        values: _vm.paymentStatusesIds
+                      },
+                      model: {
+                        value: _vm.paymentStageStatuses[paymentStage],
+                        callback: function($$v) {
+                          _vm.$set(_vm.paymentStageStatuses, paymentStage, $$v)
+                        },
+                        expression: "paymentStageStatuses[paymentStage]"
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n               " +
+                          _vm._s(_vm.translations["status"]) +
+                          " : \n           "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("close-button", {
+                    attrs: {
+                      description: "translations['remove_payment_stage']"
+                    },
+                    nativeOn: {
+                      click: function($event) {
+                        return _vm.removePaymentStage(paymentStage)
+                      }
+                    }
+                  })
+                ],
+                1
+              )
+            }),
+            0
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "fieldset",
+        { staticClass: "project-form-fieldset" },
+        [
+          _c("caption", {
+            staticClass: "project-form-caption",
+            domProps: { textContent: _vm._s(_vm.translations["client_data"]) }
+          }),
+          _vm._v(" "),
+          _c("labeled-input", { attrs: { name: "client_contact_person" } }, [
+            _vm._v(_vm._s(_vm.translations["client_contact_person"]) + " : ")
+          ]),
+          _vm._v(" "),
+          _c(
+            "labeled-input",
+            { attrs: { "input-type": "tel", name: "client_phone_number" } },
+            [_vm._v(_vm._s(_vm.translations["client_phone_number"]) + " : ")]
+          ),
+          _vm._v(" "),
+          _c(
+            "labeled-input",
+            { attrs: { "input-type": "email", name: "client_email" } },
+            [_vm._v(_vm._s(_vm.translations["client_email"]) + " : ")]
+          ),
+          _vm._v(" "),
+          _c(
+            "labeled-select",
+            {
+              attrs: {
+                name: "client_id",
+                "displayed-values": _vm.clientNames,
+                values: _vm.clientIds
+              }
+            },
+            [
+              _vm._v(
+                "\n         " +
+                  _vm._s(_vm.translations["client"]) +
+                  " : \n      "
+              )
+            ]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "fieldset",
+        { staticClass: "project-form-fieldset" },
+        [
+          _c("caption", {
+            staticClass: "project-form-caption",
+            domProps: { textContent: _vm._s(_vm.translations["invoice_data"]) }
+          }),
+          _vm._v(" "),
+          _c("labeled-input", { attrs: { name: "invoice_addres" } }, [
+            _vm._v(_vm._s(_vm.translations["addres"]) + " : ")
+          ]),
+          _vm._v(" "),
+          _c("labeled-input", { attrs: { name: "invoice_company_name" } }, [
+            _vm._v(_vm._s(_vm.translations["company_name"]) + " : ")
+          ]),
+          _vm._v(" "),
+          _c(
+            "labeled-input",
+            { attrs: { name: "tax_identification_number" } },
+            [
+              _vm._v(
+                _vm._s(_vm.translations["tax_identification_number"]) + " : "
+              )
+            ]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "fieldset",
+        { staticClass: "project-form-fieldset" },
+        [
+          _c("caption", {
+            staticClass: "project-form-caption",
+            domProps: { textContent: _vm._s(_vm.translations["summary"]) }
+          }),
+          _vm._v(" "),
+          _c("span", { staticClass: "payment-summary-container" }, [
+            _c("span", {
+              domProps: { textContent: _vm._s(_vm.translations["total_cost"]) }
+            }),
+            _vm._v(" : \n         "),
+            _c("span", {
+              domProps: { textContent: _vm._s(_vm.paymentSummary) }
+            }),
+            _vm._v(" "),
+            _c("span", {
+              domProps: {
+                textContent: _vm._s(_vm.translations["current_currency"])
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c(
+            "span",
+            { staticClass: "datepicker-wrapper" },
+            [
+              _c("span", { staticClass: "datepicker-description" }, [
+                _vm._v(
+                  "\n               " +
+                    _vm._s(_vm.translations["finish_date"]) +
+                    " :\n           "
+                )
+              ]),
+              _vm._v(" "),
+              _c("datepicker", {
+                attrs: { "input-class": "calendar-input", name: "finish_date" }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "labeled-select",
+            {
+              attrs: {
+                name: "project_status",
+                "displayed-values": _vm.projectStatusesValues,
+                values: _vm.projectStatusesIds
+              }
+            },
+            [
+              _vm._v(
+                "\n         " +
+                  _vm._s(_vm.translations["project_status"]) +
+                  " : \n      "
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c("label", {
+            staticClass: "textarea-label",
+            attrs: { for: "project-comment" },
+            domProps: {
+              textContent: _vm._s(_vm.translations["project_comment"])
+            }
+          }),
+          _vm._v(" "),
+          _c("textarea", {
+            staticClass: "nice-textarea",
+            attrs: {
+              name: "project_comment",
+              id: "project-comment",
+              cols: "30",
+              rows: "10"
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("button", {
+        staticClass: "positive-button",
+        attrs: { type: "submit" },
+        domProps: { textContent: _vm._s(_vm.translations["save"]) }
+      })
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -18596,9 +18733,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _positive_button_vue_vue_type_template_id_4cb74aac_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./positive_button.vue?vue&type=template&id=4cb74aac&scoped=true& */ "./resources/js/components/controls/positive_button.vue?vue&type=template&id=4cb74aac&scoped=true&");
+/* harmony import */ var _positive_button_vue_vue_type_template_id_4cb74aac___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./positive_button.vue?vue&type=template&id=4cb74aac& */ "./resources/js/components/controls/positive_button.vue?vue&type=template&id=4cb74aac&");
 /* harmony import */ var _positive_button_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./positive_button.vue?vue&type=script&lang=js& */ "./resources/js/components/controls/positive_button.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _positive_button_vue_vue_type_style_index_0_id_4cb74aac_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./positive_button.vue?vue&type=style&index=0&id=4cb74aac&lang=scss&scoped=true& */ "./resources/js/components/controls/positive_button.vue?vue&type=style&index=0&id=4cb74aac&lang=scss&scoped=true&");
+/* empty/unused harmony star reexport *//* harmony import */ var _positive_button_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./positive_button.vue?vue&type=style&index=0&lang=scss& */ "./resources/js/components/controls/positive_button.vue?vue&type=style&index=0&lang=scss&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -18610,11 +18747,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _positive_button_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _positive_button_vue_vue_type_template_id_4cb74aac_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _positive_button_vue_vue_type_template_id_4cb74aac_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _positive_button_vue_vue_type_template_id_4cb74aac___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _positive_button_vue_vue_type_template_id_4cb74aac___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  "4cb74aac",
+  null,
   null
   
 )
@@ -18640,35 +18777,35 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/controls/positive_button.vue?vue&type=style&index=0&id=4cb74aac&lang=scss&scoped=true&":
-/*!************************************************************************************************************************!*\
-  !*** ./resources/js/components/controls/positive_button.vue?vue&type=style&index=0&id=4cb74aac&lang=scss&scoped=true& ***!
-  \************************************************************************************************************************/
+/***/ "./resources/js/components/controls/positive_button.vue?vue&type=style&index=0&lang=scss&":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/components/controls/positive_button.vue?vue&type=style&index=0&lang=scss& ***!
+  \************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_positive_button_vue_vue_type_style_index_0_id_4cb74aac_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--8-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./positive_button.vue?vue&type=style&index=0&id=4cb74aac&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/controls/positive_button.vue?vue&type=style&index=0&id=4cb74aac&lang=scss&scoped=true&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_positive_button_vue_vue_type_style_index_0_id_4cb74aac_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_positive_button_vue_vue_type_style_index_0_id_4cb74aac_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_positive_button_vue_vue_type_style_index_0_id_4cb74aac_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_positive_button_vue_vue_type_style_index_0_id_4cb74aac_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_positive_button_vue_vue_type_style_index_0_id_4cb74aac_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_positive_button_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--8-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./positive_button.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/controls/positive_button.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_positive_button_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_positive_button_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_positive_button_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_positive_button_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_positive_button_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
-/***/ "./resources/js/components/controls/positive_button.vue?vue&type=template&id=4cb74aac&scoped=true&":
-/*!*********************************************************************************************************!*\
-  !*** ./resources/js/components/controls/positive_button.vue?vue&type=template&id=4cb74aac&scoped=true& ***!
-  \*********************************************************************************************************/
+/***/ "./resources/js/components/controls/positive_button.vue?vue&type=template&id=4cb74aac&":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/components/controls/positive_button.vue?vue&type=template&id=4cb74aac& ***!
+  \*********************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_positive_button_vue_vue_type_template_id_4cb74aac_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./positive_button.vue?vue&type=template&id=4cb74aac&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/controls/positive_button.vue?vue&type=template&id=4cb74aac&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_positive_button_vue_vue_type_template_id_4cb74aac_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_positive_button_vue_vue_type_template_id_4cb74aac___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./positive_button.vue?vue&type=template&id=4cb74aac& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/controls/positive_button.vue?vue&type=template&id=4cb74aac&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_positive_button_vue_vue_type_template_id_4cb74aac___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_positive_button_vue_vue_type_template_id_4cb74aac_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_positive_button_vue_vue_type_template_id_4cb74aac___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -18885,9 +19022,10 @@ new vue_1.default({
         showProjectForm: function () {
             this.projectFormIsVisible = true;
         },
-        closeProjectForm: function () {
-            this.projectFormIsVisible = false;
-        }
+    },
+    created: function () {
+        var _this = this;
+        this.$root.$on('closeProjectForm', function () { return _this.projectFormIsVisible = false; });
     }
 });
 
@@ -18952,7 +19090,10 @@ var translations = {
             valuation: "Wycena",
             total_cost: "Całkowity koszt",
             current_currency: "PLN",
-            finish_date: "Data zakończenia"
+            finish_date: "Data zakończenia",
+            project_status: "Status projektu",
+            project_comment: "Komentarz do projektu",
+            save: "Zapisz"
         }
     }
 };
