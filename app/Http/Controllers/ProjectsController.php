@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Handlers\Projects\ProjectsListHandler;
-use App\Requests\Projects\CreateOrEditProjectRequest;
+use App\Handlers\Projects\AddProjectHandler;
+use App\Http\Requests\Projects\CreateOrEditProjectRequest;
 
 class ProjectsController extends Controller
 {
@@ -25,7 +26,8 @@ class ProjectsController extends Controller
         ]);
     }
 
-    public function addProject(CreateOrEditProjectRequest $request){
-          
+    public function addProject(CreateOrEditProjectRequest $request, AddProjectHandler $addProjectHandler){
+
+          return $addProjectHandler->handle($request);
     }
 }

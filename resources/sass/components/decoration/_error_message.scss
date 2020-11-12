@@ -1,0 +1,25 @@
+@import '~sass/fonts';
+
+.error-header{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;
+    background: rgba(0,0,0,0.9);
+    padding: 7px;
+}
+
+.error-information-container{
+    border-radius: 9px;
+    overflow: hidden;
+    box-shadow: 2px 2px 4px 3px black;
+    border: 2px solid #ef0244;
+    margin: calc(25px + 1.6vw) auto;
+    text-align: center;
+    color: white;
+    display: table;
+    position:relative;
+    max-width:75%;
+    min-width:310px;
+    @include responsive-font;
+}

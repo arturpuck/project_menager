@@ -18,7 +18,7 @@ class CreateProjectsTable extends Migration
             $table->string('name',100)->unique();
             $table->unsignedBigInteger('status_id');
             $table->foreign('status_id')->references('id')->on('project_statuses');
-            $table->string('comments');
+            $table->string('comment')->nullable();
             $table->date('finished_at');
             $table->string('invoice_company_addres',40);
             $table->string('invoice_company_name',40);
@@ -26,10 +26,11 @@ class CreateProjectsTable extends Migration
             $table->unsignedBigInteger('invoice_tax_identification_number');
             $table->unsignedBigInteger('client_id');
             $table->foreign('client_id')->references('id')->on('clients');
+            $table->string('full_name_contact_person', 40)->nullable();
+            $table->string('contact_person_email',40)->nullable();
+            $table->string('contact_person_phone_number',30)->nullable();
             $table->unsignedBigInteger('project_manager_id');
             $table->foreign('project_manager_id')->references('id')->on('employees');
-            $table->unsignedFloat('estimated_cost');
-            $table->unsignedFloat('estimated_time_of_work');
             $table->timestamps();
             $table->engine = 'InnoDB';
         });

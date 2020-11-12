@@ -31,7 +31,6 @@ Class ProjectsListHandler {
         $projectStatuses = ProjectStatus::all();
 
         $projectMenagers = $this->employeesRepository
-                          ->select(['full_name'])
                           ->filterByStatus('project menager')
                           ->get();
 

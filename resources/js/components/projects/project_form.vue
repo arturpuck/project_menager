@@ -7,8 +7,8 @@
 
     <fieldset class="project-form-fieldset">
         <caption v-text="translations['project_basic_data']" class="project-form-caption"></caption>
-        <labeled-input name="project_name">{{translations['name']}} : </labeled-input>
-        <labeled-select name="project_menager_id" v-bind:displayed-values="projectMenagerNames" v-bind:values="projectMenagerIds">
+        <labeled-input v-model="projectName" name="project_name">{{translations['name']}} : </labeled-input>
+        <labeled-select name="project_menager_id" v-model="projectMenagerID" v-bind:displayed-values="projectMenagerNames" v-bind:values="projectMenagerIds">
           {{translations['project_menager']}} : 
        </labeled-select>
     </fieldset>
@@ -44,10 +44,10 @@
           </positive-button>
           <ul class="stages-list">
               <li v-for="workStage in workStages"  class="stage-list-element">
-                 <labeled-select name="work_stages[]" v-model="workRangeValues[workStage]" v-bind:displayed-values="tasksNames" >
+                 <labeled-select name="work_stages[]" v-model="workRangeValues[workStage]" v-bind:values="tasksIds" v-bind:displayed-values="tasksNames" >
                     {{translations['work_range']}} : 
                  </labeled-select>
-                 <labeled-select name="work_stage_engaged_persons[]" v-model="workStageEngagedPersons[workStage]" v-bind:displayed-values="Names" >
+                 <labeled-select name="work_stage_engaged_persons[]" v-model="workStageEngagedPersons[workStage]" v-bind:values="employeesIds" v-bind:displayed-values="employeesNames" >
                     {{translations['engaged_person']}} : 
                  </labeled-select>
                  <labeled-input input-type="number" v-model="estimatedHours[workStage]" name="work_stage_estimated_number_of_hours[]">{{translations['estimated_number_of_hours']}} : </labeled-input>
@@ -56,13 +56,13 @@
                      <span class="datepicker-description">
                          {{translations['start_at']}} :
                      </span>
-                     <datepicker input-class="calendar-input" v-model="startDates[workStage]" name="work_stage_date_start[]"></datepicker>
+                     <datepicker input-class="calendar-input" name="work_stage_date_start[]" format="yyyy-MM-dd" v-model="startDates[workStage]" ></datepicker>
                  </span>
                  <span class="datepicker-wrapper">
                      <span class="datepicker-description">
                          {{translations['deadline']}} :
                      </span>
-                     <datepicker input-class="calendar-input" v-model="deadLineDates[workStage]" name="work_stage_dead_line_date[]"></datepicker>
+                     <datepicker input-class="calendar-input" format="yyyy-MM-dd" name="work_stage_dead_line_date[]" v-model="deadLineDates[workStage]" ></datepicker>
                  </span>
                  <close-button description="translations['remove_work_stage']" v-on:click.native="removeWorkStage(workStage)">
                  </close-button>
@@ -83,7 +83,7 @@
                 <span class="datepicker-description">
                     {{translations['estimated_date_of_invoice']}} :
                 </span>
-                <datepicker input-class="calendar-input" v-model="paymentStageDates[paymentStage]" name="payment_stage_dates[]"></datepicker>
+                <datepicker input-class="calendar-input" name="payment_stage_dates[]" format="yyyy-MM-dd" v-model="paymentStageDates[paymentStage]" ></datepicker>
             </span>
             <labeled-select name="payment_status[]" v-model="paymentStageStatuses[paymentStage]" v-bind:displayed-values="paymentStatusesValues" v-bind:values="paymentStatusesIds">
                 {{translations['status']}} : 
@@ -96,19 +96,19 @@
    
     <fieldset class="project-form-fieldset">
        <caption v-text="translations['client_data']" class="project-form-caption"></caption>
-       <labeled-input name="client_contact_person">{{translations['client_contact_person']}} : </labeled-input>
-       <labeled-input input-type="tel" name="client_phone_number">{{translations['client_phone_number']}} : </labeled-input>
-       <labeled-input input-type="email"  name="client_email">{{translations['client_email']}} : </labeled-input>
-       <labeled-select name="client_id" v-bind:displayed-values="clientNames" v-bind:values="clientIds">
+       <labeled-input v-model="clientContactPerson" name="client_contact_person">{{translations['client_contact_person']}} : </labeled-input>
+       <labeled-input v-model="clientPhoneNumber" input-type="tel" name="client_phone_number">{{translations['client_phone_number']}} : </labeled-input>
+       <labeled-input input-type="email" v-model="clientEmail"  name="client_email">{{translations['client_email']}} : </labeled-input>
+       <labeled-select name="client_id" v-model="clientId" v-bind:displayed-values="clientNames" v-bind:values="clientIds">
           {{translations['client']}} : 
        </labeled-select>
     </fieldset>
 
     <fieldset class="project-form-fieldset">
        <caption v-text="translations['invoice_data']" class="project-form-caption"></caption>
-       <labeled-input name="invoice_addres">{{translations['addres']}} : </labeled-input>
-       <labeled-input name="invoice_company_name">{{translations['company_name']}} : </labeled-input>
-       <labeled-input name="tax_identification_number">{{translations['tax_identification_number']}} : </labeled-input>
+       <labeled-input v-model="invoiceAddres" name="invoice_addres">{{translations['addres']}} : </labeled-input>
+       <labeled-input v-model="invoiceCompanyName" name="invoice_company_name">{{translations['company_name']}} : </labeled-input>
+       <labeled-input v-model="taxIdentificationNumber" name="tax_identification_number">{{translations['tax_identification_number']}} : </labeled-input>
     </fieldset>
 
     <fieldset class="project-form-fieldset">
@@ -121,13 +121,13 @@
             <span class="datepicker-description">
                 {{translations['finish_date']}} :
             </span>
-            <datepicker input-class="calendar-input"  name="finish_date"></datepicker>
+            <datepicker format="yyyy-MM-dd" input-class="calendar-input" v-model="finishDate"  name="finish_date"></datepicker>
         </span>
-        <labeled-select name="project_status" v-bind:displayed-values="projectStatusesValues" v-bind:values="projectStatusesIds">
+        <labeled-select name="project_status_id" v-model="projectStatusId" v-bind:displayed-values="projectStatusesValues" v-bind:values="projectStatusesIds">
           {{translations['project_status']}} : 
        </labeled-select>
           <label for="project-comment" v-text="translations['project_comment']" class="textarea-label"></label>
-          <textarea name="project_comment" id="project-comment" class="nice-textarea" cols="30" rows="10"></textarea>
+          <textarea name="comment" v-model="projectComment" id="project-comment" class="nice-textarea" cols="30" rows="10"></textarea>
     </fieldset>
     <button class="positive-button" v-text="translations['save']" type="submit"></button>
  </form>
@@ -242,9 +242,25 @@
     private paymentStageStatuses:object = {};
 
     private paymentSummary:number = 0;
+    private projectName:string = '';
+    private projectMenagerID:number = 0;
+    private clientContactPerson:string = '';
+    private clientPhoneNumber:string = '';
+    private clientEmail:string = '';
+    private clientId:number = 0;
+    private invoiceAddres:string = '';
+    private invoiceCompanyName:string = '';
+    private taxIdentificationNumber:number = 0;
+    private finishDate = new Date();
+    private projectStatusId:number = 0;
+    private projectComment:string = '';
 
     logout(){
       (<HTMLFormElement>this.$refs.logout_form).submit();
+    }
+
+    parseDate(date:Date):string{
+         return date.toLocaleDateString("en-US").split('/').join('-');
     }
 
     getTaskId(task:string):number{

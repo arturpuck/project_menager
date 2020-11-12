@@ -10,7 +10,7 @@
 <script lang="ts">
   import {Vue, Component, Prop} from 'vue-property-decorator';
   
-@Component
+@Component({name: 'labeled-input'})
   export default class LabeledInput extends Vue {
   
    @Prop({

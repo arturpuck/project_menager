@@ -18,14 +18,13 @@ class CreateTaskStagesTable extends Migration
             $table->unsignedBigInteger('task_id');
             $table->foreign('task_id')->references('id')->on('tasks');
             $table->unsignedBigInteger('employee_id');
+            $table->foreign('employee_id')->references('id')->on('employees');
             $table->unsignedBigInteger('project_id');
             $table->foreign('project_id')->references('id')->on('projects');
-            $table->foreign('employee_id')->references('id')->on('employees');
             $table->unsignedFloat('estimated_time_of_work');
             $table->unsignedFloat('estimated_amount_of_money');
             $table->date('start_at');
             $table->date('deadline');
-            $table->boolean('paid');
             $table->engine = 'InnoDB';
         });
     }

@@ -1,5 +1,17 @@
 <x-base title="{{$title}}" description="{{$description}}">
    <h1 class="main-header">{{__('projects')}}</h1>
+   @if($errors->any())
+   <div class="error-information-container">
+      <div class="error-header">
+         <x-icon-error-cross/>{{__('the_following_errors_occured')}}<x-icon-error-cross/>
+      </div>
+      <ul class="error-list">
+         @foreach($errors->all() as $error)
+           <li class="error-list-element">{{$error}}</li>
+         @endforeach
+      </ul>
+   </div>
+   @endif
 
    <positive-button v-on:click.native="showProjectForm" class="add-project-button">
       {{__('add_project')}}
@@ -7,7 +19,7 @@
 
    <project-form 
       v-bind:client-ids="{{json_encode($clients->pluck('id'),true)}}"
-      v-bind:client-names="{{json_encode($clients->pluck('company_name'),true)}}"
+      v-bind:client-names="{{json_encode($clients->pluck('name'),true)}}"
       v-bind:tasks-names="{{json_encode($tasks->pluck('name'),true)}}"
       v-bind:tasks-ids="{{json_encode($tasks->pluck('id'),true)}}"
       v-bind:employees-names="{{json_encode($employees->pluck('full_name'),true)}}"

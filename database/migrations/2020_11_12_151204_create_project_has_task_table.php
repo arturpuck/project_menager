@@ -3,9 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\Client;
 
-class CreateClientsTable extends Migration
+class CreateProjectHasTaskTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,17 +13,14 @@ class CreateClientsTable extends Migration
      */
     public function up()
     {
-        Schema::create('clients', function (Blueprint $table) {
+        Schema::create('project_has_task', function (Blueprint $table) {
             $table->id();
-            $table->string('name',40);
+            $table->unsignedBigInteger('project_id');
+            $table->foreign('project_id')->references('id')->on('projects');
+            $table->unsignedBigInteger('task_id');
+            $table->foreign('task_id')->references('id')->on('tasks');
             $table->timestamps();
-            $table->engine = 'InnoDB';
         });
-
-        Client::insert([
-            ['name' => 'TVP S.A'],
-            ['name' => 'Futra z norek'],
-        ]);
     }
 
     /**
@@ -34,6 +30,6 @@ class CreateClientsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clients');
+        Schema::dropIfExists('project_has_tasks');
     }
 }

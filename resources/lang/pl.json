@@ -14,5 +14,6 @@
   "uploader" : "Uploader",
   "logout" : "Wyloguj",
   "projects_list_description" : "Lista dostępnych projektów firmy Imaggo",
-  "add_project" : "Dodaj projekt"
+  "add_project" : "Dodaj projekt",
+  "the_following_errors_occured" : "Wykryto następujące błędy"
 }

@@ -1629,7 +1629,7 @@ var LabeledInput = /** @class */ (function (_super) {
         })
     ], LabeledInput.prototype, "value", void 0);
     LabeledInput = __decorate([
-        vue_property_decorator_1.Component
+        vue_property_decorator_1.Component({ name: 'labeled-input' })
     ], LabeledInput);
     return LabeledInput;
 }(vue_property_decorator_1.Vue));
@@ -1896,10 +1896,25 @@ var ProjectForm = /** @class */ (function (_super) {
         _this.paymentStageNames = {};
         _this.paymentStageStatuses = {};
         _this.paymentSummary = 0;
+        _this.projectName = '';
+        _this.projectMenagerID = 0;
+        _this.clientContactPerson = '';
+        _this.clientPhoneNumber = '';
+        _this.clientEmail = '';
+        _this.clientId = 0;
+        _this.invoiceAddres = '';
+        _this.invoiceCompanyName = '';
+        _this.taxIdentificationNumber = 0;
+        _this.finishDate = new Date();
+        _this.projectStatusId = 0;
+        _this.projectComment = '';
         return _this;
     }
     ProjectForm.prototype.logout = function () {
         this.$refs.logout_form.submit();
+    };
+    ProjectForm.prototype.parseDate = function (date) {
+        return date.toLocaleDateString("en-US").split('/').join('-');
     };
     ProjectForm.prototype.getTaskId = function (task) {
         var index = this.tasksNames.findIndex(function (name) { return name == task; });
@@ -2810,9 +2825,20 @@ var render = function() {
             }
           }),
           _vm._v(" "),
-          _c("labeled-input", { attrs: { name: "project_name" } }, [
-            _vm._v(_vm._s(_vm.translations["name"]) + " : ")
-          ]),
+          _c(
+            "labeled-input",
+            {
+              attrs: { name: "project_name" },
+              model: {
+                value: _vm.projectName,
+                callback: function($$v) {
+                  _vm.projectName = $$v
+                },
+                expression: "projectName"
+              }
+            },
+            [_vm._v(_vm._s(_vm.translations["name"]) + " : ")]
+          ),
           _vm._v(" "),
           _c(
             "labeled-select",
@@ -2821,6 +2847,13 @@ var render = function() {
                 name: "project_menager_id",
                 "displayed-values": _vm.projectMenagerNames,
                 values: _vm.projectMenagerIds
+              },
+              model: {
+                value: _vm.projectMenagerID,
+                callback: function($$v) {
+                  _vm.projectMenagerID = $$v
+                },
+                expression: "projectMenagerID"
               }
             },
             [
@@ -2984,6 +3017,7 @@ var render = function() {
                     {
                       attrs: {
                         name: "work_stages[]",
+                        values: _vm.tasksIds,
                         "displayed-values": _vm.tasksNames
                       },
                       model: {
@@ -3008,7 +3042,8 @@ var render = function() {
                     {
                       attrs: {
                         name: "work_stage_engaged_persons[]",
-                        "displayed-values": _vm.Names
+                        values: _vm.employeesIds,
+                        "displayed-values": _vm.employeesNames
                       },
                       model: {
                         value: _vm.workStageEngagedPersons[workStage],
@@ -3089,7 +3124,8 @@ var render = function() {
                       _c("datepicker", {
                         attrs: {
                           "input-class": "calendar-input",
-                          name: "work_stage_date_start[]"
+                          name: "work_stage_date_start[]",
+                          format: "yyyy-MM-dd"
                         },
                         model: {
                           value: _vm.startDates[workStage],
@@ -3118,6 +3154,7 @@ var render = function() {
                       _c("datepicker", {
                         attrs: {
                           "input-class": "calendar-input",
+                          format: "yyyy-MM-dd",
                           name: "work_stage_dead_line_date[]"
                         },
                         model: {
@@ -3247,7 +3284,8 @@ var render = function() {
                       _c("datepicker", {
                         attrs: {
                           "input-class": "calendar-input",
-                          name: "payment_stage_dates[]"
+                          name: "payment_stage_dates[]",
+                          format: "yyyy-MM-dd"
                         },
                         model: {
                           value: _vm.paymentStageDates[paymentStage],
@@ -3315,19 +3353,48 @@ var render = function() {
             domProps: { textContent: _vm._s(_vm.translations["client_data"]) }
           }),
           _vm._v(" "),
-          _c("labeled-input", { attrs: { name: "client_contact_person" } }, [
-            _vm._v(_vm._s(_vm.translations["client_contact_person"]) + " : ")
-          ]),
+          _c(
+            "labeled-input",
+            {
+              attrs: { name: "client_contact_person" },
+              model: {
+                value: _vm.clientContactPerson,
+                callback: function($$v) {
+                  _vm.clientContactPerson = $$v
+                },
+                expression: "clientContactPerson"
+              }
+            },
+            [_vm._v(_vm._s(_vm.translations["client_contact_person"]) + " : ")]
+          ),
           _vm._v(" "),
           _c(
             "labeled-input",
-            { attrs: { "input-type": "tel", name: "client_phone_number" } },
+            {
+              attrs: { "input-type": "tel", name: "client_phone_number" },
+              model: {
+                value: _vm.clientPhoneNumber,
+                callback: function($$v) {
+                  _vm.clientPhoneNumber = $$v
+                },
+                expression: "clientPhoneNumber"
+              }
+            },
             [_vm._v(_vm._s(_vm.translations["client_phone_number"]) + " : ")]
           ),
           _vm._v(" "),
           _c(
             "labeled-input",
-            { attrs: { "input-type": "email", name: "client_email" } },
+            {
+              attrs: { "input-type": "email", name: "client_email" },
+              model: {
+                value: _vm.clientEmail,
+                callback: function($$v) {
+                  _vm.clientEmail = $$v
+                },
+                expression: "clientEmail"
+              }
+            },
             [_vm._v(_vm._s(_vm.translations["client_email"]) + " : ")]
           ),
           _vm._v(" "),
@@ -3338,6 +3405,13 @@ var render = function() {
                 name: "client_id",
                 "displayed-values": _vm.clientNames,
                 values: _vm.clientIds
+              },
+              model: {
+                value: _vm.clientId,
+                callback: function($$v) {
+                  _vm.clientId = $$v
+                },
+                expression: "clientId"
               }
             },
             [
@@ -3361,17 +3435,48 @@ var render = function() {
             domProps: { textContent: _vm._s(_vm.translations["invoice_data"]) }
           }),
           _vm._v(" "),
-          _c("labeled-input", { attrs: { name: "invoice_addres" } }, [
-            _vm._v(_vm._s(_vm.translations["addres"]) + " : ")
-          ]),
-          _vm._v(" "),
-          _c("labeled-input", { attrs: { name: "invoice_company_name" } }, [
-            _vm._v(_vm._s(_vm.translations["company_name"]) + " : ")
-          ]),
+          _c(
+            "labeled-input",
+            {
+              attrs: { name: "invoice_addres" },
+              model: {
+                value: _vm.invoiceAddres,
+                callback: function($$v) {
+                  _vm.invoiceAddres = $$v
+                },
+                expression: "invoiceAddres"
+              }
+            },
+            [_vm._v(_vm._s(_vm.translations["addres"]) + " : ")]
+          ),
           _vm._v(" "),
           _c(
             "labeled-input",
-            { attrs: { name: "tax_identification_number" } },
+            {
+              attrs: { name: "invoice_company_name" },
+              model: {
+                value: _vm.invoiceCompanyName,
+                callback: function($$v) {
+                  _vm.invoiceCompanyName = $$v
+                },
+                expression: "invoiceCompanyName"
+              }
+            },
+            [_vm._v(_vm._s(_vm.translations["company_name"]) + " : ")]
+          ),
+          _vm._v(" "),
+          _c(
+            "labeled-input",
+            {
+              attrs: { name: "tax_identification_number" },
+              model: {
+                value: _vm.taxIdentificationNumber,
+                callback: function($$v) {
+                  _vm.taxIdentificationNumber = $$v
+                },
+                expression: "taxIdentificationNumber"
+              }
+            },
             [
               _vm._v(
                 _vm._s(_vm.translations["tax_identification_number"]) + " : "
@@ -3420,7 +3525,18 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("datepicker", {
-                attrs: { "input-class": "calendar-input", name: "finish_date" }
+                attrs: {
+                  format: "yyyy-MM-dd",
+                  "input-class": "calendar-input",
+                  name: "finish_date"
+                },
+                model: {
+                  value: _vm.finishDate,
+                  callback: function($$v) {
+                    _vm.finishDate = $$v
+                  },
+                  expression: "finishDate"
+                }
               })
             ],
             1
@@ -3430,9 +3546,16 @@ var render = function() {
             "labeled-select",
             {
               attrs: {
-                name: "project_status",
+                name: "project_status_id",
                 "displayed-values": _vm.projectStatusesValues,
                 values: _vm.projectStatusesIds
+              },
+              model: {
+                value: _vm.projectStatusId,
+                callback: function($$v) {
+                  _vm.projectStatusId = $$v
+                },
+                expression: "projectStatusId"
               }
             },
             [
@@ -3453,12 +3576,29 @@ var render = function() {
           }),
           _vm._v(" "),
           _c("textarea", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.projectComment,
+                expression: "projectComment"
+              }
+            ],
             staticClass: "nice-textarea",
             attrs: {
-              name: "project_comment",
+              name: "comment",
               id: "project-comment",
               cols: "30",
               rows: "10"
+            },
+            domProps: { value: _vm.projectComment },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.projectComment = $event.target.value
+              }
             }
           })
         ],
