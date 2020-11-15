@@ -27,7 +27,8 @@ class CreateOrEditProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            'project_name' => ['required', 'unique:projects,name', 'max:100'],
+            'project_id' => ['nullable', 'exists:projects,id'],
+            'project_name' => ['required', 'max:100'],
             'project_menager_id' => ['required', new EmployeeIDBelongsToProjectManager()],
             'tasks_ids.*' => ['required', 'exists:tasks,id'],
             'employees_ids.*' => ['required', 'exists:employees,id'],
@@ -56,8 +57,8 @@ class CreateOrEditProjectRequest extends FormRequest
     public function messages(){
 
         return [
+            'project_id.exists' => 'the_selected_project_id_does_not_exist',
             'project_name.required' => 'project_name_is_missing',
-            'project_name.unique' => 'project_name_already_exists',
             'project_name.max' => 'project_name_exceeds_100_characters',
             'project_menager_id.required' => 'project_menager_is_missing',
             'tasks_ids.*.required' => 'tasks_are_missing',

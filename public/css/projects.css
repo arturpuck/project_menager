@@ -131,3 +131,103 @@ table {
 .add-project-button {
   margin-left: 10px;
 }
+
+.header {
+  font-size: 1.8vw;
+  font-family: "Exo 2", sans-serif;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  padding: 5px;
+}
+@media (max-width: 1200px) {
+  .header {
+    font-size: 20px;
+  }
+}
+
+.projects-filter-form {
+  background: black;
+  padding: 5px;
+}
+
+.filter-button {
+  margin: 5px;
+}
+
+.projects-table-container {
+  position: relative;
+  min-height: 300px;
+}
+
+.projects-table-header {
+  padding: 3px;
+  font-size: 1.2vw;
+  font-family: "Exo 2", sans-serif;
+  background: black;
+  color: white;
+  text-align: center;
+  border: 2px solid white;
+}
+@media (max-width: 1200px) {
+  .projects-table-header {
+    font-size: 16px;
+  }
+}
+
+.projects-table {
+  margin: 8px auto;
+  border-collapse: collapse;
+}
+
+.projects-table-cell {
+  color: white;
+  font-size: 1.2vw;
+  font-family: "Exo 2", sans-serif;
+  text-align: center;
+  padding: 3px;
+  background: gray;
+}
+@media (max-width: 1200px) {
+  .projects-table-cell {
+    font-size: 16px;
+  }
+}
+
+.tiny-button {
+  border: none;
+  padding: 3px;
+  background: linear-gradient(#0fe00b, #054004);
+  font-size: 1vw;
+  font-family: "Exo 2", sans-serif;
+  color: white;
+  outline: none;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+}
+@media (max-width: 1200px) {
+  .tiny-button {
+    font-size: 12px;
+  }
+}
+.tiny-button:hover {
+  background: #ef0244;
+}
+
+.success-message {
+  min-width: 300px;
+  width: 25vw;
+  margin: 5px auto;
+  padding: 5px;
+  color: white;
+  text-align: center;
+  background: linear-gradient(#0fe00b, #054004);
+  font-size: 1.4vw;
+  font-family: "Exo 2", sans-serif;
+}
+@media (max-width: 1200px) {
+  .success-message {
+    font-size: 20px;
+  }
+}

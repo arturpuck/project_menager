@@ -10,6 +10,8 @@ use App\Models\Task;
 use App\Models\Employee;
 use App\Models\PaymentStatus;
 use App\Models\ProjectStatus;
+use App\Helpers\Months;
+use App\Helpers\Company;
 
 Class ProjectsListHandler {
 
@@ -34,6 +36,9 @@ Class ProjectsListHandler {
                           ->filterByStatus('project menager')
                           ->get();
 
-        return compact('clients', 'projects', 'projectMenagers', 'tasks', 'paymentStatuses', 'employees', 'projectStatuses');
+        $months = Months::names[\App::getLocale()];
+        $yearsRange = Company::getYearsRange();
+
+        return compact('clients', 'projects', 'projectMenagers', 'tasks', 'paymentStatuses', 'employees', 'projectStatuses', 'months', 'yearsRange');
     }
 }

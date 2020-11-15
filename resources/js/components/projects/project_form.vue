@@ -1,6 +1,7 @@
 <template>
  <form method="POST" action="/add-project" class="project-form">
     <input v-bind:value="csrfToken" type="hidden" name="_token">
+    <input v-if="projectId" type="hidden" v-bind:value="projectId" name="project_id">
     <div class="close-bar">
         <close-button v-bind:description="translations['close']" v-on:click.native="closeForm" />
     </div>
@@ -225,6 +226,8 @@
     private chosenEmployeesList: string[] = [];
     private engagedPersons:object = {};
 
+    private projectId = null;
+
     private workStageIndex: number = 0;
     private workStages: Array<number> = [];
     private startDates:object = {};
@@ -257,10 +260,6 @@
 
     logout(){
       (<HTMLFormElement>this.$refs.logout_form).submit();
-    }
-
-    parseDate(date:Date):string{
-         return date.toLocaleDateString("en-US").split('/').join('-');
     }
 
     getTaskId(task:string):number{
@@ -346,8 +345,79 @@
         this.paymentSummary = totalCost;
     }
 
+    loadProjectData(project){
+        this.resetForm();
+        this.projectName = project.name;
+        this.projectMenagerID = project.project_manager_id;
+
+        let projectTasks = [];
+        project.tasks.forEach(function(value){
+            projectTasks.push(value.name);
+        });
+        this.chosenTasksList = projectTasks;
+
+        let chosenPersons = [];
+        project.employees.forEach(function(value){
+            chosenPersons.push(value.full_name);
+        });
+        this.chosenEmployeesList = chosenPersons;
+
+        project.task_stages.forEach(value =>{
+            ++this.workStageIndex;
+            this.workRangeValues[this.workStageIndex] = value.task_id;
+            this.workStageEngagedPersons[this.workStageIndex] = value.employee_id;
+            this.estimatedHours[this.workStageIndex] = value.estimated_time_of_work;
+            this.estimatedCosts[this.workStageIndex] = value.estimated_amount_of_money;
+            this.startDates[this.workStageIndex] = value.start_at;
+            this.deadLineDates[this.workStageIndex] = value.deadline;
+            this.workStages.push(this.workStageIndex);
+        });
+
+        project.payment_stages.forEach(value => {
+            ++this.paymentStageIndex;
+            this.paymentStageNames[this.paymentStageIndex] = value.name;
+            this.paymentStagesMoneyAmmount[this.paymentStageIndex] = value.ammount;
+            this.paymentStageDates[this.paymentStageIndex] = value.estimated_payment_date;
+            this.paymentStageStatuses[this.paymentStageIndex] = value.payment_status_id;
+            this.paymentStages.push(this.paymentStageIndex);
+        });
+        this.updatePaymentSummary();
+
+        this.clientContactPerson = project.full_name_contact_person;
+        this.clientPhoneNumber = project.contact_person_phone_number;
+        this.clientEmail = project.contact_person_email;
+        this.clientId = project.client_id;
+        this.invoiceAddres = project.invoice_company_addres;
+        this.invoiceCompanyName = project.invoice_company_name;
+        this.taxIdentificationNumber = project.invoice_tax_identification_number;
+        this.finishDate = project.finished_at;
+        this.projectStatusId = project.status_id;
+        this.projectId = project.id;
+        this.projectComment = project.project_comment;
+
+    }
+
+    resetForm(){
+       this.projectId = null;
+       this.workRangeValues = {};
+       this.workStageEngagedPersons = {};
+       this.estimatedHours = {};
+       this.estimatedCosts = {};
+       this.startDates = {};
+       this.deadLineDates = {};
+       this.workStageIndex = 0;
+       this.workStages = [];
+       this.paymentStageIndex = 0;
+       this.paymentStageDates = {};
+       this.paymentStagesMoneyAmmount = {};
+       this.paymentStages = [];
+       this.paymentStageNames = {};
+       this.paymentStageStatuses = {};
+    }
+
     created(){
         this.csrfToken = (<HTMLMetaElement>document.getElementById('csrf-token')).content;
+        this.$root.$on('editProject', this.loadProjectData);
     }
 
   }

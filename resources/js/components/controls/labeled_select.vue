@@ -5,6 +5,7 @@
             <slot></slot>
         </span>
         <select v-bind:name="name" v-on:input="emitData" v-bind:value="value" ref="select_value" class="described-select">
+            <option value="">---</option>
             <option v-if="values" v-for="(value, index) in displayedValues" v-bind:value="values[index]">{{value}}</option>
             <option v-if="!values" v-for="(value, index) in displayedValues" v-bind:value="displayedValues[index]">{{value}}</option>
         </select>

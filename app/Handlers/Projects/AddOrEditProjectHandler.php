@@ -7,10 +7,19 @@ use App\Models\Project;
 use App\Models\TaskStage;
 use App\Models\PaymentStage;
 
-Class AddProjectHandler {
+Class AddOrEditProjectHandler {
 
     public function handle(CreateOrEditProjectRequest $request){
-        $project = new Project();
+
+        if($projectID = $request->get('project_id')){
+            $project = Project::find($projectID);
+            $project->taskStages()->delete();
+            $project->paymentStages()->delete(); //do zoptymalizowania - średnio eleganckie
+        }
+        else{
+            $project = new Project();
+        }
+        
         $project->name = $request->get('project_name');
         $project->project_manager_id = $request->get('project_menager_id');
         $project->full_name_contact_person = $request->get('full_name_contact_person');
@@ -22,10 +31,10 @@ Class AddProjectHandler {
         $project->invoice_tax_identification_number = $request->get('tax_identification_number');
         $project->finished_at = $request->get('finish_date');
         $project->status_id = $request->get('project_status_id');
-        $project->comment = $request->get('comment');
+        $project->project_comment = $request->get('comment');
         $project->save();
-        $project->tasks()->attach($request->get('tasks_ids'));
-        $project->employees()->attach($request->get('employees_ids'));
+        $project->tasks()->sync($request->get('tasks_ids'));
+        $project->employees()->sync($request->get('employees_ids'));
         $workStageData = [];
        
         foreach($request->get('work_stages') as $key => $value){
@@ -40,7 +49,6 @@ Class AddProjectHandler {
             $workStageData[] = $workStage;
         }
         TaskStage::insert($workStageData);
-
         $paymentStageData = [];
        
         foreach($request->get('payment_stage_names') as $key => $value){
@@ -54,5 +62,6 @@ Class AddProjectHandler {
         }
         PaymentStage::insert($paymentStageData);
 
+        return back()->with('succesMessage', 'operation_successfull');
     }
 }

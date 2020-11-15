@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Handlers\Projects\ProjectsListHandler;
-use App\Handlers\Projects\AddProjectHandler;
+use App\Handlers\Projects\AddOrEditProjectHandler;
+use App\Handlers\Projects\FilterProjectsHandler;
 use App\Http\Requests\Projects\CreateOrEditProjectRequest;
+use App\Http\Requests\Projects\FilterProjectRequest;
 
 class ProjectsController extends Controller
 {
@@ -22,12 +24,18 @@ class ProjectsController extends Controller
             'paymentStatuses' => $data['paymentStatuses'],
             'projectStatuses' => $data['projectStatuses'],
             'tasks' => $data['tasks'],
-            'employees' => $data['employees']
+            'employees' => $data['employees'],
+            'months' => $data['months'],
+            'yearsRange' => $data['yearsRange']
         ]);
     }
 
-    public function addProject(CreateOrEditProjectRequest $request, AddProjectHandler $addProjectHandler){
+    public function addOrEditProject(CreateOrEditProjectRequest $request, AddOrEditProjectHandler $addOrEditProjectHandler){
 
-          return $addProjectHandler->handle($request);
+          return $addOrEditProjectHandler->handle($request);
+    }
+
+    public function filterProjects(FilterProjectRequest $request, FilterProjectsHandler $filterProjectsHandler){
+          return $filterProjectsHandler->handle($request);
     }
 }

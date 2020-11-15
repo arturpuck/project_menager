@@ -15,5 +15,22 @@
   "logout" : "Wyloguj",
   "projects_list_description" : "Lista dostępnych projektów firmy Imaggo",
   "add_project" : "Dodaj projekt",
-  "the_following_errors_occured" : "Wykryto następujące błędy"
+  "the_following_errors_occured" : "Wykryto następujące błędy",
+  "projects_list" : "Lista projektów",
+  "client" : "Klient",
+  "work_range" : "Zakres prac",
+  "project_status" : "Status projektu",
+  "month" : "Miesiąc",
+  "year" : "Rok",
+  "filter" : "Filtruj",
+  "fetching_projects" : "Pobieram projekty",
+  "client_contact_data" : "Dane kontaktowe do klienta",
+  "project_manager" : "Projekt menager",
+  "project_name" : "Nazwa projektu",
+  "valuation" : "Wycena",
+  "date_finished_at" : "Data zakończenia",
+  "comments" : "Komentarze",
+  "actions" : "Działania",
+  "edit_project" : "Edytuj projekt",
+  "operation_successfull" : "Operacja przebiegła pomyślnie"
 }

@@ -4,11 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Task;
+use App\Models\Employee;
 
 class TaskStage extends Model
 {
     use HasFactory;
     protected $table = 'task_stages';
+    public $with = ['task', 'employee'];
     protected $fillable = [
        'task_id',
        'employee_id',
@@ -18,5 +21,13 @@ class TaskStage extends Model
        'start_at',
        'deadline'
     ];
+
+    public function task(){
+        return $this->belongsTo(Task::class);
+    }
+
+    public function employee(){
+        return $this->belongsTo(Employee::class);
+    }
 
 }

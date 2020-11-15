@@ -11,6 +11,10 @@ const translations:object = {
             logout : "Wyloguj"
         },
 
+        projectsTable : {
+               name_and_second_name : "Imię i nazwisko"
+        },
+
         project_form : {
             client_data : "Dane klienta",
             client_contact_person : "Osoba do kontaktu",
@@ -50,7 +54,7 @@ const translations:object = {
             finish_date : "Data zakończenia",
             project_status : "Status projektu",
             project_comment : "Komentarz do projektu",
-            save : "Zapisz"
+            save : "Zapisz",
         }
     }
 };

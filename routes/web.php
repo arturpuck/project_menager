@@ -32,8 +32,11 @@ Route::middleware(['auth'])->group(function(){
 
       Route::get('/projects', 'ProjectsController@showProjects')
           ->name('mainpage');
+
+      Route::get('/projects/filter', 'ProjectsController@filterProjects')
+          ->name('filter');
       
-      Route::post('/add-project', 'ProjectsController@addProject')
+      Route::post('/add-project', 'ProjectsController@addOrEditProject')
              ->name('add');
 
    });

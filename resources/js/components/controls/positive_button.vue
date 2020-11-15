@@ -1,5 +1,5 @@
 <template>
-   <button type="button" class="positive-button">
+   <button v-bind:type="type" class="positive-button">
        <slot></slot>
    </button>
 </template>
@@ -7,6 +7,14 @@
 <script>
 	export default {
         name: 'positive-button',
+
+        props : {
+             type : {
+                 required: false,
+                 type : String,
+                 default : 'button'
+             }
+        }
     }
 </script>
 
