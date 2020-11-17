@@ -41,10 +41,15 @@ Route::middleware(['auth'])->group(function(){
 
    });
 
-    
+   Route::name('team.')->group(function(){
 
-    Route::get('/team', 'MainPanelController@showTeam')
-          ->name('team');
+      Route::get('/team', 'TeamController@showList')
+            ->name('mainpage');
+
+      Route::get('/team/get-all', 'TeamController@getAll')
+            ->name('get-all');
+   });
+
 
     Route::get('/payouts', 'MainPanelController@showPayouts')
           ->name('payouts');

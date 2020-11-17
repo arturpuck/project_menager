@@ -2,16 +2,18 @@
 
 namespace App\Repositories;
 
-use App\Models\Employee;
+use App\Models\User;
 
 
 Class EmployeesRepository extends BaseRepository {
 
-    public const MODEL_NAME = Employee::class;
+    public const MODEL_NAME = User::class;
 
-    public function filterByStatus(string $status): EmployeesRepository {
+    public function filterByPositions(array $statuses): EmployeesRepository {
 
-         $this->query = $this->query->where('status', $status);
+         $this->query = $this->query->whereHas('positions', function($query) use ($statuses){
+                 $query->whereIn('name',$statuses);
+         });
          return $this;
     }
 }

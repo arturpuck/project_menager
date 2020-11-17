@@ -5,6 +5,7 @@ import ProjectForm from '@jscomponents/projects/project_form.vue';
 import LabeledSelect from '@jscomponents/controls/labeled_select.vue';
 import RelativeShadowContainer from '@jscomponents/decoration/relative_shadow_container.vue'
 import ExpectCircle from '@jscomponents/decoration/expect_circle.vue';
+import UserNotification from '@jscomponents/user_notification.vue';
 import { createDebuggerStatement } from 'typescript';
 import translator from '@js/translator';
 
@@ -14,6 +15,7 @@ Vue.component('project-form', ProjectForm);
 Vue.component('labeled-select', LabeledSelect);
 Vue.component('relative-shadow-container', RelativeShadowContainer);
 Vue.component('expect-circle', ExpectCircle);
+Vue.component('user-notification', UserNotification);
 
 new Vue({
     el: '#app',
@@ -23,6 +25,8 @@ new Vue({
         return{
             projectFormIsVisible: false,
             filterClientId:'',
+            filterProjectMenager:'',
+            filterAccount:'',
             filterTaskId:'',
             filterStatusId:'',
             filterMonth:'',
@@ -37,12 +41,19 @@ new Vue({
    
     methods : {
 
+      showNotification(text, type="no-error"){
+         const header = type === "no-error" ? "information" : "error";
+         console.log(text);
+         this.$root.$emit('showNotification', {notificationText : this.translations[text], notificationType : type, headerText : this.translations['information']});
+      },
+
       showEditForm(project){
          this.$root.$emit('editProject', project);
          this.showProjectForm();
       },
 
        showProjectForm(){
+          this.$root.$emit('resetForm');
           this.projectFormIsVisible = true;
        },
 
@@ -116,7 +127,22 @@ new Vue({
             switch(response.status){
                 case 200:
                    const responseBody = await response.json();
+                   if(responseBody.length == 0){
+                      this.showNotification('no_results_have_been_foound_for_your_authentication_level')
+                   }
                    this.matchingProjects = responseBody;
+                break;
+
+                case 400:
+                  this.showNotification('the_data_is_invalid', 'error');
+                break;
+
+                case 500:
+                  this.showNotification('the_data_is_probably_ok_but_a_server_error_occured', 'error');
+                break;
+
+                default:
+                   this.showNotification('undefined_error', 'error');
                 break;
             }
    

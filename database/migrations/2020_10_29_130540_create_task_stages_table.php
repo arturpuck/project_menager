@@ -17,8 +17,8 @@ class CreateTaskStagesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('task_id');
             $table->foreign('task_id')->references('id')->on('tasks');
-            $table->unsignedBigInteger('employee_id');
-            $table->foreign('employee_id')->references('id')->on('employees');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('project_id');
             $table->foreign('project_id')->references('id')->on('projects');
             $table->unsignedFloat('estimated_time_of_work');

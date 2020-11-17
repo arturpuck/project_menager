@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Exo+2|Aldrich|Oxanium|Play&display=swap" rel="stylesheet">
     <meta name="description" content="{{__('login_panel_description')}}">
 	 <meta name="author" content="Imaggo">
-    <title>{{__('imaggo_project_manager_register_panel')}}</title>
+    <title>{{__('imaggo_project_menager_register_panel')}}</title>
 </head>
 <body class="login-panel-body">
    @if($errors->any())

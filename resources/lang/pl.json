@@ -1,5 +1,5 @@
 {
-  "imaggo_project_manager_register_panel" : "Menager projektów firmy Imaggo - panel logowania",
+  "imaggo_project_menager_register_panel" : "Menager projektów firmy Imaggo - panel logowania",
   "login_panel_description" : "Zaloguj się do menagera projektów firmy Imaggo",
   "login" : "Login",
   "password" : "Hasło",
@@ -25,12 +25,17 @@
   "filter" : "Filtruj",
   "fetching_projects" : "Pobieram projekty",
   "client_contact_data" : "Dane kontaktowe do klienta",
-  "project_manager" : "Projekt menager",
+  "project_menager" : "Projekt menager",
   "project_name" : "Nazwa projektu",
   "valuation" : "Wycena",
   "date_finished_at" : "Data zakończenia",
   "comments" : "Komentarze",
   "actions" : "Działania",
   "edit_project" : "Edytuj projekt",
-  "operation_successfull" : "Operacja przebiegła pomyślnie"
+  "operation_successfull" : "Operacja przebiegła pomyślnie",
+  "team_list_title" : "Lista pracowników firmy Immago",
+  "team_list_description" : "Lista pracowników zatrudninych w firmie Immago. Edytuj dane personalne, zmieniaj stawki",
+  "team_members_list" : "Lista członków zespołu",
+  "project_menager" : "Menadżer projektu",
+  "account" : "Account"
 }

@@ -12,7 +12,11 @@ const translations:object = {
         },
 
         projectsTable : {
-               name_and_second_name : "Imię i nazwisko"
+            name_and_second_name : "Imię i nazwisko",
+            no_results_have_been_foound_for_your_authentication_level : "Nie znaleziono żadnych projektów możliwych do wyświetlenia na Twoim poziomie uprawnień",
+            the_data_is_invalid : "Przesłane dane są nieprawidłowe",
+            undefined_error : "Bliżej niezidentyfikowany błąd",
+            the_data_is_probably_ok_but_a_server_error_occured : "Wprowadzone dane są najprawdopodobniej poprawne, jednkaże pojawił się błąd po stronie serwera"
         },
 
         project_form : {
@@ -55,6 +59,20 @@ const translations:object = {
             project_status : "Status projektu",
             project_comment : "Komentarz do projektu",
             save : "Zapisz",
+            team : "Zespół",
+            account : "Account",
+            information : "Informacja"
+        },
+
+        employees_list : {
+            full_name : "Imię i nazwisko",
+            position : "Stanowisko",
+            rate : "Stawka",
+            technologies_and_skills : "Technologie/umiejętności",
+            note : "Notatka",
+            actions : "Działania",
+            edit : "Edytuj",
+            fetching_employees : "Pobieram listę pracowników",
         }
     }
 };

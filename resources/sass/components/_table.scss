@@ -1,0 +1,40 @@
+.table-container{
+    position:relative;
+    min-height:300px;
+  }
+  
+  .table-header{
+    padding:3px;
+    @include responsive-font();
+    background:black;
+    color:white;
+    text-align: center;
+  }
+  
+  .table{
+    margin: 8px auto;
+    border-collapse: collapse;
+  }
+  
+  .table-cell{
+    color:black;
+    @include responsive-font();
+    text-align:center;
+    padding:3px;
+    border: 1px solid black;
+  }
+
+  .table-row{
+    
+    &:nth-child(odd){
+      background:white;
+    }
+
+    &:nth-child(even){
+      background:rgb(146, 139, 139);
+    }
+
+    &:hover{
+      background:crimson
+    }
+  }

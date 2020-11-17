@@ -35,5 +35,19 @@ Class ProjectsRepository extends BaseRepository {
          return $this;
     }
 
+    public function addCurrentUserRoleRestrictions() : ProjectsRepository{
+
+         if(\Auth::user()->is_admin){
+              return $this;
+         }
+         else{
+              
+              $this->query = $this->query->whereHas('employees', function($query){
+                  $query->where('full_name', \Auth::user()->full_name);
+               });
+          
+         }
+    }
+
     
 }

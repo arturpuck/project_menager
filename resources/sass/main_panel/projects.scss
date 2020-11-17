@@ -2,25 +2,13 @@
 @import '~sass/fonts';
 @import '~sass/components/decoration/icon_error_cross';
 @import '~sass/components/decoration/error_message';
+@import '~sass/components/header';
+@import '~sass/components/table';
+@import '~sass/components/tiny_button';
 
-.main-header{
-  @include responsive-font(2vw,23px);
-  font-weight:bold;
-  color:black;
-  margin: calc(30px + 2vw) 0 5px;
-  padding:0 0 0 4vw;
-}
 
 .add-project-button{
     margin-left: 10px;
-}
-
-.header{
-  @include responsive-font(1.8vw,20px);
-  font-weight:bold;
-  color:black;
-  text-align:center;
-  padding:5px;
 }
 
 .projects-filter-form{
@@ -30,49 +18,6 @@
 
 .filter-button{
   margin:5px;
-}
-
-.projects-table-container{
-  position:relative;
-  min-height:300px;
-}
-
-.projects-table-header{
-  padding:3px;
-  @include responsive-font();
-  background:black;
-  color:white;
-  text-align: center;
-  border:2px solid white;
-}
-
-.projects-table{
-  margin: 8px auto;
-  border-collapse: collapse;
-}
-
-.projects-table-cell{
-  color:white;
-  @include responsive-font();
-  text-align:center;
-  padding:3px;
-  background:gray;
-}
-
-.tiny-button{
-  border:none;
-  padding:3px;
-  background: linear-gradient(#0fe00b, #054004);
-  @include responsive-font(1vw,12px);
-  color:white;
-  outline:none;
-  text-align: center;
-  border-radius:3px;
-  cursor: pointer;
-  &:hover{
-    background:#ef0244;
-  }
-
 }
 
 .success-message{

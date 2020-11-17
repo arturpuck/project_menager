@@ -22,8 +22,8 @@ class CreatePaymentStatusesTable extends Migration
 
         PaymentStatus::insert([
             ['name' => 'awaits'],
-            ['name' => 'sent_to_client'],
-            ['name' => 'to_be_issued'],
+            ['name' => 'sent to client'],
+            ['name' => 'to be issued'],
             ['name' => 'paid']
         ]);
     }

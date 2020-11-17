@@ -1,0 +1,15 @@
+.tiny-button{
+    border:none;
+    padding:3px;
+    background: linear-gradient(#0fe00b, #054004);
+    @include responsive-font(1vw,12px);
+    color:white;
+    outline:none;
+    text-align: center;
+    border-radius:3px;
+    cursor: pointer;
+    &:hover{
+      background:#ef0244;
+    }
+  
+  }

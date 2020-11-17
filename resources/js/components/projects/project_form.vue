@@ -12,6 +12,9 @@
         <labeled-select name="project_menager_id" v-model="projectMenagerID" v-bind:displayed-values="projectMenagerNames" v-bind:values="projectMenagerIds">
           {{translations['project_menager']}} : 
        </labeled-select>
+       <labeled-select name="account_id" v-model="accountID" v-bind:displayed-values="accountsNames" v-bind:values="accountsIds">
+          {{translations['account']}} : 
+       </labeled-select>
     </fieldset>
 
     <fieldset class="project-form-fieldset">
@@ -209,6 +212,16 @@
             required: true,
     }) readonly employeesIds: number[];
 
+     @Prop({
+            type: Array,
+            required: true,
+    }) readonly accountsNames: string[];
+
+    @Prop({
+            type: Array,
+            required: true,
+    }) readonly accountsIds: number[];
+
     @Prop({
             type: Array,
             required: true,
@@ -246,6 +259,7 @@
 
     private paymentSummary:number = 0;
     private projectName:string = '';
+    private accountID:number = 0;
     private projectMenagerID:number = 0;
     private clientContactPerson:string = '';
     private clientPhoneNumber:string = '';
@@ -348,7 +362,7 @@
     loadProjectData(project){
         this.resetForm();
         this.projectName = project.name;
-        this.projectMenagerID = project.project_manager_id;
+        this.projectMenagerID = project.project_menager_id;
 
         let projectTasks = [];
         project.tasks.forEach(function(value){
@@ -365,7 +379,7 @@
         project.task_stages.forEach(value =>{
             ++this.workStageIndex;
             this.workRangeValues[this.workStageIndex] = value.task_id;
-            this.workStageEngagedPersons[this.workStageIndex] = value.employee_id;
+            this.workStageEngagedPersons[this.workStageIndex] = value.user_id;
             this.estimatedHours[this.workStageIndex] = value.estimated_time_of_work;
             this.estimatedCosts[this.workStageIndex] = value.estimated_amount_of_money;
             this.startDates[this.workStageIndex] = value.start_at;
@@ -418,6 +432,7 @@
     created(){
         this.csrfToken = (<HTMLMetaElement>document.getElementById('csrf-token')).content;
         this.$root.$on('editProject', this.loadProjectData);
+        this.$root.$on('resetForm',this.resetForm);
     }
 
   }

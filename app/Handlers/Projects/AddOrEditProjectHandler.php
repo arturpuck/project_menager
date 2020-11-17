@@ -21,8 +21,9 @@ Class AddOrEditProjectHandler {
         }
         
         $project->name = $request->get('project_name');
-        $project->project_manager_id = $request->get('project_menager_id');
-        $project->full_name_contact_person = $request->get('full_name_contact_person');
+        $project->project_menager_id = $request->get('project_menager_id');
+        $project->account_id = $request->get('account_id');
+        $project->full_name_contact_person = $request->get('client_contact_person');
         $project->contact_person_phone_number = $request->get('client_phone_number');
         $project->contact_person_email = $request->get('client_email');
         $project->client_id = $request->get('client_id');
@@ -40,7 +41,7 @@ Class AddOrEditProjectHandler {
         foreach($request->get('work_stages') as $key => $value){
             $workStage = [];
             $workStage['task_id'] = $request->get('work_stages')[$key];
-            $workStage['employee_id'] = $request->get('work_stage_engaged_persons')[$key];
+            $workStage['user_id'] = $request->get('work_stage_engaged_persons')[$key];
             $workStage['estimated_time_of_work'] = $request->get('work_stage_estimated_number_of_hours')[$key];
             $workStage['estimated_amount_of_money'] = $request->get('work_stage_estimated_ammount_of_money')[$key];
             $workStage['start_at'] = $request->get('work_stage_date_start')[$key];

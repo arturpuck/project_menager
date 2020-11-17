@@ -1,5 +1,7 @@
 {
     "/js/projects.js": "/js/projects.js",
     "/css/login_panel.css": "/css/login_panel.css",
-    "/css/projects.css": "/css/projects.css"
+    "/css/projects.css": "/css/projects.css",
+    "/css/team.css": "/css/team.css",
+    "/js/team.js": "/js/team.js"
 }

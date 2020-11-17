@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProjectHasEmployeeTable extends Migration
+class CreateProjectHasUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateProjectHasEmployeeTable extends Migration
      */
     public function up()
     {
-        Schema::create('project_has_employee', function (Blueprint $table) {
+        Schema::create('project_has_user', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('project_id');
             $table->foreign('project_id')->references('id')->on('projects');
-            $table->unsignedBigInteger('employee_id');
-            $table->foreign('employee_id')->references('id')->on('employees');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateProjectHasEmployeeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('project_has_employee');
+        Schema::dropIfExists('project_has_user');
     }
 }

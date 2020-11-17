@@ -15,12 +15,13 @@ class ProjectsController extends Controller
         
         $data = $projectsListHandler->handle($request);
         
-        return view('main_panel.projects')->with([
+        return view('main_panel.projects')->with([ //trzeba przerzucić
             'title' => 'projects_list',
             'description' => 'projects_list_description',
             'clients' => $data['clients'],
             'projects' => $data['projects'],
             'projectMenagers' => $data['projectMenagers'],
+            'accounts' => $data['accounts'],
             'paymentStatuses' => $data['paymentStatuses'],
             'projectStatuses' => $data['projectStatuses'],
             'tasks' => $data['tasks'],

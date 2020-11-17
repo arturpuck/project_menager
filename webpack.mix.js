@@ -14,7 +14,9 @@ const mix = require('laravel-mix');
 
 mix.sass('resources/sass/auth/login_panel.scss', 'public/css')
     .sass('resources/sass/main_panel/projects.scss', 'public/css')
+    .sass('resources/sass/team.scss', 'public/css')
     .js('resources/js/projects.ts', 'public/js')
+    .js('resources/js/team.ts', 'public/js')
     .options({processCssUrls: false})
     .webpackConfig({
         resolve: {

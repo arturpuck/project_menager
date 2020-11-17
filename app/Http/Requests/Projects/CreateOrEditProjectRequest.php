@@ -3,7 +3,8 @@
 namespace App\Http\Requests\Projects;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Rules\EmployeeIDBelongsToProjectManager;
+use App\Rules\EmployeeIDBelongsToProjectMenager;
+use App\Rules\EmployeeIDBelongsToAccount;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
 
@@ -29,11 +30,12 @@ class CreateOrEditProjectRequest extends FormRequest
         return [
             'project_id' => ['nullable', 'exists:projects,id'],
             'project_name' => ['required', 'max:100'],
-            'project_menager_id' => ['required', new EmployeeIDBelongsToProjectManager()],
+            'project_menager_id' => ['required', new EmployeeIDBelongsToProjectMenager()],
+            'account_id' => ['required', new EmployeeIDBelongsToAccount()],
             'tasks_ids.*' => ['required', 'exists:tasks,id'],
-            'employees_ids.*' => ['required', 'exists:employees,id'],
+            'employees_ids.*' => ['required', 'exists:users,id'],
             'work_stages.*' => ['required', 'exists:tasks,id'],
-            'work_stage_engaged_persons.*' => ['required', 'exists:employees,id'],
+            'work_stage_engaged_persons.*' => ['required', 'exists:users,id'],
             'work_stage_estimated_number_of_hours.*' => ['required', 'min:0', 'numeric'],
             'work_stage_estimated_ammount_of_money.*' => ['required', 'min:0', 'numeric'],
             'work_stage_date_start.*' => ['required', 'date_format:Y-m-d'],
@@ -64,6 +66,7 @@ class CreateOrEditProjectRequest extends FormRequest
             'tasks_ids.*.required' => 'tasks_are_missing',
             'tasks_ids.exists' => 'at_least_one_task_does_not_exist_on_the_list',
             'employees_ids.*.required' => 'employees_are_missing',
+            'account_id.required' => 'account_id_is_missing',
             'employees_ids.*.exists' => 'at_least_one_employee_does_not_exist_on_the_list',
             'work_stages.*.required' => 'work_stages_are_missing',
             'work_stages.*.exists' => 'at_least_one_work_stage_does_not_exist_on_the_list',

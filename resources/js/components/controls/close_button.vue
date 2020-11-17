@@ -12,7 +12,7 @@
         props : {
             description : {
                 required: false,
-                default:close,
+                default:'close',
                 type: String
             }
         }

@@ -37,15 +37,16 @@ Class FilterProjectsHandler {
             $this->projectsRepository->filterByYear($year);
          }
 
-         $this->projectsRepository->with(['tasks', 
+         $projects =  $this->projectsRepository->with(['tasks', 
                                          'employees', 
                                          'paymentStages', 
                                          'taskStages', 
-                                         'projectManager',
+                                         'projectMenager',
+                                         'account',
                                          'status',
-                                         'client']);
-
-         $projects = $this->projectsRepository->get();
+                                         'client'])
+                                         ->addCurrentUserRoleRestrictions()
+                                         ->get();
 
          return response()->json($projects->toArray());
     }

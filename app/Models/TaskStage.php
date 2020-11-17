@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Task;
-use App\Models\Employee;
+use App\Models\User;
 
 class TaskStage extends Model
 {
@@ -27,7 +27,7 @@ class TaskStage extends Model
     }
 
     public function employee(){
-        return $this->belongsTo(Employee::class);
+        return $this->belongsTo(User::class);
     }
 
 }

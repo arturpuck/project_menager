@@ -3,9 +3,9 @@
 namespace App\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
-use App\Models\Employee;
+use App\Models\User;
 
-class EmployeeIDBelongsToProjectManager implements Rule
+class EmployeeIDBelongsToAccount implements Rule
 {
     /**
      * Create a new rule instance.
@@ -26,10 +26,9 @@ class EmployeeIDBelongsToProjectManager implements Rule
      */
     public function passes($attribute, $value)
     {
-        return Employee::where([
-            'status' => 'project menager',
-            'id' => $value
-        ])->exists();
+        return User::whereHas('positions', function($query) use ($value){
+            $query->where('name', 'account');
+        })->where('id',$value)->exists();
     }
 
     /**
@@ -39,6 +38,6 @@ class EmployeeIDBelongsToProjectManager implements Rule
      */
     public function message()
     {
-        return 'this_employee_is_not_a_project_manager';
+        return 'the_selected_account_is_invalid';
     }
 }

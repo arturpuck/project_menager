@@ -7,6 +7,11 @@
                </a>
            </li>
            <li class="links-list-element">
+               <a v-text="translations['team']" href="/team" class="navbar-link">
+                  
+               </a>
+           </li>
+           <li class="links-list-element">
                <a v-text="translations['payouts']" href="/payouts" class="navbar-link">
                   
                </a>
