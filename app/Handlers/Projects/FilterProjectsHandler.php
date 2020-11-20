@@ -45,7 +45,7 @@ Class FilterProjectsHandler {
                                          'account',
                                          'status',
                                          'client'])
-                                         ->addCurrentUserRoleRestrictions()
+                                         ->addCurrentUserProjectAccess()
                                          ->get();
 
          return response()->json($projects->toArray());

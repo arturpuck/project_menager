@@ -49,7 +49,7 @@ new Vue({
 
       showEditForm(project){
          this.$root.$emit('editProject', project);
-         this.showProjectForm();
+         this.projectFormIsVisible = true;
       },
 
        showProjectForm(){

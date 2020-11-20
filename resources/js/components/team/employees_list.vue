@@ -15,9 +15,13 @@
          <tbody>
            <tr class="table-row" v-for="employee in employees">
                <td v-text="employee['full_name']" class="table-cell"></td>
-               <td v-text="employee['position']['name']" class="table-cell"></td>
-               <td v-text="employee['rate_per_hour']" class="table-cell"></td>
-               <td class="table-cell"></td>
+               <td v-text="getPositions(employee)" class="table-cell"></td>
+               <td v-text="employee['rate_per_hour_set_by_deal']" class="table-cell"></td>
+               <td class="table-cell">
+                  <ul class="skills-list">
+                     <li v-for="skill in employee.skills" v-text="skill.name" class="skills-list-element"></li>
+                  </ul>
+               </td>
                <td v-text="employee['note']" class="table-cell"></td>
                <td class="table-cell">
                    <button v-on:click="showEditForm(employee)" v-text="translations['edit']" class="tiny-button"></button>
@@ -38,6 +42,7 @@
      RelativeShadowContainer, ExpectCircle
  }})
 
+ 
   export default class EmployeesList extends Vue {
 
     private translations = translator('employees_list');
@@ -82,8 +87,18 @@
         this.getEmployeesList();
     }
 
-    showEditForm(project){
+    getPositions(employee):string{
+        let positions = '';
 
+        employee.positions.forEach(function(position){
+            positions += position.name + ', ';
+        });
+
+        return positions.slice(0,-2);
+    }
+
+    showEditForm(employee){
+       this.$root.$emit('showEmployeeCard', employee);
     }
 
  
@@ -95,5 +110,21 @@
 @import '~sass/fonts';
 @import '~sass/components/table';
 @import '~sass/components/tiny_button';
+
+.skills-list{
+   list-style-type: none;
+   padding:0;
+   margin:0;
+}
+
+.skills-list-element{
+   display:inline-block;
+   padding:3px;
+   background:black;
+   color:white;
+   @include responsive-font(1.1vw,13px);
+   margin:3px;
+   border-radius: 3px;
+}
 
 </style>

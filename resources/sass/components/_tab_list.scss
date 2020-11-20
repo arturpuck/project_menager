@@ -1,0 +1,27 @@
+@import '~sass/fonts';
+
+.tab-list{
+    list-style-type: none;
+    padding:5px 0 0 5px;
+    margin:0;
+    background:#191b19;
+}
+
+.tab-list-element{
+    border-radius:4px 4px 0 0;
+    background:rgb(68, 65, 65);
+    padding:4px;
+    color:white;
+    display:inline-block;
+    @include responsive-font();
+    cursor:pointer;
+    &:hover{
+        background:crimson;
+    }
+
+}
+
+.tab-list-section{
+    background:#444141;
+    border: 1px solid #444141;
+}

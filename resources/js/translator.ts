@@ -73,7 +73,31 @@ const translations:object = {
             actions : "Działania",
             edit : "Edytuj",
             fetching_employees : "Pobieram listę pracowników",
-        }
+        },
+
+        employee_data : {
+            projects_report : "Raport projektów",
+            data : "dane",
+            hours_of_work : "Przepracowane godziny",
+            save : "Zapisz",
+            project : "Projekt",
+            range : "Zakres",
+            time : "Czas",
+            status : "Status",
+            update_date: "Data aktualizacji",
+            comment : "Komentarz",
+            action : "Akcja",
+            month : "miesiąc",
+            year : "rok",
+            filter_reports : "Filtruj raporty",
+            clockify_report : "Raport clockify",
+            no_results_have_been_foound_for_your_authentication_level : "Nie znaleziono żadnych wyników odpowiadających Twojemu poziomowi uprawnień",
+            the_data_is_invalid : "Wprowadzono nieprawidłowe dane",
+            the_data_is_probably_ok_but_a_server_error_occured : "Wprowadzone dano najprawdopodobniej są poprawne, ale wystąpił błąd po stronie serwera",
+            undefined_error : "Bliżej niezidentyfikowany błąd",
+            report_saved_successfully : "Raport zapisany pomyślnie",
+        },
+       
     }
 };
 

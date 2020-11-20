@@ -6,6 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use App\Rules\EmployeeIDBelongsToProjectMenager;
 use App\Rules\EmployeeIDBelongsToAccount;
 use Illuminate\Http\Exceptions\HttpResponseException;
+use App\Model\Project;
 
 
 class CreateOrEditProjectRequest extends FormRequest
@@ -17,7 +18,26 @@ class CreateOrEditProjectRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        $request = request();
+
+        if($projectID = $request->get('project_id')){
+
+            if(Project::canBeEditedByCurrentUser($projectID)){
+                return true;
+            }
+            else{
+                throw new HttpResponseException(response('you_are_not_allowed_to_modify_this_project'),403);
+            }
+            
+        }
+        else{
+           if(\Auth::user()->can_add_or_edit_projects){
+               return true;
+           }
+           else{
+            throw new HttpResponseException(response('you_are_not_allowed_to_add_projects'),403); 
+           }
+        }
     }
 
     /**

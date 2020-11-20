@@ -48,6 +48,15 @@ Route::middleware(['auth'])->group(function(){
 
       Route::get('/team/get-all', 'TeamController@getAll')
             ->name('get-all');
+
+      Route::post('/report/store', 'TeamController@storeReport')
+            ->name('store-report');
+
+      Route::get('/employee/reports/filter', 'TeamController@filterReports')
+            ->name('filter-report');
+
+      Route::patch('/employee/reports/store', 'TeamController@storeProjectReport')
+            ->name('filter-report');
    });
 
 

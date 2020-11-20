@@ -42,6 +42,7 @@
             default: 0.5
     }) readonly step: number;
 
+
      @Prop({
             type: [Number, String],
             required: false,
@@ -58,6 +59,7 @@
        if(this.inputType == "number"){
            (<HTMLInputElement>this.$refs.text_input).setAttribute('step',String(this.step));
        }
+
     }
 
  

@@ -25,6 +25,14 @@ Class ProjectsRepository extends BaseRepository {
          return $this;
     }
 
+    public function filterByEmployeeId(int $employeeId): ProjectsRepository {
+
+     $this->query = $this->query->whereHas('employees', function($query) use ($employeeId){
+          $query->where('user_id', $employeeId);
+     });
+      return $this;
+   }
+
     public function filterByMonth($monthNumber): ProjectsRepository {
         $this->query = $this->query->whereMonth('created_at', $monthNumber);
          return $this;
@@ -35,18 +43,22 @@ Class ProjectsRepository extends BaseRepository {
          return $this;
     }
 
-    public function addCurrentUserRoleRestrictions() : ProjectsRepository{
+    public function addCurrentUserProjectAccess() : ProjectsRepository{
 
-         if(\Auth::user()->is_admin){
-              return $this;
+         if(!\Auth::user()->is_admin){
+             $this->query = $this->query->whereHas('employees', function($query){
+               $query->where('user_id', \Auth::user()->id);
+              });
          }
-         else{
-              
-              $this->query = $this->query->whereHas('employees', function($query){
-                  $query->where('full_name', \Auth::user()->full_name);
-               });
-          
-         }
+        return $this;
+    }
+
+    public function withUserProjectReports($userId){
+
+         $this->query = $this->query->with(['projectReports' => function($query) use ($userId){
+              $query->where('user_id',$userId);
+         }]);
+         return $this;
     }
 
     

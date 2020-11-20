@@ -267,7 +267,7 @@
     private clientId:number = 0;
     private invoiceAddres:string = '';
     private invoiceCompanyName:string = '';
-    private taxIdentificationNumber:number = 0;
+    private taxIdentificationNumber:string = '';
     private finishDate = new Date();
     private projectStatusId:number = 0;
     private projectComment:string = '';
@@ -363,7 +363,8 @@
         this.resetForm();
         this.projectName = project.name;
         this.projectMenagerID = project.project_menager_id;
-
+        this.accountID = project.account_id;
+      
         let projectTasks = [];
         project.tasks.forEach(function(value){
             projectTasks.push(value.name);
@@ -412,6 +413,21 @@
     }
 
     resetForm(){
+       this.projectName = '';
+       this.projectMenagerID = 0;
+       this.accountID = 0;
+       this.chosenTasksList = [];
+       this.chosenEmployeesList = [];
+       this.clientContactPerson = '';
+       this.clientPhoneNumber = '';
+       this.clientEmail = '';
+       this.clientId = 0;
+       this.invoiceAddres = '';
+       this.invoiceCompanyName = '';
+       this.taxIdentificationNumber = '';
+       this.finishDate = new Date();
+       this.projectStatusId = 0;
+       this.projectComment = '';
        this.projectId = null;
        this.workRangeValues = {};
        this.workStageEngagedPersons = {};

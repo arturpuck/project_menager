@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Task;
 use App\Models\User;
+use App\Models\Project;
 
 class TaskStage extends Model
 {
@@ -28,6 +29,10 @@ class TaskStage extends Model
 
     public function employee(){
         return $this->belongsTo(User::class);
+    }
+
+    public function project(){
+        return $this->belongsTo(Project::class);
     }
 
 }

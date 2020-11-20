@@ -13,7 +13,7 @@
    </div>
    @endif
 
-   @if(Auth::user()->can_add_projects)
+   @if(Auth::user()->can_add_or_edit_projects)
       <positive-button v-on:click.native="showProjectForm" class="add-project-button">
          {{__('add_project')}}
       </positive-button>
@@ -27,7 +27,6 @@
 
    <form class="projects-filter-form">
       @csrf
-      <div>
          <labeled-select v-model="filterClientId" name="client_id" 
             v-bind:values="{{json_encode($clients->pluck('id'),true)}}"
             v-bind:displayed-values="{{json_encode($clients->pluck('name'),true)}}">
@@ -43,8 +42,6 @@
             v-bind:displayed-values="{{json_encode($projectStatuses->pluck('name'), true)}}">
             {{__('project_status')}} : 
          </labeled-select>
-       </div>
-       <div>
           <labeled-select v-model="filterMonth" name="month"
             v-bind:values="[1,2,3,4,5,6, 7, 8,9, 10, 11, 12]"
             v-bind:displayed-values="{{json_encode($months)}}">
@@ -54,8 +51,6 @@
             v-bind:displayed-values="{{json_encode($yearsRange)}}">
             {{__('year')}} : 
           </labeled-select>
-       </div>
-       <div>
        <labeled-select v-model="filterProjectMenager" name="project_menager"
             v-bind:values="{{json_encode($projectMenagers->pluck('id'),true)}}"
             v-bind:displayed-values="{{json_encode($projectMenagers->pluck('full_name'), true)}}">
@@ -66,7 +61,6 @@
             v-bind:displayed-values="{{json_encode($accounts->pluck('full_name'), true)}}">
             {{__('account')}} : 
           </labeled-select>
-       </div>
        <positive-button v-on:click.native="filterProjects" class="filter-button">
           {{__('filter')}}
        </positive-button>
@@ -86,7 +80,9 @@
             <th class="table-header">{{__('date_finished_at')}}</th>
             <th class="table-header">{{__('project_status')}}</th>
             <th class="table-header">{{__('comments')}}</th>
+            @if(\Auth::user()->can_add_or_edit_projects)
             <th class="table-header">{{__('actions')}}</th>
+            @endif
          </thead>
          <tbody>
            <tr class="table-row" v-for="project in matchingProjects">
@@ -99,9 +95,11 @@
                <td v-text="project['finished_at']" class="table-cell"></td>
                <td v-text="project['status']['name']" class="table-cell"></td>
                <td v-text="project['project_comment']" class="table-cell"></td>
+               @if(\Auth::user()->can_add_or_edit_projects)
                <td class="table-cell">
                    <button v-on:click="showEditForm(project)" class="tiny-button">{{__('edit_project')}}</button>
                </td>
+               @endif
            </tr>
          </tbody>
      </table>

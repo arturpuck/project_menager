@@ -2200,7 +2200,7 @@ var ProjectForm = /** @class */ (function (_super) {
         _this.clientId = 0;
         _this.invoiceAddres = '';
         _this.invoiceCompanyName = '';
-        _this.taxIdentificationNumber = 0;
+        _this.taxIdentificationNumber = '';
         _this.finishDate = new Date();
         _this.projectStatusId = 0;
         _this.projectComment = '';
@@ -2281,6 +2281,7 @@ var ProjectForm = /** @class */ (function (_super) {
         this.resetForm();
         this.projectName = project.name;
         this.projectMenagerID = project.project_menager_id;
+        this.accountID = project.account_id;
         var projectTasks = [];
         project.tasks.forEach(function (value) {
             projectTasks.push(value.name);
@@ -2323,6 +2324,21 @@ var ProjectForm = /** @class */ (function (_super) {
         this.projectComment = project.project_comment;
     };
     ProjectForm.prototype.resetForm = function () {
+        this.projectName = '';
+        this.projectMenagerID = 0;
+        this.accountID = 0;
+        this.chosenTasksList = [];
+        this.chosenEmployeesList = [];
+        this.clientContactPerson = '';
+        this.clientPhoneNumber = '';
+        this.clientEmail = '';
+        this.clientId = 0;
+        this.invoiceAddres = '';
+        this.invoiceCompanyName = '';
+        this.taxIdentificationNumber = '';
+        this.finishDate = new Date();
+        this.projectStatusId = 0;
+        this.projectComment = '';
         this.projectId = null;
         this.workRangeValues = {};
         this.workStageEngagedPersons = {};
@@ -20076,7 +20092,7 @@ new vue_1.default({
         },
         showEditForm: function (project) {
             this.$root.$emit('editProject', project);
-            this.showProjectForm();
+            this.projectFormIsVisible = true;
         },
         showProjectForm: function () {
             this.$root.$emit('resetForm');
@@ -20274,7 +20290,29 @@ var translations = {
             actions: "Działania",
             edit: "Edytuj",
             fetching_employees: "Pobieram listę pracowników",
-        }
+        },
+        employee_data: {
+            projects_report: "Raport projektów",
+            data: "dane",
+            hours_of_work: "Przepracowane godziny",
+            save: "Zapisz",
+            project: "Projekt",
+            range: "Zakres",
+            time: "Czas",
+            status: "Status",
+            update_date: "Data aktualizacji",
+            comment: "Komentarz",
+            action: "Akcja",
+            month: "miesiąc",
+            year: "rok",
+            filter_reports: "Filtruj raporty",
+            clockify_report: "Raport clockify",
+            no_results_have_been_foound_for_your_authentication_level: "Nie znaleziono żadnych wyników odpowiadających Twojemu poziomowi uprawnień",
+            the_data_is_invalid: "Wprowadzono nieprawidłowe dane",
+            the_data_is_probably_ok_but_a_server_error_occured: "Wprowadzone dano najprawdopodobniej są poprawne, ale wystąpił błąd po stronie serwera",
+            undefined_error: "Bliżej niezidentyfikowany błąd",
+            report_saved_successfully: "Raport zapisany pomyślnie",
+        },
     }
 };
 function default_1(packageName) {

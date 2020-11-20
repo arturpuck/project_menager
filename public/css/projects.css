@@ -204,6 +204,9 @@ table {
 .projects-filter-form {
   background: black;
   padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .filter-button {

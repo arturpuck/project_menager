@@ -10,14 +10,23 @@ use App\Models\PaymentStage;
 use App\Models\TaskStage;
 use App\Models\Client;
 use App\Models\ProjectStatus;
+use App\Models\ProjectReport;
 
 
 class Project extends Model
 {
     use HasFactory;
 
+    public $with = [
+        'taskStages'
+    ];
+
     public function tasks(){
         return $this->belongsToMany(Task::class,'project_has_task');
+    }
+
+    public function projectReports(){
+        return $this->hasMany(ProjectReport::class);
     }
 
     public function employees(){
@@ -46,5 +55,13 @@ class Project extends Model
 
     public function status(){
         return $this->belongsTo(ProjectStatus::class);
+    }
+
+    public static function canBeEditedByCurrentUser(int $projectID): bool{
+        $userID = \Auth::user()->id;
+        
+        return self::where('id',$projectID)->where(function($query){
+            $query->where('project_menager_id', )->orWhere('account_id',$userID);
+       })->exists();
     }
 }

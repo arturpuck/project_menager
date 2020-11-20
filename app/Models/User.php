@@ -6,8 +6,12 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\Project;
 use App\Models\Role;
 use App\Models\Position;
+use App\Models\TaskStage;
+use App\Models\UserClockifyReport;
+use App\Models\ProjectReport;
 
 class User extends Authenticatable
 {
@@ -57,6 +61,18 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function taskStages(){
+        return $this->hasMany(TaskStage::class);
+    }
+    
+    public function projects(){
+        return $this->belongsToMany(Project::class,'project_has_user');
+    }
+
+    public function projectReports(){
+        return $this->hasMany(ProjectReport::class);
+    }
+
     public function positions(){
         return $this->belongsToMany(Position::class, 'user_has_position');
     }
@@ -81,8 +97,58 @@ class User extends Authenticatable
         return $this->role->name == 'account';
     }
 
-    public function getCanAddProjectsAttribute(){
-        return $this->is_admin || $this->is_project_menager;
+    public function isOrdinaryTeamMember():bool{
+        return $this->role->name == 'team member';
     }
+
+    public function getCanAddOrEditProjectsAttribute(){
+        return $this->is_admin || $this->is_project_menager || $this->is_account;
+    }
+
+    public function clockifyReports(){
+           return $this->hasMany(UserClockifyReport::class);
+    }
+
+    public function clockifyReportForCurrentMonth(){
+
+        return $this->hasMany(UserClockifyReport::class)
+                    ->whereMonth('report_date', date('m'))
+                    ->whereYear('report_date', date('Y'));
+    }
+
+    public function getHasClockifyReportForCurrentMonthAttribute(){
+        return $this->clockifyReportForCurrentMonth()->exists();
+    }
+
+    public function getClockifyReportFileForCurrentMonthNameAttribute(){
+       return $this->clockifyReportForCurrentMonth->first()->report_file_name;
+    }
+
+    public function getClockifyReportFileForCurrentMonthPathAttribute():string{
+        return "/reports/".$this->clockify_report_file_for_current_month_name;
+    }
+
+    public function canModifyOrEditOtherUser(int $userId):bool{
+
+          switch($this->role->name){
+
+              case 'administrator':
+                return true;
+              break;
+
+              case 'project menager':
+                 return ($this->id == $userId) || User::find($userId)->isOrdinaryTeamMember();
+              break;
+
+              case 'account':
+                return ($this->id == $userId) || User::find($userId)->isOrdinaryTeamMember();
+              break;
+
+              case 'team member':
+                 return $this->id == $userId;
+              break;
+          }
+    }
+    
  
 }

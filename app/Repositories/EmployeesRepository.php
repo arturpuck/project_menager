@@ -16,4 +16,40 @@ Class EmployeesRepository extends BaseRepository {
          });
          return $this;
     }
+
+    private function limitsForProjectMenagersAndAccounts(){
+
+        return $this->query->where(function($query){
+
+            $query->where('id', \Auth::user()->id);
+            $query->orWhereHas('role', function($query){
+                $query->where('name', 'team member');
+            });
+        });
+    }
+
+    public function addCurrentUserEmployeeAccess(): EmployeesRepository {
+
+        switch(\Auth::user()->role->name){
+
+            case 'administrator':
+              return $this;
+            break;
+
+            case 'project menager':
+              $this->query = $this->limitsForProjectMenagersAndAccounts();
+            break;
+
+            case 'account':
+                $this->query = $this->limitsForProjectMenagersAndAccounts();
+            break;
+
+            case 'team member':
+              $this->query->where('id', \Auth::user()->id);
+            break;
+        }
+
+        return $this;
+
+    }
 }
