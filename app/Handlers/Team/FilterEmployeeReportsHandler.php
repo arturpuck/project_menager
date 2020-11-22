@@ -21,7 +21,7 @@ Class FilterEmployeeReportsHandler{
 
        $this->projectsRepository->filterByEmployeeId($employeeId)
                                 ->withUserProjectReports($employeeId)
-                                ->addCurrentUserProjectAccess();
+                                ->limitCurrentUserProjectAccess();
 
         if($month = $request->get('month')){
             $this->projectsRepository->filterByMonth($month);

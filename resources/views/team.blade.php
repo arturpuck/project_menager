@@ -18,6 +18,8 @@
     <employees-list>
     </employees-list>
     <employee-card
+      v-bind:user-roles-values="{{json_encode($roles->pluck('name'), true)}}"
+      v-bind:user-roles-ids="{{json_encode($roles->pluck('id'), true)}}"
       v-bind:project-report-statuses-values="{{json_encode($projectReportStatuses->pluck('name'), true)}}"
       v-bind:project-report-statuses-ids="{{json_encode($projectReportStatuses->pluck('id'), true)}}"
       v-bind:months="{{json_encode($months)}}"

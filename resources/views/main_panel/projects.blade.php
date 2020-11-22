@@ -32,8 +32,7 @@
             v-bind:displayed-values="{{json_encode($clients->pluck('name'),true)}}">
             {{__('client')}} : 
          </labeled-select>
-         <labeled-select v-model="filterTaskId" name="task_id" 
-            v-bind:values="{{json_encode($tasks->pluck('id'),true)}}"
+         <labeled-select v-model="filterTaskId" name="task" 
             v-bind:displayed-values="{{json_encode($tasks->pluck('name'),true)}}">
             {{__('work_range')}} : 
          </labeled-select>
@@ -43,7 +42,7 @@
             {{__('project_status')}} : 
          </labeled-select>
           <labeled-select v-model="filterMonth" name="month"
-            v-bind:values="[1,2,3,4,5,6, 7, 8,9, 10, 11, 12]"
+            v-bind:values="['01','02','03','04','05','06', '07', '08','09', '10', '11', '12']"
             v-bind:displayed-values="{{json_encode($months)}}">
             {{__('month')}} : 
           </labeled-select>

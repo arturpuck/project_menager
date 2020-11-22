@@ -28,7 +28,7 @@ class FilterProjectRequest extends FormRequest
     {
         return [
             'client_id' => ['nullable','exists:clients,id'],
-            'task_id' => ['nullable', 'exists:tasks,id'],
+            'task' => ['nullable', 'exists:tasks,name'],
             'status_id' => ['nullable', 'exists:project_statuses,id'],
             'month' => ['nullable', 'min:1', 'max:12'],
             'year' => ['nullable',new YearWhenCompanyExisted()],

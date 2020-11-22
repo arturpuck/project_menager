@@ -30,11 +30,31 @@ Route::middleware(['auth'])->group(function(){
 
    Route::name('projects.')->group(function(){
 
-      Route::get('/projects', 'ProjectsController@showProjects')
-          ->name('mainpage');
+            Route::get('/projects', 'ProjectsController@showProjects')
+            ->name('mainpage');
 
-      Route::get('/projects/filter', 'ProjectsController@filterProjects')
-          ->name('filter');
+            Route::get('/projects/filter', 'ProjectsController@filterProjects')
+            ->name('filter');
+
+            Route::middleware(['restrictOrdinaryTeamMembers'])->group(function(){
+
+                  Route::get('/projects/profitability', 'ProjectsController@showProjectsProfitabilityPanel')
+                       ->name('profitability.panel');
+      
+                  Route::get('/projects/get-profitability', 'ProjectsController@getProjectsProfitability')
+                       ->name('profitability.get');
+
+                  Route::get('/projects/income', 'ProjectsController@showIncomePanel')
+                       ->name('income');
+
+                  Route::get('/income/filter', 'ProjectsController@filterProjectsIncome')
+                       ->name('income');
+
+                  Route::patch('/income/update-status', 'ProjectsController@updatePaymentStage')
+                       ->name('update.payment.stage');
+            });
+
+      
       
       Route::post('/add-project', 'ProjectsController@addOrEditProject')
              ->name('add');
@@ -59,21 +79,6 @@ Route::middleware(['auth'])->group(function(){
             ->name('filter-report');
    });
 
-
-    Route::get('/payouts', 'MainPanelController@showPayouts')
-          ->name('payouts');
-
-    Route::get('/cashflow', 'MainPanelController@showCashFlow')
-          ->name('cashflow');
-    
-    Route::get('/gantt', 'MainPanelController@showGantt')
-          ->name('gantt');
-
-    Route::get('/income', 'MainPanelController@showIncome')
-          ->name('income');
-
-    Route::get('/uploader', 'MainPanelController@uploader')
-          ->name('uploader');
 
 });
 

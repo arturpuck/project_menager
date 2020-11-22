@@ -11,31 +11,17 @@
                   
                </a>
            </li>
-           <li class="links-list-element">
-               <a v-text="translations['payouts']" href="/payouts" class="navbar-link">
+           <li v-if="!ordinaryTeamMember" class="links-list-element">
+               <a v-text="translations['projects_profitability']" href="/projects/profitability" class="navbar-link">
                   
                </a>
            </li>
-           <li class="links-list-element">
-               <a v-text="translations['income']" href="/income" class="navbar-link">
+           <li v-if="!ordinaryTeamMember" class="links-list-element">
+               <a v-text="translations['income']" href="/projects/income" class="navbar-link">
                   
                </a>
            </li>
-           <li class="links-list-element">
-               <a v-text="translations['cashflow']" href="/cashflow" class="navbar-link">
-                  
-               </a>
-           </li>
-           <li class="links-list-element">
-               <a v-text="translations['gantt']" href="/gantt" class="navbar-link">
-                  
-               </a>
-           </li>
-           <li class="links-list-element">
-               <a v-text="translations['uploader']" href="/uploader" class="navbar-link">
-                  
-               </a>
-           </li>
+           
            <li v-on:click="logout" class="links-list-element navbar-option-logout">
                <form ref="logout_form" action="/logout" method="POST" class="logout-form">
                    <input type="hidden" v-bind:value="csrfToken" name="_token">
@@ -55,6 +41,12 @@
 
     private translations = translator('navbar');
     private csrfToken:string = '';
+
+    @Prop({
+            type: Boolean,
+            required: false,
+            default : false
+    }) readonly ordinaryTeamMember: boolean;
 
     logout(){
       (<HTMLFormElement>this.$refs.logout_form).submit();

@@ -15,9 +15,13 @@ Class ProjectsRepository extends BaseRepository {
          return $this;
     }
 
-    public function filterByTaskId($taskId): ProjectsRepository {
-        $this->query = $this->query->where('task_id', $taskId);
-         return $this;
+    public function filterByTask($task): ProjectsRepository {
+         
+        $this->query = $this->query->whereHas('tasks', function($query) use ($task){
+            $query->where('name',$task);
+        });
+
+        return $this;
     }
 
     public function filterByStatusId($statusId): ProjectsRepository {
@@ -43,7 +47,7 @@ Class ProjectsRepository extends BaseRepository {
          return $this;
     }
 
-    public function addCurrentUserProjectAccess() : ProjectsRepository{
+    public function limitCurrentUserProjectAccess() : ProjectsRepository{
 
          if(!\Auth::user()->is_admin){
              $this->query = $this->query->whereHas('employees', function($query){
@@ -53,13 +57,51 @@ Class ProjectsRepository extends BaseRepository {
         return $this;
     }
 
-    public function withUserProjectReports($userId){
+    public function withUserProjectReports($userId): ProjectsRepository{
 
          $this->query = $this->query->with(['projectReports' => function($query) use ($userId){
               $query->where('user_id',$userId);
          }]);
          return $this;
     }
+
+    public function limitCurrentUserProfitabilityAccess(): ProjectsRepository{
+
+         if(!\Auth::user()->is_admin){
+              $this->query = $this->query->where('project_menager_id', \Auth::user()->id)
+                                          ->orWhere('account_id',  \Auth::user()->id);
+         }
+         return $this;
+    }
+
+   public function filterById($projectId): ProjectsRepository{
+        $this->query = $this->query->where('id', $projectId);
+        return $this;
+   }
+
+   public function filterByProjectMenagerId($projectMenagerId): ProjectsRepository{
+
+     $this->query = $this->query->where('project_menager_id', $projectMenagerId);
+     return $this;
+   }
+
+   public function filterByAccountId($accountId): ProjectsRepository{
+
+     $this->query = $this->query->where('account_id', $accountId);
+     return $this;
+   }
+
+   public function attachOnlyReceivedPaymentStages(){
+
+        $this->query = $this->query->with(['paymentStages' => function($query){
+
+              $query->whereHas('paymentStatus', function($query){
+                   $query->where('name', 'paid');
+              });
+        }]);
+
+        return $this;
+   }
 
     
 }

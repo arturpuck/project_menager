@@ -1,7 +1,11 @@
 {
+    "/js/income.js": "/js/income.js",
+    "/js/profitability.js": "/js/profitability.js",
     "/js/projects.js": "/js/projects.js",
     "/css/login_panel.css": "/css/login_panel.css",
     "/css/projects.css": "/css/projects.css",
     "/css/team.css": "/css/team.css",
+    "/css/profitability.css": "/css/profitability.css",
+    "/css/income.css": "/css/income.css",
     "/js/team.js": "/js/team.js"
 }

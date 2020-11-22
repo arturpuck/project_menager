@@ -36,6 +36,15 @@
   "team_list_title" : "Lista pracowników firmy Immago",
   "team_list_description" : "Lista pracowników zatrudninych w firmie Immago. Edytuj dane personalne, zmieniaj stawki",
   "team_members_list" : "Lista członków zespołu",
-  "project_menager" : "Menadżer projektu",
-  "account" : "Account"
+  "projects_profitability" : "Rentowność projektów",
+  "account" : "Account",
+  "project" : "Projekt",
+  "project_income" : "Przychód z projektu",
+  "operational_profit" : "Zysk operacyjny",
+  "project_cost" : "Koszt projektu",
+  "projects_income" : "Dochód z projektu",
+  "name" : "Nazwa",
+  "money_received" : "Kwota",
+  "date" : "Data",
+  "status" : "Status"
 }

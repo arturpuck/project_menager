@@ -15,7 +15,7 @@ Class ShowEmployeesListHandler {
     public function handle(){
 
         $employees = $this->employeesRepository->with(['positions', 'skills', 'role'])
-                                                 ->addCurrentUserEmployeeAccess()
+                                                 ->limitCurrentUserEmployeeAccess()
                                                  ->get();
 
         return response()->json($employees->toArray());

@@ -18,6 +18,11 @@ Abstract Class BaseRepository{
       return $this->query->get();
     }
 
+    public function resetQuery(){
+      $model = static::MODEL_NAME;
+      $this->query = $model::query();
+    }
+
     public function select(array $columnNames): self{
         
         foreach($columnNames as $columnName){

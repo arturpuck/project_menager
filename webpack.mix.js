@@ -15,8 +15,12 @@ const mix = require('laravel-mix');
 mix.sass('resources/sass/auth/login_panel.scss', 'public/css')
     .sass('resources/sass/main_panel/projects.scss', 'public/css')
     .sass('resources/sass/team.scss', 'public/css')
+    .sass('resources/sass/profitability.scss', 'public/css')
+    .sass('resources/sass/income.scss', 'public/css')
     .js('resources/js/projects.ts', 'public/js')
+    .js('resources/js/profitability.ts', 'public/js')
     .js('resources/js/team.ts', 'public/js')
+    .js('resources/js/income.ts', 'public/js')
     .options({processCssUrls: false})
     .webpackConfig({
         resolve: {

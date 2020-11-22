@@ -1,0 +1,12 @@
+@import '~sass/basic';
+@import '~sass/fonts';
+@import '~sass/components/header';
+@import '~sass/components/table';
+
+.filter-form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5px;
+    background: black;
+}

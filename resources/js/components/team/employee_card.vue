@@ -6,21 +6,13 @@
     <ul class="tab-list">
        <li v-text="translations['projects_report']" v-on:click="setCurrentTab" id="report-tab" class="tab-list-element"></li>
        <li v-text="translations['clockify_report']" v-on:click="setCurrentTab" id="clockify-tab" class="tab-list-element"></li>
-       <li v-text="translations['data']" id="data-tab" v-on:click="setCurrentTab" class="tab-list-element"></li>
+       <li v-text="translations['data']"  v-on:click="setCurrentTab" id="data-tab" class="tab-list-element"></li>
     </ul>
-    <section v-show="clockifyTabIsSelected" class="tab-list-section">
-      <form method="POST" enctype='multipart/form-data' action="/report/store">
-          <input type="hidden" v-bind:value="employee.id" name="user_id">
-          <input v-bind:value="csrfToken" type="hidden" name="_token">
-          <input type="file" class="report-file" name="clockify_report_file" >
-          <labeled-input class="reported-hours" input-type="number" name="reported_hours">{{translations['hours_of_work']}}</labeled-input>
-          <positive-button class="save-report" type="submit">{{translations['save']}}</positive-button>
-      </form>
-    </section>
+    
     <section v-show="reportTabIsSelected" class="tab-list-section">
         <form class="filter-results-form">
           <labeled-select v-model="filterMonth" name="month"
-            v-bind:values="[1,2,3,4,5,6, 7, 8,9, 10, 11, 12]"
+            v-bind:values="['01','02','03','04','05','06', '07', '08','09', '10', '11', '12']"
             v-bind:displayed-values="months">
             {{translations['month']}} : 
           </labeled-select>
@@ -65,7 +57,28 @@
            </tr>
          </tbody>
      </table>
-
+    </section>
+    <section v-show="clockifyTabIsSelected" class="tab-list-section">
+      <form method="POST" enctype='multipart/form-data' action="/report/store">
+          <input type="hidden" v-bind:value="employee.id" name="user_id">
+          <input v-bind:value="csrfToken" type="hidden" name="_token">
+          <input type="file" class="report-file" name="clockify_report_file" >
+          <labeled-input class="reported-hours" input-type="number" name="reported_hours">{{translations['hours_of_work']}}</labeled-input>
+          <positive-button class="save-report" type="submit">{{translations['save']}}</positive-button>
+      </form>
+    </section>
+    <section v-show="dataTabIsSelected" class="tab-list-section">
+      <form>
+        <labeled-input v-model="employee['full_name']" name="full_name" >{{translations['full_name']}} : </labeled-input>
+        <labeled-input v-model="employee['email']" name="email">{{translations['email']}} : </labeled-input>
+        <labeled-input v-model="employee['phone_number']" name="phone_number">{{translations['phone_number']}} : </labeled-input>
+         <labeled-select name="role_id" v-model="employee['role_id']"
+            v-bind:values="userRolesIds"
+            v-bind:displayed-values="userRolesValues">
+            {{translations['role']}} : 
+          </labeled-select>
+        <positive-button class="save-report">{{translations['save']}} : </positive-button>
+      </form>
     </section>
 </div>
 
@@ -85,6 +98,16 @@
 
 
   export default class EmployeeCard extends Vue {
+
+    @Prop({
+            type: Array,
+            required: true,
+    }) readonly userRolesValues: string[];
+
+    @Prop({
+            type: Array,
+            required: true,
+    }) readonly userRolesIds: string[];
 
     @Prop({
             type: Array,
@@ -122,12 +145,21 @@
     private projectIds = {};
     private filterMonth:number = 0;
     private filterYear:number = new Date().getFullYear();
+    private employeePositionsDataCopy: number[] = [];
 
     showEmployeeCard(employee:object){
        
        this.employee = employee;
+       this.makeEmployeePositionsDataCopy(employee);
        this.filterReports();
        this.showCard = true;
+    }
+
+    makeEmployeePositionsDataCopy(employee){
+        
+        employee.positions.forEach(position => {
+           this.employeePositionsDataCopy.push(position.id);
+        });
     }
 
     resetProjectReports(){

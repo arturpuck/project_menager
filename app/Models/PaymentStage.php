@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\PaymentStatus;
+use App\Models\Project;
+use App\Models\Client;
 
 class PaymentStage extends Model
 {
@@ -17,4 +20,13 @@ class PaymentStage extends Model
        'estimated_payment_date',
        'payment_status_id',
     ];
+
+    public function paymentStatus(){
+        return $this->belongsTo(PaymentStatus::class);
+    }
+
+    public function project(){
+        return $this->belongsTo(Project::class);
+    }
+
 }

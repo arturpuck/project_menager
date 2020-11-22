@@ -8,7 +8,8 @@ const translations:object = {
             cashflow : "Cashflow",
             gantt : "Gantt",
             uploader : "Uploader",
-            logout : "Wyloguj"
+            logout : "Wyloguj",
+            projects_profitability : "Rentowność projektów"
         },
 
         projectsTable : {
@@ -96,7 +97,16 @@ const translations:object = {
             the_data_is_probably_ok_but_a_server_error_occured : "Wprowadzone dano najprawdopodobniej są poprawne, ale wystąpił błąd po stronie serwera",
             undefined_error : "Bliżej niezidentyfikowany błąd",
             report_saved_successfully : "Raport zapisany pomyślnie",
+            full_name : "Imię i nazwisko",
+            email : "Email",
+            role : "Rola",
+            phone_number : "Numer telefonu"
         },
+
+        income : {
+            you_have_to_select_some_status : "Płatność musi mieć przypisany jakiś status. Aktualizacja nieudana",
+            status_changed_successfully : "Pomyślnie zmieniono status"
+        }
        
     }
 };

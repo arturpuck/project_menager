@@ -27,8 +27,12 @@ class EmployeeIDBelongsToProjectMenager implements Rule
     public function passes($attribute, $value)
     {
         return User::whereHas('positions', function($query) use ($value){
+
             $query->where('name', 'project menager');
-        })->where('id',$value)->exists();
+            
+        })->orWhereHas('role', function($query){
+             $query->where('name', 'project menager');
+        })->exists();
     }
 
     /**

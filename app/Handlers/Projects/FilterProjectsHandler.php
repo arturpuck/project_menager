@@ -21,8 +21,8 @@ Class FilterProjectsHandler {
            $this->projectsRepository->filterByClientId($clientId);
         }
 
-        if($taskId = $request->get('task_id')){
-            $this->projectsRepository->filterByTaskId($taskId);
+        if($taskId = $request->get('task')){
+            $this->projectsRepository->filterByTask($taskId);
          }
 
          if($statusId = $request->get('status_id')){
@@ -45,7 +45,7 @@ Class FilterProjectsHandler {
                                          'account',
                                          'status',
                                          'client'])
-                                         ->addCurrentUserProjectAccess()
+                                         ->limitCurrentUserProjectAccess()
                                          ->get();
 
          return response()->json($projects->toArray());

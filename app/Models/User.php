@@ -97,7 +97,7 @@ class User extends Authenticatable
         return $this->role->name == 'account';
     }
 
-    public function isOrdinaryTeamMember():bool{
+    public function getIsOrdinaryTeamMemberAttribute():bool{
         return $this->role->name == 'team member';
     }
 
@@ -137,11 +137,11 @@ class User extends Authenticatable
               break;
 
               case 'project menager':
-                 return ($this->id == $userId) || User::find($userId)->isOrdinaryTeamMember();
+                 return ($this->id == $userId) || User::find($userId)->is_ordinary_team_member;
               break;
 
               case 'account':
-                return ($this->id == $userId) || User::find($userId)->isOrdinaryTeamMember();
+                return ($this->id == $userId) || User::find($userId)->is_ordinary_team_member;
               break;
 
               case 'team member':

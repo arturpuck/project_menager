@@ -14,6 +14,7 @@ use Symfony\Component\HttpFoundation\Response;
 use App\Models\ProjectReportStatus;
 use App\Helpers\Company;
 use App\Helpers\Months;
+use App\Models\Role;
 
 class TeamController extends Controller
 {
@@ -24,7 +25,8 @@ class TeamController extends Controller
            'description' => 'team_list_description',
            'projectReportStatuses' => ProjectReportStatus::all(),
            'months' => Months::names[\App::getLocale()],
-           'yearsRange' => Company::getYearsRange()
+           'yearsRange' => Company::getYearsRange(),
+           'roles' => Role::all()
        ]);
    }
 

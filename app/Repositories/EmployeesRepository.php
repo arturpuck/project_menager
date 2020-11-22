@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\User;
+use Illuminate\Support\Collection;
 
 
 Class EmployeesRepository extends BaseRepository {
@@ -13,7 +14,10 @@ Class EmployeesRepository extends BaseRepository {
 
          $this->query = $this->query->whereHas('positions', function($query) use ($statuses){
                  $query->whereIn('name',$statuses);
+         })->orWhereHas('role', function($query) use ($statuses){
+             $query->whereIn('name',$statuses);
          });
+
          return $this;
     }
 
@@ -28,7 +32,7 @@ Class EmployeesRepository extends BaseRepository {
         });
     }
 
-    public function addCurrentUserEmployeeAccess(): EmployeesRepository {
+    public function limitCurrentUserEmployeeAccess(): EmployeesRepository {
 
         switch(\Auth::user()->role->name){
 
@@ -51,5 +55,21 @@ Class EmployeesRepository extends BaseRepository {
 
         return $this;
 
+    }
+
+    public static function filterCollectionByEmployeePosition(Collection $employees, string $requiredPosition){
+
+        $result = $employees->filter(function($employee){ 
+            
+            $positions = $employee->positions->toArray();
+         
+            foreach($positions as $position){
+
+                if($position['name'] == $requiredPosition){
+                    return true;
+                }
+            }
+             return false;
+        });
     }
 }

@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use App\Rules\EmployeeIDBelongsToProjectMenager;
 use App\Rules\EmployeeIDBelongsToAccount;
 use Illuminate\Http\Exceptions\HttpResponseException;
-use App\Model\Project;
+use App\Models\Project;
 
 
 class CreateOrEditProjectRequest extends FormRequest

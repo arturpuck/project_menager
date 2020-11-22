@@ -18,7 +18,8 @@ class Project extends Model
     use HasFactory;
 
     public $with = [
-        'taskStages'
+        'taskStages',
+        'client'
     ];
 
     public function tasks(){
@@ -58,9 +59,13 @@ class Project extends Model
     }
 
     public static function canBeEditedByCurrentUser(int $projectID): bool{
+        
+        if(\Auth::user()->is_admin){
+            return true;
+        }
         $userID = \Auth::user()->id;
         
-        return self::where('id',$projectID)->where(function($query){
+        return self::where('id',$projectID)->where(function($query) use ($userID){
             $query->where('project_menager_id', )->orWhere('account_id',$userID);
        })->exists();
     }

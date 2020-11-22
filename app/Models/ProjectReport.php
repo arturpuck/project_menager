@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\ProjectStatus;
+use App\Models\User;
 
 class ProjectReport extends Model
 {
@@ -13,7 +14,8 @@ class ProjectReport extends Model
     public $timestamps = false;
 
     public $with = [
-        'status'
+        'status',
+        'employee'
     ];
 
     protected $fillable = [
@@ -27,5 +29,9 @@ class ProjectReport extends Model
 
     public function status(){
        return $this->belongsTo(ProjectStatus::class);
+    }
+
+    public function employee(){
+        return $this->belongsTo(User::class, 'user_id');
     }
 }
