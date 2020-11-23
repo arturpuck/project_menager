@@ -430,7 +430,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".textarea-label {\n  text-align: center;\n  color: black;\n}\n.textarea-label, .nice-textarea {\n  display: block;\n  width: 95%;\n  margin: 0 auto;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n@media (max-width: 1200px) {\n.textarea-label, .nice-textarea {\n    font-size: 16px;\n}\n}\n.nice-textarea {\n  border-radius: 5px;\n  background: #242229;\n  color: white;\n  margin-bottom: 5px;\n}\n.payment-summary-container {\n  display: inline-block;\n  padding: 6px;\n  background: #242229;\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n  border-radius: 4px;\n  margin: 4px;\n}\n@media (max-width: 1200px) {\n.payment-summary-container {\n    font-size: 16px;\n}\n}\n.datepicker-description {\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n@media (max-width: 1200px) {\n.datepicker-description {\n    font-size: 16px;\n}\n}\n.datepicker-wrapper {\n  padding: 4px;\n  background: #242229;\n  border-radius: 5px;\n  display: inline-flex;\n  flex-wrap: nowrap;\n  align-items: baseline;\n  margin: 4px;\n}\n.calendar-input {\n  background: #242229;\n  color: white;\n  padding: 4px;\n  border: none;\n}\n.stage-list-element {\n  border: 2px solid gray;\n  margin: 4px 0;\n}\n.stages-list {\n  list-style-type: none;\n  padding: 4px;\n  margin: 0;\n}\n.add-stage-button {\n  margin: 5px;\n  display: block;\n}\n.remove-rectangular-element-icon {\n  width: 1.8vw;\n  height: 1.8vw;\n}\n.rectangular-elements-list {\n  list-style-type: none;\n  padding: 4px;\n  margin: 0;\n}\n.rectangular-list-element {\n  padding: 5px;\n  display: inline-block;\n  margin: 5px;\n  background: black;\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n@media (max-width: 1200px) {\n.rectangular-list-element {\n    font-size: 16px;\n}\n}\n.project-form-caption {\n  font-size: 1.5vw;\n  font-family: \"Exo 2\", sans-serif;\n  color: black;\n  display: block;\n  padding: 5px 0 5px 10px;\n  text-align: left;\n}\n@media (max-width: 1200px) {\n.project-form-caption {\n    font-size: 22px;\n}\n}\n.project-form-fieldset {\n  border: 2px solid black;\n  border-radius: 5px;\n  margin: 5px 0;\n}\n.project-form {\n  padding: 5px;\n  position: fixed;\n  top: 0;\n  width: 100%;\n  left: 0;\n  overflow-y: auto;\n  background: #fbffff;\n  max-height: 100vh;\n}\n.close-bar {\n  text-align: right;\n  padding: 5px;\n  background: black;\n}", ""]);
+exports.push([module.i, ".remove-rectangular-element-icon {\n  width: 1.8vw;\n  height: 1.8vw;\n}\n.rectangular-elements-list {\n  list-style-type: none;\n  padding: 4px;\n  margin: 0;\n}\n.rectangular-list-element {\n  padding: 5px;\n  display: inline-block;\n  margin: 5px;\n  background: black;\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n@media (max-width: 1200px) {\n.rectangular-list-element {\n    font-size: 16px;\n}\n}\n.textarea-label {\n  text-align: center;\n  color: black;\n}\n.textarea-label, .nice-textarea {\n  display: block;\n  width: 95%;\n  margin: 0 auto;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n@media (max-width: 1200px) {\n.textarea-label, .nice-textarea {\n    font-size: 16px;\n}\n}\n.nice-textarea {\n  border-radius: 5px;\n  background: #242229;\n  color: white;\n  margin-bottom: 5px;\n}\n.payment-summary-container {\n  display: inline-block;\n  padding: 6px;\n  background: #242229;\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n  border-radius: 4px;\n  margin: 4px;\n}\n@media (max-width: 1200px) {\n.payment-summary-container {\n    font-size: 16px;\n}\n}\n.datepicker-description {\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n@media (max-width: 1200px) {\n.datepicker-description {\n    font-size: 16px;\n}\n}\n.datepicker-wrapper {\n  padding: 4px;\n  background: #242229;\n  border-radius: 5px;\n  display: inline-flex;\n  flex-wrap: nowrap;\n  align-items: baseline;\n  margin: 4px;\n}\n.calendar-input {\n  background: #242229;\n  color: white;\n  padding: 4px;\n  border: none;\n}\n.stage-list-element {\n  border: 2px solid gray;\n  margin: 4px 0;\n}\n.stages-list {\n  list-style-type: none;\n  padding: 4px;\n  margin: 0;\n}\n.add-stage-button {\n  margin: 5px;\n  display: block;\n}\n.project-form-caption {\n  font-size: 1.5vw;\n  font-family: \"Exo 2\", sans-serif;\n  color: black;\n  display: block;\n  padding: 5px 0 5px 10px;\n  text-align: left;\n}\n@media (max-width: 1200px) {\n.project-form-caption {\n    font-size: 22px;\n}\n}\n.project-form-fieldset {\n  border: 2px solid black;\n  border-radius: 5px;\n  margin: 5px 0;\n}\n.project-form {\n  padding: 5px;\n  position: fixed;\n  top: 0;\n  width: 100%;\n  left: 0;\n  overflow-y: auto;\n  background: #fbffff;\n  max-height: 100vh;\n}\n.close-bar {\n  text-align: right;\n  padding: 5px;\n  background: black;\n}", ""]);
 
 // exports
 
@@ -1979,6 +1979,13 @@ var LabeledSelect = /** @class */ (function (_super) {
             default: 0
         })
     ], LabeledSelect.prototype, "value", void 0);
+    __decorate([
+        vue_property_decorator_1.Prop({
+            type: Boolean,
+            required: false,
+            default: false
+        })
+    ], LabeledSelect.prototype, "isDisabled", void 0);
     LabeledSelect = __decorate([
         vue_property_decorator_1.Component
     ], LabeledSelect);
@@ -2925,7 +2932,7 @@ var render = function() {
         {
           ref: "select_value",
           staticClass: "described-select",
-          attrs: { name: _vm.name },
+          attrs: { name: _vm.name, disabled: _vm.isDisabled },
           domProps: { value: _vm.value },
           on: { input: _vm.emitData }
         },
@@ -20297,7 +20304,7 @@ var translations = {
             year: "rok",
             filter_reports: "Filtruj raporty",
             clockify_report: "Raport clockify",
-            no_results_have_been_foound_for_your_authentication_level: "Nie znaleziono żadnych wyników odpowiadających Twojemu poziomowi uprawnień",
+            no_results_have_been_foound_for_your_authentication_level: "Nie znaleziono żadnych raportów odpowiadających Twojemu poziomowi uprawnień",
             the_data_is_invalid: "Wprowadzono nieprawidłowe dane",
             the_data_is_probably_ok_but_a_server_error_occured: "Wprowadzone dano najprawdopodobniej są poprawne, ale wystąpił błąd po stronie serwera",
             undefined_error: "Bliżej niezidentyfikowany błąd",
@@ -20305,7 +20312,16 @@ var translations = {
             full_name: "Imię i nazwisko",
             email: "Email",
             role: "Rola",
-            phone_number: "Numer telefonu"
+            phone_number: "Numer telefonu",
+            add_position: "Dodaj stanowisko",
+            positions: "Stanowiska",
+            skills: "Umiejętności",
+            add_skill: "Dodaj umiejętność",
+            rate_per_hour_set_by_deal: "Stawka godzinowa na umowie",
+            rate_per_month: "Stawka miesięczna",
+            real_rate_per_hour: "Rzeczywista stawka godzinowa",
+            note: "Notatka",
+            employee_data_modified_successfully: "Pomyślnie zmodyfikowano dane pracownika"
         },
         income: {
             you_have_to_select_some_status: "Płatność musi mieć przypisany jakiś status. Aktualizacja nieudana",

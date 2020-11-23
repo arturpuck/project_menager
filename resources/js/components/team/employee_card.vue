@@ -69,15 +69,40 @@
     </section>
     <section v-show="dataTabIsSelected" class="tab-list-section">
       <form>
-        <labeled-input v-model="employee['full_name']" name="full_name" >{{translations['full_name']}} : </labeled-input>
+        <labeled-input v-bind:is-disabled="ordinaryTeamMember" v-model="employee['full_name']" name="full_name" >{{translations['full_name']}} : </labeled-input>
         <labeled-input v-model="employee['email']" name="email">{{translations['email']}} : </labeled-input>
         <labeled-input v-model="employee['phone_number']" name="phone_number">{{translations['phone_number']}} : </labeled-input>
-         <labeled-select name="role_id" v-model="employee['role_id']"
+        <labeled-select name="role_id" v-bind:is-disabled="ordinaryTeamMember" v-model="employee['role_id']"
             v-bind:values="userRolesIds"
             v-bind:displayed-values="userRolesValues">
             {{translations['role']}} : 
-          </labeled-select>
-        <positive-button class="save-report">{{translations['save']}} : </positive-button>
+        </labeled-select>
+        <labeled-input v-model="employee['rate_per_hour_set_by_deal']" v-bind:is-disabled="ordinaryTeamMember" input-type="number" name="rate_per_hour_set_by_deal">{{translations['rate_per_hour_set_by_deal']}} : </labeled-input>
+        <labeled-input v-model="employee['rate_per_month']" v-bind:is-disabled="ordinaryTeamMember" input-type="number" name="rate_per_month">{{translations['rate_per_month']}} : </labeled-input>
+        <labeled-input v-model="employee['real_rate_per_hour']" v-if="!ordinaryTeamMember" input-type="number" name="real_rate_per_hour">{{translations['real_rate_per_hour']}} : </labeled-input>
+        <label for="note" v-text="translations['note']" class="note-label"></label>
+        <textarea v-model="employee['note']" id="note" class="note"  cols="20" rows="5"></textarea>
+        <fieldset class="form-fieldset">
+              <caption v-text="translations['positions']" class="form-caption"></caption>
+              <ul class="rectangular-elements-list">
+                <li v-for="position in employeePositionsList" class="rectangular-list-element">
+                    {{position}}
+                    <close-button class="remove-rectangular-element-icon" v-bind:description="translations['close']" v-on:click.native="removePositionFromList(position)" /> 
+                </li>
+              </ul>
+             <multiselect v-on:added="addItemToPositionsList" v-bind:values="employeePositions" >{{translations['add_position']}}</multiselect> 
+        </fieldset>
+        <fieldset class="form-fieldset">
+              <caption v-text="translations['skills']" class="form-caption"></caption>
+              <ul class="rectangular-elements-list">
+                <li v-for="skill in employeeSkillsList" class="rectangular-list-element">
+                    {{skill}}
+                    <close-button class="remove-rectangular-element-icon" v-bind:description="translations['close']" v-on:click.native="removeSkillFromList(skill)" /> 
+                </li>
+              </ul>
+             <multiselect v-on:added="addItemToSkillsList" v-bind:values="employeeSkills" >{{translations['add_skill']}}</multiselect> 
+        </fieldset>
+        <positive-button v-on:click.native="saveEmployeeData">{{translations['save']}} </positive-button>
       </form>
     </section>
 </div>
@@ -92,12 +117,33 @@
   import PositiveButton from '@jscomponents/controls/positive_button.vue';
   import Datepicker from 'vuejs-datepicker';
   import LabeledSelect from '@jscomponents/controls/labeled_select.vue';
+  import Multiselect from '@jscomponents/controls/multiselect.vue';
 
   
-@Component({components : {CloseButton, LabeledInput, PositiveButton, Datepicker, LabeledSelect}})
+@Component({components : {CloseButton, Multiselect, LabeledInput, PositiveButton, Datepicker, LabeledSelect}})
 
 
   export default class EmployeeCard extends Vue {
+
+    @Prop({
+            type: Array,
+            required: true,
+    }) readonly employeeSkills: string[];
+
+    @Prop({
+            type: Array,
+            required: true,
+    }) readonly employeeSkillsIds: number[];
+
+    @Prop({
+            type: Array,
+            required: true,
+    }) readonly employeePositions: string[];
+
+    @Prop({
+            type: Array,
+            required: true,
+    }) readonly employeePositionsIds: number[];
 
     @Prop({
             type: Array,
@@ -129,6 +175,12 @@
             required: true,
     }) readonly yearsRange: string[];
 
+    @Prop({
+            type: Boolean,
+            required: false,
+            default:false
+    }) readonly ordinaryTeamMember: boolean;
+
 
     private translations = translator('employee_data');
     private csrfToken:string = '';
@@ -145,21 +197,116 @@
     private projectIds = {};
     private filterMonth:number = 0;
     private filterYear:number = new Date().getFullYear();
-    private employeePositionsDataCopy: number[] = [];
+    private employeePositionsList :string[] = [];
+    private employeeSkillsList :string[] = [];
+
+  async saveEmployeeData(){
+
+         if(!this.ordinaryTeamMember){
+
+            let skillsIds:number[] = [];
+            let positionsIds:number[] = [];
+
+            this.employeeSkillsList.forEach(value => {
+                  skillsIds.push(this.getSkillId(value));
+            });
+
+            this.employeePositionsList.forEach(value => {
+                  positionsIds.push(this.getPositionId(value));
+            });
+
+            this.employee['positions_ids'] = positionsIds;
+            this.employee['skills_ids'] = skillsIds;
+         }
+
+           const requestData = {
+               method : 'PATCH',
+               headers : {
+                  'X-CSRF-TOKEN' : this.csrfToken,
+                  'Content-type': 'application/json; charset=UTF-8'
+               },
+               body : JSON.stringify(this.employee)
+               
+            };
+
+            const response = await fetch('/employee/change-data',requestData);
+
+            switch(response.status){
+                 case 200:
+                   this.showNotification(this.translations['employee_data_modified_successfully'])
+                 break;
+            }
+    }
+
+    getSkillId(skillName:string):number{
+      const index = this.employeeSkillsList.findIndex( name => name == skillName);
+      return this.employeeSkillsIds[index];
+    }
+
+    getPositionId(positionName:string):number{
+      const index = this.employeePositionsList.findIndex( name => name == positionName);
+      return this.employeePositionsIds[index];
+    }
+
+    removePositionFromList(position){
+
+      if(!this.ordinaryTeamMember){
+         this.employeePositionsList = this.employeePositionsList.filter(value => value != position);
+      }
+       
+    }
+
+    removeSkillFromList(skill){
+
+      if(!this.ordinaryTeamMember){
+         this.employeeSkillsList = this.employeeSkillsList.filter(value => value != skill);
+      }
+       
+    }
+
+    addItemToPositionsList(position){
+
+         if(!this.employeePositionsList.includes(position) && !this.ordinaryTeamMember){
+           this.employeePositionsList.push(position);
+        }
+    }
+
+    addItemToSkillsList(skill){
+
+         if(!this.employeeSkillsList.includes(skill) && !this.ordinaryTeamMember){
+           this.employeeSkillsList.push(skill);
+        }
+    }
 
     showEmployeeCard(employee:object){
        
        this.employee = employee;
-       this.makeEmployeePositionsDataCopy(employee);
+       this.loadEmployeePositions(employee);
+       this.loadEmployeeSkills(employee);
        this.filterReports();
        this.showCard = true;
     }
 
-    makeEmployeePositionsDataCopy(employee){
-        
-        employee.positions.forEach(position => {
-           this.employeePositionsDataCopy.push(position.id);
-        });
+    loadEmployeePositions(employee){
+
+        if(this.employeePositionsList.length == 0){
+
+           employee.positions.forEach(position => {
+           this.employeePositionsList.push(position.name);
+          });
+
+        } 
+    }
+
+    loadEmployeeSkills(employee){
+
+        if(this.employeeSkillsList.length == 0){
+
+           employee.skills.forEach(skill => {
+             this.employeeSkillsList.push(skill.name);
+          });
+
+        } 
     }
 
     resetProjectReports(){
@@ -372,6 +519,35 @@
 @import '~sass/fonts';
 @import '~sass/components/tab_list';
 @import '~sass/components/table';
+
+.note{
+    background: #242229;
+    border: none;
+    border-radius: 5px;
+    color:white;
+    @include responsive-font();
+    display: block;
+    margin: 3px auto;
+}
+
+.note-label{
+   color:white;
+    @include responsive-font();
+    display: block;
+    text-align: center;
+}
+
+.form-caption{
+  @include responsive-font();
+  color:white;
+  padding:5px;
+}
+
+.form-fieldset{
+  border: 2px solid black;
+  border-radius: 4px;
+  margin: 5px;
+}
 
 .filter-results-form{
   padding:5px;

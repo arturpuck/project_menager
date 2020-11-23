@@ -4,7 +4,7 @@
         <span class="select-description">
             <slot></slot>
         </span>
-        <select v-bind:name="name" v-on:input="emitData" v-bind:value="value" ref="select_value" class="described-select">
+        <select v-bind:name="name" v-bind:disabled="isDisabled" v-on:input="emitData" v-bind:value="value" ref="select_value" class="described-select">
             <option value="">---</option>
             <option v-if="values" v-for="(value, index) in displayedValues" v-bind:value="values[index]">{{value}}</option>
             <option v-if="!values" v-for="(value, index) in displayedValues" v-bind:value="displayedValues[index]">{{value}}</option>
@@ -40,6 +40,12 @@
             required: false,
             default:0
     }) readonly value: string | number;
+
+    @Prop({
+            type: Boolean,
+            required: false,
+            default:false
+    }) readonly isDisabled: boolean;
 
     emitData(event){
        this.$emit('input',event.target.value);

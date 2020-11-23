@@ -26,6 +26,7 @@ Class EmployeesRepository extends BaseRepository {
         return $this->query->where(function($query){
 
             $query->where('id', \Auth::user()->id);
+            
             $query->orWhereHas('role', function($query){
                 $query->where('name', 'team member');
             });

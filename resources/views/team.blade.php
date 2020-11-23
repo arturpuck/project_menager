@@ -22,7 +22,14 @@
       v-bind:user-roles-ids="{{json_encode($roles->pluck('id'), true)}}"
       v-bind:project-report-statuses-values="{{json_encode($projectReportStatuses->pluck('name'), true)}}"
       v-bind:project-report-statuses-ids="{{json_encode($projectReportStatuses->pluck('id'), true)}}"
+      v-bind:employee-positions="{{json_encode($positions->pluck('name'), true)}}"
+      v-bind:employee-positions-ids="{{json_encode($positions->pluck('id'), true)}}"
+      v-bind:employee-skills="{{json_encode($skills->pluck('name'), true)}}"
+      v-bind:employee-skills-ids="{{json_encode($skills->pluck('id'), true)}}"
       v-bind:months="{{json_encode($months)}}"
+      @if(\Auth::user()->is_ordinary_team_member)
+         v-bind:ordinary-team-member="true"
+      @endif
       v-bind:years-range="{{json_encode($yearsRange)}}">
     </employee-card>
     <user-notification></user-notification>

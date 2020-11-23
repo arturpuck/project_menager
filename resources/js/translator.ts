@@ -92,7 +92,7 @@ const translations:object = {
             year : "rok",
             filter_reports : "Filtruj raporty",
             clockify_report : "Raport clockify",
-            no_results_have_been_foound_for_your_authentication_level : "Nie znaleziono żadnych wyników odpowiadających Twojemu poziomowi uprawnień",
+            no_results_have_been_foound_for_your_authentication_level : "Nie znaleziono żadnych raportów odpowiadających Twojemu poziomowi uprawnień",
             the_data_is_invalid : "Wprowadzono nieprawidłowe dane",
             the_data_is_probably_ok_but_a_server_error_occured : "Wprowadzone dano najprawdopodobniej są poprawne, ale wystąpił błąd po stronie serwera",
             undefined_error : "Bliżej niezidentyfikowany błąd",
@@ -100,7 +100,16 @@ const translations:object = {
             full_name : "Imię i nazwisko",
             email : "Email",
             role : "Rola",
-            phone_number : "Numer telefonu"
+            phone_number : "Numer telefonu",
+            add_position : "Dodaj stanowisko",
+            positions : "Stanowiska",
+            skills : "Umiejętności",
+            add_skill : "Dodaj umiejętność",
+            rate_per_hour_set_by_deal : "Stawka godzinowa na umowie",
+            rate_per_month : "Stawka miesięczna",
+            real_rate_per_hour : "Rzeczywista stawka godzinowa",
+            note : "Notatka",
+            employee_data_modified_successfully : "Pomyślnie zmodyfikowano dane pracownika"
         },
 
         income : {

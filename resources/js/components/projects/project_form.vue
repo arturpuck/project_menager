@@ -457,6 +457,7 @@
 <style lang="scss" >
 
 @import '~sass/fonts';
+@import '~sass/components/rectangular_list';
 
 .textarea-label{
     text-align: center;
@@ -525,25 +526,7 @@
     display: block;
 }
 
-.remove-rectangular-element-icon{
-    width:1.8vw;
-    height:1.8vw;
-}
 
-.rectangular-elements-list{
-    list-style-type: none;
-    padding:4px;
-    margin:0;
-}
-
-.rectangular-list-element{
-    padding:5px;
-    display:inline-block;
-    margin:5px;
-    background:black;
-    color:white;
-    @include responsive-font();
-}
 
 .project-form-caption{
     @include responsive-font(1.5vw,22px);

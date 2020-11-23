@@ -77,6 +77,9 @@ Route::middleware(['auth'])->group(function(){
 
       Route::patch('/employee/reports/store', 'TeamController@storeProjectReport')
             ->name('filter-report');
+
+      Route::patch('/employee/change-data', 'TeamController@updateEmployeeData')
+            ->name('update.employee.data');
    });
 
 

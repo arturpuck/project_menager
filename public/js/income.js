@@ -1737,6 +1737,13 @@ var LabeledSelect = /** @class */ (function (_super) {
             default: 0
         })
     ], LabeledSelect.prototype, "value", void 0);
+    __decorate([
+        vue_property_decorator_1.Prop({
+            type: Boolean,
+            required: false,
+            default: false
+        })
+    ], LabeledSelect.prototype, "isDisabled", void 0);
     LabeledSelect = __decorate([
         vue_property_decorator_1.Component
     ], LabeledSelect);
@@ -2229,7 +2236,7 @@ var render = function() {
         {
           ref: "select_value",
           staticClass: "described-select",
-          attrs: { name: _vm.name },
+          attrs: { name: _vm.name, disabled: _vm.isDisabled },
           domProps: { value: _vm.value },
           on: { input: _vm.emitData }
         },
@@ -15923,7 +15930,7 @@ var translations = {
             year: "rok",
             filter_reports: "Filtruj raporty",
             clockify_report: "Raport clockify",
-            no_results_have_been_foound_for_your_authentication_level: "Nie znaleziono żadnych wyników odpowiadających Twojemu poziomowi uprawnień",
+            no_results_have_been_foound_for_your_authentication_level: "Nie znaleziono żadnych raportów odpowiadających Twojemu poziomowi uprawnień",
             the_data_is_invalid: "Wprowadzono nieprawidłowe dane",
             the_data_is_probably_ok_but_a_server_error_occured: "Wprowadzone dano najprawdopodobniej są poprawne, ale wystąpił błąd po stronie serwera",
             undefined_error: "Bliżej niezidentyfikowany błąd",
@@ -15931,7 +15938,16 @@ var translations = {
             full_name: "Imię i nazwisko",
             email: "Email",
             role: "Rola",
-            phone_number: "Numer telefonu"
+            phone_number: "Numer telefonu",
+            add_position: "Dodaj stanowisko",
+            positions: "Stanowiska",
+            skills: "Umiejętności",
+            add_skill: "Dodaj umiejętność",
+            rate_per_hour_set_by_deal: "Stawka godzinowa na umowie",
+            rate_per_month: "Stawka miesięczna",
+            real_rate_per_hour: "Rzeczywista stawka godzinowa",
+            note: "Notatka",
+            employee_data_modified_successfully: "Pomyślnie zmodyfikowano dane pracownika"
         },
         income: {
             you_have_to_select_some_status: "Płatność musi mieć przypisany jakiś status. Aktualizacja nieudana",

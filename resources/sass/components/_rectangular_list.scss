@@ -1,0 +1,21 @@
+@import '~sass/fonts';
+
+.remove-rectangular-element-icon{
+    width:1.8vw;
+    height:1.8vw;
+}
+
+.rectangular-elements-list{
+    list-style-type: none;
+    padding:4px;
+    margin:0;
+}
+
+.rectangular-list-element{
+    padding:5px;
+    display:inline-block;
+    margin:5px;
+    background:black;
+    color:white;
+    @include responsive-font();
+}
