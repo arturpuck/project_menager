@@ -4,6 +4,7 @@ namespace App\Handlers\Projects;
 
 use App\Repositories\ProjectsRepository;
 use App\Repositories\EmployeesRepository;
+use App\Helpers\Months;
 
 
 Class ShowProjectsProfitabilityPanelHandler {
@@ -20,6 +21,7 @@ Class ShowProjectsProfitabilityPanelHandler {
     public function handle(){
 
       $availableProjects =  $this->projectsRepository->with(['projectReports','paymentStages'])
+                                 ->filterByVisibleInProfitabilityPanel()
                                  ->limitCurrentUserProfitabilityAccess()
                                  ->get();
 
@@ -36,7 +38,8 @@ Class ShowProjectsProfitabilityPanelHandler {
 
     $title = 'projects_profitability';
     $description = 'find_out_if_you_make_money_on_your_projects';
+    $months = Months::names[\App::getLocale()];
 
-     return compact('availableProjects', 'projectMenagers', 'accounts', 'title', 'description');
+     return compact('availableProjects', 'projectMenagers', 'accounts', 'title', 'description', 'months');
     }
 }

@@ -1,5 +1,16 @@
 <x-base title="{{$title}}" description="{{$description}}">
-   <h1 class="header">{{__('projects')}}</h1>
+   <div class="header-container">
+      <h1 class="header">
+         {{__('projects')}}
+      </h1>
+
+      <positive-button v-on:click.native="showProjectForm" class="add-project-button">
+         <img class="button-icon" src="/images/decoration/Icon feather-plus-circle.svg"></img>
+         {{__('add_project')}}
+      </positive-button>
+   </div>
+
+   
    @if($errors->any())
    <div class="error-information-container">
       <div class="error-header">
@@ -13,56 +24,54 @@
    </div>
    @endif
 
-   @if(Auth::user()->can_add_or_edit_projects)
-      <positive-button v-on:click.native="showProjectForm" class="add-project-button">
-         {{__('add_project')}}
-      </positive-button>
-   @endif
-
    @if(Session::has('succesMessage'))
        <div class="success-message">{{__(Session::get('succesMessage'))}}</div>
    @endif
 
-   <h2 class="header">{{__('projects_list')}}</h2>
+   <h2 class="header project-list-header">{{__('projects_list')}}</h2>
 
    <form class="projects-filter-form">
       @csrf
-         <labeled-select v-model="filterClientId" name="client_id" 
-            v-bind:values="{{json_encode($clients->pluck('id'),true)}}"
-            v-bind:displayed-values="{{json_encode($clients->pluck('name'),true)}}">
-            {{__('client')}} : 
-         </labeled-select>
-         <labeled-select v-model="filterTaskId" name="task" 
-            v-bind:displayed-values="{{json_encode($tasks->pluck('name'),true)}}">
-            {{__('work_range')}} : 
-         </labeled-select>
-         <labeled-select v-model="filterStatusId" name="status_id"
-            v-bind:values="{{json_encode($projectStatuses->pluck('id'), true)}}"
-            v-bind:displayed-values="{{json_encode($projectStatuses->pluck('name'), true)}}">
-            {{__('project_status')}} : 
-         </labeled-select>
-          <labeled-select v-model="filterMonth" name="month"
-            v-bind:values="['01','02','03','04','05','06', '07', '08','09', '10', '11', '12']"
-            v-bind:displayed-values="{{json_encode($months)}}">
-            {{__('month')}} : 
-          </labeled-select>
-          <labeled-select v-model="filterYear" name="year"
-            v-bind:displayed-values="{{json_encode($yearsRange)}}">
-            {{__('year')}} : 
-          </labeled-select>
-       <labeled-select v-model="filterProjectMenager" name="project_menager"
-            v-bind:values="{{json_encode($projectMenagers->pluck('id'),true)}}"
-            v-bind:displayed-values="{{json_encode($projectMenagers->pluck('full_name'), true)}}">
-            {{__('project_menager')}} : 
-          </labeled-select>
-          <labeled-select v-model="filterAccount" name="account"
-            v-bind:values="{{json_encode($accounts->pluck('id'),true)}}"
-            v-bind:displayed-values="{{json_encode($accounts->pluck('full_name'), true)}}">
-            {{__('account')}} : 
-          </labeled-select>
-       <positive-button v-on:click.native="filterProjects" class="filter-button">
-          {{__('filter')}}
-       </positive-button>
+         <div class="filter-controls">
+            <labeled-select v-model="filterClientId" name="client_id" 
+               v-bind:values="{{json_encode($clients->pluck('id'),true)}}"
+               v-bind:displayed-values="{{json_encode($clients->pluck('name'),true)}}">
+               {{__('client')}} : 
+            </labeled-select>
+            <labeled-select v-model="filterTaskId" name="task" 
+               v-bind:displayed-values="{{json_encode($tasks->pluck('name'),true)}}">
+               {{__('work_range')}} : 
+            </labeled-select>
+            <labeled-select v-model="filterStatusId" name="status_id"
+               v-bind:values="{{json_encode($projectStatuses->pluck('id'), true)}}"
+               v-bind:displayed-values="{{json_encode($projectStatuses->pluck('name'), true)}}">
+               {{__('project_status')}} : 
+            </labeled-select>
+            <labeled-select v-model="filterMonth" class="shortened-select" name="month"
+               v-bind:values="['01','02','03','04','05','06', '07', '08','09', '10', '11', '12']"
+               v-bind:displayed-values="{{json_encode($months)}}">
+               {{__('month')}} : 
+            </labeled-select>
+          </div>
+          <div class="filter-controls">
+            <labeled-select v-model="filterYear" class="shortened-select" name="year"
+               v-bind:displayed-values="{{json_encode($yearsRange)}}">
+               {{__('year')}} : 
+            </labeled-select>
+            <labeled-select v-model="filterProjectMenager" name="project_menager"
+               v-bind:values="{{json_encode($projectMenagers->pluck('id'),true)}}"
+               v-bind:displayed-values="{{json_encode($projectMenagers->pluck('full_name'), true)}}">
+               {{__('project_menager')}} : 
+            </labeled-select>
+            <labeled-select v-model="filterAccount" name="account"
+               v-bind:values="{{json_encode($accounts->pluck('id'),true)}}"
+               v-bind:displayed-values="{{json_encode($accounts->pluck('full_name'), true)}}">
+               {{__('account')}} : 
+            </labeled-select>
+            <positive-button v-on:click.native="filterProjects" class="filter-button">
+            {{__('filter')}}
+            </positive-button>
+         </div>
    </form>
    <div class="table-container">
       <relative-shadow-container v-show="fetchingProjectsInProgress">
@@ -75,7 +84,6 @@
             <th class="table-header">{{__('project_menager')}}</th>
             <th class="table-header">{{__('account')}}</th>
             <th class="table-header">{{__('client')}}</th>
-            <th class="table-header">{{__('valuation')}}</th>
             <th class="table-header">{{__('date_finished_at')}}</th>
             <th class="table-header">{{__('project_status')}}</th>
             <th class="table-header">{{__('comments')}}</th>
@@ -89,14 +97,13 @@
                <td v-text="getClientContactData(project)" class="table-cell"></td>
                <td v-text="project['project_menager']['full_name']" class="table-cell"></td>
                <td v-text="project['account']['full_name']" class="table-cell"></td>
-               <td v-text="project['client']['name']" class="table-cell"></td>
-               <td v-text="getProjectValuation(project)" class="table-cell"></td>
-               <td v-text="project['finished_at']" class="table-cell"></td>
-               <td v-text="project['status']['name']" class="table-cell"></td>
+               <td v-text="project['company_name']" class="table-cell"></td>
+               <td v-text="project['should_be_finished_at']" class="table-cell"></td>
+               <td v-text="project['status']['name']" v-bind:class="{'finished-status' : checkProjectStatus(project)}" class="table-cell status-cell"></td>
                <td v-text="project['project_comment']" class="table-cell"></td>
                @if(\Auth::user()->can_add_or_edit_projects)
                <td class="table-cell">
-                   <button v-on:click="showEditForm(project)" class="tiny-button">{{__('edit_project')}}</button>
+                   <button class="blank-button" v-on:click="showEditForm(project)">{{__('edit')}}</button>
                </td>
                @endif
            </tr>

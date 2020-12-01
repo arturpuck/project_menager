@@ -1,5 +1,5 @@
 <x-base title="{{$title}}" description="{{$description}}">
-    <h1 class="header">{{__('projects_profitability')}}</h1>
+    <h1 class="header header-under-navbar">{{__('projects_profitability')}}</h1>
 
    <form class="filter-form">
       @csrf
@@ -18,6 +18,11 @@
             v-bind:displayed-values="{{json_encode($accounts->pluck('full_name'), true)}}">
             {{__('account')}} : 
          </labeled-select>
+         <labeled-select v-model="filterMonth" class="shortened-select" name="month"
+            v-bind:values="['01','02','03','04','05','06', '07', '08','09', '10', '11', '12']"
+            v-bind:displayed-values="{{json_encode($months)}}">
+            {{__('month')}} : 
+         </labeled-select>
          
        <positive-button v-on:click.native="getProjectProfitabilityData" class="filter-button">
           {{__('filter')}}
@@ -29,18 +34,20 @@
             <th class="table-header">{{__('project')}}</th>
             <th class="table-header">{{__('account')}}</th>
             <th class="table-header">{{__('project_menager')}}</th>
-            <th class="table-header">{{__('project_income')}}</th>
             <th class="table-header">{{__('project_cost')}}</th>
-            <th class="table-header">{{__('operational_profit')}}</th>
+            <th class="table-header">{{__('real_income')}}</th>
+            <th class="table-header">{{__('projected_income')}}</th>
+            <th class="table-header">{{__('current_profit')}}</th>
          </thead>
          <tbody>
            <tr class="table-row" v-for="index in projectsProfitabilityIndex">
                <td v-text="projectNames[index - 1]" class="table-cell"></td>
                <td v-text="accountNames[index - 1]" class="table-cell"></td>
                <td v-text="projectMenagers[index - 1]" class="table-cell"></td>
-               <td v-text="projectIncomes[index - 1]" class="table-cell"></td>
                <td v-text="projectCosts[index -1]" class="table-cell"></td>
-               <td v-text="operationalProfits[index -1]" class="table-cell"></td>
+               <td v-text="realIncomes[index - 1]" class="table-cell"></td>
+               <td v-text="projectedIncomes[index -1]" class="table-cell"></td>
+               <td v-text="currentProfits[index -1]" class="table-cell"></td>
            </tr>
          </tbody>
      </table>

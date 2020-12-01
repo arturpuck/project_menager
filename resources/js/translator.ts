@@ -4,7 +4,7 @@ const translations:object = {
             projects : "Projekty",
             team : "Team",
             payouts : "Wypłaty",
-            income : "Dochód",
+            income : "Przychód",
             cashflow : "Cashflow",
             gantt : "Gantt",
             uploader : "Uploader",
@@ -22,6 +22,7 @@ const translations:object = {
 
         project_form : {
             client_data : "Dane klienta",
+            adding_project: "Dodawanie projektu",
             client_contact_person : "Osoba do kontaktu",
             client_phone_number : "Telefon kontaktowy",
             client_email : "Email",
@@ -62,7 +63,11 @@ const translations:object = {
             save : "Zapisz",
             team : "Zespół",
             account : "Account",
-            information : "Informacja"
+            information : "Informacja",
+            the_data_is_invalid : "Próba pobrania danych klienta zakończyła się niepowodzeniem. Potencjalne przyczyny : klient został usunięty z bazy, ręcznie zmodyfikowano wartości pola wyboru klienta(element select) w nieprawidłowy sposób",
+            server_error_occured : "Wystąpił błąd po stronie serwera",
+            undefined_error : "Bliżej niezidentyfikowany błąd",
+            fetching_client_data : "Pobieram dane klienta"
         },
 
         employees_list : {

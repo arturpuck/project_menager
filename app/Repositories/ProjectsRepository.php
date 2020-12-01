@@ -17,8 +17,10 @@ Class ProjectsRepository extends BaseRepository {
 
     public function filterByTask($task): ProjectsRepository {
          
-        $this->query = $this->query->whereHas('tasks', function($query) use ($task){
-            $query->where('name',$task);
+        $this->query = $this->query->whereHas('taskStages', function($query) use ($task){
+            $query->whereHas('task', function($query) use ($task){
+                 $query->where('name',$task);
+            });
         });
 
         return $this;
@@ -99,6 +101,19 @@ Class ProjectsRepository extends BaseRepository {
                    $query->where('name', 'paid');
               });
         }]);
+
+        return $this;
+   }
+
+   public function filterByVisibleInProfitabilityPanel(): ProjectsRepository{
+
+        $this->query = $this->query->whereHas('paymentStages', function($query){
+
+             $query->whereHas('paymentStatus', function($query){
+                 $query->whereIn('name', ['sent to client', 'paid', 'to be issued']);
+             });
+            
+        });
 
         return $this;
    }

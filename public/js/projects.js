@@ -297,7 +297,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".labeled-input-value-label[data-v-56cf15e0] {\n  display: flex;\n  align-items: baseline;\n  background: #242229;\n  padding: 3px 10px;\n  border-radius: 8px;\n  color: white;\n  margin: 5px;\n  border: 2px solid transparent;\n  position: relative;\n  height: 2em;\n}\n.text-input-description[data-v-56cf15e0] {\n  white-space: nowrap;\n}\n.labeled-input-value[data-v-56cf15e0] {\n  background: #242229;\n  border: none;\n  border-bottom: 1px solid transparent;\n  color: #fff;\n  width: 1%;\n  flex-grow: 10;\n  padding-left: 4px;\n  box-shadow: 0 0 0 1000px #242229 inset;\n}\n.labeled-input-value[data-v-56cf15e0], .text-input-description[data-v-56cf15e0], .labeled-input-value-label[data-v-56cf15e0] {\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n@media (max-width: 1200px) {\n.labeled-input-value[data-v-56cf15e0], .text-input-description[data-v-56cf15e0], .labeled-input-value-label[data-v-56cf15e0] {\n    font-size: 16px;\n}\n}\n.labeled-input-value[data-v-56cf15e0]:focus {\n  outline: none;\n  border-bottom: 1px solid #86838f;\n}\n.labeled-input-container[data-v-56cf15e0] {\n  display: inline-block;\n  min-width: 320px;\n  width: 20vw;\n}", ""]);
+exports.push([module.i, ".labeled-input-value-label[data-v-56cf15e0] {\n  display: flex;\n  align-items: baseline;\n  background: white;\n  border: 1px solid #E3E3E3;\n  border-radius: 4px;\n  color: #3C4346;\n  margin: 5px;\n  position: relative;\n  height: 2em;\n  font-weight: bold;\n}\n.text-input-description[data-v-56cf15e0] {\n  white-space: nowrap;\n  line-height: 2em;\n  padding: 0 10px;\n  background: #e9e9ea;\n  color: #3C4346;\n  opacity: 0.5;\n  font-weight: bold;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n}\n@media (max-width: 1200px) {\n.text-input-description[data-v-56cf15e0] {\n    font-size: 15px;\n}\n}\n.labeled-input-value[data-v-56cf15e0] {\n  background: white;\n  border: none;\n  border-bottom: 1px solid transparent;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  color: #3C4346;\n  width: 1%;\n  flex-grow: 10;\n  padding-left: 4px;\n  font-weight: bold;\n}\n@media (max-width: 1200px) {\n.labeled-input-value[data-v-56cf15e0] {\n    font-size: 15px;\n}\n}\n.labeled-input-value[data-v-56cf15e0]:focus {\n  outline: none;\n  border-bottom: 1px solid #86838f;\n}\n.labeled-input-container[data-v-56cf15e0] {\n  display: inline-block;\n  min-width: 320px;\n  width: 20vw;\n}", ""]);
 
 // exports
 
@@ -316,7 +316,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".select-label[data-v-0bbb9fa6] {\n  display: flex;\n  align-items: baseline;\n  border-radius: 7px;\n  padding: 3px 10px;\n  color: white;\n  margin: 5px;\n  background: #242229;\n  position: relative;\n  border: 2px solid transparent;\n  height: 2em;\n}\n.select-description[data-v-0bbb9fa6] {\n  white-space: nowrap;\n}\n.described-select[data-v-0bbb9fa6] {\n  width: 1%;\n  flex-grow: 10;\n  color: white;\n  border: none;\n  background: #242229;\n  outline: none;\n}\n.described-select[data-v-0bbb9fa6], .select-description[data-v-0bbb9fa6], .select-label[data-v-0bbb9fa6] {\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n@media (max-width: 1200px) {\n.described-select[data-v-0bbb9fa6], .select-description[data-v-0bbb9fa6], .select-label[data-v-0bbb9fa6] {\n    font-size: 16px;\n}\n}\n.described-select-container[data-v-0bbb9fa6] {\n  min-width: 320px;\n  width: 20vw;\n  display: inline-block;\n}", ""]);
+exports.push([module.i, ".select-label[data-v-0bbb9fa6] {\n  display: flex;\n  align-items: center;\n  border: 1px solid #E3E3E3;\n  border-radius: 4px;\n  padding: 3px 3px 3px 0;\n  color: #3C4346;\n  margin: 5px;\n  background: white;\n  position: relative;\n  height: 2em;\n}\n.select-description[data-v-0bbb9fa6] {\n  white-space: nowrap;\n  color: #3C4346;\n  line-height: 2em;\n  padding: 0 5px;\n  background: #e9e9ea;\n  opacity: 0.5;\n  font-weight: bold;\n}\n.described-select[data-v-0bbb9fa6] {\n  width: 1%;\n  flex-grow: 10;\n  color: #3C4346;\n  border: none;\n  background: white;\n  outline: none;\n  font-weight: bold;\n}\n.described-select[data-v-0bbb9fa6], .select-description[data-v-0bbb9fa6], .select-label[data-v-0bbb9fa6] {\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n}\n@media (max-width: 1200px) {\n.described-select[data-v-0bbb9fa6], .select-description[data-v-0bbb9fa6], .select-label[data-v-0bbb9fa6] {\n    font-size: 15px;\n}\n}\n.described-select-container[data-v-0bbb9fa6] {\n  min-width: 320px;\n  width: 20vw;\n  display: inline-block;\n}", ""]);
 
 // exports
 
@@ -354,7 +354,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".positive-button {\n  background: linear-gradient(#0fe00b, #054004);\n  padding: 5px;\n  color: white;\n  width: 15vw;\n  min-width: 200px;\n  border-radius: 5px;\n  font-weight: bold;\n  border: none;\n  cursor: pointer;\n  font-size: 1.5vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n.positive-button:hover {\n  background: #ef0244;\n}\n@media (max-width: 1200px) {\n.positive-button {\n    font-size: 19px;\n}\n}", ""]);
+exports.push([module.i, ".positive-button {\n  border: 1px solid #0FCACA;\n  border-radius: 10px;\n  opacity: 1;\n  font-size: 1.5vw;\n  font-family: \"Exo 2\", sans-serif;\n  font-family: Montserrat;\n  font-weight: bold;\n  letter-spacing: 0px;\n  color: #000000;\n  opacity: 1;\n  cursor: pointer;\n  display: inline-flex;\n  align-items: center;\n  padding: 0.5vw 1vw;\n}\n@media (max-width: 1200px) {\n.positive-button {\n    font-size: 19px;\n}\n}", ""]);
 
 // exports
 
@@ -411,7 +411,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".links-list {\n  list-style-type: none;\n  padding: 0;\n  margin: 0;\n}\n.links-list-element {\n  display: inline;\n  font-size: 1.3vw;\n  font-family: \"Exo 2\", sans-serif;\n  display: inline-block;\n}\n@media (max-width: 1200px) {\n.links-list-element {\n    font-size: 12px;\n}\n}\n.navbar-link {\n  text-decoration: none;\n  padding: 7px;\n  display: inline-block;\n  cursor: pointer;\n  font-size: 1.3vw;\n  font-family: \"Exo 2\", sans-serif;\n  color: white;\n}\n@media (max-width: 1200px) {\n.navbar-link {\n    font-size: 12px;\n}\n}\n.navbar-link:hover {\n  background: crimson;\n}\n.horizontal-navbar {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  background: black;\n}\n.logout-form {\n  position: absolute;\n  top: -9999px;\n  left: 0;\n}\n.navbar-option-logout {\n  font-size: 1.3vw;\n  font-family: \"Exo 2\", sans-serif;\n  cursor: pointer;\n  display: inline-block;\n  padding: 7px;\n  color: white;\n}\n@media (max-width: 1200px) {\n.navbar-option-logout {\n    font-size: 12px;\n}\n}\n.navbar-option-logout:hover {\n  background: crimson;\n}", ""]);
+exports.push([module.i, ".links-list {\n  list-style-type: none;\n  padding: 0;\n  margin: 0;\n  display: flex;\n  font-size: 0;\n}\n.links-list-element {\n  display: inline;\n}\n.navbar-link {\n  text-decoration: none;\n  line-height: 3.9vw;\n  display: inline-block;\n  cursor: pointer;\n  font-size: 1.3vw;\n  font-family: \"Exo 2\", sans-serif;\n  font-family: \"Montserrat\", sans-serif;\n  font-weight: bold;\n  padding: 0 2vw;\n  color: #FFFFFF;\n}\n@media (max-width: 1200px) {\n.navbar-link {\n    font-size: 13px;\n}\n}\n.navbar-link:hover {\n  background: #159797;\n}\n.horizontal-navbar {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  background: #0FCACA;\n}\n.logout-form {\n  position: absolute;\n  top: -9999px;\n  left: 0;\n}\n.logout-caption {\n  font-size: 1.3vw;\n  font-family: \"Exo 2\", sans-serif;\n  font-family: \"Montserrat\", sans-serif;\n  cursor: pointer;\n  display: inline-block;\n  font-weight: bold;\n  color: white;\n  line-height: 3vw;\n  padding: 0 1vw;\n  border: 1px solid #FFFFFF;\n  border-radius: 10px;\n}\n@media (max-width: 1200px) {\n.logout-caption {\n    font-size: 12px;\n}\n}\n.company-logo {\n  height: 2.5vw;\n}\n.logo-list-element {\n  padding: 0.7vw 7vw;\n}\n.logout-element {\n  display: flex;\n  align-items: center;\n  padding: 0 1vw;\n}\n.logout-element:hover {\n  background: #159797;\n}", ""]);
 
 // exports
 
@@ -430,7 +430,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".remove-rectangular-element-icon {\n  width: 1.8vw;\n  height: 1.8vw;\n}\n.rectangular-elements-list {\n  list-style-type: none;\n  padding: 4px;\n  margin: 0;\n}\n.rectangular-list-element {\n  padding: 5px;\n  display: inline-block;\n  margin: 5px;\n  background: black;\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n@media (max-width: 1200px) {\n.rectangular-list-element {\n    font-size: 16px;\n}\n}\n.textarea-label {\n  text-align: center;\n  color: black;\n}\n.textarea-label, .nice-textarea {\n  display: block;\n  width: 95%;\n  margin: 0 auto;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n@media (max-width: 1200px) {\n.textarea-label, .nice-textarea {\n    font-size: 16px;\n}\n}\n.nice-textarea {\n  border-radius: 5px;\n  background: #242229;\n  color: white;\n  margin-bottom: 5px;\n}\n.payment-summary-container {\n  display: inline-block;\n  padding: 6px;\n  background: #242229;\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n  border-radius: 4px;\n  margin: 4px;\n}\n@media (max-width: 1200px) {\n.payment-summary-container {\n    font-size: 16px;\n}\n}\n.datepicker-description {\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n@media (max-width: 1200px) {\n.datepicker-description {\n    font-size: 16px;\n}\n}\n.datepicker-wrapper {\n  padding: 4px;\n  background: #242229;\n  border-radius: 5px;\n  display: inline-flex;\n  flex-wrap: nowrap;\n  align-items: baseline;\n  margin: 4px;\n}\n.calendar-input {\n  background: #242229;\n  color: white;\n  padding: 4px;\n  border: none;\n}\n.stage-list-element {\n  border: 2px solid gray;\n  margin: 4px 0;\n}\n.stages-list {\n  list-style-type: none;\n  padding: 4px;\n  margin: 0;\n}\n.add-stage-button {\n  margin: 5px;\n  display: block;\n}\n.project-form-caption {\n  font-size: 1.5vw;\n  font-family: \"Exo 2\", sans-serif;\n  color: black;\n  display: block;\n  padding: 5px 0 5px 10px;\n  text-align: left;\n}\n@media (max-width: 1200px) {\n.project-form-caption {\n    font-size: 22px;\n}\n}\n.project-form-fieldset {\n  border: 2px solid black;\n  border-radius: 5px;\n  margin: 5px 0;\n}\n.project-form {\n  padding: 5px;\n  position: fixed;\n  top: 0;\n  width: 100%;\n  left: 0;\n  overflow-y: auto;\n  background: #fbffff;\n  max-height: 100vh;\n}\n.close-bar {\n  text-align: right;\n  padding: 5px;\n  background: black;\n}", ""]);
+exports.push([module.i, ".remove-rectangular-element-icon {\n  width: 1.8vw;\n  height: 1.8vw;\n}\n.rectangular-elements-list {\n  list-style-type: none;\n  padding: 4px;\n  margin: 0;\n}\n.rectangular-list-element {\n  padding: 5px;\n  display: inline-block;\n  margin: 5px;\n  background: black;\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n@media (max-width: 1200px) {\n.rectangular-list-element {\n    font-size: 16px;\n}\n}\n.removal-button {\n  padding: 0 10px;\n  color: white;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  background: crimson;\n  display: inline-flex;\n  align-items: center;\n  border: none;\n  border-radius: 4px;\n  line-height: 2em;\n  cursor: pointer;\n}\n@media (max-width: 1200px) {\n.removal-button {\n    font-size: 15px;\n}\n}\n.textarea-container {\n  display: flex;\n  flex-wrap: nowrap;\n  border: 1px solid #E3E3E3;\n  border-radius: 4px;\n  align-items: stretch;\n}\n.textarea-label {\n  flex-basis: 15%;\n  background: #efeeee;\n  font-size: 1.1vw;\n  font-family: Montserrat, sans-serif;\n  color: black;\n  font-weight: bold;\n}\n@media (max-width: 1200px) {\n.textarea-label {\n    font-size: 12px;\n}\n}\n.textarea {\n  flex-basis: 85%;\n  color: black;\n  font-size: 1.3vw;\n  font-family: Montserrat, sans-serif;\n  border: none;\n}\n@media (max-width: 1200px) {\n.textarea {\n    font-size: 14px;\n}\n}\n.read-only-box-container {\n  display: inline-flex;\n  flex-wrap: nowrap;\n}\n.read-only-label {\n  color: white;\n  background: #00C8C8;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  line-height: 2em;\n  white-space: nowrap;\n  padding: 0 0.3vw;\n  border-radius: 4px 0 0 4px;\n}\n@media (max-width: 1200px) {\n.read-only-label {\n    font-size: 15px;\n}\n}\n.read-only-content {\n  color: black;\n  font-weight: bold;\n  background: #e9e9ea;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  line-height: 2em;\n  white-space: nowrap;\n  padding: 0 0.3vw;\n  border-radius: 0 4px 4px 0;\n}\n@media (max-width: 1200px) {\n.read-only-content {\n    font-size: 15px;\n}\n}\n.datepicker-wrapper {\n  display: inline-flex;\n  flex-wrap: nowrap;\n  align-items: center;\n  border: 1px solid #E3E3E3;\n  border-radius: 4px;\n}\n.datepicker-description {\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  line-height: 2em;\n  white-space: nowrap;\n  color: #3C4346;\n  padding: 0 5px;\n  background: #e9e9ea;\n  opacity: 0.5;\n  font-weight: bold;\n}\n@media (max-width: 1200px) {\n.datepicker-description {\n    font-size: 15px;\n}\n}\n#app .calendar-input {\n  color: #3C4346;\n  border: none;\n  background: white;\n  outline: none;\n  font-weight: bold;\n}\n.calendar-icon {\n  width: 0.8em;\n  height: 0.8em;\n  margin: 0 4px;\n}\n#app .flickering-circle {\n  background: #d0d7dc;\n}\n#app .expect-circles-label {\n  font-size: 1.1vw;\n  font-family: Montserrat, sans-serif;\n}\n@media (max-width: 1200px) {\n#app .expect-circles-label {\n    font-size: 12px;\n}\n}\n.wide-button {\n  display: block;\n  width: 95%;\n  margin: 0 auto;\n}\n.relative-container {\n  position: relative;\n}\n.calendar-input {\n  background: #242229;\n  color: white;\n  padding: 4px;\n  border: none;\n}\n.stages-list {\n  list-style-type: none;\n  padding: 4px;\n  margin: 0;\n}\n.add-stage-button {\n  margin: 5px;\n  display: block;\n}\n.project-form-caption {\n  font-size: 1.5vw;\n  font-family: Montserrat, sans-serif;\n  letter-spacing: 0px;\n  color: #3C4346;\n  opacity: 1;\n  display: block;\n  text-align: left;\n  padding-left: 2vw;\n}\n@media (max-width: 1200px) {\n.project-form-caption {\n    font-size: 22px;\n}\n}\n.project-form-fieldset {\n  padding: 1vw;\n}\n.project-form {\n  padding: 10px;\n  position: fixed;\n  top: 0;\n  width: 100%;\n  left: 0;\n  overflow-y: auto;\n  background: #fbffff;\n  max-height: 100vh;\n}\n.introductory-bar {\n  display: flex;\n  justify-content: space-between;\n  padding: 5px;\n}\n.button-icon {\n  margin: 0 10px;\n}\n.colored-button {\n  background: #00C8C8;\n  color: white;\n  padding: 0.7vw 10px;\n}", ""]);
 
 // exports
 
@@ -2168,6 +2168,42 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -2179,6 +2215,8 @@ var close_button_vue_1 = __importDefault(__webpack_require__(/*! @jscomponents/c
 var labeled_select_vue_1 = __importDefault(__webpack_require__(/*! @jscomponents/controls/labeled_select.vue */ "./resources/js/components/controls/labeled_select.vue"));
 var multiselect_vue_1 = __importDefault(__webpack_require__(/*! @jscomponents/controls/multiselect.vue */ "./resources/js/components/controls/multiselect.vue"));
 var vuejs_datepicker_1 = __importDefault(__webpack_require__(/*! vuejs-datepicker */ "./node_modules/vuejs-datepicker/dist/vuejs-datepicker.esm.js"));
+var relative_shadow_container_vue_1 = __importDefault(__webpack_require__(/*! @jscomponents/decoration/relative_shadow_container.vue */ "./resources/js/components/decoration/relative_shadow_container.vue"));
+var expect_circle_vue_1 = __importDefault(__webpack_require__(/*! @jscomponents/decoration/expect_circle.vue */ "./resources/js/components/decoration/expect_circle.vue"));
 var ProjectForm = /** @class */ (function (_super) {
     __extends(ProjectForm, _super);
     function ProjectForm() {
@@ -2186,17 +2224,15 @@ var ProjectForm = /** @class */ (function (_super) {
         _this.translations = translator_1.default('project_form');
         _this.csrfToken = '';
         _this.selectedWorkRangeOptions = [];
-        _this.chosenTasksList = [];
-        _this.chosenEmployeesList = [];
         _this.engagedPersons = {};
         _this.projectId = null;
+        _this.fetchingClientDataInProgress = false;
         _this.workStageIndex = 0;
         _this.workStages = [];
         _this.startDates = {};
         _this.deadLineDates = {};
         _this.workRangeValues = {};
         _this.estimatedHours = {};
-        _this.estimatedCosts = {};
         _this.workStageEngagedPersons = {};
         _this.paymentStageIndex = 0;
         _this.paymentStageDates = {};
@@ -2223,32 +2259,112 @@ var ProjectForm = /** @class */ (function (_super) {
     ProjectForm.prototype.logout = function () {
         this.$refs.logout_form.submit();
     };
-    ProjectForm.prototype.getTaskId = function (task) {
-        var index = this.tasksNames.findIndex(function (name) { return name == task; });
-        return this.tasksIds[index];
+    ProjectForm.prototype.loadClientData = function (client) {
+        this.clientContactPerson = client.contact_person_name;
+        this.clientPhoneNumber = client.contact_phone_number;
+        this.clientEmail = client.email;
+        this.invoiceAddres = client.address;
+        this.invoiceCompanyName = client.name;
+        this.taxIdentificationNumber = client.tax_identification_number;
     };
-    ProjectForm.prototype.getEmployeeId = function (employeeName) {
-        var index = this.employeesNames.findIndex(function (name) { return name == employeeName; });
-        return this.employeesIds[index];
+    ProjectForm.prototype.fetchEmployeesHavingDesiredSkill = function (workStage) {
+        return __awaiter(this, void 0, void 0, function () {
+            var desiredSkillId, requestData, response, _a, responseBody;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        desiredSkillId = this.workRangeValues[workStage];
+                        requestData = {
+                            method: 'GET',
+                            headers: {
+                                'X-CSRF-TOKEN': this.csrfToken
+                            },
+                        };
+                        return [4 /*yield*/, fetch("/employees/get-with-desired-skill?skill_id=" + desiredSkillId, requestData)];
+                    case 1:
+                        response = _b.sent();
+                        _a = response.status;
+                        switch (_a) {
+                            case 200: return [3 /*break*/, 2];
+                            case 400: return [3 /*break*/, 4];
+                            case 500: return [3 /*break*/, 5];
+                        }
+                        return [3 /*break*/, 6];
+                    case 2: return [4 /*yield*/, response.json()];
+                    case 3:
+                        responseBody = _b.sent();
+                        console.log(responseBody);
+                        return [3 /*break*/, 7];
+                    case 4:
+                        this.showNotification(this.translations['the_data_is_invalid'], 'error');
+                        return [3 /*break*/, 7];
+                    case 5:
+                        this.showNotification(this.translations['server_error_occured'], 'error');
+                        return [3 /*break*/, 7];
+                    case 6:
+                        this.showNotification(this.translations['undefined_error'], 'error');
+                        return [3 /*break*/, 7];
+                    case 7: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ProjectForm.prototype.fetchClientsData = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var clientID, requestData, response, _a, responseBody;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        clientID = this.clientId;
+                        if (!clientID) {
+                            return [2 /*return*/];
+                        }
+                        this.fetchingClientDataInProgress = true;
+                        requestData = {
+                            method: 'GET',
+                            headers: {
+                                'X-CSRF-TOKEN': this.csrfToken
+                            },
+                        };
+                        return [4 /*yield*/, fetch("/clients/get-single?id=" + clientID, requestData)];
+                    case 1:
+                        response = _b.sent();
+                        _a = response.status;
+                        switch (_a) {
+                            case 200: return [3 /*break*/, 2];
+                            case 400: return [3 /*break*/, 4];
+                            case 500: return [3 /*break*/, 5];
+                        }
+                        return [3 /*break*/, 6];
+                    case 2: return [4 /*yield*/, response.json()];
+                    case 3:
+                        responseBody = _b.sent();
+                        console.log(responseBody);
+                        this.loadClientData(responseBody);
+                        return [3 /*break*/, 7];
+                    case 4:
+                        this.showNotification(this.translations['the_data_is_invalid'], 'error');
+                        return [3 /*break*/, 7];
+                    case 5:
+                        this.showNotification(this.translations['server_error_occured'], 'error');
+                        return [3 /*break*/, 7];
+                    case 6:
+                        this.showNotification(this.translations['undefined_error'], 'error');
+                        return [3 /*break*/, 7];
+                    case 7:
+                        this.fetchingClientDataInProgress = false;
+                        return [2 /*return*/];
+                }
+            });
+        });
     };
     ProjectForm.prototype.closeForm = function () {
         this.$root.$emit('closeProjectForm');
     };
-    ProjectForm.prototype.addItemToTasksList = function (task) {
-        if (!this.chosenTasksList.includes(task)) {
-            this.chosenTasksList.push(task);
-        }
-    };
-    ProjectForm.prototype.addItemToEmployeesList = function (employee) {
-        if (!this.chosenEmployeesList.includes(employee)) {
-            this.chosenEmployeesList.push(employee);
-        }
-    };
-    ProjectForm.prototype.removeTaskFromList = function (task) {
-        this.chosenTasksList = this.chosenTasksList.filter(function (element) { return element != task; });
-    };
-    ProjectForm.prototype.removeEmployeeFromList = function (employee) {
-        this.chosenEmployeesList = this.chosenEmployeesList.filter(function (element) { return element != employee; });
+    ProjectForm.prototype.showNotification = function (text, type) {
+        if (type === void 0) { type = "no-error"; }
+        var header = type === "no-error" ? "information" : "error";
+        this.$root.$emit('showNotification', { notificationText: text, notificationType: type, headerText: this.translations['information'] });
     };
     ProjectForm.prototype.addWorkStage = function () {
         ++this.workStageIndex;
@@ -2256,7 +2372,6 @@ var ProjectForm = /** @class */ (function (_super) {
         this.startDates[this.workStageIndex] = new Date();
         this.workRangeValues[this.workStageIndex] = 0;
         this.estimatedHours[this.workStageIndex] = 0;
-        this.estimatedCosts[this.workStageIndex] = 0;
         this.workStageEngagedPersons[this.workStageIndex] = 0;
         this.workStages.push(this.workStageIndex);
     };
@@ -2274,7 +2389,6 @@ var ProjectForm = /** @class */ (function (_super) {
         delete this.startDates[workStageID];
         delete this.workRangeValues[workStageID];
         delete this.estimatedHours[workStageID];
-        delete this.estimatedCosts[workStageID];
         delete this.workStageEngagedPersons[workStageID];
     };
     ProjectForm.prototype.removePaymentStage = function (paymentStageID) {
@@ -2296,22 +2410,11 @@ var ProjectForm = /** @class */ (function (_super) {
         this.projectName = project.name;
         this.projectMenagerID = project.project_menager_id;
         this.accountID = project.account_id;
-        var projectTasks = [];
-        project.tasks.forEach(function (value) {
-            projectTasks.push(value.name);
-        });
-        this.chosenTasksList = projectTasks;
-        var chosenPersons = [];
-        project.employees.forEach(function (value) {
-            chosenPersons.push(value.full_name);
-        });
-        this.chosenEmployeesList = chosenPersons;
         project.task_stages.forEach(function (value) {
             ++_this.workStageIndex;
             _this.workRangeValues[_this.workStageIndex] = value.task_id;
             _this.workStageEngagedPersons[_this.workStageIndex] = value.user_id;
             _this.estimatedHours[_this.workStageIndex] = value.estimated_time_of_work;
-            _this.estimatedCosts[_this.workStageIndex] = value.estimated_amount_of_money;
             _this.startDates[_this.workStageIndex] = value.start_at;
             _this.deadLineDates[_this.workStageIndex] = value.deadline;
             _this.workStages.push(_this.workStageIndex);
@@ -2325,14 +2428,14 @@ var ProjectForm = /** @class */ (function (_super) {
             _this.paymentStages.push(_this.paymentStageIndex);
         });
         this.updatePaymentSummary();
-        this.clientContactPerson = project.full_name_contact_person;
-        this.clientPhoneNumber = project.contact_person_phone_number;
-        this.clientEmail = project.contact_person_email;
         this.clientId = project.client_id;
-        this.invoiceAddres = project.invoice_company_addres;
-        this.invoiceCompanyName = project.invoice_company_name;
-        this.taxIdentificationNumber = project.invoice_tax_identification_number;
-        this.finishDate = project.finished_at;
+        this.clientContactPerson = project.client_contact_person_name;
+        this.clientPhoneNumber = project.client_phone_number;
+        this.clientEmail = project.client_email;
+        this.invoiceAddres = project.company_addres;
+        this.invoiceCompanyName = project.company_name;
+        this.taxIdentificationNumber = project.company_tax_identification_number;
+        this.finishDate = project.should_be_finished_at;
         this.projectStatusId = project.status_id;
         this.projectId = project.id;
         this.projectComment = project.project_comment;
@@ -2341,8 +2444,6 @@ var ProjectForm = /** @class */ (function (_super) {
         this.projectName = '';
         this.projectMenagerID = 0;
         this.accountID = 0;
-        this.chosenTasksList = [];
-        this.chosenEmployeesList = [];
         this.clientContactPerson = '';
         this.clientPhoneNumber = '';
         this.clientEmail = '';
@@ -2357,7 +2458,6 @@ var ProjectForm = /** @class */ (function (_super) {
         this.workRangeValues = {};
         this.workStageEngagedPersons = {};
         this.estimatedHours = {};
-        this.estimatedCosts = {};
         this.startDates = {};
         this.deadLineDates = {};
         this.workStageIndex = 0;
@@ -2472,7 +2572,7 @@ var ProjectForm = /** @class */ (function (_super) {
     ], ProjectForm.prototype, "paymentStatusesIds", void 0);
     ProjectForm = __decorate([
         vue_property_decorator_1.Component({ components: {
-                LabeledInput: labeled_input_vue_1.default, CloseButton: close_button_vue_1.default, LabeledSelect: labeled_select_vue_1.default, Multiselect: multiselect_vue_1.default, Datepicker: vuejs_datepicker_1.default
+                LabeledInput: labeled_input_vue_1.default, CloseButton: close_button_vue_1.default, LabeledSelect: labeled_select_vue_1.default, Multiselect: multiselect_vue_1.default, Datepicker: vuejs_datepicker_1.default, RelativeShadowContainer: relative_shadow_container_vue_1.default, ExpectCircle: expect_circle_vue_1.default
             } })
     ], ProjectForm);
     return ProjectForm;
@@ -3173,13 +3273,17 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("nav", { staticClass: "horizontal-navbar" }, [
     _c("ul", { staticClass: "links-list" }, [
-      _c("li", { staticClass: "links-list-element" }, [
-        _c("a", {
-          staticClass: "navbar-link",
-          attrs: { href: "/projects" },
-          domProps: { textContent: _vm._s(_vm.translations["projects"]) }
-        })
-      ]),
+      _vm._m(0),
+      _vm._v(" "),
+      !_vm.ordinaryTeamMember
+        ? _c("li", { staticClass: "links-list-element" }, [
+            _c("a", {
+              staticClass: "navbar-link",
+              attrs: { href: "/projects" },
+              domProps: { textContent: _vm._s(_vm.translations["projects"]) }
+            })
+          ])
+        : _vm._e(),
       _vm._v(" "),
       _c("li", { staticClass: "links-list-element" }, [
         _c("a", {
@@ -3214,7 +3318,7 @@ var render = function() {
       _c(
         "li",
         {
-          staticClass: "links-list-element navbar-option-logout",
+          staticClass: "links-list-element logout-element",
           on: { click: _vm.logout }
         },
         [
@@ -3234,6 +3338,7 @@ var render = function() {
           ),
           _vm._v(" "),
           _c("span", {
+            staticClass: "logout-caption",
             domProps: { textContent: _vm._s(_vm.translations["logout"]) }
           })
         ]
@@ -3241,7 +3346,19 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "links-list-element logo-list-element" }, [
+      _c("img", {
+        staticClass: "company-logo",
+        attrs: { src: "/images/decoration/logo_navbar.svg", alt: "" }
+      })
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -3284,8 +3401,15 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "close-bar" },
+        { staticClass: "introductory-bar" },
         [
+          _c("h2", {
+            staticClass: "header",
+            domProps: {
+              textContent: _vm._s(_vm.translations["adding_project"])
+            }
+          }),
+          _vm._v(" "),
           _c("close-button", {
             attrs: { description: _vm.translations["close"] },
             nativeOn: {
@@ -3383,121 +3507,13 @@ var render = function() {
         [
           _c("caption", {
             staticClass: "project-form-caption",
-            domProps: { textContent: _vm._s(_vm.translations["work_range"]) }
-          }),
-          _vm._v(" "),
-          _c(
-            "ul",
-            { staticClass: "rectangular-elements-list" },
-            _vm._l(_vm.chosenTasksList, function(task) {
-              return _c(
-                "li",
-                { staticClass: "rectangular-list-element" },
-                [
-                  _vm._v(
-                    "\n               " + _vm._s(task) + "\n               "
-                  ),
-                  _c("close-button", {
-                    staticClass: "remove-rectangular-element-icon",
-                    attrs: { description: _vm.translations["close"] },
-                    nativeOn: {
-                      click: function($event) {
-                        return _vm.removeTaskFromList(task)
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("input", {
-                    attrs: { type: "hidden", name: "tasks_ids[]" },
-                    domProps: { value: _vm.getTaskId(task) }
-                  })
-                ],
-                1
-              )
-            }),
-            0
-          ),
-          _vm._v(" "),
-          _c(
-            "multiselect",
-            {
-              attrs: { values: _vm.tasksNames },
-              on: { added: _vm.addItemToTasksList }
-            },
-            [_vm._v(_vm._s(_vm.translations["choose_range"]))]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "fieldset",
-        { staticClass: "project-form-fieldset" },
-        [
-          _c("caption", {
-            staticClass: "project-form-caption",
-            domProps: {
-              textContent: _vm._s(_vm.translations["engaged_persons"])
-            }
-          }),
-          _vm._v(" "),
-          _c(
-            "ul",
-            { staticClass: "rectangular-elements-list" },
-            _vm._l(_vm.chosenEmployeesList, function(employee) {
-              return _c(
-                "li",
-                { staticClass: "rectangular-list-element" },
-                [
-                  _vm._v(
-                    "\n               " + _vm._s(employee) + "\n               "
-                  ),
-                  _c("close-button", {
-                    staticClass: "remove-rectangular-element-icon",
-                    attrs: { description: _vm.translations["close"] },
-                    nativeOn: {
-                      click: function($event) {
-                        return _vm.removeEmployeeFromList(employee)
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("input", {
-                    attrs: { type: "hidden", name: "employees_ids[]" },
-                    domProps: { value: _vm.getEmployeeId(employee) }
-                  })
-                ],
-                1
-              )
-            }),
-            0
-          ),
-          _vm._v(" "),
-          _c(
-            "multiselect",
-            {
-              attrs: { values: _vm.employeesNames },
-              on: { added: _vm.addItemToEmployeesList }
-            },
-            [_vm._v(_vm._s(_vm.translations["choose_persons"]))]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "fieldset",
-        { staticClass: "project-form-fieldset" },
-        [
-          _c("caption", {
-            staticClass: "project-form-caption",
             domProps: { textContent: _vm._s(_vm.translations["work_stages"]) }
           }),
           _vm._v(" "),
           _c(
             "positive-button",
             {
-              staticClass: "add-stage-button",
+              staticClass: "add-stage-button colored-button",
               nativeOn: {
                 click: function($event) {
                   return _vm.addWorkStage($event)
@@ -3508,8 +3524,12 @@ var render = function() {
               _vm._v(
                 "\n             " +
                   _vm._s(_vm.translations["add_work_stage"]) +
-                  "\n         "
-              )
+                  "\n             "
+              ),
+              _c("img", {
+                staticClass: "button-icon",
+                attrs: { src: "/images/decoration/Group 61.svg" }
+              })
             ]
           ),
           _vm._v(" "),
@@ -3528,6 +3548,11 @@ var render = function() {
                         name: "work_stages[]",
                         values: _vm.tasksIds,
                         "displayed-values": _vm.tasksNames
+                      },
+                      on: {
+                        input: function($event) {
+                          return _vm.fetchEmployeesHavingDesiredSkill(workStage)
+                        }
                       },
                       model: {
                         value: _vm.workRangeValues[workStage],
@@ -3595,30 +3620,6 @@ var render = function() {
                   ),
                   _vm._v(" "),
                   _c(
-                    "labeled-input",
-                    {
-                      attrs: {
-                        "input-type": "number",
-                        step: 0.1,
-                        name: "work_stage_estimated_ammount_of_money[]"
-                      },
-                      model: {
-                        value: _vm.estimatedCosts[workStage],
-                        callback: function($$v) {
-                          _vm.$set(_vm.estimatedCosts, workStage, $$v)
-                        },
-                        expression: "estimatedCosts[workStage]"
-                      }
-                    },
-                    [
-                      _vm._v(
-                        _vm._s(_vm.translations["estimated_ammount_of_money"]) +
-                          " : "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
                     "span",
                     { staticClass: "datepicker-wrapper" },
                     [
@@ -3642,6 +3643,15 @@ var render = function() {
                             _vm.$set(_vm.startDates, workStage, $$v)
                           },
                           expression: "startDates[workStage]"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("img", {
+                        staticClass: "calendar-icon",
+                        attrs: {
+                          src:
+                            "/images/decoration/Icon awesome-calendar-alt.svg",
+                          alt: ""
                         }
                       })
                     ],
@@ -3673,19 +3683,43 @@ var render = function() {
                           },
                           expression: "deadLineDates[workStage]"
                         }
+                      }),
+                      _vm._v(" "),
+                      _c("img", {
+                        staticClass: "calendar-icon",
+                        attrs: {
+                          src:
+                            "/images/decoration/Icon awesome-calendar-alt.svg",
+                          alt: ""
+                        }
                       })
                     ],
                     1
                   ),
                   _vm._v(" "),
-                  _c("close-button", {
-                    attrs: { description: "translations['remove_work_stage']" },
-                    nativeOn: {
-                      click: function($event) {
-                        return _vm.removeWorkStage(workStage)
+                  _c(
+                    "button",
+                    {
+                      staticClass: "removal-button",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          return _vm.removeWorkStage(workStage)
+                        }
                       }
-                    }
-                  })
+                    },
+                    [
+                      _vm._v(
+                        "\n                 " +
+                          _vm._s(_vm.translations["remove_work_stage"]) +
+                          "\n                 "
+                      ),
+                      _c("img", {
+                        staticClass: "button-icon",
+                        attrs: { src: "/images/decoration/icon_remove.svg" }
+                      })
+                    ]
+                  )
                 ],
                 1
               )
@@ -3710,7 +3744,7 @@ var render = function() {
           _c(
             "positive-button",
             {
-              staticClass: "add-stage-button",
+              staticClass: "add-stage-button colored-button",
               nativeOn: {
                 click: function($event) {
                   return _vm.addPaymentStage($event)
@@ -3721,8 +3755,12 @@ var render = function() {
               _vm._v(
                 "\n             " +
                   _vm._s(_vm.translations["add_payment_stage"]) +
-                  "\n         "
-              )
+                  "\n             "
+              ),
+              _c("img", {
+                staticClass: "button-icon",
+                attrs: { src: "/images/decoration/Group 61.svg" }
+              })
             ]
           ),
           _vm._v(" "),
@@ -3803,6 +3841,15 @@ var render = function() {
                           },
                           expression: "paymentStageDates[paymentStage]"
                         }
+                      }),
+                      _vm._v(" "),
+                      _c("img", {
+                        staticClass: "calendar-icon",
+                        attrs: {
+                          src:
+                            "/images/decoration/Icon awesome-calendar-alt.svg",
+                          alt: ""
+                        }
                       })
                     ],
                     1
@@ -3833,16 +3880,29 @@ var render = function() {
                     ]
                   ),
                   _vm._v(" "),
-                  _c("close-button", {
-                    attrs: {
-                      description: "translations['remove_payment_stage']"
-                    },
-                    nativeOn: {
-                      click: function($event) {
-                        return _vm.removePaymentStage(paymentStage)
+                  _c(
+                    "button",
+                    {
+                      staticClass: "removal-button",
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          return _vm.removePaymentStage(paymentStage)
+                        }
                       }
-                    }
-                  })
+                    },
+                    [
+                      _vm._v(
+                        "\n               " +
+                          _vm._s(_vm.translations["remove_payment_stage"]) +
+                          "\n               "
+                      ),
+                      _c("img", {
+                        staticClass: "button-icon",
+                        attrs: { src: "/images/decoration/icon_remove.svg" }
+                      })
+                    ]
+                  )
                 ],
                 1
               )
@@ -3855,8 +3915,28 @@ var render = function() {
       _vm._v(" "),
       _c(
         "fieldset",
-        { staticClass: "project-form-fieldset" },
+        { staticClass: "project-form-fieldset relative-container" },
         [
+          _c(
+            "relative-shadow-container",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.fetchingClientDataInProgress,
+                  expression: "fetchingClientDataInProgress"
+                }
+              ]
+            },
+            [
+              _c("expect-circle", {
+                attrs: { label: _vm.translations["fetching_client_data"] }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
           _c("caption", {
             staticClass: "project-form-caption",
             domProps: { textContent: _vm._s(_vm.translations["client_data"]) }
@@ -3915,6 +3995,7 @@ var render = function() {
                 "displayed-values": _vm.clientNames,
                 values: _vm.clientIds
               },
+              on: { input: _vm.fetchClientsData },
               model: {
                 value: _vm.clientId,
                 callback: function($$v) {
@@ -3928,6 +4009,25 @@ var render = function() {
                 "\n         " +
                   _vm._s(_vm.translations["client"]) +
                   " : \n      "
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "labeled-input",
+            {
+              attrs: { name: "tax_identification_number" },
+              model: {
+                value: _vm.taxIdentificationNumber,
+                callback: function($$v) {
+                  _vm.taxIdentificationNumber = $$v
+                },
+                expression: "taxIdentificationNumber"
+              }
+            },
+            [
+              _vm._v(
+                _vm._s(_vm.translations["tax_identification_number"]) + " : "
               )
             ]
           )
@@ -3972,25 +4072,6 @@ var render = function() {
               }
             },
             [_vm._v(_vm._s(_vm.translations["company_name"]) + " : ")]
-          ),
-          _vm._v(" "),
-          _c(
-            "labeled-input",
-            {
-              attrs: { name: "tax_identification_number" },
-              model: {
-                value: _vm.taxIdentificationNumber,
-                callback: function($$v) {
-                  _vm.taxIdentificationNumber = $$v
-                },
-                expression: "taxIdentificationNumber"
-              }
-            },
-            [
-              _vm._v(
-                _vm._s(_vm.translations["tax_identification_number"]) + " : "
-              )
-            ]
           )
         ],
         1
@@ -4005,20 +4086,23 @@ var render = function() {
             domProps: { textContent: _vm._s(_vm.translations["summary"]) }
           }),
           _vm._v(" "),
-          _c("span", { staticClass: "payment-summary-container" }, [
+          _c("span", { staticClass: "read-only-box-container" }, [
             _c("span", {
+              staticClass: "read-only-label",
               domProps: { textContent: _vm._s(_vm.translations["total_cost"]) }
             }),
-            _vm._v(" : \n         "),
-            _c("span", {
-              domProps: { textContent: _vm._s(_vm.paymentSummary) }
-            }),
             _vm._v(" "),
-            _c("span", {
-              domProps: {
-                textContent: _vm._s(_vm.translations["current_currency"])
-              }
-            })
+            _c("span", { staticClass: "read-only-content" }, [
+              _c("span", {
+                domProps: { textContent: _vm._s(_vm.paymentSummary) }
+              }),
+              _vm._v(" "),
+              _c("span", {
+                domProps: {
+                  textContent: _vm._s(_vm.translations["current_currency"])
+                }
+              })
+            ])
           ]),
           _vm._v(" "),
           _c(
@@ -4045,6 +4129,14 @@ var render = function() {
                     _vm.finishDate = $$v
                   },
                   expression: "finishDate"
+                }
+              }),
+              _vm._v(" "),
+              _c("img", {
+                staticClass: "calendar-icon",
+                attrs: {
+                  src: "/images/decoration/Icon awesome-calendar-alt.svg",
+                  alt: ""
                 }
               })
             ],
@@ -4076,46 +4168,48 @@ var render = function() {
             ]
           ),
           _vm._v(" "),
-          _c("label", {
-            staticClass: "textarea-label",
-            attrs: { for: "project-comment" },
-            domProps: {
-              textContent: _vm._s(_vm.translations["project_comment"])
-            }
-          }),
-          _vm._v(" "),
-          _c("textarea", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.projectComment,
-                expression: "projectComment"
+          _c("div", { staticClass: "textarea-container" }, [
+            _c("label", {
+              staticClass: "textarea-label",
+              attrs: { for: "project-comment" },
+              domProps: {
+                textContent: _vm._s(_vm.translations["project_comment"])
               }
-            ],
-            staticClass: "nice-textarea",
-            attrs: {
-              name: "comment",
-              id: "project-comment",
-              cols: "30",
-              rows: "10"
-            },
-            domProps: { value: _vm.projectComment },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
+            }),
+            _vm._v(" "),
+            _c("textarea", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.projectComment,
+                  expression: "projectComment"
                 }
-                _vm.projectComment = $event.target.value
+              ],
+              staticClass: "textarea",
+              attrs: {
+                name: "comment",
+                id: "project-comment",
+                cols: "30",
+                rows: "10"
+              },
+              domProps: { value: _vm.projectComment },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.projectComment = $event.target.value
+                }
               }
-            }
-          })
+            })
+          ])
         ],
         1
       ),
       _vm._v(" "),
       _c("button", {
-        staticClass: "positive-button",
+        staticClass: "positive-button colored-button wide-button",
         attrs: { type: "submit" },
         domProps: { textContent: _vm._s(_vm.translations["save"]) }
       })
@@ -20080,10 +20174,12 @@ new vue_1.default({
         };
     },
     methods: {
+        checkProjectStatus: function (project) {
+            return project.status.name === 'finished';
+        },
         showNotification: function (text, type) {
             if (type === void 0) { type = "no-error"; }
             var header = type === "no-error" ? "information" : "error";
-            console.log(text);
             this.$root.$emit('showNotification', { notificationText: this.translations[text], notificationType: type, headerText: this.translations['information'] });
         },
         showEditForm: function (project) {
@@ -20095,14 +20191,7 @@ new vue_1.default({
             this.projectFormIsVisible = true;
         },
         getClientContactData: function (project) {
-            return project.full_name_contact_person + " - " + project.contact_person_email + " - " + project.contact_person_phone_number;
-        },
-        getProjectValuation: function (project) {
-            var totalCost = 0;
-            project.task_stages.forEach(function (value) {
-                totalCost += value.estimated_amount_of_money;
-            });
-            return totalCost;
+            return project.client_contact_person_name + " - " + project.client_email + " - " + project.client_phone_number;
         },
         buildFilterQuery: function () {
             var _this = this;
@@ -20166,6 +20255,7 @@ new vue_1.default({
                         case 3: return [4 /*yield*/, response.json()];
                         case 4:
                             responseBody = _b.sent();
+                            //console.log(responseBody);
                             if (responseBody.length == 0) {
                                 this.showNotification('no_results_have_been_foound_for_your_authentication_level');
                             }
@@ -20220,7 +20310,7 @@ var translations = {
             projects: "Projekty",
             team: "Team",
             payouts: "Wypłaty",
-            income: "Dochód",
+            income: "Przychód",
             cashflow: "Cashflow",
             gantt: "Gantt",
             uploader: "Uploader",
@@ -20236,6 +20326,7 @@ var translations = {
         },
         project_form: {
             client_data: "Dane klienta",
+            adding_project: "Dodawanie projektu",
             client_contact_person: "Osoba do kontaktu",
             client_phone_number: "Telefon kontaktowy",
             client_email: "Email",
@@ -20276,7 +20367,11 @@ var translations = {
             save: "Zapisz",
             team: "Zespół",
             account: "Account",
-            information: "Informacja"
+            information: "Informacja",
+            the_data_is_invalid: "Próba pobrania danych klienta zakończyła się niepowodzeniem. Potencjalne przyczyny : klient został usunięty z bazy, ręcznie zmodyfikowano wartości pola wyboru klienta(element select) w nieprawidłowy sposób",
+            server_error_occured: "Wystąpił błąd po stronie serwera",
+            undefined_error: "Bliżej niezidentyfikowany błąd",
+            fetching_client_data: "Pobieram dane klienta"
         },
         employees_list: {
             full_name: "Imię i nazwisko",

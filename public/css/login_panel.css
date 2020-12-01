@@ -54,7 +54,7 @@ table {
 .body {
   min-height: 100vh;
   border-top: 1px solid transparent;
-  background: #d4cccf;
+  background: white;
 }
 
 .icon-error-close {

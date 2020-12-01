@@ -54,21 +54,31 @@ table {
 .body {
   min-height: 100vh;
   border-top: 1px solid transparent;
-  background: #d4cccf;
+  background: white;
 }
 
 .header {
   font-size: 2vw;
   font-family: "Exo 2", sans-serif;
+  text-align: left;
+  font-family: Montserrat;
   font-weight: bold;
+  letter-spacing: 0px;
   color: black;
-  margin: calc(30px + 2vw) 0 5px;
   padding: 0 0 0 4vw;
+  display: inline-block;
 }
 @media (max-width: 1200px) {
   .header {
     font-size: 23px;
   }
+}
+
+.header-under-navbar {
+  display: block;
+  margin-top: 4.5vw;
+  margin-top: 4.7vw;
+  padding: 0.9vw;
 }
 
 .table-container {
@@ -77,16 +87,16 @@ table {
 }
 
 .table-header {
-  padding: 3px;
+  padding: 1vw 7px;
   font-size: 1.2vw;
-  font-family: "Exo 2", sans-serif;
-  background: black;
+  font-family: Montserrat, sans-serif;
+  background: #3C4346;
   color: white;
   text-align: center;
 }
 @media (max-width: 1200px) {
   .table-header {
-    font-size: 16px;
+    font-size: 12px;
   }
 }
 
@@ -97,26 +107,18 @@ table {
 
 .table-cell {
   color: black;
-  font-size: 1.2vw;
-  font-family: "Exo 2", sans-serif;
   text-align: center;
   padding: 3px;
-  border: 1px solid black;
+  font-size: 1.2vw;
+  font-family: Montserrat, sans-serif;
 }
 @media (max-width: 1200px) {
   .table-cell {
-    font-size: 16px;
+    font-size: 12px;
   }
 }
-
-.table-row:nth-child(odd) {
-  background: white;
-}
-.table-row:nth-child(even) {
-  background: #928b8b;
-}
-.table-row:hover {
-  background: crimson;
+.table-cell:nth-child(even) {
+  background: #efeeee;
 }
 
 .filter-form {

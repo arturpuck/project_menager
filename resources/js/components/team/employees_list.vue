@@ -24,7 +24,7 @@
                </td>
                <td v-text="employee['note']" class="table-cell"></td>
                <td class="table-cell">
-                   <button v-on:click="showEditForm(employee)" v-text="translations['edit']" class="tiny-button"></button>
+                   <button v-on:click="showEditForm(employee)" v-text="translations['edit']" class="blank-button"></button>
                </td>
            </tr>
          </tbody>
@@ -109,7 +109,7 @@
 
 @import '~sass/fonts';
 @import '~sass/components/table';
-@import '~sass/components/tiny_button';
+@import '~sass/components/blank_button';
 
 .skills-list{
    list-style-type: none;

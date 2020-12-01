@@ -235,6 +235,10 @@
                  case 200:
                    this.showNotification(this.translations['employee_data_modified_successfully'])
                  break;
+
+                  case 400:
+                   this.showNotification(this.translations['the_data_is_invalid']);
+                 break;
             }
     }
 

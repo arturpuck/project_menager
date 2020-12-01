@@ -21,6 +21,10 @@ class PaymentStage extends Model
        'payment_status_id',
     ];
 
+    public $with = [
+      'paymentStatus'
+    ];
+
     public function paymentStatus(){
         return $this->belongsTo(PaymentStatus::class);
     }

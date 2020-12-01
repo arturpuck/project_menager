@@ -30,12 +30,6 @@ Route::middleware(['auth'])->group(function(){
 
    Route::name('projects.')->group(function(){
 
-            Route::get('/projects', 'ProjectsController@showProjects')
-            ->name('mainpage');
-
-            Route::get('/projects/filter', 'ProjectsController@filterProjects')
-            ->name('filter');
-
             Route::middleware(['restrictOrdinaryTeamMembers'])->group(function(){
 
                   Route::get('/projects/profitability', 'ProjectsController@showProjectsProfitabilityPanel')
@@ -52,19 +46,24 @@ Route::middleware(['auth'])->group(function(){
 
                   Route::patch('/income/update-status', 'ProjectsController@updatePaymentStage')
                        ->name('update.payment.stage');
+                  
+                  Route::get('/projects', 'ProjectsController@showProjects')
+                       ->name('mainpage');
+           
+                  Route::get('/projects/filter', 'ProjectsController@filterProjects')
+                       ->name('filter');
+
+                  Route::post('/add-project', 'ProjectsController@addOrEditProject')
+                       ->name('add');
             });
 
       
-      
-      Route::post('/add-project', 'ProjectsController@addOrEditProject')
-             ->name('add');
-
    });
 
    Route::name('team.')->group(function(){
 
       Route::get('/team', 'TeamController@showList')
-            ->name('mainpage');
+            ->name('list');
 
       Route::get('/team/get-all', 'TeamController@getAll')
             ->name('get-all');
@@ -80,6 +79,20 @@ Route::middleware(['auth'])->group(function(){
 
       Route::patch('/employee/change-data', 'TeamController@updateEmployeeData')
             ->name('update.employee.data');
+
+      Route::get('/employees/get-with-desired-skill', 'TeamController@getEmployeesWithDesiredSkill')
+             ->middleware('restrictOrdinaryTeamMembers')
+             ->name('get.employee.with.desired.skill');
+   });
+
+   Route::name('clients.')->group(function(){
+
+      Route::middleware(['restrictOrdinaryTeamMembers'])->group(function(){
+
+            Route::get('/clients/get-single', 'ClientsController@getSingle')
+                  ->name('get.single');
+      });
+
    });
 
 

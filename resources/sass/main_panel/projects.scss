@@ -2,9 +2,10 @@
 @import '~sass/fonts';
 @import '~sass/components/decoration/icon_error_cross';
 @import '~sass/components/decoration/error_message';
+@import '~sass/components/decoration/header_container';
 @import '~sass/components/header';
+@import '~sass/components/blank_button';
 @import '~sass/components/table';
-@import '~sass/components/tiny_button';
 
 
 .add-project-button{
@@ -12,15 +13,22 @@
 }
 
 .projects-filter-form{
-  background: black;
+  background: white;
   padding: 5px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
-.filter-button{
+#app .filter-button{
   margin:5px;
+  background:#0FCACA;
+  color:white;
+  @include responsive-font(1.2vw, 15px,Montserrat);
+  height:2em;
+  padding:0 3vw;
+}
+
+#app .shortened-select{
+  min-width: 220px;
+  width: 10vw;
 }
 
 .success-message{
@@ -32,4 +40,25 @@
   text-align: center;
   background: linear-gradient(#0fe00b, #054004);
   @include responsive-font(1.4vw,20px);
+}
+
+.button-icon{
+  margin:0 5px;
+}
+
+.project-list-header{
+  padding: 1.5vw 70px;
+}
+
+.filter-controls{
+  display:flex;
+  justify-content: space-between;
+}
+
+.status-cell{
+  font-weight:bold;
+}
+
+.finished-status{
+  color:#5CC52D;
 }

@@ -24,13 +24,15 @@ new Vue({
             filterProjectId:'',
             filterProjectMenagerId:'',
             filterAccountId:'',
+            filterMonth:'',
             projectsProfitabilityIndex:0,
             projectNames: [],
             accountNames: [],
             projectMenagers: [],
-            projectIncomes: [],
+            realIncomes: [],
             projectCosts:[],
-            operationalProfits: []
+            projectedIncomes: [],
+            currentProfits:[]
         };
     
     },
@@ -84,11 +86,16 @@ new Vue({
               this.projectNames.push(project.name);
               this.accountNames.push(project.account.full_name);
               this.projectMenagers.push(project.project_menager.full_name);
-              this.projectIncomes.push(this.countProjectIncome(project.payment_stages));
+              this.realIncomes.push(this.countProjectRealIncome(project.payment_stages));
               this.projectCosts.push(this.countProjectCost(project.project_reports));
-              this.operationalProfits.push(this.countProjectOperationalProfit(this.projectsProfitabilityIndex - 1));
+              this.projectedIncomes.push(this.countProjectProjectedIncome(project.payment_stages));
+              this.currentProfits.push(this.countCurrentProfits(this.projectsProfitabilityIndex - 1));
         });
           
+    },
+
+    countCurrentProfits(index:number){
+          return this.realIncomes[index] - this.projectCosts[index];
     },
 
     resetTable(){
@@ -96,20 +103,28 @@ new Vue({
         this.projectNames = [];
         this.accountNames = [];
         this.projectMenagers = [];
-        this.projectIncomes = [];
+        this.realIncomes = [];
         this.projectCosts = [];
-        this.operationalProfits = [];
+        this.projectedIncomes = [];
     },
 
-    countProjectOperationalProfit(index:number){
-       return parseFloat(this.projectIncomes[index]) - parseFloat(this.projectCosts[index]);
-    },
-
-    countProjectIncome(paymentStages){
+    countProjectProjectedIncome(paymentStages){
         let totalIncome:number = 0;
 
         paymentStages.forEach(function(paymentStage){
-            totalIncome += paymentStage.ammount;
+                totalIncome += paymentStage.ammount;
+        });
+        return totalIncome;
+    },
+
+    countProjectRealIncome(paymentStages){
+        let totalIncome:number = 0;
+
+        paymentStages.forEach(function(paymentStage){
+
+            if(paymentStage.payment_status.name == 'paid'){
+                totalIncome += paymentStage.ammount;
+            }  
         });
         return totalIncome;
     },

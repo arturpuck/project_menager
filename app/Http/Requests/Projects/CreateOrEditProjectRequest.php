@@ -5,7 +5,6 @@ namespace App\Http\Requests\Projects;
 use Illuminate\Foundation\Http\FormRequest;
 use App\Rules\EmployeeIDBelongsToProjectMenager;
 use App\Rules\EmployeeIDBelongsToAccount;
-use Illuminate\Http\Exceptions\HttpResponseException;
 use App\Models\Project;
 
 
@@ -21,22 +20,10 @@ class CreateOrEditProjectRequest extends FormRequest
         $request = request();
 
         if($projectID = $request->get('project_id')){
-
-            if(Project::canBeEditedByCurrentUser($projectID)){
-                return true;
-            }
-            else{
-                throw new HttpResponseException(response('you_are_not_allowed_to_modify_this_project'),403);
-            }
-            
+          return  Project::canBeEditedByCurrentUser($projectID);  
         }
         else{
-           if(\Auth::user()->can_add_or_edit_projects){
-               return true;
-           }
-           else{
-            throw new HttpResponseException(response('you_are_not_allowed_to_add_projects'),403); 
-           }
+           return \Auth::user()->can_add_or_edit_projects;
         }
     }
 
@@ -52,8 +39,6 @@ class CreateOrEditProjectRequest extends FormRequest
             'project_name' => ['required', 'max:100'],
             'project_menager_id' => ['required', new EmployeeIDBelongsToProjectMenager()],
             'account_id' => ['required', new EmployeeIDBelongsToAccount()],
-            'tasks_ids.*' => ['required', 'exists:tasks,id'],
-            'employees_ids.*' => ['required', 'exists:users,id'],
             'work_stages.*' => ['required', 'exists:tasks,id'],
             'work_stage_engaged_persons.*' => ['required', 'exists:users,id'],
             'work_stage_estimated_number_of_hours.*' => ['required', 'min:0', 'numeric'],
@@ -66,13 +51,14 @@ class CreateOrEditProjectRequest extends FormRequest
             'payment_status' => ['required', 'exists:payment_statuses,id'],
             'client_contact_person' => ['nullable', 'max:40'],
             'client_phone_number' => ['nullable', 'max:20'],
-            'client_email' => ['nullable', 'email'],
-            'client_id' => ['required','exists:clients,id'],
+            'client_email' => ['nullable', 'email', 'max:40'],
+            'client_id' => ['nullable', 'exists:clients,id'],
             'invoice_addres' => ['required', 'max:40'],
             'invoice_company_name' => ['required', 'max:40'],
             'finish_date' => ['required', 'date_format:Y-m-d'],
             'project_comment' => ['nullable', 'max:1000'],
-            'project_status_id' => ['required', 'exists:project_statuses,id']
+            'project_status_id' => ['required', 'exists:project_statuses,id'],
+            'tax_identification_number' => ['required', 'numeric']
         ];
     }
 

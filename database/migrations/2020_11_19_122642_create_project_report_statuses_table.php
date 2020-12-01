@@ -16,7 +16,7 @@ class CreateProjectReportStatusesTable extends Migration
     {
         Schema::create('project_report_statuses', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
+            $table->string('name',30)->unique();
         });
 
         ProjectReportStatus::insert([

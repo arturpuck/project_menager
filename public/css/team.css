@@ -54,21 +54,31 @@ table {
 .body {
   min-height: 100vh;
   border-top: 1px solid transparent;
-  background: #d4cccf;
+  background: white;
 }
 
 .header {
   font-size: 2vw;
   font-family: "Exo 2", sans-serif;
+  text-align: left;
+  font-family: Montserrat;
   font-weight: bold;
+  letter-spacing: 0px;
   color: black;
-  margin: calc(30px + 2vw) 0 5px;
   padding: 0 0 0 4vw;
+  display: inline-block;
 }
 @media (max-width: 1200px) {
   .header {
     font-size: 23px;
   }
+}
+
+.header-under-navbar {
+  display: block;
+  margin-top: 4.5vw;
+  margin-top: 4.7vw;
+  padding: 0.9vw;
 }
 
 .remove-rectangular-element-icon {

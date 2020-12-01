@@ -2,6 +2,7 @@
   "imaggo_project_menager_register_panel" : "Menager projektów firmy Imaggo - panel logowania",
   "login_panel_description" : "Zaloguj się do menagera projektów firmy Imaggo",
   "login" : "Login",
+  "edit" : "Edytuj",
   "password" : "Hasło",
   "log_in" : "Zaloguj",
   "incorrect_login_data" : "Niepoprawne dane logowania",
@@ -28,7 +29,7 @@
   "project_menager" : "Projekt menager",
   "project_name" : "Nazwa projektu",
   "valuation" : "Wycena",
-  "date_finished_at" : "Data zakończenia",
+  "date_finished_at" : "Powinien być zakończony do",
   "comments" : "Komentarze",
   "actions" : "Działania",
   "edit_project" : "Edytuj projekt",
@@ -46,5 +47,8 @@
   "name" : "Nazwa",
   "money_received" : "Kwota",
   "date" : "Data",
-  "status" : "Status"
+  "status" : "Status",
+  "real_income" : "Rzeczywisty przychód",
+  "projected_income" : "Prognozowany przychód",
+  "current_profit" : "Bieżący zysk"
 }

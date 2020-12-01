@@ -7,11 +7,13 @@ use App\Http\Requests\Team\StoreReportRequest;
 use App\Http\Requests\Team\FilterEmployeeReportsRequest;
 use App\Http\Requests\Team\CreateOrEditProjectReportRequest;
 use App\Http\Requests\Team\UpdateEmployeeDataRequest;
+use App\Http\Requests\Team\GetEmployeesWithDesiredSkillRequest;
 use App\Handlers\Team\StoreReportHandler;
 use App\Handlers\Team\CreateOrEditProjectReportHandler;
 use App\Handlers\Team\ShowEmployeesListHandler;
 use App\Handlers\Team\FilterEmployeeReportsHandler;
 use App\Handlers\Team\UpdateEmployeeDataHandler;
+use App\Handlers\Team\GetEmployeesWithDesiredSkillHandler;
 use Symfony\Component\HttpFoundation\Response;
 use App\Models\ProjectReportStatus;
 use App\Helpers\Company;
@@ -54,5 +56,9 @@ class TeamController extends Controller
 
    public function updateEmployeeData(UpdateEmployeeDataRequest $request, UpdateEmployeeDataHandler $updateEmployeeDataHandler){
        return $updateEmployeeDataHandler->handle($request);
+   }
+
+   public function getEmployeesWithDesiredSkill(GetEmployeesWithDesiredSkillRequest $request, GetEmployeesWithDesiredSkillHandler $employeesWithDesiredSkillHandler){
+        return $employeesWithDesiredSkillHandler->handle($request);
    }
 }

@@ -24,18 +24,18 @@
 
 .positive-button
 {
-	background: linear-gradient(#0fe00b, #054004);
-	padding:5px;
-	color:white;
-	width: 15vw;
-    min-width: 200px;
-	border-radius: 5px;
-    font-weight:bold;
-    border: none;
-    cursor:pointer;
-    &:hover{
-        background:#ef0244;
-    }
+	border: 1px solid #0FCACA;
+    border-radius: 10px;
+    opacity: 1;
     @include responsive-font(1.5vw, 19px);
+    font-family:  Montserrat;
+    font-weight:bold;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    cursor:pointer;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5vw 1vw;
 }
 </style>

@@ -22,7 +22,6 @@ class CreateTaskStagesTable extends Migration
             $table->unsignedBigInteger('project_id');
             $table->foreign('project_id')->references('id')->on('projects');
             $table->unsignedFloat('estimated_time_of_work');
-            $table->unsignedFloat('estimated_amount_of_money');
             $table->date('start_at');
             $table->date('deadline');
             $table->engine = 'InnoDB';

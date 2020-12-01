@@ -61,32 +61,39 @@
 
 .select-label{
 	display:flex;
-	align-items: baseline;
-	border-radius:7px;
-	padding: 3px 10px;
-	color:white;
+	align-items: center;
+	border: 1px solid #E3E3E3;
+    border-radius: 4px;
+	padding: 3px 3px 3px 0;
+	color:#3C4346;
 	margin: 5px;
-	background:#242229;
+	background:white;
 	position:relative;
-    border: 2px solid transparent;
     height: 2em;
 }
 
 .select-description{
-	white-space: nowrap;
+    white-space: nowrap;
+    color:#3C4346;
+    line-height: 2em;
+    padding: 0 5px;
+    background: #e9e9ea;
+    opacity: 0.5;
+    font-weight:bold;
 }
 
 .described-select{
 	width:1%;
 	flex-grow: 10;
-	color:white;
+	color:#3C4346;
 	border: none;
-	background:#242229;
-	outline:none;
+	background:white;
+    outline:none;
+    font-weight:bold; 
 }
 
 .described-select, .select-description, .select-label{
-    @include responsive-font;
+    @include responsive-font(1.2vw, 15px,Montserrat);
 }
 
 .described-select-container{

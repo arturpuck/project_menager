@@ -102,7 +102,7 @@ class User extends Authenticatable
     }
 
     public function getCanAddOrEditProjectsAttribute(){
-        return $this->is_admin || $this->is_project_menager || $this->is_account;
+        return !$this->is_ordinary_team_member;
     }
 
     public function clockifyReports(){

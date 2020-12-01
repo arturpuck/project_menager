@@ -41,9 +41,12 @@ new Vue({
    
     methods : {
 
+      checkProjectStatus(project):boolean{
+         return project.status.name === 'finished';
+      },
+
       showNotification(text, type="no-error"){
          const header = type === "no-error" ? "information" : "error";
-         console.log(text);
          this.$root.$emit('showNotification', {notificationText : this.translations[text], notificationType : type, headerText : this.translations['information']});
       },
 
@@ -58,16 +61,7 @@ new Vue({
        },
 
        getClientContactData(project){
-          return `${project.full_name_contact_person} - ${project.contact_person_email} - ${project.contact_person_phone_number}`;
-       },
-
-       getProjectValuation(project){
-          let totalCost:number = 0;
-          project.task_stages.forEach(function(value){
-              totalCost += value.estimated_amount_of_money;
-          });
-
-          return totalCost;
+          return `${project.client_contact_person_name} - ${project.client_email} - ${project.client_phone_number}`;
        },
 
        buildFilterQuery(){
@@ -127,6 +121,7 @@ new Vue({
             switch(response.status){
                 case 200:
                    const responseBody = await response.json();
+                   //console.log(responseBody);
                    if(responseBody.length == 0){
                       this.showNotification('no_results_have_been_foound_for_your_authentication_level')
                    }

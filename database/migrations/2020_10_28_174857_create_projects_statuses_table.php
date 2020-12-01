@@ -16,7 +16,7 @@ class CreateProjectsStatusesTable extends Migration
     {
         Schema::create('project_statuses', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
+            $table->string('name',30)->unique();
             $table->engine = 'InnoDB';
         });
 

@@ -1,0 +1,11 @@
+.blank-button{
+    background:transparent;
+    margin:0;
+    padding:0;
+    outline:none;
+    @include responsive-font(1.2vw, 15px,Montserrat);
+    color:black;
+    font-weight: bold;
+    border: none;
+    cursor:pointer;
+}

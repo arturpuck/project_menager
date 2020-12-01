@@ -1,5 +1,5 @@
 <x-base title="{{$title}}" description="{{$description}}">
-    <h1 class="header">{{__('projects_income')}}</h1>
+    <h1 class="header header-under-navbar">{{__('projects_income')}}</h1>
 
    <form class="filter-form">
       @csrf

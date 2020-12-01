@@ -22,7 +22,7 @@ class CreateProjectReportsTable extends Migration
             $table->unsignedBigInteger('status_id');
             $table->foreign('status_id')->references('id')->on('project_statuses');
             $table->unsignedFloat('time_spent');
-            $table->string('comment',1000);
+            $table->string('comment',1000)->nullable();
             $table->date('updated_at');
         });
     }

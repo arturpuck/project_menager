@@ -4,9 +4,9 @@
   }
   
   .table-header{
-    padding:3px;
-    @include responsive-font();
-    background:black;
+    padding: 1vw 7px;
+    @include responsive-font(1.2vw,12px,Montserrat);
+    background:#3C4346;
     color:white;
     text-align: center;
   }
@@ -18,23 +18,10 @@
   
   .table-cell{
     color:black;
-    @include responsive-font();
     text-align:center;
     padding:3px;
-    border: 1px solid black;
-  }
-
-  .table-row{
-    
-    &:nth-child(odd){
-      background:white;
-    }
-
+    @include responsive-font(1.2vw,12px,Montserrat);
     &:nth-child(even){
-      background:rgb(146, 139, 139);
-    }
-
-    &:hover{
-      background:crimson
+      background:#efeeee;
     }
   }

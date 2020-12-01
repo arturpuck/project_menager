@@ -22,10 +22,6 @@ class Project extends Model
         'client'
     ];
 
-    public function tasks(){
-        return $this->belongsToMany(Task::class,'project_has_task');
-    }
-
     public function projectReports(){
         return $this->hasMany(ProjectReport::class);
     }

@@ -18,7 +18,7 @@ Class GetProjectsProfitabilityHandler {
     public function handle(GetProjectsProfitabilityRequest $request) : Response{
         
        $this->projectsRepository->with(['projectReports', 'paymentStages', 'projectMenager', 'account'])
-                                              ->attachOnlyReceivedPaymentStages()
+                                              ->filterByVisibleInProfitabilityPanel()
                                               ->limitCurrentUserProfitabilityAccess();
         
         if($projectId = $request->get('project_id')){

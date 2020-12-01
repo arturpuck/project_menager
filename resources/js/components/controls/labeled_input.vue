@@ -73,33 +73,37 @@
 .labeled-input-value-label {
     display: flex;
     align-items: baseline;
-    background: #242229;
-    padding: 3px 10px;
-    border-radius: 8px;
-    color:white;
+    background: white;
+    border: 1px solid #E3E3E3;
+    border-radius: 4px;
+    color:#3C4346;
     margin: 5px;
-    border: 2px solid transparent;
     position:relative;
     height: 2em;
+    font-weight:bold;
 }
 
 .text-input-description{
-	white-space: nowrap;
+  white-space: nowrap;
+  line-height:2em;
+  padding:0 10px;
+  background: #e9e9ea;
+  color: #3C4346;
+  opacity: 0.5;
+  font-weight:bold;
+   @include responsive-font(1.2vw, 15px,Montserrat);
 }
 
 .labeled-input-value {
-    background: #242229;
+    background: white;
     border: none;
     border-bottom: 1px solid transparent;
-    color: #fff;
+    @include responsive-font(1.2vw, 15px,Montserrat);
+    color: #3C4346;
     width: 1%;
     flex-grow:10;
     padding-left:4px;
-    box-shadow: 0 0 0 1000px #242229 inset;
-}
-
-.labeled-input-value, .text-input-description, .labeled-input-value-label{
-    @include responsive-font;
+    font-weight:bold;
 }
 
 .labeled-input-value:focus {

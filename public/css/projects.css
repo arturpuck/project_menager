@@ -54,7 +54,7 @@ table {
 .body {
   min-height: 100vh;
   border-top: 1px solid transparent;
-  background: #d4cccf;
+  background: white;
 }
 
 .icon-error-close {
@@ -114,17 +114,51 @@ table {
   }
 }
 
+.header-container {
+  background: #E5FEFE;
+  padding: 3vw;
+  margin: 3.8vw 0 5px;
+}
+
 .header {
   font-size: 2vw;
   font-family: "Exo 2", sans-serif;
+  text-align: left;
+  font-family: Montserrat;
   font-weight: bold;
+  letter-spacing: 0px;
   color: black;
-  margin: calc(30px + 2vw) 0 5px;
   padding: 0 0 0 4vw;
+  display: inline-block;
 }
 @media (max-width: 1200px) {
   .header {
     font-size: 23px;
+  }
+}
+
+.header-under-navbar {
+  display: block;
+  margin-top: 4.5vw;
+  margin-top: 4.7vw;
+  padding: 0.9vw;
+}
+
+.blank-button {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-size: 1.2vw;
+  font-family: Montserrat, sans-serif;
+  color: black;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+@media (max-width: 1200px) {
+  .blank-button {
+    font-size: 15px;
   }
 }
 
@@ -134,16 +168,16 @@ table {
 }
 
 .table-header {
-  padding: 3px;
+  padding: 1vw 7px;
   font-size: 1.2vw;
-  font-family: "Exo 2", sans-serif;
-  background: black;
+  font-family: Montserrat, sans-serif;
+  background: #3C4346;
   color: white;
   text-align: center;
 }
 @media (max-width: 1200px) {
   .table-header {
-    font-size: 16px;
+    font-size: 12px;
   }
 }
 
@@ -154,47 +188,18 @@ table {
 
 .table-cell {
   color: black;
-  font-size: 1.2vw;
-  font-family: "Exo 2", sans-serif;
   text-align: center;
   padding: 3px;
-  border: 1px solid black;
+  font-size: 1.2vw;
+  font-family: Montserrat, sans-serif;
 }
 @media (max-width: 1200px) {
   .table-cell {
-    font-size: 16px;
-  }
-}
-
-.table-row:nth-child(odd) {
-  background: white;
-}
-.table-row:nth-child(even) {
-  background: #928b8b;
-}
-.table-row:hover {
-  background: crimson;
-}
-
-.tiny-button {
-  border: none;
-  padding: 3px;
-  background: linear-gradient(#0fe00b, #054004);
-  font-size: 1vw;
-  font-family: "Exo 2", sans-serif;
-  color: white;
-  outline: none;
-  text-align: center;
-  border-radius: 3px;
-  cursor: pointer;
-}
-@media (max-width: 1200px) {
-  .tiny-button {
     font-size: 12px;
   }
 }
-.tiny-button:hover {
-  background: #ef0244;
+.table-cell:nth-child(even) {
+  background: #efeeee;
 }
 
 .add-project-button {
@@ -202,15 +207,28 @@ table {
 }
 
 .projects-filter-form {
-  background: black;
+  background: white;
   padding: 5px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
-.filter-button {
+#app .filter-button {
   margin: 5px;
+  background: #0FCACA;
+  color: white;
+  font-size: 1.2vw;
+  font-family: Montserrat, sans-serif;
+  height: 2em;
+  padding: 0 3vw;
+}
+@media (max-width: 1200px) {
+  #app .filter-button {
+    font-size: 15px;
+  }
+}
+
+#app .shortened-select {
+  min-width: 220px;
+  width: 10vw;
 }
 
 .success-message {
@@ -228,4 +246,25 @@ table {
   .success-message {
     font-size: 20px;
   }
+}
+
+.button-icon {
+  margin: 0 5px;
+}
+
+.project-list-header {
+  padding: 1.5vw 70px;
+}
+
+.filter-controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.status-cell {
+  font-weight: bold;
+}
+
+.finished-status {
+  color: #5CC52D;
 }

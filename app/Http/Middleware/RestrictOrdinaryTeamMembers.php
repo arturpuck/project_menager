@@ -17,7 +17,7 @@ class RestrictOrdinaryTeamMembers
     public function handle(Request $request, Closure $next)
     {
         if(\Auth::user()->is_ordinary_team_member){
-            return back();
+            return redirect()->route('team.list');
         }
         return $next($request);
     }

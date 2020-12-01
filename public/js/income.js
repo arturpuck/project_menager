@@ -297,7 +297,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".select-label[data-v-0bbb9fa6] {\n  display: flex;\n  align-items: baseline;\n  border-radius: 7px;\n  padding: 3px 10px;\n  color: white;\n  margin: 5px;\n  background: #242229;\n  position: relative;\n  border: 2px solid transparent;\n  height: 2em;\n}\n.select-description[data-v-0bbb9fa6] {\n  white-space: nowrap;\n}\n.described-select[data-v-0bbb9fa6] {\n  width: 1%;\n  flex-grow: 10;\n  color: white;\n  border: none;\n  background: #242229;\n  outline: none;\n}\n.described-select[data-v-0bbb9fa6], .select-description[data-v-0bbb9fa6], .select-label[data-v-0bbb9fa6] {\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n@media (max-width: 1200px) {\n.described-select[data-v-0bbb9fa6], .select-description[data-v-0bbb9fa6], .select-label[data-v-0bbb9fa6] {\n    font-size: 16px;\n}\n}\n.described-select-container[data-v-0bbb9fa6] {\n  min-width: 320px;\n  width: 20vw;\n  display: inline-block;\n}", ""]);
+exports.push([module.i, ".select-label[data-v-0bbb9fa6] {\n  display: flex;\n  align-items: center;\n  border: 1px solid #E3E3E3;\n  border-radius: 4px;\n  padding: 3px 3px 3px 0;\n  color: #3C4346;\n  margin: 5px;\n  background: white;\n  position: relative;\n  height: 2em;\n}\n.select-description[data-v-0bbb9fa6] {\n  white-space: nowrap;\n  color: #3C4346;\n  line-height: 2em;\n  padding: 0 5px;\n  background: #e9e9ea;\n  opacity: 0.5;\n  font-weight: bold;\n}\n.described-select[data-v-0bbb9fa6] {\n  width: 1%;\n  flex-grow: 10;\n  color: #3C4346;\n  border: none;\n  background: white;\n  outline: none;\n  font-weight: bold;\n}\n.described-select[data-v-0bbb9fa6], .select-description[data-v-0bbb9fa6], .select-label[data-v-0bbb9fa6] {\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n}\n@media (max-width: 1200px) {\n.described-select[data-v-0bbb9fa6], .select-description[data-v-0bbb9fa6], .select-label[data-v-0bbb9fa6] {\n    font-size: 15px;\n}\n}\n.described-select-container[data-v-0bbb9fa6] {\n  min-width: 320px;\n  width: 20vw;\n  display: inline-block;\n}", ""]);
 
 // exports
 
@@ -316,7 +316,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".positive-button {\n  background: linear-gradient(#0fe00b, #054004);\n  padding: 5px;\n  color: white;\n  width: 15vw;\n  min-width: 200px;\n  border-radius: 5px;\n  font-weight: bold;\n  border: none;\n  cursor: pointer;\n  font-size: 1.5vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n.positive-button:hover {\n  background: #ef0244;\n}\n@media (max-width: 1200px) {\n.positive-button {\n    font-size: 19px;\n}\n}", ""]);
+exports.push([module.i, ".positive-button {\n  border: 1px solid #0FCACA;\n  border-radius: 10px;\n  opacity: 1;\n  font-size: 1.5vw;\n  font-family: \"Exo 2\", sans-serif;\n  font-family: Montserrat;\n  font-weight: bold;\n  letter-spacing: 0px;\n  color: #000000;\n  opacity: 1;\n  cursor: pointer;\n  display: inline-flex;\n  align-items: center;\n  padding: 0.5vw 1vw;\n}\n@media (max-width: 1200px) {\n.positive-button {\n    font-size: 19px;\n}\n}", ""]);
 
 // exports
 
@@ -373,7 +373,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".links-list {\n  list-style-type: none;\n  padding: 0;\n  margin: 0;\n}\n.links-list-element {\n  display: inline;\n  font-size: 1.3vw;\n  font-family: \"Exo 2\", sans-serif;\n  display: inline-block;\n}\n@media (max-width: 1200px) {\n.links-list-element {\n    font-size: 12px;\n}\n}\n.navbar-link {\n  text-decoration: none;\n  padding: 7px;\n  display: inline-block;\n  cursor: pointer;\n  font-size: 1.3vw;\n  font-family: \"Exo 2\", sans-serif;\n  color: white;\n}\n@media (max-width: 1200px) {\n.navbar-link {\n    font-size: 12px;\n}\n}\n.navbar-link:hover {\n  background: crimson;\n}\n.horizontal-navbar {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  background: black;\n}\n.logout-form {\n  position: absolute;\n  top: -9999px;\n  left: 0;\n}\n.navbar-option-logout {\n  font-size: 1.3vw;\n  font-family: \"Exo 2\", sans-serif;\n  cursor: pointer;\n  display: inline-block;\n  padding: 7px;\n  color: white;\n}\n@media (max-width: 1200px) {\n.navbar-option-logout {\n    font-size: 12px;\n}\n}\n.navbar-option-logout:hover {\n  background: crimson;\n}", ""]);
+exports.push([module.i, ".links-list {\n  list-style-type: none;\n  padding: 0;\n  margin: 0;\n  display: flex;\n  font-size: 0;\n}\n.links-list-element {\n  display: inline;\n}\n.navbar-link {\n  text-decoration: none;\n  line-height: 3.9vw;\n  display: inline-block;\n  cursor: pointer;\n  font-size: 1.3vw;\n  font-family: \"Exo 2\", sans-serif;\n  font-family: \"Montserrat\", sans-serif;\n  font-weight: bold;\n  padding: 0 2vw;\n  color: #FFFFFF;\n}\n@media (max-width: 1200px) {\n.navbar-link {\n    font-size: 13px;\n}\n}\n.navbar-link:hover {\n  background: #159797;\n}\n.horizontal-navbar {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  background: #0FCACA;\n}\n.logout-form {\n  position: absolute;\n  top: -9999px;\n  left: 0;\n}\n.logout-caption {\n  font-size: 1.3vw;\n  font-family: \"Exo 2\", sans-serif;\n  font-family: \"Montserrat\", sans-serif;\n  cursor: pointer;\n  display: inline-block;\n  font-weight: bold;\n  color: white;\n  line-height: 3vw;\n  padding: 0 1vw;\n  border: 1px solid #FFFFFF;\n  border-radius: 10px;\n}\n@media (max-width: 1200px) {\n.logout-caption {\n    font-size: 12px;\n}\n}\n.company-logo {\n  height: 2.5vw;\n}\n.logo-list-element {\n  padding: 0.7vw 7vw;\n}\n.logout-element {\n  display: flex;\n  align-items: center;\n  padding: 0 1vw;\n}\n.logout-element:hover {\n  background: #159797;\n}", ""]);
 
 // exports
 
@@ -2404,13 +2404,17 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("nav", { staticClass: "horizontal-navbar" }, [
     _c("ul", { staticClass: "links-list" }, [
-      _c("li", { staticClass: "links-list-element" }, [
-        _c("a", {
-          staticClass: "navbar-link",
-          attrs: { href: "/projects" },
-          domProps: { textContent: _vm._s(_vm.translations["projects"]) }
-        })
-      ]),
+      _vm._m(0),
+      _vm._v(" "),
+      !_vm.ordinaryTeamMember
+        ? _c("li", { staticClass: "links-list-element" }, [
+            _c("a", {
+              staticClass: "navbar-link",
+              attrs: { href: "/projects" },
+              domProps: { textContent: _vm._s(_vm.translations["projects"]) }
+            })
+          ])
+        : _vm._e(),
       _vm._v(" "),
       _c("li", { staticClass: "links-list-element" }, [
         _c("a", {
@@ -2445,7 +2449,7 @@ var render = function() {
       _c(
         "li",
         {
-          staticClass: "links-list-element navbar-option-logout",
+          staticClass: "links-list-element logout-element",
           on: { click: _vm.logout }
         },
         [
@@ -2465,6 +2469,7 @@ var render = function() {
           ),
           _vm._v(" "),
           _c("span", {
+            staticClass: "logout-caption",
             domProps: { textContent: _vm._s(_vm.translations["logout"]) }
           })
         ]
@@ -2472,7 +2477,19 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "links-list-element logo-list-element" }, [
+      _c("img", {
+        staticClass: "company-logo",
+        attrs: { src: "/images/decoration/logo_navbar.svg", alt: "" }
+      })
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -15846,7 +15863,7 @@ var translations = {
             projects: "Projekty",
             team: "Team",
             payouts: "Wypłaty",
-            income: "Dochód",
+            income: "Przychód",
             cashflow: "Cashflow",
             gantt: "Gantt",
             uploader: "Uploader",
@@ -15862,6 +15879,7 @@ var translations = {
         },
         project_form: {
             client_data: "Dane klienta",
+            adding_project: "Dodawanie projektu",
             client_contact_person: "Osoba do kontaktu",
             client_phone_number: "Telefon kontaktowy",
             client_email: "Email",
@@ -15902,7 +15920,11 @@ var translations = {
             save: "Zapisz",
             team: "Zespół",
             account: "Account",
-            information: "Informacja"
+            information: "Informacja",
+            the_data_is_invalid: "Próba pobrania danych klienta zakończyła się niepowodzeniem. Potencjalne przyczyny : klient został usunięty z bazy, ręcznie zmodyfikowano wartości pola wyboru klienta(element select) w nieprawidłowy sposób",
+            server_error_occured: "Wystąpił błąd po stronie serwera",
+            undefined_error: "Bliżej niezidentyfikowany błąd",
+            fetching_client_data: "Pobieram dane klienta"
         },
         employees_list: {
             full_name: "Imię i nazwisko",

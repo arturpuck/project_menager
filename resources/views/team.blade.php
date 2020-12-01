@@ -1,5 +1,5 @@
 <x-base title="{{$title}}" description="{{$description}}">
-    <h1 class="header">{{__('team_members_list')}}</h1>
+    <h1 class="header header-under-navbar">{{__('team_members_list')}}</h1>
     @if(Session::has('succesMessage'))
        <div class="success-message">{{__(Session::get('succesMessage'))}}</div>
    @endif
