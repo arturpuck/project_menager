@@ -25,19 +25,16 @@ class CreateUserHasPositionTable extends Migration
 
         $user = User::find(1);
         $user->positions()->sync([4]);
+        $user->skills()->sync([1,2,3,4,16,17,18]);
 
         $user = User::find(2);
         $user->positions()->sync([1,4]);
+        $user->skills()->sync([21,23,25,8,9,10]);
 
         $user = User::find(3);
         $user->positions()->sync([2,3]);
-
-        $employee = User::find(1);
-        $employee->skills()->sync([1,2,3,4]);
-        $employee = User::find(2);
-        $employee->skills()->sync([8,10,11]);
-        $employee = User::find(2);
-        $employee->skills()->sync([1,2,3,4,5,6,7]);
+        $user->skills()->sync([8,9,10,11,12,13, 24, 15]);
+        
     }
 
     /**

@@ -64,10 +64,13 @@ const translations:object = {
             team : "Zespół",
             account : "Account",
             information : "Informacja",
+            the_work_range_data_is_invalid : "Błędne dane zakresu pracy. Prawdopodobnie wybrany zakres już nie istnieje, lub w jakiś sposób zmodyfikowano dane przechowywane w elemencie select",
             the_data_is_invalid : "Próba pobrania danych klienta zakończyła się niepowodzeniem. Potencjalne przyczyny : klient został usunięty z bazy, ręcznie zmodyfikowano wartości pola wyboru klienta(element select) w nieprawidłowy sposób",
             server_error_occured : "Wystąpił błąd po stronie serwera",
             undefined_error : "Bliżej niezidentyfikowany błąd",
-            fetching_client_data : "Pobieram dane klienta"
+            fetching_client_data : "Pobieram dane klienta",
+            in_order_to_select_an_employee_you_have_to_select_work_range : "Kontrolka jest chwilowo zablokowana, ponieważ aby wybrać pracownika należy najpierw wybrać zakres prac. Pobrana zostanie lista osób z wybraną umiejętnością",
+            there_are_no_employees_with_this_skill : "Nie znaleziono pracowników z taką umiejętnością/biegłych w danym zakresie pracy"
         },
 
         employees_list : {

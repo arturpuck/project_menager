@@ -35,6 +35,17 @@ class CreateSkillsTable extends Migration
             ['name' => 'Woo'],
             ['name' => 'PhotoShop'],
             ['name' => 'UI/UX'],
+            ['name' => 'copywriting'],
+            ['name' => 'development'],
+            ['name' => 'UX consulting'],
+            ['name' => 'UX mock_ups'],
+            ['name' => 'PM'],
+            ['name' => 'graphical projects'],
+            ['name' => 'tech leadership'],
+            ['name' => 'testing'],
+            ['name' => 'creating specification'],
+            ['name' => 'UI'],
+            ['name' => 'implementation']
         ]);
     }
 

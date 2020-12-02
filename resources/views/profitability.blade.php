@@ -3,11 +3,6 @@
 
    <form class="filter-form">
       @csrf
-         <labeled-select v-model="filterProjectId" name="project_id" 
-            v-bind:values="{{json_encode($availableProjects->pluck('id'),true)}}"
-            v-bind:displayed-values="{{json_encode($availableProjects->pluck('name'),true)}}">
-            {{__('project')}} : 
-         </labeled-select>
          <labeled-select v-model="filterProjectMenagerId" name="project_menager_id" 
             v-bind:values="{{json_encode($projectMenagers->pluck('id'),true)}}"
             v-bind:displayed-values="{{json_encode($projectMenagers->pluck('full_name'),true)}}">
@@ -22,6 +17,10 @@
             v-bind:values="['01','02','03','04','05','06', '07', '08','09', '10', '11', '12']"
             v-bind:displayed-values="{{json_encode($months)}}">
             {{__('month')}} : 
+         </labeled-select>
+         <labeled-select v-model="filterYear" class="shortened-select" name="year"
+               v-bind:displayed-values="{{json_encode($yearsRange)}}">
+               {{__('year')}} : 
          </labeled-select>
          
        <positive-button v-on:click.native="getProjectProfitabilityData" class="filter-button">

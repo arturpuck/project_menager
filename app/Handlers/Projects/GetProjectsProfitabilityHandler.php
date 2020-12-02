@@ -21,9 +21,13 @@ Class GetProjectsProfitabilityHandler {
                                               ->filterByVisibleInProfitabilityPanel()
                                               ->limitCurrentUserProfitabilityAccess();
         
-        if($projectId = $request->get('project_id')){
-           $this->projectsRepository->filterById($projectId);
+        if($month = $request->get('month')){
+           $this->projectsRepository->filterByLastPaymentStageMonth($month);
         }
+
+        if($year = $request->get('year')){
+            $this->projectsRepository->filterByLastPaymentStageYear($year);
+         }
 
         if($projectMenagerId = $request->get('project_menager_id')){
             $this->projectsRepository->filterByProjectMenagerId($projectMenagerId);

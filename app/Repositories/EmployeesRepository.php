@@ -23,8 +23,8 @@ Class EmployeesRepository extends BaseRepository {
 
     public function filterBySkillId(int $skillId): EmployeesRepository {
 
-        $this->query = $this->query->whereHas('skill', function($query) use ($skillId){
-             $query->where('id',$skillId);
+        $this->query = $this->query->whereHas('skills', function($query) use ($skillId){
+             $query->where('skills.id',$skillId);
         });
 
         return $this;

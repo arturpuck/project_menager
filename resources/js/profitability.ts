@@ -21,10 +21,10 @@ new Vue({
     data() {
 
         return{
-            filterProjectId:'',
             filterProjectMenagerId:'',
             filterAccountId:'',
             filterMonth:'',
+            filterYear:'',
             projectsProfitabilityIndex:0,
             projectNames: [],
             accountNames: [],
@@ -51,9 +51,6 @@ new Vue({
                 };
                 let queryParams:string = '';
 
-                if(this.filterProjectId){
-                   queryParams = `project_id=${this.filterProjectId}&`;
-                }
 
                 if(this.filterProjectMenagerId){
                     queryParams += `project_menager_id=${this.filterProjectMenagerId}&`;
@@ -61,6 +58,14 @@ new Vue({
 
                  if(this.filterAccountId){
                     queryParams += `account_id=${this.filterAccountId}&`;
+                 }
+
+                 if(this.filterYear){
+                    queryParams += `year=${this.filterYear}&`;
+                 }
+
+                 if(this.filterMonth){
+                    queryParams += `month=${this.filterMonth}&`;
                  }
                 
                  queryParams = queryParams.slice(0,-1);

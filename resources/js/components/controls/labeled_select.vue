@@ -4,10 +4,10 @@
         <span class="select-description">
             <slot></slot>
         </span>
-        <select v-bind:name="name" v-bind:disabled="isDisabled" v-on:input="emitData" v-bind:value="value" ref="select_value" class="described-select">
+        <select v-bind:name="name" v-bind:disabled="inputIsDisabled" v-on:input="emitData" v-bind:value="value" ref="select_value" class="described-select">
             <option value="">---</option>
-            <option v-if="values" v-for="(value, index) in displayedValues" v-bind:value="values[index]">{{value}}</option>
-            <option v-if="!values" v-for="(value, index) in displayedValues" v-bind:value="displayedValues[index]">{{value}}</option>
+            <option v-if="selectValues" v-for="(value, index) in displayedSelectValues" v-bind:value="selectValues[index]">{{value}}</option>
+            <option v-if="!selectValues" v-for="(value, index) in displayedSelectValues" v-bind:value="displayedSelectValues[index]">{{value}}</option>
         </select>
     </label>
 </div>
@@ -21,19 +21,20 @@
   
    @Prop({
             type: Array,
-            required: true,
-    }) readonly displayedValues: Array<string>;
+            required: false,
+            default: function () {return [];}
+    }) readonly displayedValues;
 
     @Prop({
             type: Array,
             required: false,
-            default:undefined
-    }) readonly values: Array<string>;
+            default: function () {return [];}
+    }) readonly values;
 
     @Prop({
             type: String,
             required: true,
-    }) readonly name: Array<string>;
+    }) readonly name: string;
 
     @Prop({
             type: [String, Number],
@@ -47,10 +48,61 @@
             default:false
     }) readonly isDisabled: boolean;
 
+    @Prop({
+            type: [String, Number],
+            required: false,
+            default: undefined
+    }) readonly identifier:  string | number;
+
+    private dynamicDisabledState:boolean = null;
+    private dynamicDisplayedValues:Array<string> = null;
+    private dynamicValues:Array<string> = null;
+
+
     emitData(event){
        this.$emit('input',event.target.value);
     }
+    
+    get inputIsDisabled() : boolean{
 
+        return (this.dynamicDisabledState === null) ? this.isDisabled : this.dynamicDisabledState;
+    }
+
+    get selectValues():Array<string>{
+
+        return (this.dynamicValues === null) ? this.values : this.dynamicValues;
+    }
+
+    get displayedSelectValues():Array<string>{
+
+        return (this.dynamicDisplayedValues === null) ? this.displayedValues : this.dynamicDisplayedValues;
+    }
+
+    created(){
+
+        if(this.identifier){
+            this.$root.$on(`modifyValues${this.identifier}`, this.modifyValues);
+            this.$root.$on(`modifyDisabledState${this.identifier}`, this.modifyDisabledState);
+        }
+    }
+
+    modifyValues(values){
+       
+        if(values['displayed']){
+            this.dynamicDisplayedValues = values['displayed'];
+        }
+
+        if(values['values']){
+            this.dynamicValues = values['values'];
+        }
+    }
+
+    modifyDisabledState(state){
+        this.dynamicDisabledState = state;
+    }
+
+
+    
 
   }
 </script>

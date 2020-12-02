@@ -5,6 +5,7 @@ namespace App\Http\Requests\Projects;
 use Illuminate\Foundation\Http\FormRequest;
 use App\Rules\EmployeeIDBelongsToProjectMenager;
 use App\Rules\EmployeeIDBelongsToAccount;
+use App\Rules\SkillsMatchEmployee;
 use App\Models\Project;
 
 
@@ -40,7 +41,7 @@ class CreateOrEditProjectRequest extends FormRequest
             'project_menager_id' => ['required', new EmployeeIDBelongsToProjectMenager()],
             'account_id' => ['required', new EmployeeIDBelongsToAccount()],
             'work_stages.*' => ['required', 'exists:tasks,id'],
-            'work_stage_engaged_persons.*' => ['required', 'exists:users,id'],
+            'work_stage_engaged_persons.*' => ['required', 'exists:users,id', new SkillsMatchEmployee($this->work_stages, $this->work_stage_engaged_persons)],
             'work_stage_estimated_number_of_hours.*' => ['required', 'min:0', 'numeric'],
             'work_stage_estimated_ammount_of_money.*' => ['required', 'min:0', 'numeric'],
             'work_stage_date_start.*' => ['required', 'date_format:Y-m-d'],

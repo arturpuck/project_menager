@@ -5,6 +5,7 @@ namespace App\Http\Requests\Projects;
 use Illuminate\Foundation\Http\FormRequest;
 use App\Rules\EmployeeIDBelongsToAccount;
 use App\Rules\EmployeeIDBelongsToProjectMenager;
+use App\Rules\YearWhenCompanyExisted;
 
 class GetProjectsProfitabilityRequest extends FormRequest
 {
@@ -26,9 +27,10 @@ class GetProjectsProfitabilityRequest extends FormRequest
     public function rules()
     {
         return [
-            'project_id' => ['nullable', 'exists:projects,id'],
             'account_id' => ['nullable', new EmployeeIDBelongsToAccount()],
-            'project_menager_id' => ['nullable', new EmployeeIDBelongsToProjectMenager()]
+            'project_menager_id' => ['nullable', new EmployeeIDBelongsToProjectMenager()],
+            'month' => ['nullable', 'numeric', 'min:1', 'max:12'],
+            'year' => ['nullable', new YearWhenCompanyExisted()]
         ];
     }
 }

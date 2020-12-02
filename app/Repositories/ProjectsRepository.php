@@ -118,5 +118,24 @@ Class ProjectsRepository extends BaseRepository {
         return $this;
    }
 
+   public function filterByLastPaymentStageMonth($month): ProjectsRepository{
+
+       $this->query = $this->query->whereHas('lastPaymentStage', function($query) use ($month){
+             $query->whereMonth('estimated_payment_date', $month);    
+       });
+       
+       return $this;
+   }
+
+   public function filterByLastPaymentStageYear($year): ProjectsRepository{
+
+     $this->query = $this->query->whereHas('lastPaymentStage', function($query) use ($year){
+           $query->whereYear('estimated_payment_date', $year);    
+     });
+
+     return $this;
+
+   }
+
     
 }

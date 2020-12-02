@@ -22,6 +22,8 @@ class CreateUserHasSkillTable extends Migration
             $table->foreign('skill_id')->references('id')->on('skills');
             $table->timestamps();
         });
+
+        
         
        
     }

@@ -2,34 +2,27 @@
 
 namespace App\Handlers\Projects;
 
-use App\Repositories\ProjectsRepository;
 use App\Repositories\EmployeesRepository;
 use App\Helpers\Months;
+use App\Helpers\Company;
 
 
 Class ShowProjectsProfitabilityPanelHandler {
 
-    private ProjectsRepository $projectsRepository;
     private EmployeesRepository $employeesRepository;
 
-    public function __construct(ProjectsRepository $projectsRepository, EmployeesRepository $employeesRepository){
+    public function __construct(EmployeesRepository $employeesRepository){
 
-        $this->projectsRepository = $projectsRepository;
         $this->employeesRepository = $employeesRepository;
     }
 
     public function handle(){
 
-      $availableProjects =  $this->projectsRepository->with(['projectReports','paymentStages'])
-                                 ->filterByVisibleInProfitabilityPanel()
-                                 ->limitCurrentUserProfitabilityAccess()
-                                 ->get();
-
      $projectMenagers = $this->employeesRepository 
                              ->filterByPositions(['project menager'])
                              ->get();
 
-     $this->projectsRepository->resetQuery();  //może warto by zoptymalizować na 1 strzał do bazy
+     $this->employeesRepository->resetQuery();  //może warto by zoptymalizować na 1 strzał do bazy
 
      $accounts = $this->employeesRepository 
                       ->filterByPositions(['account'])
@@ -39,7 +32,8 @@ Class ShowProjectsProfitabilityPanelHandler {
     $title = 'projects_profitability';
     $description = 'find_out_if_you_make_money_on_your_projects';
     $months = Months::names[\App::getLocale()];
+    $yearsRange = Company::getYearsRange();
 
-     return compact('availableProjects', 'projectMenagers', 'accounts', 'title', 'description', 'months');
+     return compact('projectMenagers', 'accounts', 'title', 'description', 'months', 'yearsRange');
     }
 }

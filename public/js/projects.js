@@ -430,7 +430,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".remove-rectangular-element-icon {\n  width: 1.8vw;\n  height: 1.8vw;\n}\n.rectangular-elements-list {\n  list-style-type: none;\n  padding: 4px;\n  margin: 0;\n}\n.rectangular-list-element {\n  padding: 5px;\n  display: inline-block;\n  margin: 5px;\n  background: black;\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n@media (max-width: 1200px) {\n.rectangular-list-element {\n    font-size: 16px;\n}\n}\n.removal-button {\n  padding: 0 10px;\n  color: white;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  background: crimson;\n  display: inline-flex;\n  align-items: center;\n  border: none;\n  border-radius: 4px;\n  line-height: 2em;\n  cursor: pointer;\n}\n@media (max-width: 1200px) {\n.removal-button {\n    font-size: 15px;\n}\n}\n.textarea-container {\n  display: flex;\n  flex-wrap: nowrap;\n  border: 1px solid #E3E3E3;\n  border-radius: 4px;\n  align-items: stretch;\n}\n.textarea-label {\n  flex-basis: 15%;\n  background: #efeeee;\n  font-size: 1.1vw;\n  font-family: Montserrat, sans-serif;\n  color: black;\n  font-weight: bold;\n}\n@media (max-width: 1200px) {\n.textarea-label {\n    font-size: 12px;\n}\n}\n.textarea {\n  flex-basis: 85%;\n  color: black;\n  font-size: 1.3vw;\n  font-family: Montserrat, sans-serif;\n  border: none;\n}\n@media (max-width: 1200px) {\n.textarea {\n    font-size: 14px;\n}\n}\n.read-only-box-container {\n  display: inline-flex;\n  flex-wrap: nowrap;\n}\n.read-only-label {\n  color: white;\n  background: #00C8C8;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  line-height: 2em;\n  white-space: nowrap;\n  padding: 0 0.3vw;\n  border-radius: 4px 0 0 4px;\n}\n@media (max-width: 1200px) {\n.read-only-label {\n    font-size: 15px;\n}\n}\n.read-only-content {\n  color: black;\n  font-weight: bold;\n  background: #e9e9ea;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  line-height: 2em;\n  white-space: nowrap;\n  padding: 0 0.3vw;\n  border-radius: 0 4px 4px 0;\n}\n@media (max-width: 1200px) {\n.read-only-content {\n    font-size: 15px;\n}\n}\n.datepicker-wrapper {\n  display: inline-flex;\n  flex-wrap: nowrap;\n  align-items: center;\n  border: 1px solid #E3E3E3;\n  border-radius: 4px;\n}\n.datepicker-description {\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  line-height: 2em;\n  white-space: nowrap;\n  color: #3C4346;\n  padding: 0 5px;\n  background: #e9e9ea;\n  opacity: 0.5;\n  font-weight: bold;\n}\n@media (max-width: 1200px) {\n.datepicker-description {\n    font-size: 15px;\n}\n}\n#app .calendar-input {\n  color: #3C4346;\n  border: none;\n  background: white;\n  outline: none;\n  font-weight: bold;\n}\n.calendar-icon {\n  width: 0.8em;\n  height: 0.8em;\n  margin: 0 4px;\n}\n#app .flickering-circle {\n  background: #d0d7dc;\n}\n#app .expect-circles-label {\n  font-size: 1.1vw;\n  font-family: Montserrat, sans-serif;\n}\n@media (max-width: 1200px) {\n#app .expect-circles-label {\n    font-size: 12px;\n}\n}\n.wide-button {\n  display: block;\n  width: 95%;\n  margin: 0 auto;\n}\n.relative-container {\n  position: relative;\n}\n.calendar-input {\n  background: #242229;\n  color: white;\n  padding: 4px;\n  border: none;\n}\n.stages-list {\n  list-style-type: none;\n  padding: 4px;\n  margin: 0;\n}\n.add-stage-button {\n  margin: 5px;\n  display: block;\n}\n.project-form-caption {\n  font-size: 1.5vw;\n  font-family: Montserrat, sans-serif;\n  letter-spacing: 0px;\n  color: #3C4346;\n  opacity: 1;\n  display: block;\n  text-align: left;\n  padding-left: 2vw;\n}\n@media (max-width: 1200px) {\n.project-form-caption {\n    font-size: 22px;\n}\n}\n.project-form-fieldset {\n  padding: 1vw;\n}\n.project-form {\n  padding: 10px;\n  position: fixed;\n  top: 0;\n  width: 100%;\n  left: 0;\n  overflow-y: auto;\n  background: #fbffff;\n  max-height: 100vh;\n}\n.introductory-bar {\n  display: flex;\n  justify-content: space-between;\n  padding: 5px;\n}\n.button-icon {\n  margin: 0 10px;\n}\n.colored-button {\n  background: #00C8C8;\n  color: white;\n  padding: 0.7vw 10px;\n}", ""]);
+exports.push([module.i, ".remove-rectangular-element-icon {\n  width: 1.8vw;\n  height: 1.8vw;\n}\n.rectangular-elements-list {\n  list-style-type: none;\n  padding: 4px;\n  margin: 0;\n}\n.rectangular-list-element {\n  padding: 5px;\n  display: inline-block;\n  margin: 5px;\n  background: black;\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n@media (max-width: 1200px) {\n.rectangular-list-element {\n    font-size: 16px;\n}\n}\n.removal-button {\n  padding: 0 10px;\n  color: white;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  background: crimson;\n  display: inline-flex;\n  align-items: center;\n  border: none;\n  border-radius: 4px;\n  line-height: 2em;\n  cursor: pointer;\n}\n@media (max-width: 1200px) {\n.removal-button {\n    font-size: 15px;\n}\n}\n.textarea-container {\n  display: flex;\n  flex-wrap: nowrap;\n  border: 1px solid #E3E3E3;\n  border-radius: 4px;\n  align-items: stretch;\n}\n.textarea-label {\n  flex-basis: 15%;\n  background: #efeeee;\n  font-size: 1.1vw;\n  font-family: Montserrat, sans-serif;\n  color: black;\n  font-weight: bold;\n}\n@media (max-width: 1200px) {\n.textarea-label {\n    font-size: 12px;\n}\n}\n.textarea {\n  flex-basis: 85%;\n  color: black;\n  font-size: 1.3vw;\n  font-family: Montserrat, sans-serif;\n  border: none;\n}\n@media (max-width: 1200px) {\n.textarea {\n    font-size: 14px;\n}\n}\n.read-only-box-container {\n  display: inline-flex;\n  flex-wrap: nowrap;\n}\n.read-only-label {\n  color: white;\n  background: #00C8C8;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  line-height: 2em;\n  white-space: nowrap;\n  padding: 0 0.3vw;\n  border-radius: 4px 0 0 4px;\n}\n@media (max-width: 1200px) {\n.read-only-label {\n    font-size: 15px;\n}\n}\n.read-only-content {\n  color: black;\n  font-weight: bold;\n  background: #e9e9ea;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  line-height: 2em;\n  white-space: nowrap;\n  padding: 0 0.3vw;\n  border-radius: 0 4px 4px 0;\n}\n@media (max-width: 1200px) {\n.read-only-content {\n    font-size: 15px;\n}\n}\n.datepicker-wrapper {\n  display: inline-flex;\n  flex-wrap: nowrap;\n  align-items: center;\n  border: 1px solid #E3E3E3;\n  border-radius: 4px;\n}\n.datepicker-description {\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  line-height: 2em;\n  white-space: nowrap;\n  color: #3C4346;\n  padding: 0 5px;\n  background: #e9e9ea;\n  opacity: 0.5;\n  font-weight: bold;\n}\n@media (max-width: 1200px) {\n.datepicker-description {\n    font-size: 15px;\n}\n}\n#app .calendar-input {\n  color: #3C4346;\n  border: none;\n  background: white;\n  outline: none;\n  font-weight: bold;\n}\n.calendar-icon {\n  width: 0.8em;\n  height: 0.8em;\n  margin: 0 4px;\n}\n.select-label {\n  display: flex;\n  align-items: center;\n  border: 1px solid #E3E3E3;\n  border-radius: 4px;\n  padding: 3px 3px 3px 0;\n  color: #3C4346;\n  margin: 5px;\n  background: white;\n  position: relative;\n  height: 2em;\n}\n.select-description {\n  white-space: nowrap;\n  color: #3C4346;\n  line-height: 2em;\n  padding: 0 5px;\n  background: #e9e9ea;\n  opacity: 0.5;\n  font-weight: bold;\n}\n.described-select {\n  width: 1%;\n  flex-grow: 10;\n  color: #3C4346;\n  border: none;\n  background: white;\n  outline: none;\n  font-weight: bold;\n}\n.described-select, .select-description, .select-label {\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n}\n@media (max-width: 1200px) {\n.described-select, .select-description, .select-label {\n    font-size: 15px;\n}\n}\n.described-select-container {\n  min-width: 320px;\n  width: 20vw;\n  display: inline-block;\n}\n#app .flickering-circle {\n  background: #d0d7dc;\n}\n#app .expect-circles-label {\n  font-size: 1.1vw;\n  font-family: Montserrat, sans-serif;\n}\n@media (max-width: 1200px) {\n#app .expect-circles-label {\n    font-size: 12px;\n}\n}\n.wide-button {\n  display: block;\n  width: 95%;\n  margin: 0 auto;\n}\n.relative-container {\n  position: relative;\n}\n.calendar-input {\n  background: #242229;\n  color: white;\n  padding: 4px;\n  border: none;\n}\n.stages-list {\n  list-style-type: none;\n  padding: 4px;\n  margin: 0;\n}\n.add-stage-button {\n  margin: 5px;\n  display: block;\n}\n.project-form-caption {\n  font-size: 1.5vw;\n  font-family: Montserrat, sans-serif;\n  letter-spacing: 0px;\n  color: #3C4346;\n  opacity: 1;\n  display: block;\n  text-align: left;\n  padding-left: 2vw;\n}\n@media (max-width: 1200px) {\n.project-form-caption {\n    font-size: 22px;\n}\n}\n.project-form-fieldset {\n  padding: 1vw;\n}\n.project-form {\n  padding: 10px;\n  position: fixed;\n  top: 0;\n  width: 100%;\n  left: 0;\n  overflow-y: auto;\n  background: #fbffff;\n  max-height: 100vh;\n}\n.introductory-bar {\n  display: flex;\n  justify-content: space-between;\n  padding: 5px;\n}\n.button-icon {\n  margin: 0 10px;\n}\n.colored-button {\n  background: #00C8C8;\n  color: white;\n  padding: 0.7vw 10px;\n}", ""]);
 
 // exports
 
@@ -1948,22 +1948,65 @@ var vue_property_decorator_1 = __webpack_require__(/*! vue-property-decorator */
 var LabeledSelect = /** @class */ (function (_super) {
     __extends(LabeledSelect, _super);
     function LabeledSelect() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.dynamicDisabledState = null;
+        _this.dynamicDisplayedValues = null;
+        _this.dynamicValues = null;
+        return _this;
     }
     LabeledSelect.prototype.emitData = function (event) {
         this.$emit('input', event.target.value);
     };
+    Object.defineProperty(LabeledSelect.prototype, "inputIsDisabled", {
+        get: function () {
+            return (this.dynamicDisabledState === null) ? this.isDisabled : this.dynamicDisabledState;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(LabeledSelect.prototype, "selectValues", {
+        get: function () {
+            return (this.dynamicValues === null) ? this.values : this.dynamicValues;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(LabeledSelect.prototype, "displayedSelectValues", {
+        get: function () {
+            return (this.dynamicDisplayedValues === null) ? this.displayedValues : this.dynamicDisplayedValues;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    LabeledSelect.prototype.created = function () {
+        if (this.identifier) {
+            this.$root.$on("modifyValues" + this.identifier, this.modifyValues);
+            this.$root.$on("modifyDisabledState" + this.identifier, this.modifyDisabledState);
+        }
+    };
+    LabeledSelect.prototype.modifyValues = function (values) {
+        if (values['displayed']) {
+            this.dynamicDisplayedValues = values['displayed'];
+        }
+        if (values['values']) {
+            this.dynamicValues = values['values'];
+        }
+    };
+    LabeledSelect.prototype.modifyDisabledState = function (state) {
+        this.dynamicDisabledState = state;
+    };
     __decorate([
         vue_property_decorator_1.Prop({
             type: Array,
-            required: true,
+            required: false,
+            default: function () { return []; }
         })
     ], LabeledSelect.prototype, "displayedValues", void 0);
     __decorate([
         vue_property_decorator_1.Prop({
             type: Array,
             required: false,
-            default: undefined
+            default: function () { return []; }
         })
     ], LabeledSelect.prototype, "values", void 0);
     __decorate([
@@ -1986,6 +2029,13 @@ var LabeledSelect = /** @class */ (function (_super) {
             default: false
         })
     ], LabeledSelect.prototype, "isDisabled", void 0);
+    __decorate([
+        vue_property_decorator_1.Prop({
+            type: [String, Number],
+            required: false,
+            default: undefined
+        })
+    ], LabeledSelect.prototype, "identifier", void 0);
     LabeledSelect = __decorate([
         vue_property_decorator_1.Component
     ], LabeledSelect);
@@ -2242,18 +2292,22 @@ var ProjectForm = /** @class */ (function (_super) {
         _this.paymentStageStatuses = {};
         _this.paymentSummary = 0;
         _this.projectName = '';
-        _this.accountID = 0;
-        _this.projectMenagerID = 0;
+        _this.accountID = '';
+        _this.projectMenagerID = '';
         _this.clientContactPerson = '';
         _this.clientPhoneNumber = '';
         _this.clientEmail = '';
-        _this.clientId = 0;
+        _this.clientId = '';
         _this.invoiceAddres = '';
         _this.invoiceCompanyName = '';
         _this.taxIdentificationNumber = '';
         _this.finishDate = new Date();
-        _this.projectStatusId = 0;
+        _this.projectStatusId = '';
         _this.projectComment = '';
+        _this.disabledEmployeeInputs = {};
+        _this.employeesWithDesiredSkillIds = {};
+        _this.employeesWithDesiredSkillNames = {};
+        _this.employeeWithDesiredSkill = {};
         return _this;
     }
     ProjectForm.prototype.logout = function () {
@@ -2267,13 +2321,55 @@ var ProjectForm = /** @class */ (function (_super) {
         this.invoiceCompanyName = client.name;
         this.taxIdentificationNumber = client.tax_identification_number;
     };
-    ProjectForm.prototype.fetchEmployeesHavingDesiredSkill = function (workStage) {
+    ProjectForm.prototype.setEngagedPersonsInputState = function (disabledInput, workStage) {
+        if (disabledInput) {
+            this.employeeWithDesiredSkill[workStage] = '';
+            this.employeesWithDesiredSkillIds[workStage] = [];
+            this.employeesWithDesiredSkillNames[workStage] = [];
+        }
+        this.employeeWithDesiredSkill[workStage] = '';
+        var disabledInputData = {};
+        disabledInputData[workStage] = disabledInput;
+        this.disabledEmployeeInputs = Object.assign({}, this.disabledEmployeeInputs, disabledInputData);
+    };
+    ProjectForm.prototype.loadEmployeesForSelectedWorkRange = function (employees, workStage, employeeId) {
+        if (employeeId === void 0) { employeeId = null; }
+        if (employees.length > 0) {
+            var employeesWithDesiredSkillIds_1 = [];
+            var employeesWithDesiredSkillNames_1 = [];
+            employees.forEach(function (employee) {
+                employeesWithDesiredSkillIds_1.push(employee.id);
+                employeesWithDesiredSkillNames_1.push(employee.full_name);
+            });
+            this.setEngagedPersonsInputState(false, workStage);
+            this.employeesWithDesiredSkillIds[workStage] = employeesWithDesiredSkillIds_1;
+            this.employeesWithDesiredSkillNames[workStage] = employeesWithDesiredSkillNames_1;
+            if (employeeId) {
+                this.employeeWithDesiredSkill[workStage] = employeeId;
+            }
+        }
+        else {
+            this.setEngagedPersonsInputState(true, workStage);
+            this.showNotification(this.translations['there_are_no_employees_with_this_skill']);
+        }
+    };
+    ProjectForm.prototype.notifyUserWhyInputIsDisabled = function (workStage) {
+        if (this.disabledEmployeeInputs[workStage] === true) {
+            this.showNotification(this.translations['in_order_to_select_an_employee_you_have_to_select_work_range'], 'error');
+        }
+    };
+    ProjectForm.prototype.fetchEmployeesHavingDesiredSkill = function (workStage, employeeId) {
+        if (employeeId === void 0) { employeeId = null; }
         return __awaiter(this, void 0, void 0, function () {
             var desiredSkillId, requestData, response, _a, responseBody;
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
                         desiredSkillId = this.workRangeValues[workStage];
+                        if (!desiredSkillId) {
+                            this.setEngagedPersonsInputState(true, workStage);
+                            return [2 /*return*/];
+                        }
                         requestData = {
                             method: 'GET',
                             headers: {
@@ -2293,10 +2389,10 @@ var ProjectForm = /** @class */ (function (_super) {
                     case 2: return [4 /*yield*/, response.json()];
                     case 3:
                         responseBody = _b.sent();
-                        console.log(responseBody);
+                        this.loadEmployeesForSelectedWorkRange(responseBody, workStage, employeeId);
                         return [3 /*break*/, 7];
                     case 4:
-                        this.showNotification(this.translations['the_data_is_invalid'], 'error');
+                        this.showNotification(this.translations['the_work_range_data_is_invalid'], 'error');
                         return [3 /*break*/, 7];
                     case 5:
                         this.showNotification(this.translations['server_error_occured'], 'error');
@@ -2370,10 +2466,14 @@ var ProjectForm = /** @class */ (function (_super) {
         ++this.workStageIndex;
         this.deadLineDates[this.workStageIndex] = new Date();
         this.startDates[this.workStageIndex] = new Date();
-        this.workRangeValues[this.workStageIndex] = 0;
+        this.workRangeValues[this.workStageIndex] = '';
         this.estimatedHours[this.workStageIndex] = 0;
         this.workStageEngagedPersons[this.workStageIndex] = 0;
         this.workStages.push(this.workStageIndex);
+        this.disabledEmployeeInputs[this.workStageIndex] = true;
+        this.employeesWithDesiredSkillIds[this.workStageIndex] = {};
+        this.employeesWithDesiredSkillNames[this.workStageIndex] = {};
+        this.employeeWithDesiredSkill[this.workStageIndex] = '';
     };
     ProjectForm.prototype.addPaymentStage = function () {
         ++this.paymentStageIndex;
@@ -2390,6 +2490,10 @@ var ProjectForm = /** @class */ (function (_super) {
         delete this.workRangeValues[workStageID];
         delete this.estimatedHours[workStageID];
         delete this.workStageEngagedPersons[workStageID];
+        delete this.disabledEmployeeInputs[workStageID];
+        delete this.employeesWithDesiredSkillIds[workStageID];
+        delete this.employeesWithDesiredSkillNames[workStageID];
+        delete this.employeeWithDesiredSkill[workStageID];
     };
     ProjectForm.prototype.removePaymentStage = function (paymentStageID) {
         this.paymentStages = this.paymentStages.filter(function (value) { return value != paymentStageID; });
@@ -2418,6 +2522,8 @@ var ProjectForm = /** @class */ (function (_super) {
             _this.startDates[_this.workStageIndex] = value.start_at;
             _this.deadLineDates[_this.workStageIndex] = value.deadline;
             _this.workStages.push(_this.workStageIndex);
+            _this.setEngagedPersonsInputState(false, _this.workStageIndex);
+            _this.fetchEmployeesHavingDesiredSkill(_this.workStageIndex, value.user_id);
         });
         project.payment_stages.forEach(function (value) {
             ++_this.paymentStageIndex;
@@ -2442,17 +2548,17 @@ var ProjectForm = /** @class */ (function (_super) {
     };
     ProjectForm.prototype.resetForm = function () {
         this.projectName = '';
-        this.projectMenagerID = 0;
-        this.accountID = 0;
+        this.projectMenagerID = '';
+        this.accountID = '';
         this.clientContactPerson = '';
         this.clientPhoneNumber = '';
         this.clientEmail = '';
-        this.clientId = 0;
+        this.clientId = '';
         this.invoiceAddres = '';
         this.invoiceCompanyName = '';
         this.taxIdentificationNumber = '';
         this.finishDate = new Date();
-        this.projectStatusId = 0;
+        this.projectStatusId = '';
         this.projectComment = '';
         this.projectId = null;
         this.workRangeValues = {};
@@ -3032,26 +3138,26 @@ var render = function() {
         {
           ref: "select_value",
           staticClass: "described-select",
-          attrs: { name: _vm.name, disabled: _vm.isDisabled },
+          attrs: { name: _vm.name, disabled: _vm.inputIsDisabled },
           domProps: { value: _vm.value },
           on: { input: _vm.emitData }
         },
         [
           _c("option", { attrs: { value: "" } }, [_vm._v("---")]),
           _vm._v(" "),
-          _vm._l(_vm.displayedValues, function(value, index) {
-            return _vm.values
-              ? _c("option", { domProps: { value: _vm.values[index] } }, [
+          _vm._l(_vm.displayedSelectValues, function(value, index) {
+            return _vm.selectValues
+              ? _c("option", { domProps: { value: _vm.selectValues[index] } }, [
                   _vm._v(_vm._s(value))
                 ])
               : _vm._e()
           }),
           _vm._v(" "),
-          _vm._l(_vm.displayedValues, function(value, index) {
-            return !_vm.values
+          _vm._l(_vm.displayedSelectValues, function(value, index) {
+            return !_vm.selectValues
               ? _c(
                   "option",
-                  { domProps: { value: _vm.displayedValues[index] } },
+                  { domProps: { value: _vm.displayedSelectValues[index] } },
                   [_vm._v(_vm._s(value))]
                 )
               : _vm._e()
@@ -3572,27 +3678,89 @@ var render = function() {
                   ),
                   _vm._v(" "),
                   _c(
-                    "labeled-select",
+                    "div",
                     {
-                      attrs: {
-                        name: "work_stage_engaged_persons[]",
-                        values: _vm.employeesIds,
-                        "displayed-values": _vm.employeesNames
-                      },
-                      model: {
-                        value: _vm.workStageEngagedPersons[workStage],
-                        callback: function($$v) {
-                          _vm.$set(_vm.workStageEngagedPersons, workStage, $$v)
-                        },
-                        expression: "workStageEngagedPersons[workStage]"
+                      staticClass: "described-select-container",
+                      on: {
+                        click: function($event) {
+                          return _vm.notifyUserWhyInputIsDisabled(workStage)
+                        }
                       }
                     },
                     [
-                      _vm._v(
-                        "\n                   " +
-                          _vm._s(_vm.translations["engaged_person"]) +
-                          " : \n                "
-                      )
+                      _c("label", { staticClass: "select-label" }, [
+                        _c("span", {
+                          staticClass: "select-description",
+                          domProps: {
+                            textContent: _vm._s(
+                              _vm.translations["engaged_persons"]
+                            )
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "select",
+                          {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.employeeWithDesiredSkill[workStage],
+                                expression:
+                                  "employeeWithDesiredSkill[workStage]"
+                              }
+                            ],
+                            staticClass: "described-select",
+                            attrs: {
+                              name: "work_stage_engaged_persons[]",
+                              disabled: _vm.disabledEmployeeInputs[workStage]
+                            },
+                            on: {
+                              change: function($event) {
+                                var $$selectedVal = Array.prototype.filter
+                                  .call($event.target.options, function(o) {
+                                    return o.selected
+                                  })
+                                  .map(function(o) {
+                                    var val = "_value" in o ? o._value : o.value
+                                    return val
+                                  })
+                                _vm.$set(
+                                  _vm.employeeWithDesiredSkill,
+                                  workStage,
+                                  $event.target.multiple
+                                    ? $$selectedVal
+                                    : $$selectedVal[0]
+                                )
+                              }
+                            }
+                          },
+                          [
+                            _c("option", { attrs: { value: "" } }, [
+                              _vm._v("---")
+                            ]),
+                            _vm._v(" "),
+                            _vm._l(
+                              _vm.employeesWithDesiredSkillNames[workStage],
+                              function(value, index) {
+                                return _c(
+                                  "option",
+                                  {
+                                    domProps: {
+                                      value:
+                                        _vm.employeesWithDesiredSkillIds[
+                                          workStage
+                                        ][index]
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(value))]
+                                )
+                              }
+                            )
+                          ],
+                          2
+                        )
+                      ])
                     ]
                   ),
                   _vm._v(" "),
@@ -20368,10 +20536,13 @@ var translations = {
             team: "Zespół",
             account: "Account",
             information: "Informacja",
+            the_work_range_data_is_invalid: "Błędne dane zakresu pracy. Prawdopodobnie wybrany zakres już nie istnieje, lub w jakiś sposób zmodyfikowano dane przechowywane w elemencie select",
             the_data_is_invalid: "Próba pobrania danych klienta zakończyła się niepowodzeniem. Potencjalne przyczyny : klient został usunięty z bazy, ręcznie zmodyfikowano wartości pola wyboru klienta(element select) w nieprawidłowy sposób",
             server_error_occured: "Wystąpił błąd po stronie serwera",
             undefined_error: "Bliżej niezidentyfikowany błąd",
-            fetching_client_data: "Pobieram dane klienta"
+            fetching_client_data: "Pobieram dane klienta",
+            in_order_to_select_an_employee_you_have_to_select_work_range: "Kontrolka jest chwilowo zablokowana, ponieważ aby wybrać pracownika należy najpierw wybrać zakres prac. Pobrana zostanie lista osób z wybraną umiejętnością",
+            there_are_no_employees_with_this_skill: "Nie znaleziono pracowników z taką umiejętnością/biegłych w danym zakresie pracy"
         },
         employees_list: {
             full_name: "Imię i nazwisko",

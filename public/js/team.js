@@ -1997,22 +1997,65 @@ var vue_property_decorator_1 = __webpack_require__(/*! vue-property-decorator */
 var LabeledSelect = /** @class */ (function (_super) {
     __extends(LabeledSelect, _super);
     function LabeledSelect() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.dynamicDisabledState = null;
+        _this.dynamicDisplayedValues = null;
+        _this.dynamicValues = null;
+        return _this;
     }
     LabeledSelect.prototype.emitData = function (event) {
         this.$emit('input', event.target.value);
     };
+    Object.defineProperty(LabeledSelect.prototype, "inputIsDisabled", {
+        get: function () {
+            return (this.dynamicDisabledState === null) ? this.isDisabled : this.dynamicDisabledState;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(LabeledSelect.prototype, "selectValues", {
+        get: function () {
+            return (this.dynamicValues === null) ? this.values : this.dynamicValues;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(LabeledSelect.prototype, "displayedSelectValues", {
+        get: function () {
+            return (this.dynamicDisplayedValues === null) ? this.displayedValues : this.dynamicDisplayedValues;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    LabeledSelect.prototype.created = function () {
+        if (this.identifier) {
+            this.$root.$on("modifyValues" + this.identifier, this.modifyValues);
+            this.$root.$on("modifyDisabledState" + this.identifier, this.modifyDisabledState);
+        }
+    };
+    LabeledSelect.prototype.modifyValues = function (values) {
+        if (values['displayed']) {
+            this.dynamicDisplayedValues = values['displayed'];
+        }
+        if (values['values']) {
+            this.dynamicValues = values['values'];
+        }
+    };
+    LabeledSelect.prototype.modifyDisabledState = function (state) {
+        this.dynamicDisabledState = state;
+    };
     __decorate([
         vue_property_decorator_1.Prop({
             type: Array,
-            required: true,
+            required: false,
+            default: function () { return []; }
         })
     ], LabeledSelect.prototype, "displayedValues", void 0);
     __decorate([
         vue_property_decorator_1.Prop({
             type: Array,
             required: false,
-            default: undefined
+            default: function () { return []; }
         })
     ], LabeledSelect.prototype, "values", void 0);
     __decorate([
@@ -2035,6 +2078,13 @@ var LabeledSelect = /** @class */ (function (_super) {
             default: false
         })
     ], LabeledSelect.prototype, "isDisabled", void 0);
+    __decorate([
+        vue_property_decorator_1.Prop({
+            type: [String, Number],
+            required: false,
+            default: undefined
+        })
+    ], LabeledSelect.prototype, "identifier", void 0);
     LabeledSelect = __decorate([
         vue_property_decorator_1.Component
     ], LabeledSelect);
@@ -3258,26 +3308,26 @@ var render = function() {
         {
           ref: "select_value",
           staticClass: "described-select",
-          attrs: { name: _vm.name, disabled: _vm.isDisabled },
+          attrs: { name: _vm.name, disabled: _vm.inputIsDisabled },
           domProps: { value: _vm.value },
           on: { input: _vm.emitData }
         },
         [
           _c("option", { attrs: { value: "" } }, [_vm._v("---")]),
           _vm._v(" "),
-          _vm._l(_vm.displayedValues, function(value, index) {
-            return _vm.values
-              ? _c("option", { domProps: { value: _vm.values[index] } }, [
+          _vm._l(_vm.displayedSelectValues, function(value, index) {
+            return _vm.selectValues
+              ? _c("option", { domProps: { value: _vm.selectValues[index] } }, [
                   _vm._v(_vm._s(value))
                 ])
               : _vm._e()
           }),
           _vm._v(" "),
-          _vm._l(_vm.displayedValues, function(value, index) {
-            return !_vm.values
+          _vm._l(_vm.displayedSelectValues, function(value, index) {
+            return !_vm.selectValues
               ? _c(
                   "option",
-                  { domProps: { value: _vm.displayedValues[index] } },
+                  { domProps: { value: _vm.displayedSelectValues[index] } },
                   [_vm._v(_vm._s(value))]
                 )
               : _vm._e()
@@ -20513,10 +20563,13 @@ var translations = {
             team: "Zespół",
             account: "Account",
             information: "Informacja",
+            the_work_range_data_is_invalid: "Błędne dane zakresu pracy. Prawdopodobnie wybrany zakres już nie istnieje, lub w jakiś sposób zmodyfikowano dane przechowywane w elemencie select",
             the_data_is_invalid: "Próba pobrania danych klienta zakończyła się niepowodzeniem. Potencjalne przyczyny : klient został usunięty z bazy, ręcznie zmodyfikowano wartości pola wyboru klienta(element select) w nieprawidłowy sposób",
             server_error_occured: "Wystąpił błąd po stronie serwera",
             undefined_error: "Bliżej niezidentyfikowany błąd",
-            fetching_client_data: "Pobieram dane klienta"
+            fetching_client_data: "Pobieram dane klienta",
+            in_order_to_select_an_employee_you_have_to_select_work_range: "Kontrolka jest chwilowo zablokowana, ponieważ aby wybrać pracownika należy najpierw wybrać zakres prac. Pobrana zostanie lista osób z wybraną umiejętnością",
+            there_are_no_employees_with_this_skill: "Nie znaleziono pracowników z taką umiejętnością/biegłych w danym zakresie pracy"
         },
         employees_list: {
             full_name: "Imię i nazwisko",

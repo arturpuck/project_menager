@@ -54,6 +54,13 @@ class Project extends Model
         return $this->belongsTo(ProjectStatus::class);
     }
 
+    public function lastPaymentStage(){
+
+        return $this->paymentStages()
+                     ->latest('estimated_payment_date')
+                     ->take(1);
+    }
+
     public static function canBeEditedByCurrentUser(int $projectID): bool{
         
         if(\Auth::user()->is_admin){

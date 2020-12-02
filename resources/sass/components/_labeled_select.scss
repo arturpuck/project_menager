@@ -1,0 +1,44 @@
+@import '~sass/fonts';
+
+.select-label{
+	display:flex;
+	align-items: center;
+	border: 1px solid #E3E3E3;
+    border-radius: 4px;
+	padding: 3px 3px 3px 0;
+	color:#3C4346;
+	margin: 5px;
+	background:white;
+	position:relative;
+    height: 2em;
+}
+
+.select-description{
+    white-space: nowrap;
+    color:#3C4346;
+    line-height: 2em;
+    padding: 0 5px;
+    background: #e9e9ea;
+    opacity: 0.5;
+    font-weight:bold;
+}
+
+.described-select{
+	width:1%;
+	flex-grow: 10;
+	color:#3C4346;
+	border: none;
+	background:white;
+    outline:none;
+    font-weight:bold; 
+}
+
+.described-select, .select-description, .select-label{
+    @include responsive-font(1.2vw, 15px,Montserrat);
+}
+
+.described-select-container{
+    min-width: 320px;
+    width: 20vw;
+    display:inline-block;
+}

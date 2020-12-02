@@ -29,9 +29,15 @@
                  <labeled-select name="work_stages[]" v-model="workRangeValues[workStage]" v-on:input="fetchEmployeesHavingDesiredSkill(workStage)" v-bind:values="tasksIds" v-bind:displayed-values="tasksNames" >
                     {{translations['work_range']}} : 
                  </labeled-select>
-                 <labeled-select name="work_stage_engaged_persons[]" v-model="workStageEngagedPersons[workStage]" v-bind:values="employeesIds" v-bind:displayed-values="employeesNames" >
-                    {{translations['engaged_person']}} : 
-                 </labeled-select>
+                 <div v-on:click="notifyUserWhyInputIsDisabled(workStage)" class="described-select-container">
+                    <label class="select-label" >
+                        <span v-text="translations['engaged_persons']" class="select-description"></span>
+                        <select name="work_stage_engaged_persons[]" v-bind:disabled="disabledEmployeeInputs[workStage]" v-model="employeeWithDesiredSkill[workStage]"  class="described-select">
+                            <option value="">---</option>
+                            <option v-for="(value, index) in employeesWithDesiredSkillNames[workStage]" v-bind:value="employeesWithDesiredSkillIds[workStage][index]">{{value}}</option>
+                        </select>
+                    </label>
+                </div>
                  <labeled-input input-type="number" v-model="estimatedHours[workStage]" name="work_stage_estimated_number_of_hours[]">{{translations['estimated_number_of_hours']}} : </labeled-input>
                  <span class="datepicker-wrapper">
                      <span class="datepicker-description">
@@ -254,18 +260,22 @@
 
     private paymentSummary:number = 0;
     private projectName:string = '';
-    private accountID:number = 0;
-    private projectMenagerID:number = 0;
+    private accountID = '';
+    private projectMenagerID = '';
     private clientContactPerson:string = '';
     private clientPhoneNumber:string = '';
     private clientEmail:string = '';
-    private clientId:number = 0;
+    private clientId = '';
     private invoiceAddres:string = '';
     private invoiceCompanyName:string = '';
     private taxIdentificationNumber:string = '';
     private finishDate = new Date();
-    private projectStatusId:number = 0;
+    private projectStatusId = '';
     private projectComment:string = '';
+    private disabledEmployeeInputs: object = {};
+    private employeesWithDesiredSkillIds: object = {};
+    private employeesWithDesiredSkillNames:object = {};
+    private employeeWithDesiredSkill:object = {};
 
     logout(){
       (<HTMLFormElement>this.$refs.logout_form).submit();
@@ -280,9 +290,63 @@
      this.taxIdentificationNumber = client.tax_identification_number;
   }
 
-  async fetchEmployeesHavingDesiredSkill(workStage){
+  setEngagedPersonsInputState(disabledInput:boolean, workStage){
+
+         if(disabledInput){
+             this.employeeWithDesiredSkill[workStage] = '';
+             this.employeesWithDesiredSkillIds[workStage] = [];
+             this.employeesWithDesiredSkillNames[workStage] = [];
+         }
+         this.employeeWithDesiredSkill[workStage] = '';
+         const disabledInputData = {};
+         disabledInputData[workStage] = disabledInput;
+         this.disabledEmployeeInputs = Object.assign({}, this.disabledEmployeeInputs, disabledInputData);
+  }
+
+  loadEmployeesForSelectedWorkRange(employees, workStage, employeeId = null){
+    
+
+     if(employees.length > 0){
+
+         let employeesWithDesiredSkillIds = [];
+         let employeesWithDesiredSkillNames = [];
+
+         employees.forEach(employee => {
+            employeesWithDesiredSkillIds.push(employee.id);
+            employeesWithDesiredSkillNames.push(employee.full_name);
+         });
+
+         this.setEngagedPersonsInputState(false, workStage);
+         
+         this.employeesWithDesiredSkillIds[workStage] = employeesWithDesiredSkillIds;
+         this.employeesWithDesiredSkillNames[workStage] = employeesWithDesiredSkillNames;
+         if(employeeId){
+             this.employeeWithDesiredSkill[workStage] = employeeId;
+         }
+     }
+     else{
+         this.setEngagedPersonsInputState(true, workStage);
+         this.showNotification(this.translations['there_are_no_employees_with_this_skill']); 
+     }
+  }
+
+  notifyUserWhyInputIsDisabled(workStage){
+     
+      if(this.disabledEmployeeInputs[workStage] === true){
+         this.showNotification(this.translations['in_order_to_select_an_employee_you_have_to_select_work_range'],'error');
+      }
+  }
+
+  async fetchEmployeesHavingDesiredSkill(workStage, employeeId:number = null){
+
         const desiredSkillId = this.workRangeValues[workStage];
-         const requestData = {
+
+        if(!desiredSkillId){
+            this.setEngagedPersonsInputState(true, workStage);
+            return;
+        }
+
+        const requestData = {
 
                method : 'GET',
                headers : {
@@ -296,12 +360,11 @@
 
                   case 200:
                      const responseBody = await response.json();
-                     console.log(responseBody);
-                     
+                     this.loadEmployeesForSelectedWorkRange(responseBody, workStage, employeeId);
                   break;
 
                   case 400:
-                   this.showNotification(this.translations['the_data_is_invalid'], 'error');
+                   this.showNotification(this.translations['the_work_range_data_is_invalid'], 'error');
                   break;
 
                   case 500:
@@ -371,10 +434,14 @@
         ++this.workStageIndex;
         this.deadLineDates[this.workStageIndex] = new Date();
         this.startDates[this.workStageIndex] = new Date();
-        this.workRangeValues[this.workStageIndex] = 0;
+        this.workRangeValues[this.workStageIndex] = '';
         this.estimatedHours[this.workStageIndex] = 0;
         this.workStageEngagedPersons[this.workStageIndex] = 0;
         this.workStages.push(this.workStageIndex);
+        this.disabledEmployeeInputs[this.workStageIndex] = true;
+        this.employeesWithDesiredSkillIds[this.workStageIndex] = {};
+        this.employeesWithDesiredSkillNames[this.workStageIndex] = {};
+        this.employeeWithDesiredSkill[this.workStageIndex] = '';
     }
 
     addPaymentStage(){
@@ -393,6 +460,10 @@
         delete this.workRangeValues[workStageID];
         delete this.estimatedHours[workStageID];
         delete this.workStageEngagedPersons[workStageID];
+        delete this.disabledEmployeeInputs[workStageID];
+        delete this.employeesWithDesiredSkillIds[workStageID];
+        delete this.employeesWithDesiredSkillNames[workStageID];
+        delete this.employeeWithDesiredSkill[workStageID];
     }
 
     removePaymentStage(paymentStageID:number){
@@ -424,6 +495,8 @@
             this.startDates[this.workStageIndex] = value.start_at;
             this.deadLineDates[this.workStageIndex] = value.deadline;
             this.workStages.push(this.workStageIndex);
+            this.setEngagedPersonsInputState(false,this.workStageIndex);
+            this.fetchEmployeesHavingDesiredSkill(this.workStageIndex, value.user_id);
         });
 
         project.payment_stages.forEach(value => {
@@ -450,17 +523,17 @@
 
     resetForm(){
        this.projectName = '';
-       this.projectMenagerID = 0;
-       this.accountID = 0;
+       this.projectMenagerID = '';
+       this.accountID = '';
        this.clientContactPerson = '';
        this.clientPhoneNumber = '';
        this.clientEmail = '';
-       this.clientId = 0;
+       this.clientId = '';
        this.invoiceAddres = '';
        this.invoiceCompanyName = '';
        this.taxIdentificationNumber = '';
        this.finishDate = new Date();
-       this.projectStatusId = 0;
+       this.projectStatusId = '';
        this.projectComment = '';
        this.projectId = null;
        this.workRangeValues = {};
@@ -495,6 +568,7 @@
 @import '~sass/components/labeled_wide_textarea';
 @import '~sass/components/read_only_box';
 @import '~sass/components/datepicker_wraper';
+@import '~sass/components/labeled_select';
 
 #app .flickering-circle{
    background: #d0d7dc;
