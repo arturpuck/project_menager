@@ -105,6 +105,10 @@ class User extends Authenticatable
         return !$this->is_ordinary_team_member;
     }
 
+    public function getCanAddTeamMemberAttribute(){
+        return !$this->is_ordinary_team_member;
+    }
+
     public function clockifyReports(){
            return $this->hasMany(UserClockifyReport::class);
     }

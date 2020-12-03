@@ -50,5 +50,6 @@
   "status" : "Status",
   "real_income" : "Rzeczywisty przychód",
   "projected_income" : "Prognozowany przychód",
-  "current_profit" : "Bieżący zysk"
+  "current_profit" : "Bieżący zysk",
+  "add_team_member" : "Dodaj członka zespołu"
 }

@@ -1,4 +1,18 @@
 <x-base title="{{$title}}" description="{{$description}}">
+    @if(\Auth::user()->can_add_team_member)
+    <div class="introductory-container">
+      <positive-button v-on:click.native="showAddNewEmployeeForm" class="add-project-button">
+         <img class="button-icon" src="/images/decoration/Icon feather-plus-circle.svg"></img>
+         {{__('add_team_member')}}
+      </positive-button>
+    </div>
+    <new-employee v-on:close="closeNewEmployeeForm" v-show="newEmployeeFormIsVisible"
+      v-bind:employee-positions="{{json_encode($positions->pluck('name'), true)}}"
+      v-bind:employee-positions-ids="{{json_encode($positions->pluck('id'), true)}}"
+      v-bind:employee-skills="{{json_encode($skills->pluck('name'), true)}}"
+      v-bind:employee-skills-ids="{{json_encode($skills->pluck('id'), true)}}"
+    ></new-employee>
+    @endif
     <h1 class="header header-under-navbar">{{__('team_members_list')}}</h1>
     @if(Session::has('succesMessage'))
        <div class="success-message">{{__(Session::get('succesMessage'))}}</div>

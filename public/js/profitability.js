@@ -16010,6 +16010,23 @@ var translations = {
         income: {
             you_have_to_select_some_status: "Płatność musi mieć przypisany jakiś status. Aktualizacja nieudana",
             status_changed_successfully: "Pomyślnie zmieniono status"
+        },
+        new_employee: {
+            add_new_employee: "Dodaj nowego pracownika",
+            login: "Login",
+            email: "Email",
+            password: "Hasło",
+            confirm_password: "Potwierdź hasło",
+            full_name: "Imię i nazwisko",
+            phone_number: "Numer telefonu",
+            rate_per_hour_set_by_deal: "Stawka godzinowa na umowie",
+            real_rate_per_hour: "Rzeczywista stawka godzinowa",
+            month_rate: "Stawka miesięczna",
+            positions: "Stanowiska",
+            add_skill: "Dodaj umiejętność",
+            add_position: "Dodaj stanowisko",
+            skills: "Umiejętności",
+            save: "Dodaj "
         }
     }
 };

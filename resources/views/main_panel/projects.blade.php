@@ -1,5 +1,5 @@
 <x-base title="{{$title}}" description="{{$description}}">
-   <div class="header-container">
+   <div class="introductory-container">
       <h1 class="header">
          {{__('projects')}}
       </h1>
@@ -10,7 +10,6 @@
       </positive-button>
    </div>
 
-   
    @if($errors->any())
    <div class="error-information-container">
       <div class="error-header">
