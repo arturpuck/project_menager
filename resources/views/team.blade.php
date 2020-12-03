@@ -27,6 +27,8 @@
       v-bind:employee-skills="{{json_encode($skills->pluck('name'), true)}}"
       v-bind:employee-skills-ids="{{json_encode($skills->pluck('id'), true)}}"
       v-bind:months="{{json_encode($months)}}"
+      v-bind:clockify-available-months-names="{{json_encode($currentMonthAndPreviousNames, true)}}"
+      v-bind:clockify-available-months-numbers="{{json_encode($currentMonthAndPreviousNumbers, true)}}"
       @if(\Auth::user()->is_ordinary_team_member)
          v-bind:ordinary-team-member="true"
       @endif

@@ -109,6 +109,13 @@ class User extends Authenticatable
            return $this->hasMany(UserClockifyReport::class);
     }
 
+    public function clockifyReport($month, $year){
+
+        return $this->hasMany(UserClockifyReport::class)
+                    ->whereMonth('report_date', $month)
+                    ->whereYear('report_date', $year);
+    }
+
     public function clockifyReportForCurrentMonth(){
 
         return $this->hasMany(UserClockifyReport::class)

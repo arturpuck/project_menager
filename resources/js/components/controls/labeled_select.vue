@@ -5,7 +5,7 @@
             <slot></slot>
         </span>
         <select v-bind:name="name" v-bind:disabled="inputIsDisabled" v-on:input="emitData" v-bind:value="value" ref="select_value" class="described-select">
-            <option value="">---</option>
+            <option value="" >---</option>
             <option v-if="selectValues" v-for="(value, index) in displayedSelectValues" v-bind:value="selectValues[index]">{{value}}</option>
             <option v-if="!selectValues" v-for="(value, index) in displayedSelectValues" v-bind:value="displayedSelectValues[index]">{{value}}</option>
         </select>
@@ -39,7 +39,7 @@
     @Prop({
             type: [String, Number],
             required: false,
-            default:0
+            default:''
     }) readonly value: string | number;
 
     @Prop({

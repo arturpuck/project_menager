@@ -4,6 +4,7 @@ namespace App\Http\Requests\Team;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
+use App\Rules\MonthNumberEqualsToCurrentOrPrevious;
 
 class StoreReportRequest extends FormRequest
 {
@@ -36,7 +37,8 @@ class StoreReportRequest extends FormRequest
         return [
             'user_id' => ['required', 'exists:users,id'],
             'clockify_report_file' => ['required', 'file'],
-            'reported_hours' => ['required', 'numeric', 'min:0', 'max:540']
+            'reported_hours' => ['required', 'numeric', 'min:0', 'max:540'],
+            'report_for_month' => ['required', new MonthNumberEqualsToCurrentOrPrevious()]
         ];
     }
 

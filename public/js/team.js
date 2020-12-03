@@ -2068,7 +2068,7 @@ var LabeledSelect = /** @class */ (function (_super) {
         vue_property_decorator_1.Prop({
             type: [String, Number],
             required: false,
-            default: 0
+            default: ''
         })
     ], LabeledSelect.prototype, "value", void 0);
     __decorate([
@@ -2692,6 +2692,18 @@ var EmployeeCard = /** @class */ (function (_super) {
             required: true,
         })
     ], EmployeeCard.prototype, "yearsRange", void 0);
+    __decorate([
+        vue_property_decorator_1.Prop({
+            type: Array,
+            required: true,
+        })
+    ], EmployeeCard.prototype, "clockifyAvailableMonthsNames", void 0);
+    __decorate([
+        vue_property_decorator_1.Prop({
+            type: Array,
+            required: true,
+        })
+    ], EmployeeCard.prototype, "clockifyAvailableMonthsNumbers", void 0);
     __decorate([
         vue_property_decorator_1.Prop({
             type: Boolean,
@@ -4016,6 +4028,24 @@ var render = function() {
                 staticClass: "report-file",
                 attrs: { type: "file", name: "clockify_report_file" }
               }),
+              _vm._v(" "),
+              _c(
+                "labeled-select",
+                {
+                  attrs: {
+                    name: "report_for_month",
+                    "displayed-values": _vm.clockifyAvailableMonthsNames,
+                    values: _vm.clockifyAvailableMonthsNumbers
+                  }
+                },
+                [
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(_vm.translations["month_report"]) +
+                      " :\n          "
+                  )
+                ]
+              ),
               _vm._v(" "),
               _c(
                 "labeled-input",
@@ -20614,7 +20644,8 @@ var translations = {
             rate_per_month: "Stawka miesięczna",
             real_rate_per_hour: "Rzeczywista stawka godzinowa",
             note: "Notatka",
-            employee_data_modified_successfully: "Pomyślnie zmodyfikowano dane pracownika"
+            employee_data_modified_successfully: "Pomyślnie zmodyfikowano dane pracownika",
+            month_report: "Raport za miesiąc"
         },
         income: {
             you_have_to_select_some_status: "Płatność musi mieć przypisany jakiś status. Aktualizacja nieudana",

@@ -12,18 +12,21 @@ Class StoreReportHandler {
 
     public function handle(StoreReportRequest $request){
 
-        
             $file = $request->file('clockify_report_file');
-            $currentDate = date('Y-m-d');
             $userID = $request->get('user_id');
-            $user = User::with('clockifyReportForCurrentMonth')->find($userID);
-           
-            if($user->has_clockify_report_for_current_month){
-                Storage::disk('public')->delete($user->clockify_report_file_for_current_month_path);
+            $user = User::find($userID);
+            $reportForMonth = $request->get('report_for_month');
+            $currentMonth = date('m');
+            $currentYear = date('Y');
+            $reportForYear = (($currentMonth == 1) and ($reportForMonth == 12)) ? ($currentYear - 1) : $currentYear;
+            $fixedDayJustForColumnPurposes = '28';
+
+            if($clockifyReport = $user->clockifyReport($reportForMonth, $reportForYear)->get()->first()){
+                Storage::disk('public')->delete($clockifyReport->file_path);
             }
-            
+            $reportData = $reportForYear.'-'.$reportForMonth.'-'.$fixedDayJustForColumnPurposes;
             $extension = $file->getClientOriginalExtension();
-            $dateUnderscored = str_replace('-','_',$currentDate);
+            $dateUnderscored = str_replace('-','_',$reportData);
             $userName = str_replace(' ','_', $user->full_name);
             $fileName = $dateUnderscored.'_'.$userName.'.'.$extension;
            
@@ -31,7 +34,7 @@ Class StoreReportHandler {
 
             UserClockifyReport::updateOrCreate(
                 [
-                  'report_date' => $currentDate,
+                  'report_date' => $reportData,
                   'user_id' => $userID
                 ],
                 [

@@ -117,7 +117,8 @@ const translations:object = {
             rate_per_month : "Stawka miesięczna",
             real_rate_per_hour : "Rzeczywista stawka godzinowa",
             note : "Notatka",
-            employee_data_modified_successfully : "Pomyślnie zmodyfikowano dane pracownika"
+            employee_data_modified_successfully : "Pomyślnie zmodyfikowano dane pracownika",
+            month_report : "Raport za miesiąc"
         },
 
         income : {

@@ -63,6 +63,9 @@
           <input type="hidden" v-bind:value="employee.id" name="user_id">
           <input v-bind:value="csrfToken" type="hidden" name="_token">
           <input type="file" class="report-file" name="clockify_report_file" >
+          <labeled-select name="report_for_month"  v-bind:displayed-values="clockifyAvailableMonthsNames" v-bind:values="clockifyAvailableMonthsNumbers">
+            {{translations['month_report']}} :
+          </labeled-select>
           <labeled-input class="reported-hours" input-type="number" name="reported_hours">{{translations['hours_of_work']}}</labeled-input>
           <positive-button class="save-report" type="submit">{{translations['save']}}</positive-button>
       </form>
@@ -174,6 +177,16 @@
             type: Array,
             required: true,
     }) readonly yearsRange: string[];
+
+    @Prop({
+            type: Array,
+            required: true,
+    }) readonly clockifyAvailableMonthsNames: string[];
+
+    @Prop({
+            type: Array,
+            required: true,
+    }) readonly clockifyAvailableMonthsNumbers: string[];
 
     @Prop({
             type: Boolean,

@@ -34,7 +34,9 @@ class TeamController extends Controller
            'yearsRange' => Company::getYearsRange(),
            'roles' => Role::all(),
            'positions' => Position::all(),
-           'skills' => Skill::all()
+           'skills' => Skill::all(),
+           'currentMonthAndPreviousNames' => Months::namesOfCurrentMonthAndPrevious(),
+           'currentMonthAndPreviousNumbers' => Months::numbersOfCurrentMonthAndPrevious()
        ]);
    }
 

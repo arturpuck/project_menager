@@ -17,4 +17,10 @@ class UserClockifyReport extends Model
         'report_date',
         'report_file_name'
     ];
+
+    public function getFilePathAttribute(){
+
+        return '/reports/'.$this->report_file_name;
+
+    }
 }

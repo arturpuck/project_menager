@@ -1777,7 +1777,7 @@ var LabeledSelect = /** @class */ (function (_super) {
         vue_property_decorator_1.Prop({
             type: [String, Number],
             required: false,
-            default: 0
+            default: ''
         })
     ], LabeledSelect.prototype, "value", void 0);
     __decorate([
@@ -16004,7 +16004,8 @@ var translations = {
             rate_per_month: "Stawka miesięczna",
             real_rate_per_hour: "Rzeczywista stawka godzinowa",
             note: "Notatka",
-            employee_data_modified_successfully: "Pomyślnie zmodyfikowano dane pracownika"
+            employee_data_modified_successfully: "Pomyślnie zmodyfikowano dane pracownika",
+            month_report: "Raport za miesiąc"
         },
         income: {
             you_have_to_select_some_status: "Płatność musi mieć przypisany jakiś status. Aktualizacja nieudana",
