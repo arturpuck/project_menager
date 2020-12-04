@@ -4,19 +4,18 @@
     list-style-type: none;
     padding:5px 0 0 5px;
     margin:0;
-    background:#191b19;
 }
 
 .tab-list-element{
     border-radius:4px 4px 0 0;
-    background:rgb(68, 65, 65);
     padding:4px;
     color:white;
     display:inline-block;
-    @include responsive-font();
+    color:black;
+    @include responsive-font(1.2vw, 15px,Montserrat);
     cursor:pointer;
     &:hover{
-        background:crimson;
+        background:#0FCACA;
     }
 
 }

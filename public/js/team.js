@@ -430,7 +430,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".tab-list {\n  list-style-type: none;\n  padding: 5px 0 0 5px;\n  margin: 0;\n  background: #191b19;\n}\n.tab-list-element {\n  border-radius: 4px 4px 0 0;\n  background: #444141;\n  padding: 4px;\n  color: white;\n  display: inline-block;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n  cursor: pointer;\n}\n@media (max-width: 1200px) {\n.tab-list-element {\n    font-size: 16px;\n}\n}\n.tab-list-element:hover {\n  background: crimson;\n}\n.tab-list-section {\n  background: #444141;\n  border: 1px solid #444141;\n}\n.table-container {\n  position: relative;\n  min-height: 300px;\n}\n.table-header {\n  padding: 1vw 7px;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  background: #3C4346;\n  color: white;\n  text-align: center;\n}\n@media (max-width: 1200px) {\n.table-header {\n    font-size: 12px;\n}\n}\n.table {\n  margin: 8px auto;\n  border-collapse: collapse;\n}\n.table-cell {\n  color: black;\n  text-align: center;\n  padding: 3px;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n}\n@media (max-width: 1200px) {\n.table-cell {\n    font-size: 12px;\n}\n}\n.table-cell:nth-child(even) {\n  background: #efeeee;\n}\n.note {\n  background: #242229;\n  border: none;\n  border-radius: 5px;\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n  display: block;\n  margin: 3px auto;\n}\n@media (max-width: 1200px) {\n.note {\n    font-size: 16px;\n}\n}\n.note-label {\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n  display: block;\n  text-align: center;\n}\n@media (max-width: 1200px) {\n.note-label {\n    font-size: 16px;\n}\n}\n.form-caption {\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n  color: white;\n  padding: 5px;\n}\n@media (max-width: 1200px) {\n.form-caption {\n    font-size: 16px;\n}\n}\n.form-fieldset {\n  border: 2px solid black;\n  border-radius: 4px;\n  margin: 5px;\n}\n.filter-results-form {\n  padding: 5px;\n  background: black;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-evenly;\n}\n.employee-card {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100vw;\n  min-height: 100vh;\n  overflow-y: auto;\n}\n.close-bar {\n  text-align: right;\n  padding: 5px;\n  background: black;\n}\n.report-file {\n  display: block;\n  margin: 0 auto;\n  padding: 6px;\n}\n#app .reported-hours {\n  display: block;\n  margin: 4px auto;\n}\n#app .save-report {\n  display: block;\n  margin: 4px auto;\n}\n#app .project-hours {\n  min-width: 50px;\n  max-width: 10vw;\n}\n#app .project-status {\n  min-width: 130px;\n  max-width: 20vw;\n}\n.datepicker-wrapper {\n  padding: 4px;\n  background: #242229;\n  border-radius: 5px;\n  display: inline-flex;\n  flex-wrap: nowrap;\n  align-items: baseline;\n  margin: 4px;\n}\n.calendar-input {\n  background: #242229;\n  color: white;\n  padding: 4px;\n  border: none;\n}\n.classic-textarea {\n  background: #242229;\n  border-radius: 4px;\n  color: white;\n}", ""]);
+exports.push([module.i, ".tab-list {\n  list-style-type: none;\n  padding: 5px 0 0 5px;\n  margin: 0;\n}\n.tab-list-element {\n  border-radius: 4px 4px 0 0;\n  padding: 4px;\n  color: white;\n  display: inline-block;\n  color: black;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  cursor: pointer;\n}\n@media (max-width: 1200px) {\n.tab-list-element {\n    font-size: 15px;\n}\n}\n.tab-list-element:hover {\n  background: #0FCACA;\n}\n.tab-list-section {\n  background: #444141;\n  border: 1px solid #444141;\n}\n.table-container {\n  position: relative;\n  min-height: 300px;\n}\n.table-header {\n  padding: 1vw 7px;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  background: #3C4346;\n  color: white;\n  text-align: center;\n}\n@media (max-width: 1200px) {\n.table-header {\n    font-size: 12px;\n}\n}\n.table {\n  margin: 8px auto;\n  border-collapse: collapse;\n}\n.table-cell {\n  color: black;\n  text-align: center;\n  padding: 3px;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n}\n@media (max-width: 1200px) {\n.table-cell {\n    font-size: 12px;\n}\n}\n.table-cell:nth-child(even) {\n  background: #efeeee;\n}\n.header {\n  font-size: 2vw;\n  font-family: \"Exo 2\", sans-serif;\n  text-align: left;\n  font-family: Montserrat;\n  font-weight: bold;\n  letter-spacing: 0px;\n  color: black;\n  padding: 0 0 0 4vw;\n  display: inline-block;\n}\n@media (max-width: 1200px) {\n.header {\n    font-size: 23px;\n}\n}\n.header-under-navbar {\n  display: block;\n  margin-top: 4.5vw;\n  margin-top: 4.7vw;\n  padding: 0.9vw;\n}\n.blank-button {\n  background: transparent;\n  margin: 0;\n  padding: 0;\n  outline: none;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  color: black;\n  font-weight: bold;\n  border: none;\n  cursor: pointer;\n}\n@media (max-width: 1200px) {\n.blank-button {\n    font-size: 15px;\n}\n}\n.filter-form {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: flex-start;\n  padding: 5px;\n}\n.introductory-bar {\n  display: flex;\n  justify-content: space-between;\n  padding: 2vw;\n}\n.note {\n  background: #242229;\n  border: none;\n  border-radius: 5px;\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n  display: block;\n  margin: 3px auto;\n}\n@media (max-width: 1200px) {\n.note {\n    font-size: 16px;\n}\n}\n.note-label {\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n  display: block;\n  text-align: center;\n}\n@media (max-width: 1200px) {\n.note-label {\n    font-size: 16px;\n}\n}\n.form-caption {\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n  color: white;\n  padding: 5px;\n}\n@media (max-width: 1200px) {\n.form-caption {\n    font-size: 16px;\n}\n}\n.form-fieldset {\n  border: 2px solid black;\n  border-radius: 4px;\n  margin: 5px;\n}\n.filter-results-form {\n  padding: 5px;\n  background: black;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-evenly;\n}\n.employee-card {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100vw;\n  min-height: 100vh;\n  overflow-y: auto;\n  background: white;\n}\n.close-bar {\n  text-align: right;\n  padding: 5px;\n  background: black;\n}\n.report-file {\n  display: block;\n  margin: 0 auto;\n  padding: 6px;\n}\n#app .reported-hours {\n  display: block;\n  margin: 4px auto;\n}\n#app .save-report {\n  display: block;\n  margin: 4px auto;\n}\n#app .project-hours {\n  min-width: 50px;\n  max-width: 10vw;\n}\n#app .project-status {\n  min-width: 130px;\n  max-width: 20vw;\n}\n.datepicker-wrapper {\n  padding: 4px;\n  background: #242229;\n  border-radius: 5px;\n  display: inline-flex;\n  flex-wrap: nowrap;\n  align-items: baseline;\n  margin: 4px;\n}\n.calendar-input {\n  background: #242229;\n  color: white;\n  padding: 4px;\n  border: none;\n}\n.classic-textarea {\n  background: white;\n  border-radius: 4px;\n  border: none;\n  color: black;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n}\n@media (max-width: 1200px) {\n.classic-textarea {\n    font-size: 15px;\n}\n}\n.tab-list-element {\n  padding: 2vw;\n}\n#app .filter-button {\n  margin: 5px;\n  background: #0FCACA;\n  color: white;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  height: 2em;\n  padding: 0 3vw;\n  margin-left: auto;\n}\n@media (max-width: 1200px) {\n#app .filter-button {\n    font-size: 15px;\n}\n}", ""]);
 
 // exports
 
@@ -2381,7 +2381,7 @@ var EmployeeCard = /** @class */ (function (_super) {
         _this.reportComments = {};
         _this.numberOfDisplayedReports = 0;
         _this.projectIds = {};
-        _this.filterMonth = 0;
+        _this.filterMonth = '';
         _this.userReportForMonth = {};
         _this.filterYear = new Date().getFullYear();
         _this.employeePositionsList = [];
@@ -2633,12 +2633,8 @@ var EmployeeCard = /** @class */ (function (_super) {
         });
     };
     EmployeeCard.prototype.reportComment = function (project) {
-        if (project.project_reports.length == 0) {
-            return '';
-        }
-        else {
-            return project.project_reports[0].comment;
-        }
+        var length = project.project_reports.length;
+        return (length == 0) ? '' : project.project_reports[length - 1].comment;
     };
     EmployeeCard.prototype.updateDate = function (project) {
         if (project.project_reports.length == 0) {
@@ -3995,8 +3991,13 @@ var render = function() {
     [
       _c(
         "div",
-        { staticClass: "close-bar" },
+        { staticClass: "introductory-bar" },
         [
+          _c("h2", {
+            staticClass: "header",
+            domProps: { textContent: _vm._s(_vm.employee["full_name"]) }
+          }),
+          _vm._v(" "),
           _c("close-button", {
             attrs: { description: _vm.translations["close"] },
             nativeOn: {
@@ -4044,13 +4045,12 @@ var render = function() {
               value: _vm.reportTabIsSelected,
               expression: "reportTabIsSelected"
             }
-          ],
-          staticClass: "tab-list-section"
+          ]
         },
         [
           _c(
             "form",
-            { staticClass: "filter-results-form" },
+            { staticClass: "filter-form" },
             [
               _c(
                 "labeled-select",
@@ -4114,7 +4114,7 @@ var render = function() {
               _c(
                 "positive-button",
                 {
-                  staticClass: "filter-reports",
+                  staticClass: "filter-button",
                   nativeOn: {
                     click: function($event) {
                       return _vm.filterReports($event)
@@ -4305,7 +4305,7 @@ var render = function() {
                     _c(
                       "button",
                       {
-                        staticClass: "tiny-button",
+                        staticClass: "blank-button",
                         on: {
                           click: function($event) {
                             return _vm.saveProjectReportSettings(index)
@@ -4333,8 +4333,7 @@ var render = function() {
               value: _vm.clockifyTabIsSelected,
               expression: "clockifyTabIsSelected"
             }
-          ],
-          staticClass: "tab-list-section"
+          ]
         },
         [
           _c(
@@ -4410,8 +4409,7 @@ var render = function() {
               value: _vm.dataTabIsSelected,
               expression: "dataTabIsSelected"
             }
-          ],
-          staticClass: "tab-list-section"
+          ]
         },
         [
           _c(
@@ -21405,7 +21403,7 @@ var translations = {
         },
         employee_data: {
             projects_report: "Raport projektów",
-            data: "dane",
+            data: "Dane",
             hours_of_work: "Przepracowane godziny",
             save: "Zapisz",
             project: "Projekt",

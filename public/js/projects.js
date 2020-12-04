@@ -20556,7 +20556,7 @@ var translations = {
         },
         employee_data: {
             projects_report: "Raport projektów",
-            data: "dane",
+            data: "Dane",
             hours_of_work: "Przepracowane godziny",
             save: "Zapisz",
             project: "Projekt",

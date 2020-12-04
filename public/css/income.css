@@ -124,7 +124,21 @@ table {
 .filter-form {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   padding: 5px;
-  background: black;
+}
+
+#app .filter-button {
+  margin: 5px;
+  background: #0FCACA;
+  color: white;
+  font-size: 1.2vw;
+  font-family: Montserrat, sans-serif;
+  height: 2em;
+  padding: 0 3vw;
+}
+@media (max-width: 1200px) {
+  #app .filter-button {
+    font-size: 15px;
+  }
 }

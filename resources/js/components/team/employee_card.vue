@@ -1,6 +1,7 @@
 <template>
 <div v-show="showCard" class="employee-card">
-    <div class="close-bar">
+    <div class="introductory-bar">
+        <h2 v-text="employee['full_name']" class="header"></h2>
         <close-button v-bind:description="translations['close']" v-on:click.native="closeCard" />
     </div>
     <ul class="tab-list">
@@ -8,9 +9,8 @@
        <li v-text="translations['clockify_report']"  v-on:click="showClockifyTab" class="tab-list-element"></li>
        <li v-text="translations['data']"  v-on:click="showDataTab" id="data-tab" class="tab-list-element"></li>
     </ul>
-    
-    <section v-show="reportTabIsSelected" class="tab-list-section">
-        <form class="filter-results-form">
+    <section v-show="reportTabIsSelected">
+        <form class="filter-form">
           <labeled-select v-model="filterMonth" name="month"
             v-bind:values="['01','02','03','04','05','06', '07', '08','09', '10', '11', '12']"
             v-bind:displayed-values="months">
@@ -20,7 +20,7 @@
             v-bind:displayed-values="yearsRange">
             {{translations['year']}} : 
           </labeled-select>
-          <positive-button v-on:click.native="filterReports" class="filter-reports" >{{translations['filter_reports']}}</positive-button>
+          <positive-button v-on:click.native="filterReports" class="filter-button" >{{translations['filter_reports']}}</positive-button>
         </form>
 
         <table class="table">
@@ -56,13 +56,13 @@
                  <textarea v-model="reportComments[index]" class="classic-textarea"></textarea>
                </td>
                <td class="table-cell">
-                  <button v-on:click="saveProjectReportSettings(index)" class="tiny-button">{{translations['save']}}</button>
+                  <button v-on:click="saveProjectReportSettings(index)" class="blank-button">{{translations['save']}}</button>
                </td>
            </tr>
          </tbody>
      </table>
     </section>
-    <section v-show="clockifyTabIsSelected" class="tab-list-section">
+    <section v-show="clockifyTabIsSelected">
       <form method="POST" enctype='multipart/form-data' action="/report/store">
           <input type="hidden" v-bind:value="employee.id" name="user_id">
           <input v-bind:value="csrfToken" type="hidden" name="_token">
@@ -74,7 +74,7 @@
           <positive-button class="save-report" type="submit">{{translations['save']}}</positive-button>
       </form>
     </section>
-    <section v-show="dataTabIsSelected" class="tab-list-section">
+    <section v-show="dataTabIsSelected">
       <form>
         <labeled-input v-bind:is-disabled="ordinaryTeamMember" v-model="employee['full_name']" name="full_name" >{{translations['full_name']}} : </labeled-input>
         <labeled-input v-model="employee['email']" name="email">{{translations['email']}} : </labeled-input>
@@ -218,7 +218,7 @@
     private reportComments = {};
     private numberOfDisplayedReports:number = 0;
     private projectIds = {};
-    private filterMonth:number = 0;
+    private filterMonth = '';
     private userReportForMonth:object = {};
     private filterYear:number = new Date().getFullYear();
     private employeePositionsList :string[] = [];
@@ -494,13 +494,9 @@
     }
 
     reportComment(project){
-      
-      if(project.project_reports.length == 0){
-         return '';
-       }
-       else{
-         return project.project_reports[0].comment
-       }
+
+      let length = project.project_reports.length;
+      return (length == 0) ? '' : project.project_reports[length -1].comment;
     }
 
     updateDate(project){
@@ -572,6 +568,21 @@
 @import '~sass/fonts';
 @import '~sass/components/tab_list';
 @import '~sass/components/table';
+@import '~sass/components/header';
+@import '~sass/components/blank_button';
+
+.filter-form{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 5px;
+}
+
+.introductory-bar{
+    display:flex;
+    justify-content:space-between;
+    padding:2vw;
+}
 
 .note{
     background: #242229;
@@ -617,6 +628,7 @@
     width:100vw;
     min-height:100vh;
     overflow-y: auto;
+    background:white;
 }
 
 .close-bar{
@@ -669,10 +681,26 @@
 }
 
 .classic-textarea{
-  background: #242229;
+  background: white;
   border-radius: 4px;
-  color: white;
+  border:none;
+  color: black;
+  @include responsive-font(1.2vw, 15px,Montserrat);
 }
+
+.tab-list-element{
+    padding: 2vw;
+}
+
+#app .filter-button{
+    margin:5px;
+    background:#0FCACA;
+    color:white;
+    @include responsive-font(1.2vw, 15px,Montserrat);
+    height:2em;
+    padding:0 3vw;
+    margin-left: auto;
+  }
 
 
 
