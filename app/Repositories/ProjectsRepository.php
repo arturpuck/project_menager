@@ -67,6 +67,14 @@ Class ProjectsRepository extends BaseRepository {
          return $this;
     }
 
+    public function withUserProjectReportForCurrentMonth($userId): ProjectsRepository{
+
+          $this->query = $this->query->with(['projectReportsForCurrentMonth' => function($query) use ($userId){
+               $query->where('user_id',$userId);
+          }]);
+          return $this;
+    }
+
     public function limitCurrentUserProfitabilityAccess(): ProjectsRepository{
 
          if(!\Auth::user()->is_admin){

@@ -61,6 +61,12 @@ class Project extends Model
                      ->take(1);
     }
 
+    public function projectReportsForCurrentMonth(){
+
+        return $this->projectReports()
+                    ->whereMonth('updated_at', date('m'));
+    }
+
     public static function canBeEditedByCurrentUser(int $projectID): bool{
         
         if(\Auth::user()->is_admin){

@@ -4,9 +4,9 @@
         <close-button v-bind:description="translations['close']" v-on:click.native="closeCard" />
     </div>
     <ul class="tab-list">
-       <li v-text="translations['projects_report']" v-on:click="setCurrentTab" id="report-tab" class="tab-list-element"></li>
-       <li v-text="translations['clockify_report']" v-on:click="setCurrentTab" id="clockify-tab" class="tab-list-element"></li>
-       <li v-text="translations['data']"  v-on:click="setCurrentTab" id="data-tab" class="tab-list-element"></li>
+       <li v-text="translations['projects_report']" v-on:click="showReportsTab"  class="tab-list-element"></li>
+       <li v-text="translations['clockify_report']"  v-on:click="showClockifyTab" class="tab-list-element"></li>
+       <li v-text="translations['data']"  v-on:click="showDataTab" id="data-tab" class="tab-list-element"></li>
     </ul>
     
     <section v-show="reportTabIsSelected" class="tab-list-section">
@@ -29,7 +29,8 @@
             <th v-text="translations['range']" class="table-header"></th>
             <th v-text="translations['time']" class="table-header"></th>
             <th v-text="translations['status']" class="table-header"></th>
-            <th v-text="translations['update_date']" class="table-header"></th>
+            <th v-text="translations['update_month']" class="table-header"></th>
+            <th v-text="translations['total_time_spent']" class="table-header"></th>
             <th v-text="translations['comment']" class="table-header"></th>
             <th v-text="translations['action']" class="table-header"></th>
          </thead>
@@ -38,15 +39,18 @@
                <td v-text="projectNames[index]" class="table-cell"></td>
                <td v-text="taskRanges[index]" class="table-cell"></td>
                <td class="table-cell">
-                  <labeled-input input-type="number" class="project-hours" v-model="workTimes[index]" name="project_reported_hours"></labeled-input>
+                  <labeled-input input-type="number" class="project-hours" v-model="workTimesInReportedMonth[index]" name="project_reported_hours"></labeled-input>
                </td>
                <td class="table-cell">
                  <labeled-select name="account_id" class="project-status" v-model="workStatuses[index]" v-bind:displayed-values="projectReportStatusesValues" v-bind:values="projectReportStatusesIds"></labeled-select>
                </td>
                <td class="table-cell">
-                 <span class="datepicker-wrapper">
-                    <datepicker input-class="calendar-input" v-model="reportUpdateDates[index]" format="yyyy-MM-dd" name="update_date" ></datepicker>
-                 </span>
+                 <labeled-select name="report_for_month" v-model="userReportForMonth[index]"  v-bind:displayed-values="clockifyAvailableMonthsNames" v-bind:values="clockifyAvailableMonthsNumbers">
+                    {{translations['month_report']}} :
+                 </labeled-select>
+               </td>
+               <td class="table-cell">
+                 {{totalTimeSpent[index]}}
                </td>
                <td class="table-cell">
                  <textarea v-model="reportComments[index]" class="classic-textarea"></textarea>
@@ -75,7 +79,7 @@
         <labeled-input v-bind:is-disabled="ordinaryTeamMember" v-model="employee['full_name']" name="full_name" >{{translations['full_name']}} : </labeled-input>
         <labeled-input v-model="employee['email']" name="email">{{translations['email']}} : </labeled-input>
         <labeled-input v-model="employee['phone_number']" name="phone_number">{{translations['phone_number']}} : </labeled-input>
-        <labeled-select name="role_id" v-bind:is-disabled="ordinaryTeamMember" v-model="employee['role_id']"
+        <labeled-select name="role_id" v-bind:is-disabled="!admin" v-model="employee['role_id']"
             v-bind:values="userRolesIds"
             v-bind:displayed-values="userRolesValues">
             {{translations['role']}} : 
@@ -194,6 +198,12 @@
             default:false
     }) readonly ordinaryTeamMember: boolean;
 
+    @Prop({
+            type: Boolean,
+            required: false,
+            default:false
+    }) readonly admin: boolean;
+
 
     private translations = translator('employee_data');
     private csrfToken:string = '';
@@ -202,16 +212,31 @@
     private selectedTab:string = 'report-tab';
     private projectNames = {};
     private taskRanges = {};
-    private workTimes = {};
+    private workTimesInReportedMonth = {};
     private workStatuses = {};
     private reportUpdateDates = {};
     private reportComments = {};
     private numberOfDisplayedReports:number = 0;
     private projectIds = {};
     private filterMonth:number = 0;
+    private userReportForMonth:object = {};
     private filterYear:number = new Date().getFullYear();
     private employeePositionsList :string[] = [];
     private employeeSkillsList :string[] = [];
+    private totalTimeSpent :object = {};
+
+    showReportsTab(){
+      this.selectedTab = 'report-tab';
+      this.filterReports();
+    }
+
+    showClockifyTab(){
+      this.selectedTab = 'clockify-tab';
+    }
+
+    showDataTab(){
+       this.selectedTab = 'data-tab';
+    }
 
   async saveEmployeeData(){
 
@@ -231,6 +256,12 @@
             this.employee['positions_ids'] = positionsIds;
             this.employee['skills_ids'] = skillsIds;
          }
+         let employeeCopy = Object.assign({}, this.employee);
+
+
+         if(!this.admin){
+           delete employeeCopy['role_id'];
+         }
 
            const requestData = {
                method : 'PATCH',
@@ -238,7 +269,7 @@
                   'X-CSRF-TOKEN' : this.csrfToken,
                   'Content-type': 'application/json; charset=UTF-8'
                },
-               body : JSON.stringify(this.employee)
+               body : JSON.stringify(employeeCopy)
                
             };
 
@@ -300,7 +331,6 @@
        this.employee = employee;
        this.loadEmployeePositions(employee);
        this.loadEmployeeSkills(employee);
-       this.filterReports();
        this.showCard = true;
     }
 
@@ -331,10 +361,11 @@
         this.projectIds = {};
         this.projectNames = {};
         this.taskRanges = {};
-        this.workTimes = {};
+        this.workTimesInReportedMonth = {};
         this.workStatuses = {};
         this.reportUpdateDates = {};
         this.reportComments = {};
+        this.totalTimeSpent = {};
     }
 
     loadProjectReports(projects){
@@ -345,11 +376,23 @@
             this.projectIds[this.numberOfDisplayedReports] = project.id;
             this.projectNames[this.numberOfDisplayedReports] =  project.name ;
             this.taskRanges[this.numberOfDisplayedReports] = this.tasksList(project);
-            this.workTimes[this.numberOfDisplayedReports] = this.projectHours(project) || 0;
+            this.workTimesInReportedMonth[this.numberOfDisplayedReports] =  0;
             this.workStatuses[this.numberOfDisplayedReports] = this.projectStatus(project) || '';
             this.reportUpdateDates[this.numberOfDisplayedReports] = this.updateDate(project) || new Date().getFullYear();
             this.reportComments[this.numberOfDisplayedReports] = this.reportComment(project);
+            this.totalTimeSpent[this.numberOfDisplayedReports] = this.countTotalTimeSpentOnProjectByEmployee(project.project_reports);
        });
+    }
+
+    countTotalTimeSpentOnProjectByEmployee(reports:any[]):number{
+
+           if(reports.length == 0){
+             return 0;
+           }
+
+           let totalTimeSpent:number = 0;
+           reports.forEach(report => totalTimeSpent += report.time_spent);
+           return totalTimeSpent;
     }
 
     showNotification(text, type="no-error"){
@@ -384,10 +427,11 @@
 
                     case 200:
                       const responseBody = await response.json();
-                      console.log(responseBody);
+                      
                       if(responseBody.length == 0){
                           this.showNotification(this.translations['no_results_have_been_foound_for_your_authentication_level'])
                       }
+                      console.log(responseBody);
                       this.loadProjectReports(responseBody);
                     break;
 
@@ -407,13 +451,12 @@
     }
 
    async saveProjectReportSettings(index:number){
-         const date = this.reportUpdateDates[index].toISOString().slice(0, 10);
       
          const requestBody = {
             project_id : this.projectIds[index],
-            time : this.workTimes[index],
+            time : this.workTimesInReportedMonth[index],
             status_id : this.workStatuses[index],
-            update_date : date,
+            update_month : this.userReportForMonth[index],
             comment : this.reportComments[index],
             employee_id : this.employee.id
          };
@@ -484,13 +527,10 @@
       return taskList.slice(0,-2);
     }
 
-    projectHours(project){
-       if(project.project_reports.length == 0){
-         return 0;
-       }
-       else{
-        return project.project_reports[0].time_spent;
-       }
+    projectHoursInCurrentMonth(reportForCurrentMonth){
+
+        return (reportForCurrentMonth.length == 0) ? 0 : reportForCurrentMonth[0].time_spent;
+         
     }
 
     projectStatus(project){
@@ -504,10 +544,6 @@
 
     closeCard(){
       this.showCard = false;
-    }
-
-    setCurrentTab(event){
-      this.selectedTab = event.target.id || event.target.parent.id;
     }
 
     get reportTabIsSelected():boolean{

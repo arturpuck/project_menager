@@ -11,6 +11,8 @@
       v-bind:employee-positions-ids="{{json_encode($positions->pluck('id'), true)}}"
       v-bind:employee-skills="{{json_encode($skills->pluck('name'), true)}}"
       v-bind:employee-skills-ids="{{json_encode($skills->pluck('id'), true)}}"
+      v-bind:user-roles-values="{{json_encode($roles->pluck('name'), true)}}"
+      v-bind:user-roles-ids="{{json_encode($roles->pluck('id'), true)}}"
     ></new-employee>
     @endif
     <h1 class="header header-under-navbar">{{__('team_members_list')}}</h1>
@@ -45,6 +47,9 @@
       v-bind:clockify-available-months-numbers="{{json_encode($currentMonthAndPreviousNumbers, true)}}"
       @if(\Auth::user()->is_ordinary_team_member)
          v-bind:ordinary-team-member="true"
+      @endif
+      @if(\Auth::user()->is_admin)
+         v-bind:admin="true"
       @endif
       v-bind:years-range="{{json_encode($yearsRange)}}">
     </employee-card>

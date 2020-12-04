@@ -66,23 +66,30 @@ Route::middleware(['auth'])->group(function(){
             ->name('list');
 
       Route::get('/team/get-all', 'TeamController@getAll')
-            ->name('get-all');
+            ->name('get.all');
 
       Route::post('/report/store', 'TeamController@storeReport')
             ->name('store-report');
 
       Route::get('/employee/reports/filter', 'TeamController@filterReports')
-            ->name('filter-report');
+            ->name('filter.report');
 
       Route::patch('/employee/reports/store', 'TeamController@storeProjectReport')
-            ->name('filter-report');
+            ->name('store.report');
 
       Route::patch('/employee/change-data', 'TeamController@updateEmployeeData')
             ->name('update.employee.data');
 
-      Route::get('/employees/get-with-desired-skill', 'TeamController@getEmployeesWithDesiredSkill')
-             ->middleware('restrictOrdinaryTeamMembers')
-             ->name('get.employee.with.desired.skill');
+      Route::middleware(['restrictOrdinaryTeamMembers'])->group(function(){
+
+            Route::get('/employees/get-with-desired-skill', 'TeamController@getEmployeesWithDesiredSkill')
+                 ->name('get.employee.with.desired.skill');
+
+            Route::post('/employee/create', 'TeamController@createNewEmployee')
+                 ->name('create.new.employee');
+      });
+
+      
    });
 
    Route::name('clients.')->group(function(){

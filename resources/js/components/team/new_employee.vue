@@ -7,13 +7,22 @@
    <div class="user-data">
       <labeled-input v-model="login" name="login" >{{translations['login']}} : </labeled-input>
       <labeled-input v-model="email" name="email" >{{translations['email']}} : </labeled-input>
-      <labeled-input v-model="password" name="password" >{{translations['password']}} : </labeled-input>
-      <labeled-input v-model="passwordConfirmation" name="password_confirmation" >{{translations['confirm_password']}} : </labeled-input>
+      <labeled-input v-model="password" input-type="password" name="password" >{{translations['password']}} : </labeled-input>
+      <labeled-input v-model="passwordConfirmation" input-type="password" name="password_confirmation" >{{translations['confirm_password']}} : </labeled-input>
       <labeled-input v-model="fullName" name="full_name" >{{translations['full_name']}} : </labeled-input>
       <labeled-input v-model="phoneNumber" name="phone_number" >{{translations['phone_number']}} : </labeled-input>
       <labeled-input v-model="ratePerHourSetByDeal" input-type="number" name="rate_per_hour_set_by_deal" >{{translations['rate_per_hour_set_by_deal']}} : </labeled-input>
       <labeled-input v-model="realRatePerHour" input-type="number" name="real_rate_per_hour" >{{translations['real_rate_per_hour']}} : </labeled-input>
       <labeled-input v-model="monthRate" input-type="number" name="month_rate" >{{translations['month_rate']}} : </labeled-input>
+      <labeled-select name="role_id"  v-model="userRole"
+            v-bind:values="userRolesIds"
+            v-bind:displayed-values="userRolesValues">
+            {{translations['role']}} : 
+        </labeled-select>
+        <div class="textarea-container">
+          <label for="note" v-text="translations['note']" class="textarea-label"></label>
+          <textarea name="comment" v-model="employeeNote" id="note" class="textarea" cols="30" rows="10"></textarea>
+        </div>   
       <fieldset class="block-fieldset">
          <caption v-text="translations['positions']" class="classic-caption"></caption>
           <ul class="rectangular-elements-list">
@@ -34,7 +43,7 @@
                 </li>
               </ul>
       </fieldset>
-      <positive-button v-on:click.native="createNewEmployee">{{translations['save']}} </positive-button>
+      <positive-button class="colored-button wide-button" v-on:click.native="createNewEmployee">{{translations['add_employee']}} </positive-button>
    </div>
 </form>
 </template>
@@ -78,6 +87,16 @@
             required: true,
     }) readonly employeeSkillsIds: number[];
 
+    @Prop({
+            type: Array,
+            required: true,
+    }) readonly userRolesValues: string[];
+
+    @Prop({
+            type: Array,
+            required: true,
+    }) readonly userRolesIds: string[];
+
     private translations = translator('new_employee');
     private passwordConfirmation:string = '';
     private password:string = '';
@@ -85,14 +104,71 @@
     private email:string = '';
     private fullName:string = '';
     private phoneNumber:string = '';
+    private employeeNote:string = '';
+    private userRole:string = '';
     private ratePerHourSetByDeal:number = 0;
     private realRatePerHour:number = 0;
     private monthRate:number = 0;
     private employeePositionsList :string[] = [];
     private employeeSkillsList :string[] = [];
+    private csrfToken:string = '';
 
-    createNewEmployee(){
+    getNewEmployeeData() : Object{
 
+      let employeeData = {};
+      let skillsIds:number[] = [];
+      let positionsIds:number[] = [];
+
+      this.employeeSkillsList.forEach(value => {
+            skillsIds.push(this.getSkillId(value));
+      });
+
+      this.employeePositionsList.forEach(value => {
+            positionsIds.push(this.getPositionId(value));
+      });
+
+      employeeData['positions_ids'] = positionsIds;
+      employeeData['login'] = this.login;
+      employeeData['password'] = this.password;
+      employeeData['password_confirmation'] = this.passwordConfirmation;
+      employeeData['skills_ids'] = skillsIds;
+      employeeData['full_name'] = this.fullName;
+      employeeData['email'] = this.email;
+      employeeData['phone_number'] = this.phoneNumber;
+      employeeData['role_id'] = this.userRole;
+      employeeData['rate_per_hour_set_by_deal'] = this.ratePerHourSetByDeal;
+      employeeData['rate_per_month'] = this.monthRate;
+      employeeData['real_rate_per_hour'] = this.realRatePerHour;
+      employeeData['note'] = this.employeeNote;
+
+      return employeeData;
+    }
+
+   async createNewEmployee(){
+
+    let employeeData:object = this.getNewEmployeeData();
+
+           const requestData = {
+               method : 'POST',
+               headers : {
+                  'X-CSRF-TOKEN' : this.csrfToken,
+                  'Content-type': 'application/json; charset=UTF-8'
+               },
+               body : JSON.stringify(employeeData)
+               
+            };
+
+            const response = await fetch('/employee/create',requestData);
+
+            switch(response.status){
+                 case 200:
+                   this.showNotification(this.translations['employee_created_successfully'])
+                 break;
+
+                  case 400:
+                   this.showNotification(this.translations['the_data_is_invalid']);
+                 break;
+            }
     }
 
     hideForm(){
@@ -135,6 +211,10 @@
            this.employeeSkillsList.push(skill);
         }
     }
+
+    created(){
+      this.csrfToken = (<HTMLMetaElement>document.getElementById('csrf-token')).content;
+    }
     
   }
 </script>
@@ -144,9 +224,22 @@
 @import '~sass/fonts';
 @import '~sass/components/header';
 @import '~sass/components/rectangular_list';
+@import '~sass/components/labeled_wide_textarea';
 
 .block-fieldset{
   width:100%;
+}
+
+.colored-button {
+    background: #00C8C8;
+    color: white;
+    padding: 0.7vw 10px;
+}
+
+.wide-button {
+    display: block;
+    width: 95%;
+    margin: 0 auto;
 }
 
 .classic-caption{

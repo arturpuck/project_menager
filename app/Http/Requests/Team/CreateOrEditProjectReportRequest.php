@@ -3,6 +3,9 @@
 namespace App\Http\Requests\Team;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Rules\MonthNumberEqualsToCurrentOrPrevious;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Contracts\Validation\Validator;
 
 class CreateOrEditProjectReportRequest extends FormRequest
 {
@@ -36,8 +39,13 @@ class CreateOrEditProjectReportRequest extends FormRequest
             'project_id' => ['required', 'exists:projects,id'],
             'time' => ['required', 'numeric', 'min:0', 'max:540'],
             'status_id' => ['required', 'exists:project_statuses,id'],
-            'update_date' => ['required', 'date'],
+            'update_month' => ['required', new MonthNumberEqualsToCurrentOrPrevious()],
             'comment' => ['nullable', 'max:1000']
         ];
+    }
+
+    public function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response()->json($validator->messages()->all(),400));
     }
 }

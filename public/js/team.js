@@ -468,7 +468,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".header {\n  font-size: 2vw;\n  font-family: \"Exo 2\", sans-serif;\n  text-align: left;\n  font-family: Montserrat;\n  font-weight: bold;\n  letter-spacing: 0px;\n  color: black;\n  padding: 0 0 0 4vw;\n  display: inline-block;\n}\n@media (max-width: 1200px) {\n.header {\n    font-size: 23px;\n}\n}\n.header-under-navbar {\n  display: block;\n  margin-top: 4.5vw;\n  margin-top: 4.7vw;\n  padding: 0.9vw;\n}\n.remove-rectangular-element-icon {\n  width: 1.8vw;\n  height: 1.8vw;\n}\n.rectangular-elements-list {\n  list-style-type: none;\n  padding: 4px;\n  margin: 0;\n}\n.rectangular-list-element {\n  padding: 5px;\n  display: inline-block;\n  margin: 5px;\n  background: black;\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n@media (max-width: 1200px) {\n.rectangular-list-element {\n    font-size: 16px;\n}\n}\n.block-fieldset {\n  width: 100%;\n}\n.classic-caption {\n  font-size: 1.5vw;\n  font-family: Montserrat, sans-serif;\n  letter-spacing: 0px;\n  color: #3C4346;\n  opacity: 1;\n  display: block;\n  text-align: left;\n  padding-left: 2vw;\n}\n@media (max-width: 1200px) {\n.classic-caption {\n    font-size: 22px;\n}\n}\n.new-employee-form {\n  position: fixed;\n  width: 100%;\n  height: 100vh;\n  overflow-y: auto;\n  top: 0;\n  left: 0;\n  background: white;\n  z-index: 2;\n}\n.header-bar {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 0.7vw;\n}\n.user-data {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n}", ""]);
+exports.push([module.i, ".header {\n  font-size: 2vw;\n  font-family: \"Exo 2\", sans-serif;\n  text-align: left;\n  font-family: Montserrat;\n  font-weight: bold;\n  letter-spacing: 0px;\n  color: black;\n  padding: 0 0 0 4vw;\n  display: inline-block;\n}\n@media (max-width: 1200px) {\n.header {\n    font-size: 23px;\n}\n}\n.header-under-navbar {\n  display: block;\n  margin-top: 4.5vw;\n  margin-top: 4.7vw;\n  padding: 0.9vw;\n}\n.remove-rectangular-element-icon {\n  width: 1.8vw;\n  height: 1.8vw;\n}\n.rectangular-elements-list {\n  list-style-type: none;\n  padding: 4px;\n  margin: 0;\n}\n.rectangular-list-element {\n  padding: 5px;\n  display: inline-block;\n  margin: 5px;\n  background: black;\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n@media (max-width: 1200px) {\n.rectangular-list-element {\n    font-size: 16px;\n}\n}\n.textarea-container {\n  display: flex;\n  flex-wrap: nowrap;\n  border: 1px solid #E3E3E3;\n  border-radius: 4px;\n  align-items: stretch;\n}\n.textarea-label {\n  flex-basis: 15%;\n  background: #efeeee;\n  font-size: 1.1vw;\n  font-family: Montserrat, sans-serif;\n  color: black;\n  font-weight: bold;\n}\n@media (max-width: 1200px) {\n.textarea-label {\n    font-size: 12px;\n}\n}\n.textarea {\n  flex-basis: 85%;\n  color: black;\n  font-size: 1.3vw;\n  font-family: Montserrat, sans-serif;\n  border: none;\n}\n@media (max-width: 1200px) {\n.textarea {\n    font-size: 14px;\n}\n}\n.block-fieldset {\n  width: 100%;\n}\n.colored-button {\n  background: #00C8C8;\n  color: white;\n  padding: 0.7vw 10px;\n}\n.wide-button {\n  display: block;\n  width: 95%;\n  margin: 0 auto;\n}\n.classic-caption {\n  font-size: 1.5vw;\n  font-family: Montserrat, sans-serif;\n  letter-spacing: 0px;\n  color: #3C4346;\n  opacity: 1;\n  display: block;\n  text-align: left;\n  padding-left: 2vw;\n}\n@media (max-width: 1200px) {\n.classic-caption {\n    font-size: 22px;\n}\n}\n.new-employee-form {\n  position: fixed;\n  width: 100%;\n  height: 100vh;\n  overflow-y: auto;\n  top: 0;\n  left: 0;\n  background: white;\n  z-index: 2;\n}\n.header-bar {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 0.7vw;\n}\n.user-data {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n}", ""]);
 
 // exports
 
@@ -2375,21 +2375,33 @@ var EmployeeCard = /** @class */ (function (_super) {
         _this.selectedTab = 'report-tab';
         _this.projectNames = {};
         _this.taskRanges = {};
-        _this.workTimes = {};
+        _this.workTimesInReportedMonth = {};
         _this.workStatuses = {};
         _this.reportUpdateDates = {};
         _this.reportComments = {};
         _this.numberOfDisplayedReports = 0;
         _this.projectIds = {};
         _this.filterMonth = 0;
+        _this.userReportForMonth = {};
         _this.filterYear = new Date().getFullYear();
         _this.employeePositionsList = [];
         _this.employeeSkillsList = [];
+        _this.totalTimeSpent = {};
         return _this;
     }
+    EmployeeCard.prototype.showReportsTab = function () {
+        this.selectedTab = 'report-tab';
+        this.filterReports();
+    };
+    EmployeeCard.prototype.showClockifyTab = function () {
+        this.selectedTab = 'clockify-tab';
+    };
+    EmployeeCard.prototype.showDataTab = function () {
+        this.selectedTab = 'data-tab';
+    };
     EmployeeCard.prototype.saveEmployeeData = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var skillsIds_1, positionsIds_1, requestData, response;
+            var skillsIds_1, positionsIds_1, employeeCopy, requestData, response;
             var _this = this;
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -2406,13 +2418,17 @@ var EmployeeCard = /** @class */ (function (_super) {
                             this.employee['positions_ids'] = positionsIds_1;
                             this.employee['skills_ids'] = skillsIds_1;
                         }
+                        employeeCopy = Object.assign({}, this.employee);
+                        if (!this.admin) {
+                            delete employeeCopy['role_id'];
+                        }
                         requestData = {
                             method: 'PATCH',
                             headers: {
                                 'X-CSRF-TOKEN': this.csrfToken,
                                 'Content-type': 'application/json; charset=UTF-8'
                             },
-                            body: JSON.stringify(this.employee)
+                            body: JSON.stringify(employeeCopy)
                         };
                         return [4 /*yield*/, fetch('/employee/change-data', requestData)];
                     case 1:
@@ -2462,7 +2478,6 @@ var EmployeeCard = /** @class */ (function (_super) {
         this.employee = employee;
         this.loadEmployeePositions(employee);
         this.loadEmployeeSkills(employee);
-        this.filterReports();
         this.showCard = true;
     };
     EmployeeCard.prototype.loadEmployeePositions = function (employee) {
@@ -2486,10 +2501,11 @@ var EmployeeCard = /** @class */ (function (_super) {
         this.projectIds = {};
         this.projectNames = {};
         this.taskRanges = {};
-        this.workTimes = {};
+        this.workTimesInReportedMonth = {};
         this.workStatuses = {};
         this.reportUpdateDates = {};
         this.reportComments = {};
+        this.totalTimeSpent = {};
     };
     EmployeeCard.prototype.loadProjectReports = function (projects) {
         var _this = this;
@@ -2499,11 +2515,20 @@ var EmployeeCard = /** @class */ (function (_super) {
             _this.projectIds[_this.numberOfDisplayedReports] = project.id;
             _this.projectNames[_this.numberOfDisplayedReports] = project.name;
             _this.taskRanges[_this.numberOfDisplayedReports] = _this.tasksList(project);
-            _this.workTimes[_this.numberOfDisplayedReports] = _this.projectHours(project) || 0;
+            _this.workTimesInReportedMonth[_this.numberOfDisplayedReports] = 0;
             _this.workStatuses[_this.numberOfDisplayedReports] = _this.projectStatus(project) || '';
             _this.reportUpdateDates[_this.numberOfDisplayedReports] = _this.updateDate(project) || new Date().getFullYear();
             _this.reportComments[_this.numberOfDisplayedReports] = _this.reportComment(project);
+            _this.totalTimeSpent[_this.numberOfDisplayedReports] = _this.countTotalTimeSpentOnProjectByEmployee(project.project_reports);
         });
+    };
+    EmployeeCard.prototype.countTotalTimeSpentOnProjectByEmployee = function (reports) {
+        if (reports.length == 0) {
+            return 0;
+        }
+        var totalTimeSpent = 0;
+        reports.forEach(function (report) { return totalTimeSpent += report.time_spent; });
+        return totalTimeSpent;
     };
     EmployeeCard.prototype.showNotification = function (text, type) {
         if (type === void 0) { type = "no-error"; }
@@ -2543,10 +2568,10 @@ var EmployeeCard = /** @class */ (function (_super) {
                     case 2: return [4 /*yield*/, response.json()];
                     case 3:
                         responseBody = _b.sent();
-                        console.log(responseBody);
                         if (responseBody.length == 0) {
                             this.showNotification(this.translations['no_results_have_been_foound_for_your_authentication_level']);
                         }
+                        console.log(responseBody);
                         this.loadProjectReports(responseBody);
                         return [3 /*break*/, 7];
                     case 4:
@@ -2565,16 +2590,15 @@ var EmployeeCard = /** @class */ (function (_super) {
     };
     EmployeeCard.prototype.saveProjectReportSettings = function (index) {
         return __awaiter(this, void 0, void 0, function () {
-            var date, requestBody, requestData, response;
+            var requestBody, requestData, response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        date = this.reportUpdateDates[index].toISOString().slice(0, 10);
                         requestBody = {
                             project_id: this.projectIds[index],
-                            time: this.workTimes[index],
+                            time: this.workTimesInReportedMonth[index],
                             status_id: this.workStatuses[index],
-                            update_date: date,
+                            update_month: this.userReportForMonth[index],
                             comment: this.reportComments[index],
                             employee_id: this.employee.id
                         };
@@ -2634,13 +2658,8 @@ var EmployeeCard = /** @class */ (function (_super) {
         });
         return taskList.slice(0, -2);
     };
-    EmployeeCard.prototype.projectHours = function (project) {
-        if (project.project_reports.length == 0) {
-            return 0;
-        }
-        else {
-            return project.project_reports[0].time_spent;
-        }
+    EmployeeCard.prototype.projectHoursInCurrentMonth = function (reportForCurrentMonth) {
+        return (reportForCurrentMonth.length == 0) ? 0 : reportForCurrentMonth[0].time_spent;
     };
     EmployeeCard.prototype.projectStatus = function (project) {
         if (project.project_reports.length == 0) {
@@ -2652,9 +2671,6 @@ var EmployeeCard = /** @class */ (function (_super) {
     };
     EmployeeCard.prototype.closeCard = function () {
         this.showCard = false;
-    };
-    EmployeeCard.prototype.setCurrentTab = function (event) {
-        this.selectedTab = event.target.id || event.target.parent.id;
     };
     Object.defineProperty(EmployeeCard.prototype, "reportTabIsSelected", {
         get: function () {
@@ -2760,6 +2776,13 @@ var EmployeeCard = /** @class */ (function (_super) {
             default: false
         })
     ], EmployeeCard.prototype, "ordinaryTeamMember", void 0);
+    __decorate([
+        vue_property_decorator_1.Prop({
+            type: Boolean,
+            required: false,
+            default: false
+        })
+    ], EmployeeCard.prototype, "admin", void 0);
     EmployeeCard = __decorate([
         vue_property_decorator_1.Component({ components: { CloseButton: close_button_vue_1.default, Multiselect: multiselect_vue_1.default, LabeledInput: labeled_input_vue_1.default, PositiveButton: positive_button_vue_1.default, Datepicker: vuejs_datepicker_1.default, LabeledSelect: labeled_select_vue_1.default } })
     ], EmployeeCard);
@@ -2947,6 +2970,42 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -2971,14 +3030,72 @@ var NewEmployee = /** @class */ (function (_super) {
         _this.email = '';
         _this.fullName = '';
         _this.phoneNumber = '';
+        _this.employeeNote = '';
+        _this.userRole = '';
         _this.ratePerHourSetByDeal = 0;
         _this.realRatePerHour = 0;
         _this.monthRate = 0;
         _this.employeePositionsList = [];
         _this.employeeSkillsList = [];
+        _this.csrfToken = '';
         return _this;
     }
+    NewEmployee.prototype.getNewEmployeeData = function () {
+        var _this = this;
+        var employeeData = {};
+        var skillsIds = [];
+        var positionsIds = [];
+        this.employeeSkillsList.forEach(function (value) {
+            skillsIds.push(_this.getSkillId(value));
+        });
+        this.employeePositionsList.forEach(function (value) {
+            positionsIds.push(_this.getPositionId(value));
+        });
+        employeeData['positions_ids'] = positionsIds;
+        employeeData['login'] = this.login;
+        employeeData['password'] = this.password;
+        employeeData['password_confirmation'] = this.passwordConfirmation;
+        employeeData['skills_ids'] = skillsIds;
+        employeeData['full_name'] = this.fullName;
+        employeeData['email'] = this.email;
+        employeeData['phone_number'] = this.phoneNumber;
+        employeeData['role_id'] = this.userRole;
+        employeeData['rate_per_hour_set_by_deal'] = this.ratePerHourSetByDeal;
+        employeeData['rate_per_month'] = this.monthRate;
+        employeeData['real_rate_per_hour'] = this.realRatePerHour;
+        employeeData['note'] = this.employeeNote;
+        return employeeData;
+    };
     NewEmployee.prototype.createNewEmployee = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var employeeData, requestData, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        employeeData = this.getNewEmployeeData();
+                        requestData = {
+                            method: 'POST',
+                            headers: {
+                                'X-CSRF-TOKEN': this.csrfToken,
+                                'Content-type': 'application/json; charset=UTF-8'
+                            },
+                            body: JSON.stringify(employeeData)
+                        };
+                        return [4 /*yield*/, fetch('/employee/create', requestData)];
+                    case 1:
+                        response = _a.sent();
+                        switch (response.status) {
+                            case 200:
+                                this.showNotification(this.translations['employee_created_successfully']);
+                                break;
+                            case 400:
+                                this.showNotification(this.translations['the_data_is_invalid']);
+                                break;
+                        }
+                        return [2 /*return*/];
+                }
+            });
+        });
     };
     NewEmployee.prototype.hideForm = function () {
         this.$emit('close');
@@ -3012,6 +3129,9 @@ var NewEmployee = /** @class */ (function (_super) {
             this.employeeSkillsList.push(skill);
         }
     };
+    NewEmployee.prototype.created = function () {
+        this.csrfToken = document.getElementById('csrf-token').content;
+    };
     __decorate([
         vue_property_decorator_1.Prop({
             type: Array,
@@ -3036,6 +3156,18 @@ var NewEmployee = /** @class */ (function (_super) {
             required: true,
         })
     ], NewEmployee.prototype, "employeeSkillsIds", void 0);
+    __decorate([
+        vue_property_decorator_1.Prop({
+            type: Array,
+            required: true,
+        })
+    ], NewEmployee.prototype, "userRolesValues", void 0);
+    __decorate([
+        vue_property_decorator_1.Prop({
+            type: Array,
+            required: true,
+        })
+    ], NewEmployee.prototype, "userRolesIds", void 0);
     NewEmployee = __decorate([
         vue_property_decorator_1.Component({ components: {
                 RelativeShadowContainer: relative_shadow_container_vue_1.default, ExpectCircle: expect_circle_vue_1.default, CloseButton: close_button_vue_1.default,
@@ -3880,27 +4012,25 @@ var render = function() {
       _c("ul", { staticClass: "tab-list" }, [
         _c("li", {
           staticClass: "tab-list-element",
-          attrs: { id: "report-tab" },
           domProps: {
             textContent: _vm._s(_vm.translations["projects_report"])
           },
-          on: { click: _vm.setCurrentTab }
+          on: { click: _vm.showReportsTab }
         }),
         _vm._v(" "),
         _c("li", {
           staticClass: "tab-list-element",
-          attrs: { id: "clockify-tab" },
           domProps: {
             textContent: _vm._s(_vm.translations["clockify_report"])
           },
-          on: { click: _vm.setCurrentTab }
+          on: { click: _vm.showClockifyTab }
         }),
         _vm._v(" "),
         _c("li", {
           staticClass: "tab-list-element",
           attrs: { id: "data-tab" },
           domProps: { textContent: _vm._s(_vm.translations["data"]) },
-          on: { click: _vm.setCurrentTab }
+          on: { click: _vm.showDataTab }
         })
       ]),
       _vm._v(" "),
@@ -4022,7 +4152,14 @@ var render = function() {
               _c("th", {
                 staticClass: "table-header",
                 domProps: {
-                  textContent: _vm._s(_vm.translations["update_date"])
+                  textContent: _vm._s(_vm.translations["update_month"])
+                }
+              }),
+              _vm._v(" "),
+              _c("th", {
+                staticClass: "table-header",
+                domProps: {
+                  textContent: _vm._s(_vm.translations["total_time_spent"])
                 }
               }),
               _vm._v(" "),
@@ -4062,11 +4199,11 @@ var render = function() {
                           name: "project_reported_hours"
                         },
                         model: {
-                          value: _vm.workTimes[index],
+                          value: _vm.workTimesInReportedMonth[index],
                           callback: function($$v) {
-                            _vm.$set(_vm.workTimes, index, $$v)
+                            _vm.$set(_vm.workTimesInReportedMonth, index, $$v)
                           },
-                          expression: "workTimes[index]"
+                          expression: "workTimesInReportedMonth[index]"
                         }
                       })
                     ],
@@ -4096,27 +4233,44 @@ var render = function() {
                     1
                   ),
                   _vm._v(" "),
-                  _c("td", { staticClass: "table-cell" }, [
-                    _c(
-                      "span",
-                      { staticClass: "datepicker-wrapper" },
-                      [
-                        _c("datepicker", {
+                  _c(
+                    "td",
+                    { staticClass: "table-cell" },
+                    [
+                      _c(
+                        "labeled-select",
+                        {
                           attrs: {
-                            "input-class": "calendar-input",
-                            format: "yyyy-MM-dd",
-                            name: "update_date"
+                            name: "report_for_month",
+                            "displayed-values":
+                              _vm.clockifyAvailableMonthsNames,
+                            values: _vm.clockifyAvailableMonthsNumbers
                           },
                           model: {
-                            value: _vm.reportUpdateDates[index],
+                            value: _vm.userReportForMonth[index],
                             callback: function($$v) {
-                              _vm.$set(_vm.reportUpdateDates, index, $$v)
+                              _vm.$set(_vm.userReportForMonth, index, $$v)
                             },
-                            expression: "reportUpdateDates[index]"
+                            expression: "userReportForMonth[index]"
                           }
-                        })
-                      ],
-                      1
+                        },
+                        [
+                          _vm._v(
+                            "\n                    " +
+                              _vm._s(_vm.translations["month_report"]) +
+                              " :\n                 "
+                          )
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "table-cell" }, [
+                    _vm._v(
+                      "\n                 " +
+                        _vm._s(_vm.totalTimeSpent[index]) +
+                        "\n               "
                     )
                   ]),
                   _vm._v(" "),
@@ -4316,7 +4470,7 @@ var render = function() {
                 {
                   attrs: {
                     name: "role_id",
-                    "is-disabled": _vm.ordinaryTeamMember,
+                    "is-disabled": !_vm.admin,
                     values: _vm.userRolesIds,
                     "displayed-values": _vm.userRolesValues
                   },
@@ -4778,7 +4932,7 @@ var render = function() {
         _c(
           "labeled-input",
           {
-            attrs: { name: "password" },
+            attrs: { "input-type": "password", name: "password" },
             model: {
               value: _vm.password,
               callback: function($$v) {
@@ -4793,7 +4947,7 @@ var render = function() {
         _c(
           "labeled-input",
           {
-            attrs: { name: "password_confirmation" },
+            attrs: { "input-type": "password", name: "password_confirmation" },
             model: {
               value: _vm.passwordConfirmation,
               callback: function($$v) {
@@ -4886,6 +5040,61 @@ var render = function() {
           },
           [_vm._v(_vm._s(_vm.translations["month_rate"]) + " : ")]
         ),
+        _vm._v(" "),
+        _c(
+          "labeled-select",
+          {
+            attrs: {
+              name: "role_id",
+              values: _vm.userRolesIds,
+              "displayed-values": _vm.userRolesValues
+            },
+            model: {
+              value: _vm.userRole,
+              callback: function($$v) {
+                _vm.userRole = $$v
+              },
+              expression: "userRole"
+            }
+          },
+          [
+            _vm._v(
+              "\n            " +
+                _vm._s(_vm.translations["role"]) +
+                " : \n        "
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "textarea-container" }, [
+          _c("label", {
+            staticClass: "textarea-label",
+            attrs: { for: "note" },
+            domProps: { textContent: _vm._s(_vm.translations["note"]) }
+          }),
+          _vm._v(" "),
+          _c("textarea", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.employeeNote,
+                expression: "employeeNote"
+              }
+            ],
+            staticClass: "textarea",
+            attrs: { name: "comment", id: "note", cols: "30", rows: "10" },
+            domProps: { value: _vm.employeeNote },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.employeeNote = $event.target.value
+              }
+            }
+          })
+        ]),
         _vm._v(" "),
         _c("fieldset", { staticClass: "block-fieldset" }, [
           _c("caption", {
@@ -4984,13 +5193,14 @@ var render = function() {
         _c(
           "positive-button",
           {
+            staticClass: "colored-button wide-button",
             nativeOn: {
               click: function($event) {
                 return _vm.createNewEmployee($event)
               }
             }
           },
-          [_vm._v(_vm._s(_vm.translations["save"]) + " ")]
+          [_vm._v(_vm._s(_vm.translations["add_employee"]) + " ")]
         )
       ],
       1
@@ -21200,9 +21410,10 @@ var translations = {
             save: "Zapisz",
             project: "Projekt",
             range: "Zakres",
-            time: "Czas",
+            time_in_current_month: "Czas w bieżącym miesiącu",
+            time: "Raportowany czas",
             status: "Status",
-            update_date: "Data aktualizacji",
+            update_month: "Miesiąc aktualizacji",
             comment: "Komentarz",
             action: "Akcja",
             month: "miesiąc",
@@ -21227,7 +21438,8 @@ var translations = {
             real_rate_per_hour: "Rzeczywista stawka godzinowa",
             note: "Notatka",
             employee_data_modified_successfully: "Pomyślnie zmodyfikowano dane pracownika",
-            month_report: "Raport za miesiąc"
+            month_report: "Raport za miesiąc",
+            total_time_spent: "Całkowity czas"
         },
         income: {
             you_have_to_select_some_status: "Płatność musi mieć przypisany jakiś status. Aktualizacja nieudana",
@@ -21248,7 +21460,10 @@ var translations = {
             add_skill: "Dodaj umiejętność",
             add_position: "Dodaj stanowisko",
             skills: "Umiejętności",
-            save: "Dodaj "
+            add_employee: "Dodaj pracownika",
+            role: "Rola",
+            note: "Notatka",
+            employee_created_successfully: "Pomyślnie utworzono użytkownika"
         }
     }
 };

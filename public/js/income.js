@@ -15996,9 +15996,10 @@ var translations = {
             save: "Zapisz",
             project: "Projekt",
             range: "Zakres",
-            time: "Czas",
+            time_in_current_month: "Czas w bieżącym miesiącu",
+            time: "Raportowany czas",
             status: "Status",
-            update_date: "Data aktualizacji",
+            update_month: "Miesiąc aktualizacji",
             comment: "Komentarz",
             action: "Akcja",
             month: "miesiąc",
@@ -16023,7 +16024,8 @@ var translations = {
             real_rate_per_hour: "Rzeczywista stawka godzinowa",
             note: "Notatka",
             employee_data_modified_successfully: "Pomyślnie zmodyfikowano dane pracownika",
-            month_report: "Raport za miesiąc"
+            month_report: "Raport za miesiąc",
+            total_time_spent: "Całkowity czas"
         },
         income: {
             you_have_to_select_some_status: "Płatność musi mieć przypisany jakiś status. Aktualizacja nieudana",
@@ -16044,7 +16046,10 @@ var translations = {
             add_skill: "Dodaj umiejętność",
             add_position: "Dodaj stanowisko",
             skills: "Umiejętności",
-            save: "Dodaj "
+            add_employee: "Dodaj pracownika",
+            role: "Rola",
+            note: "Notatka",
+            employee_created_successfully: "Pomyślnie utworzono użytkownika"
         }
     }
 };
