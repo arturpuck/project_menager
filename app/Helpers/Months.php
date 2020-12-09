@@ -9,6 +9,11 @@ Class Months{
         'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'] 
     ];
 
+    public static function getNames():array{
+
+        return self::names[\App::getLocale()];
+    }
+
     public static function namesOfCurrentMonthAndPrevious():array{
 
           $currentMonth = intval(date('m'));

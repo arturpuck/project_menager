@@ -166,7 +166,11 @@
                  break;
 
                   case 400:
-                   this.showNotification(this.translations['the_data_is_invalid']);
+                   this.showNotification(this.translations['the_data_is_invalid'], 'error');
+                 break;
+
+                 case 500:
+                   this.showNotification(this.translations['the_data_is_probably_ok_but_a_server_error_occured'], 'error');
                  break;
             }
     }
@@ -181,12 +185,13 @@
     }
 
     getSkillId(skillName:string):number{
-      const index = this.employeeSkillsList.findIndex( name => name == skillName);
+      const index = this.employeeSkills.findIndex( name => name == skillName);
+      alert(index);
       return this.employeeSkillsIds[index];
     }
 
     getPositionId(positionName:string):number{
-      const index = this.employeePositionsList.findIndex( name => name == positionName);
+      const index = this.employeePositions.findIndex( name => name == positionName);
       return this.employeePositionsIds[index];
     }
 

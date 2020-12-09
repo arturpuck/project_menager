@@ -15,7 +15,7 @@ Class GetEmployeesWithDesiredSkillHandler {
 
     public function handle(GetEmployeesWithDesiredSkillRequest $request){
 
-        $employees = $this->employeesRepository->filterBySkillId($request->get('skill_id'))
+        $employees = $this->employeesRepository->filterByTaskStageId($request->get('skill_id'))
                                                 ->get();
 
         return response()->json($employees->toArray());

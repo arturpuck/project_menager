@@ -28,7 +28,7 @@ class CreateUsersTable extends Migration
             $table->unsignedFloat('rate_per_month')->nullable();
             $table->unsignedBigInteger('role_id');
             $table->foreign('role_id')->references('id')->on('roles');
-            $table->string('note',1000);
+            $table->string('note',1000)->nullable();
             $table->timestamps();
             $table->engine = 'InnoDB';
         });

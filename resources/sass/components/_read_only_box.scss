@@ -16,10 +16,17 @@
 .read-only-content{
     color:black;
     font-weight:bold;
-    background:#e9e9ea;
     @include responsive-font(1.2vw, 15px,Montserrat);
     line-height: 2em;
     white-space: nowrap;
-    padding:0 0.3vw;
-    border-radius:0 4px 4px 0;
+    padding:0 0.7vw;
+}
+
+.sub-container{
+    display: flex;
+    align-items: center;
+}
+
+.money-ammount{
+    background: #efeeee;
 }

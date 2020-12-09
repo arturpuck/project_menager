@@ -16,22 +16,40 @@ class CreateTasksTable extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 30)->unique();
+            $table->string('name', 50)->unique();
+            $table->string('name_pl', 50)->unique();
             $table->engine = 'InnoDB';
         });
 
         Task::insert([
-            ['name' => 'copywriting'],
-            ['name' => 'development'],
-            ['name' => 'UX consulting'],
-            ['name' => 'UX mock_ups'],
-            ['name' => 'PM'],
-            ['name' => 'graphical projects'],
-            ['name' => 'tech leadership'],
-            ['name' => 'testing'],
-            ['name' => 'creating specification'],
-            ['name' => 'UI'],
-            ['name' => 'implementation']
+            ['name' => 'copywriting',
+             'name_pl' => 'tworzenie tekstów na potrzeby marketingu'],
+            ['name' => 'development',
+              'name_pl' => 'rozbudowa',
+            ],
+            ['name' => 'UX consulting',
+             'name_pl' => 'konsultacje UX'
+            ],
+            ['name' => 'UX mock ups',
+            'name_pl' => 'makiety UX'
+            ],
+            ['name' => 'PM',
+             'name_pl' => 'zarządzanie projektem'
+            ],
+            ['name' => 'graphical projects',
+            'name_pl' => 'projekty graficzne'],
+            ['name' => 'tech leadership',
+            'name_pl' => 'przywództwo technologiczne'
+            ],
+            ['name' => 'testing',
+            'name_pl' => 'testy'
+            ],
+            ['name' => 'creating specification',
+            'name_pl' => 'tworzenie specyfikacji'],
+            ['name' => 'UI',
+            'name_pl' => 'interface użytkownika'],
+            ['name' => 'implementation',
+            'name_pl' => 'implementacja']
         ]);
     }
 

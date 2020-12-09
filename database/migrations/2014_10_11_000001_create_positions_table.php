@@ -16,14 +16,19 @@ class CreatePositionsTable extends Migration
     {
         Schema::create('positions', function (Blueprint $table) {
             $table->id();
-            $table->string('name',20);
+            $table->string('name',30)->unique();
+            $table->string('name_pl',30)->unique();
         });
 
         Position::insert([
-            ['name' => 'project menager'],
-            ['name' => 'account'],
-            ['name' => 'graphic artist'],
-            ['name' => 'developer'],
+            ['name' => 'project menager',
+             'name_pl' => 'menadżer projektów'],
+            ['name' => 'account',
+            'name_pl' => 'specjalista do spraw klientów'],
+            ['name' => 'graphic artist',
+            'name_pl' => 'artysta grafik'],
+            ['name' => 'developer',
+            'name_pl' => 'koder'],
         ]);
     }
 

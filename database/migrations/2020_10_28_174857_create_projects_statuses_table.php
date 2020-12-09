@@ -17,16 +17,23 @@ class CreateProjectsStatusesTable extends Migration
         Schema::create('project_statuses', function (Blueprint $table) {
             $table->id();
             $table->string('name',30)->unique();
+            $table->string('name_pl',30)->unique();
             $table->engine = 'InnoDB';
         });
 
         ProjectStatus::insert([
-            ['name' => 'programming_in_progress'],
-            ['name' => 'awaits'],
-            ['name' => 'done'],
-            ['name' => 'canceled'],
-            ['name' => 'graphical_design_in_progress'],
-            ['name' => 'UX_model_in_progress']
+            ['name' => 'programming in progress',
+             'name_pl' => 'programowanie w toku'],
+            ['name' => 'awaits',
+            'name_pl' => 'oczekuje'],
+            ['name' => 'done',
+            'name_pl' => 'zrobiony'],
+            ['name' => 'canceled',
+            'name_pl' => 'anulowany'],
+            ['name' => 'graphical design in progress',
+            'name_pl' => 'projekt graficzny w toku'],
+            ['name' => 'UX model in progress',
+            'name_pl' => 'model UX w toku']
         ]);
     }
 

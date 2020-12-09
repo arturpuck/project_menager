@@ -29,7 +29,6 @@ Class AddOrEditProjectHandler {
 
         if($projectID = $request->get('project_id')){
             $project = Project::find($projectID);
-            $project->paymentStages()->delete(); //do zoptymalizowania - średnio eleganckie
         }
         else{
             $project = new Project();
@@ -63,6 +62,7 @@ Class AddOrEditProjectHandler {
             $workStage['project_id'] = $project->id;
             $workStageData[] = $workStage;
         }
+        $project->taskStages()->delete();
         TaskStage::insert($workStageData);
         $paymentStageData = [];
        
@@ -75,6 +75,7 @@ Class AddOrEditProjectHandler {
             $paymentStage['project_id'] = $project->id;
             $paymentStageData[] = $paymentStage;
         }
+        $project->paymentStages()->delete();
         PaymentStage::insert($paymentStageData);
 
         return back()->with('succesMessage', 'operation_successfull');

@@ -1,30 +1,39 @@
 @import '~sass/fonts';
 
 .datepicker-wrapper{
-    display:inline-flex;
-    flex-wrap:nowrap;
-    align-items: center;
+    display: inline-block;
     border: 1px solid #E3E3E3;
     border-radius: 4px;
+    border:1px solid black;
+}
+
+.datepicker-bottom-container{
+    display:flex;
+    flex-wrap:nowrap;
+    align-items: center;
 }
 
 .datepicker-description{
-    @include responsive-font(1.2vw, 15px,Montserrat);
-    line-height: 2em;
+    @include responsive-font(1vw, 12px,Montserrat);
     white-space: nowrap;
-    color:#3C4346;
-    padding: 0 5px;
+    display: block;
+    color: #3C4346;
+    padding: 0.5vw;
     background: #e9e9ea;
     opacity: 0.5;
-    font-weight:bold;
+    font-weight: bold;
+    text-align: center;
 }
 
-#app .calendar-input{
+.calendar-input{
     color:#3C4346;
 	border: none;
 	background:white;
     outline:none;
     font-weight:bold; 
+    @include responsive-font(1.3vw, 16px,Montserrat);
+    text-align: center;
+    margin: 3px 0;
 }
 
 .calendar-icon{

@@ -6,6 +6,7 @@
 @import '~sass/components/header';
 @import '~sass/components/blank_button';
 @import '~sass/components/table';
+@import '~sass/components/datepicker_wraper';
 
 
 .add-project-button{
@@ -22,13 +23,8 @@
   background:#0FCACA;
   color:white;
   @include responsive-font(1.2vw, 15px,Montserrat);
-  height:2em;
-  padding:0 3vw;
-}
-
-#app .shortened-select{
-  min-width: 220px;
-  width: 10vw;
+  text-align: center;
+  display: block;
 }
 
 .success-message{
@@ -47,12 +43,14 @@
 }
 
 .project-list-header{
-  padding: 1.5vw 70px;
+  padding: 1.5vw 7vw;
 }
 
 .filter-controls{
-  display:flex;
+  display: grid;
+  grid-template-columns: repeat(4, 24%);
   justify-content: space-between;
+  justify-items: stretch;
 }
 
 .status-cell{

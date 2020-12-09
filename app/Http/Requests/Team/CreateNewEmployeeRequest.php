@@ -29,7 +29,7 @@ class CreateNewEmployeeRequest extends FormRequest
         return [
             'login' => ['required', 'unique:users,login'],
             'full_name' => ['required', 'string', 'max:30'],
-            'email' => ['required', 'email'],
+            'email' => ['required', 'unique:users,email', 'email'],
             'phone_number' => ['required', 'string', 'max:20'],
             'role_id' => ['numeric', 'exists:roles,id', new CurrentUserCanAssignRole()],
             'rate_per_hour_set_by_deal' => ['required', 'numeric'],

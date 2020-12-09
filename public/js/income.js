@@ -278,7 +278,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".button-close {\n  display: inline-block;\n  background: #ef0244;\n  width: 65%;\n  height: 65%;\n  position: absolute;\n  font-size: 0;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  -webkit-clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);\n          clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);\n}\n.button-close-container:hover .button-close {\n  background: white;\n}\n.button-close-container {\n  position: relative;\n  background: white;\n  border-radius: 50%;\n  border: 3px solid #ef0244;\n  font-size: 0;\n  min-width: 20px;\n  min-height: 20px;\n  width: 2.3vw;\n  height: 2.3vw;\n  cursor: pointer;\n  display: inline-block;\n}\n.button-close-container:hover {\n  background: #ef0244;\n}\n.button-description {\n  position: absolute;\n  top: -9999px;\n  left: 0;\n}", ""]);
+exports.push([module.i, ".button-close {\n  display: inline-block;\n  background: black;\n  width: 65%;\n  height: 65%;\n  position: absolute;\n  font-size: 0;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  -webkit-clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);\n          clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);\n}\n.button-close-container:hover .button-close {\n  background: white;\n}\n.button-close-container {\n  position: relative;\n  background: white;\n  border-radius: 50%;\n  border: 3px solid black;\n  font-size: 0;\n  min-width: 20px;\n  min-height: 20px;\n  width: 2.3vw;\n  height: 2.3vw;\n  cursor: pointer;\n  display: inline-block;\n}\n.button-close-container:hover {\n  background: black;\n}\n.button-description {\n  position: absolute;\n  top: -9999px;\n  left: 0;\n}", ""]);
 
 // exports
 
@@ -297,7 +297,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".select-label[data-v-0bbb9fa6] {\n  display: flex;\n  align-items: center;\n  border: 1px solid #E3E3E3;\n  border-radius: 4px;\n  padding: 3px 3px 3px 0;\n  color: #3C4346;\n  margin: 5px;\n  background: white;\n  position: relative;\n  height: 2em;\n}\n.select-description[data-v-0bbb9fa6] {\n  white-space: nowrap;\n  color: #3C4346;\n  line-height: 2em;\n  padding: 0 5px;\n  background: #e9e9ea;\n  opacity: 0.5;\n  font-weight: bold;\n}\n.described-select[data-v-0bbb9fa6] {\n  width: 1%;\n  flex-grow: 10;\n  color: #3C4346;\n  border: none;\n  background: white;\n  outline: none;\n  font-weight: bold;\n}\n.described-select[data-v-0bbb9fa6], .select-description[data-v-0bbb9fa6], .select-label[data-v-0bbb9fa6] {\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n}\n@media (max-width: 1200px) {\n.described-select[data-v-0bbb9fa6], .select-description[data-v-0bbb9fa6], .select-label[data-v-0bbb9fa6] {\n    font-size: 15px;\n}\n}\n.described-select-container[data-v-0bbb9fa6] {\n  min-width: 320px;\n  width: 20vw;\n  display: inline-block;\n}", ""]);
+exports.push([module.i, ".select-label[data-v-0bbb9fa6] {\n  border: 1px solid black;\n  border-radius: 4px;\n  color: #3C4346;\n  margin: 5px;\n  background: white;\n  display: inline-block;\n  padding: 0;\n  overflow: hidden;\n}\n.select-description[data-v-0bbb9fa6] {\n  white-space: nowrap;\n  display: block;\n  color: #3C4346;\n  padding: 0.5vw;\n  background: #e9e9ea;\n  opacity: 0.5;\n  font-weight: bold;\n  text-align: center;\n}\n.described-select[data-v-0bbb9fa6] {\n  display: block;\n  color: #3C4346;\n  border: none;\n  background: white;\n  outline: none;\n  font-weight: bold;\n  width: 95%;\n  min-width: -webkit-fit-content;\n  min-width: -moz-fit-content;\n  min-width: fit-content;\n  margin: 3px auto;\n  font-size: 1.3vw;\n  font-family: Montserrat, sans-serif;\n}\n@media (max-width: 1200px) {\n.described-select[data-v-0bbb9fa6] {\n    font-size: 16px;\n}\n}\n.select-description[data-v-0bbb9fa6], .select-label[data-v-0bbb9fa6] {\n  font-size: 1vw;\n  font-family: Montserrat, sans-serif;\n}\n@media (max-width: 1200px) {\n.select-description[data-v-0bbb9fa6], .select-label[data-v-0bbb9fa6] {\n    font-size: 12px;\n}\n}", ""]);
 
 // exports
 
@@ -316,7 +316,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".positive-button {\n  border: 1px solid #0FCACA;\n  border-radius: 10px;\n  opacity: 1;\n  font-size: 1.5vw;\n  font-family: \"Exo 2\", sans-serif;\n  font-family: Montserrat;\n  font-weight: bold;\n  letter-spacing: 0px;\n  color: #000000;\n  opacity: 1;\n  cursor: pointer;\n  display: inline-flex;\n  align-items: center;\n  padding: 0.5vw 1vw;\n}\n@media (max-width: 1200px) {\n.positive-button {\n    font-size: 19px;\n}\n}", ""]);
+exports.push([module.i, ".positive-button {\n  border: 1px solid #0FCACA;\n  border-radius: 10px;\n  opacity: 1;\n  font-size: 1.3vw;\n  font-family: \"Exo 2\", sans-serif;\n  font-family: Montserrat;\n  font-weight: bold;\n  letter-spacing: 0px;\n  color: #000000;\n  opacity: 1;\n  cursor: pointer;\n  display: inline-flex;\n  align-items: center;\n  padding: 0.4vw 0.7vw;\n}\n@media (max-width: 1200px) {\n.positive-button {\n    font-size: 17px;\n}\n}", ""]);
 
 // exports
 
@@ -1706,65 +1706,22 @@ var vue_property_decorator_1 = __webpack_require__(/*! vue-property-decorator */
 var LabeledSelect = /** @class */ (function (_super) {
     __extends(LabeledSelect, _super);
     function LabeledSelect() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.dynamicDisabledState = null;
-        _this.dynamicDisplayedValues = null;
-        _this.dynamicValues = null;
-        return _this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     LabeledSelect.prototype.emitData = function (event) {
         this.$emit('input', event.target.value);
     };
-    Object.defineProperty(LabeledSelect.prototype, "inputIsDisabled", {
-        get: function () {
-            return (this.dynamicDisabledState === null) ? this.isDisabled : this.dynamicDisabledState;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(LabeledSelect.prototype, "selectValues", {
-        get: function () {
-            return (this.dynamicValues === null) ? this.values : this.dynamicValues;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(LabeledSelect.prototype, "displayedSelectValues", {
-        get: function () {
-            return (this.dynamicDisplayedValues === null) ? this.displayedValues : this.dynamicDisplayedValues;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    LabeledSelect.prototype.created = function () {
-        if (this.identifier) {
-            this.$root.$on("modifyValues" + this.identifier, this.modifyValues);
-            this.$root.$on("modifyDisabledState" + this.identifier, this.modifyDisabledState);
-        }
-    };
-    LabeledSelect.prototype.modifyValues = function (values) {
-        if (values['displayed']) {
-            this.dynamicDisplayedValues = values['displayed'];
-        }
-        if (values['values']) {
-            this.dynamicValues = values['values'];
-        }
-    };
-    LabeledSelect.prototype.modifyDisabledState = function (state) {
-        this.dynamicDisabledState = state;
-    };
     __decorate([
         vue_property_decorator_1.Prop({
             type: Array,
-            required: false,
-            default: function () { return []; }
+            required: true,
         })
     ], LabeledSelect.prototype, "displayedValues", void 0);
     __decorate([
         vue_property_decorator_1.Prop({
             type: Array,
             required: false,
-            default: function () { return []; }
+            default: undefined
         })
     ], LabeledSelect.prototype, "values", void 0);
     __decorate([
@@ -1787,13 +1744,6 @@ var LabeledSelect = /** @class */ (function (_super) {
             default: false
         })
     ], LabeledSelect.prototype, "isDisabled", void 0);
-    __decorate([
-        vue_property_decorator_1.Prop({
-            type: [String, Number],
-            required: false,
-            default: undefined
-        })
-    ], LabeledSelect.prototype, "identifier", void 0);
     LabeledSelect = __decorate([
         vue_property_decorator_1.Component
     ], LabeledSelect);
@@ -2277,43 +2227,41 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "described-select-container" }, [
-    _c("label", { staticClass: "select-label" }, [
-      _c("span", { staticClass: "select-description" }, [_vm._t("default")], 2),
-      _vm._v(" "),
-      _c(
-        "select",
-        {
-          ref: "select_value",
-          staticClass: "described-select",
-          attrs: { name: _vm.name, disabled: _vm.inputIsDisabled },
-          domProps: { value: _vm.value },
-          on: { input: _vm.emitData }
-        },
-        [
-          _c("option", { attrs: { value: "" } }, [_vm._v("---")]),
-          _vm._v(" "),
-          _vm._l(_vm.displayedSelectValues, function(value, index) {
-            return _vm.selectValues
-              ? _c("option", { domProps: { value: _vm.selectValues[index] } }, [
-                  _vm._v(_vm._s(value))
-                ])
-              : _vm._e()
-          }),
-          _vm._v(" "),
-          _vm._l(_vm.displayedSelectValues, function(value, index) {
-            return !_vm.selectValues
-              ? _c(
-                  "option",
-                  { domProps: { value: _vm.displayedSelectValues[index] } },
-                  [_vm._v(_vm._s(value))]
-                )
-              : _vm._e()
-          })
-        ],
-        2
-      )
-    ])
+  return _c("label", { staticClass: "select-label" }, [
+    _c("div", { staticClass: "select-description" }, [_vm._t("default")], 2),
+    _vm._v(" "),
+    _c(
+      "select",
+      {
+        ref: "select_value",
+        staticClass: "described-select",
+        attrs: { name: _vm.name, disabled: _vm.isDisabled },
+        domProps: { value: _vm.value },
+        on: { input: _vm.emitData }
+      },
+      [
+        _c("option", { attrs: { value: "" } }, [_vm._v("---")]),
+        _vm._v(" "),
+        _vm._l(_vm.displayedValues, function(value, index) {
+          return _vm.values
+            ? _c("option", { domProps: { value: _vm.values[index] } }, [
+                _vm._v(_vm._s(value))
+              ])
+            : _vm._e()
+        }),
+        _vm._v(" "),
+        _vm._l(_vm.displayedValues, function(value, index) {
+          return !_vm.values
+            ? _c(
+                "option",
+                { domProps: { value: _vm.displayedValues[index] } },
+                [_vm._v(_vm._s(value))]
+              )
+            : _vm._e()
+        })
+      ],
+      2
+    )
   ])
 }
 var staticRenderFns = []
@@ -16049,7 +15997,9 @@ var translations = {
             add_employee: "Dodaj pracownika",
             role: "Rola",
             note: "Notatka",
-            employee_created_successfully: "Pomyślnie utworzono użytkownika"
+            employee_created_successfully: "Pomyślnie utworzono użytkownika",
+            the_data_is_invalid: "Wprowadzono nieprawidłowe dane",
+            the_data_is_probably_ok_but_a_server_error_occured: "Wprowadzone dano najprawdopodobniej są poprawne, ale wystąpił błąd po stronie serwera"
         }
     }
 };

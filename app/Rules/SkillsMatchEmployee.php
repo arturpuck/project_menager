@@ -40,13 +40,14 @@ class SkillsMatchEmployee implements Rule
         foreach($this->userIds as $index => $userId){
 
             $skillId = $this->skillIds[$index];
-            
-            $userHasSuchSkill = User::where('id',$userId)->whereHas('skills', function($query) use ($skillId){
-                 $query->where('skills.id', $skillId);
-            })->exists();
+
+            $userHasSuchSkill = User::find($userId)->skills()
+                                                   ->leftJoin('tasks', 'skills.name', '=', 'tasks.name')
+                                                   ->where('tasks.id',$skillId)
+                                                   ->exists();
 
             if(!$userHasSuchSkill){
-                $this->errorMessage = 'skills_where_assigned_to_aa_incorrect_user';
+                $this->errorMessage = 'skills_where_assigned_to_an_incorrect_user';
                 return false;
             }
         }

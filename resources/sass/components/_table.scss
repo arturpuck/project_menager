@@ -19,7 +19,7 @@
   .table-cell{
     color:black;
     text-align:center;
-    padding:3px;
+    padding:1vw;
     @include responsive-font(1.2vw,12px,Montserrat);
     &:nth-child(even){
       background:#efeeee;

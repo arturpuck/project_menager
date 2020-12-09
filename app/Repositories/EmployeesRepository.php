@@ -30,6 +30,26 @@ Class EmployeesRepository extends BaseRepository {
         return $this;
     }
 
+    public function filterByTaskStageId(int $skillId): EmployeesRepository {
+
+        $this->query = $this->query->whereHas('skills', function($query) use ($skillId){
+
+             $query->leftJoin('tasks', 'skills.name', '=', 'tasks.name')
+                   ->where('tasks.id',$skillId);
+        });
+
+        return $this;
+    }
+
+    public function filterBySkill(string $skill): EmployeesRepository {
+
+        $this->query = $this->query->whereHas('skills', function($query) use ($skill){
+             $query->where('name',$skill);
+        });
+
+        return $this;
+    }
+
     private function limitsForProjectMenagersAndAccounts(){
 
         return $this->query->where(function($query){
@@ -67,19 +87,4 @@ Class EmployeesRepository extends BaseRepository {
 
     }
 
-    public static function filterCollectionByEmployeePosition(Collection $employees, string $requiredPosition){
-
-        $result = $employees->filter(function($employee){ 
-            
-            $positions = $employee->positions->toArray();
-         
-            foreach($positions as $position){
-
-                if($position['name'] == $requiredPosition){
-                    return true;
-                }
-            }
-             return false;
-        });
-    }
 }

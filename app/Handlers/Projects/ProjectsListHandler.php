@@ -12,6 +12,7 @@ use App\Models\PaymentStatus;
 use App\Models\ProjectStatus;
 use App\Helpers\Months;
 use App\Helpers\Company;
+use App\Helpers\PluckColumnBy;
 
 Class ProjectsListHandler {
 
@@ -25,47 +26,33 @@ Class ProjectsListHandler {
 
     public function handle(Request $request){
 
-        $clients = Client::all();
-        $projects = Project::all();
-        $tasks = Task::all();
-        $employees = User::all();
-        $paymentStatuses = PaymentStatus::all();
-        $projectStatuses = ProjectStatus::all();
 
-        $projectMenagersAndAccounts = $this->employeesRepository 
-                          ->filterByPositions(['project menager', 'account'])
+        $projectMenagers = $this->employeesRepository 
+                          ->filterByPositions(['project menager'])
                           ->get();
-                        
-        $projectMenagers = $projectMenagersAndAccounts->filter(function($employee){ //możnaby filtrowanie gdzieś wydzielić do ponownego użycia
-            
-            $positions = $employee->positions->toArray();
-         
-            foreach($positions as $position){
 
-                if($position['name'] == 'project menager'){
-                    return true;
-                }
-            }
-             return false;
-        });
+        $this->employeesRepository->resetQuery();
 
+        $accounts = $this->employeesRepository 
+                          ->filterByPositions(['account'])
+                          ->get();
 
-        $accounts = $projectMenagersAndAccounts->filter(function($employee){
-           
-            $positions = $employee->positions->toArray();
+        $pluckColumnBy = PluckColumnBy::get();
 
-            foreach($positions as $position){
-                
-                if($position['name']  == 'account'){
-                    return true;
-                }
-            }
-             return false;
-        });
+                   return view('projects')->with([ 'clients' => Client::all(),
+                                                  'projects' => Project::all(),
+                                                  'projectMenagers' => $projectMenagers,
+                                                  'accounts' => $accounts,
+                                                  'paymentStatuses' => PaymentStatus::all(),
+                                                  'projectStatuses' => ProjectStatus::all(),
+                                                  'months' => Months::getNames(),
+                                                  'title' => 'projects_list',
+                                                  'description' => 'projects_list_description',
+                                                  'tasks' => Task::all(),
+                                                  'pluckColumnBy' => $pluckColumnBy,
+                                                  'paymentStatuses' => PaymentStatus::all(),
+                                                  'yearsRange' => Company::getYearsRange()]);
 
-        $months = Months::names[\App::getLocale()];
-        $yearsRange = Company::getYearsRange();
-
-        return compact('clients', 'projects', 'projectMenagers', 'tasks', 'paymentStatuses', 'employees', 'projectStatuses', 'months', 'yearsRange', 'accounts');
+    
     }
 }

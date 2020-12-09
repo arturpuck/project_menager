@@ -10,7 +10,8 @@ class ProjectStatus extends Model
     use HasFactory;
 
   protected  $fillable = [
-      'name'
+      'name',
+      'name_pl'
   ];
 
   public $timestamps = false;

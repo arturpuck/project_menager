@@ -95,8 +95,6 @@ new Vue({
 
        this.fetchingProjectsInProgress = true;
 
-        try{
-
             const requestBody = {
                 client_id: this.filterClientId,
                 task_id: this.filterTaskId,
@@ -121,7 +119,6 @@ new Vue({
             switch(response.status){
                 case 200:
                    const responseBody = await response.json();
-                   //console.log(responseBody);
                    if(responseBody.length == 0){
                       this.showNotification('no_results_have_been_foound_for_your_authentication_level')
                    }
@@ -141,13 +138,7 @@ new Vue({
                 break;
             }
    
-       }
-       catch(error){
-          alert(error.message);
-       }
-       finally{
            this.fetchingProjectsInProgress = false;
-       }
     }
         
    },
@@ -155,6 +146,10 @@ new Vue({
    created(){
        this.$root.$on('closeProjectForm', () => this.projectFormIsVisible = false);
        this.csrfToken = (<HTMLMetaElement>document.getElementById('csrf-token')).content;
+   },
+
+   mounted(){
+      this.filterProjects();
    }
    
 });

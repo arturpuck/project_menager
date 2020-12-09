@@ -116,7 +116,7 @@ table {
 
 .introductory-container {
   background: #E5FEFE;
-  padding: 3vw;
+  padding: 3vw 0;
   margin: 3.8vw 0 5px;
 }
 
@@ -128,7 +128,7 @@ table {
   font-weight: bold;
   letter-spacing: 0px;
   color: black;
-  padding: 0 0 0 4vw;
+  padding: 0 0 0 7vw;
   display: inline-block;
 }
 @media (max-width: 1200px) {
@@ -189,7 +189,7 @@ table {
 .table-cell {
   color: black;
   text-align: center;
-  padding: 3px;
+  padding: 1vw;
   font-size: 1.2vw;
   font-family: Montserrat, sans-serif;
 }
@@ -200,6 +200,60 @@ table {
 }
 .table-cell:nth-child(even) {
   background: #efeeee;
+}
+
+.datepicker-wrapper {
+  display: inline-block;
+  border: 1px solid #E3E3E3;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+
+.datepicker-bottom-container {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.datepicker-description {
+  font-size: 1vw;
+  font-family: Montserrat, sans-serif;
+  white-space: nowrap;
+  display: block;
+  color: #3C4346;
+  padding: 0.5vw;
+  background: #e9e9ea;
+  opacity: 0.5;
+  font-weight: bold;
+  text-align: center;
+}
+@media (max-width: 1200px) {
+  .datepicker-description {
+    font-size: 12px;
+  }
+}
+
+.calendar-input {
+  color: #3C4346;
+  border: none;
+  background: white;
+  outline: none;
+  font-weight: bold;
+  font-size: 1.3vw;
+  font-family: Montserrat, sans-serif;
+  text-align: center;
+  margin: 3px 0;
+}
+@media (max-width: 1200px) {
+  .calendar-input {
+    font-size: 16px;
+  }
+}
+
+.calendar-icon {
+  width: 0.8em;
+  height: 0.8em;
+  margin: 0 4px;
 }
 
 .add-project-button {
@@ -217,18 +271,13 @@ table {
   color: white;
   font-size: 1.2vw;
   font-family: Montserrat, sans-serif;
-  height: 2em;
-  padding: 0 3vw;
+  text-align: center;
+  display: block;
 }
 @media (max-width: 1200px) {
   #app .filter-button {
     font-size: 15px;
   }
-}
-
-#app .shortened-select {
-  min-width: 220px;
-  width: 10vw;
 }
 
 .success-message {
@@ -253,12 +302,14 @@ table {
 }
 
 .project-list-header {
-  padding: 1.5vw 70px;
+  padding: 1.5vw 7vw;
 }
 
 .filter-controls {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 24%);
   justify-content: space-between;
+  justify-items: stretch;
 }
 
 .status-cell {

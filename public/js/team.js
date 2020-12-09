@@ -278,7 +278,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".button-close {\n  display: inline-block;\n  background: #ef0244;\n  width: 65%;\n  height: 65%;\n  position: absolute;\n  font-size: 0;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  -webkit-clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);\n          clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);\n}\n.button-close-container:hover .button-close {\n  background: white;\n}\n.button-close-container {\n  position: relative;\n  background: white;\n  border-radius: 50%;\n  border: 3px solid #ef0244;\n  font-size: 0;\n  min-width: 20px;\n  min-height: 20px;\n  width: 2.3vw;\n  height: 2.3vw;\n  cursor: pointer;\n  display: inline-block;\n}\n.button-close-container:hover {\n  background: #ef0244;\n}\n.button-description {\n  position: absolute;\n  top: -9999px;\n  left: 0;\n}", ""]);
+exports.push([module.i, ".button-close {\n  display: inline-block;\n  background: black;\n  width: 65%;\n  height: 65%;\n  position: absolute;\n  font-size: 0;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  -webkit-clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);\n          clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);\n}\n.button-close-container:hover .button-close {\n  background: white;\n}\n.button-close-container {\n  position: relative;\n  background: white;\n  border-radius: 50%;\n  border: 3px solid black;\n  font-size: 0;\n  min-width: 20px;\n  min-height: 20px;\n  width: 2.3vw;\n  height: 2.3vw;\n  cursor: pointer;\n  display: inline-block;\n}\n.button-close-container:hover {\n  background: black;\n}\n.button-description {\n  position: absolute;\n  top: -9999px;\n  left: 0;\n}", ""]);
 
 // exports
 
@@ -297,7 +297,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".labeled-input-value-label[data-v-56cf15e0] {\n  display: flex;\n  align-items: baseline;\n  background: white;\n  border: 1px solid #E3E3E3;\n  border-radius: 4px;\n  color: #3C4346;\n  margin: 5px;\n  position: relative;\n  height: 2em;\n  font-weight: bold;\n}\n.text-input-description[data-v-56cf15e0] {\n  white-space: nowrap;\n  line-height: 2em;\n  padding: 0 10px;\n  background: #e9e9ea;\n  color: #3C4346;\n  opacity: 0.5;\n  font-weight: bold;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n}\n@media (max-width: 1200px) {\n.text-input-description[data-v-56cf15e0] {\n    font-size: 15px;\n}\n}\n.labeled-input-value[data-v-56cf15e0] {\n  background: white;\n  border: none;\n  border-bottom: 1px solid transparent;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  color: #3C4346;\n  width: 1%;\n  flex-grow: 10;\n  padding-left: 4px;\n  font-weight: bold;\n}\n@media (max-width: 1200px) {\n.labeled-input-value[data-v-56cf15e0] {\n    font-size: 15px;\n}\n}\n.labeled-input-value[data-v-56cf15e0]:focus {\n  outline: none;\n  border-bottom: 1px solid #86838f;\n}\n.labeled-input-container[data-v-56cf15e0] {\n  display: inline-block;\n  min-width: 320px;\n  width: 20vw;\n}", ""]);
+exports.push([module.i, ".labeled-input-value-label[data-v-56cf15e0] {\n  display: inline-block;\n  background: white;\n  border: 1px solid black;\n  border-radius: 4px;\n  color: #3C4346;\n  margin: 5px;\n  font-weight: bold;\n  overflow: hidden;\n  min-width: -webkit-min-content;\n  min-width: -moz-min-content;\n  min-width: min-content;\n  width: 20vw;\n}\n.text-input-description[data-v-56cf15e0] {\n  white-space: nowrap;\n  display: block;\n  color: #3C4346;\n  padding: 0.5vw;\n  background: #e9e9ea;\n  opacity: 0.5;\n  font-weight: bold;\n  text-align: center;\n  font-size: 1vw;\n  font-family: Montserrat, sans-serif;\n}\n@media (max-width: 1200px) {\n.text-input-description[data-v-56cf15e0] {\n    font-size: 12px;\n}\n}\n.labeled-input-value[data-v-56cf15e0] {\n  background: white;\n  border: none;\n  border-bottom: 1px solid transparent;\n  font-size: 1.3vw;\n  font-family: Montserrat, sans-serif;\n  color: #3C4346;\n  padding-left: 4px;\n  font-weight: bold;\n  width: 95%;\n  margin: 3px auto;\n  display: block;\n}\n@media (max-width: 1200px) {\n.labeled-input-value[data-v-56cf15e0] {\n    font-size: 16px;\n}\n}\n.labeled-input-value[data-v-56cf15e0]:focus {\n  outline: none;\n  border-bottom: 1px solid #86838f;\n}\n.labeled-input-container[data-v-56cf15e0] {\n  display: inline-block;\n  min-width: 320px;\n}", ""]);
 
 // exports
 
@@ -316,7 +316,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".select-label[data-v-0bbb9fa6] {\n  display: flex;\n  align-items: center;\n  border: 1px solid #E3E3E3;\n  border-radius: 4px;\n  padding: 3px 3px 3px 0;\n  color: #3C4346;\n  margin: 5px;\n  background: white;\n  position: relative;\n  height: 2em;\n}\n.select-description[data-v-0bbb9fa6] {\n  white-space: nowrap;\n  color: #3C4346;\n  line-height: 2em;\n  padding: 0 5px;\n  background: #e9e9ea;\n  opacity: 0.5;\n  font-weight: bold;\n}\n.described-select[data-v-0bbb9fa6] {\n  width: 1%;\n  flex-grow: 10;\n  color: #3C4346;\n  border: none;\n  background: white;\n  outline: none;\n  font-weight: bold;\n}\n.described-select[data-v-0bbb9fa6], .select-description[data-v-0bbb9fa6], .select-label[data-v-0bbb9fa6] {\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n}\n@media (max-width: 1200px) {\n.described-select[data-v-0bbb9fa6], .select-description[data-v-0bbb9fa6], .select-label[data-v-0bbb9fa6] {\n    font-size: 15px;\n}\n}\n.described-select-container[data-v-0bbb9fa6] {\n  min-width: 320px;\n  width: 20vw;\n  display: inline-block;\n}", ""]);
+exports.push([module.i, ".select-label[data-v-0bbb9fa6] {\n  border: 1px solid black;\n  border-radius: 4px;\n  color: #3C4346;\n  margin: 5px;\n  background: white;\n  display: inline-block;\n  padding: 0;\n  overflow: hidden;\n}\n.select-description[data-v-0bbb9fa6] {\n  white-space: nowrap;\n  display: block;\n  color: #3C4346;\n  padding: 0.5vw;\n  background: #e9e9ea;\n  opacity: 0.5;\n  font-weight: bold;\n  text-align: center;\n}\n.described-select[data-v-0bbb9fa6] {\n  display: block;\n  color: #3C4346;\n  border: none;\n  background: white;\n  outline: none;\n  font-weight: bold;\n  width: 95%;\n  min-width: -webkit-fit-content;\n  min-width: -moz-fit-content;\n  min-width: fit-content;\n  margin: 3px auto;\n  font-size: 1.3vw;\n  font-family: Montserrat, sans-serif;\n}\n@media (max-width: 1200px) {\n.described-select[data-v-0bbb9fa6] {\n    font-size: 16px;\n}\n}\n.select-description[data-v-0bbb9fa6], .select-label[data-v-0bbb9fa6] {\n  font-size: 1vw;\n  font-family: Montserrat, sans-serif;\n}\n@media (max-width: 1200px) {\n.select-description[data-v-0bbb9fa6], .select-label[data-v-0bbb9fa6] {\n    font-size: 12px;\n}\n}", ""]);
 
 // exports
 
@@ -354,7 +354,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".positive-button {\n  border: 1px solid #0FCACA;\n  border-radius: 10px;\n  opacity: 1;\n  font-size: 1.5vw;\n  font-family: \"Exo 2\", sans-serif;\n  font-family: Montserrat;\n  font-weight: bold;\n  letter-spacing: 0px;\n  color: #000000;\n  opacity: 1;\n  cursor: pointer;\n  display: inline-flex;\n  align-items: center;\n  padding: 0.5vw 1vw;\n}\n@media (max-width: 1200px) {\n.positive-button {\n    font-size: 19px;\n}\n}", ""]);
+exports.push([module.i, ".positive-button {\n  border: 1px solid #0FCACA;\n  border-radius: 10px;\n  opacity: 1;\n  font-size: 1.3vw;\n  font-family: \"Exo 2\", sans-serif;\n  font-family: Montserrat;\n  font-weight: bold;\n  letter-spacing: 0px;\n  color: #000000;\n  opacity: 1;\n  cursor: pointer;\n  display: inline-flex;\n  align-items: center;\n  padding: 0.4vw 0.7vw;\n}\n@media (max-width: 1200px) {\n.positive-button {\n    font-size: 17px;\n}\n}", ""]);
 
 // exports
 
@@ -430,7 +430,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".tab-list {\n  list-style-type: none;\n  padding: 5px 0 0 5px;\n  margin: 0;\n}\n.tab-list-element {\n  border-radius: 4px 4px 0 0;\n  padding: 4px;\n  color: white;\n  display: inline-block;\n  color: black;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  cursor: pointer;\n}\n@media (max-width: 1200px) {\n.tab-list-element {\n    font-size: 15px;\n}\n}\n.tab-list-element:hover {\n  background: #0FCACA;\n}\n.tab-list-section {\n  background: #444141;\n  border: 1px solid #444141;\n}\n.table-container {\n  position: relative;\n  min-height: 300px;\n}\n.table-header {\n  padding: 1vw 7px;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  background: #3C4346;\n  color: white;\n  text-align: center;\n}\n@media (max-width: 1200px) {\n.table-header {\n    font-size: 12px;\n}\n}\n.table {\n  margin: 8px auto;\n  border-collapse: collapse;\n}\n.table-cell {\n  color: black;\n  text-align: center;\n  padding: 3px;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n}\n@media (max-width: 1200px) {\n.table-cell {\n    font-size: 12px;\n}\n}\n.table-cell:nth-child(even) {\n  background: #efeeee;\n}\n.header {\n  font-size: 2vw;\n  font-family: \"Exo 2\", sans-serif;\n  text-align: left;\n  font-family: Montserrat;\n  font-weight: bold;\n  letter-spacing: 0px;\n  color: black;\n  padding: 0 0 0 4vw;\n  display: inline-block;\n}\n@media (max-width: 1200px) {\n.header {\n    font-size: 23px;\n}\n}\n.header-under-navbar {\n  display: block;\n  margin-top: 4.5vw;\n  margin-top: 4.7vw;\n  padding: 0.9vw;\n}\n.blank-button {\n  background: transparent;\n  margin: 0;\n  padding: 0;\n  outline: none;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  color: black;\n  font-weight: bold;\n  border: none;\n  cursor: pointer;\n}\n@media (max-width: 1200px) {\n.blank-button {\n    font-size: 15px;\n}\n}\n.filter-form {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: flex-start;\n  padding: 5px;\n}\n.introductory-bar {\n  display: flex;\n  justify-content: space-between;\n  padding: 2vw;\n}\n.note {\n  background: #242229;\n  border: none;\n  border-radius: 5px;\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n  display: block;\n  margin: 3px auto;\n}\n@media (max-width: 1200px) {\n.note {\n    font-size: 16px;\n}\n}\n.note-label {\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n  display: block;\n  text-align: center;\n}\n@media (max-width: 1200px) {\n.note-label {\n    font-size: 16px;\n}\n}\n.form-caption {\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n  color: white;\n  padding: 5px;\n}\n@media (max-width: 1200px) {\n.form-caption {\n    font-size: 16px;\n}\n}\n.form-fieldset {\n  border: 2px solid black;\n  border-radius: 4px;\n  margin: 5px;\n}\n.filter-results-form {\n  padding: 5px;\n  background: black;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-evenly;\n}\n.employee-card {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100vw;\n  min-height: 100vh;\n  overflow-y: auto;\n  background: white;\n}\n.close-bar {\n  text-align: right;\n  padding: 5px;\n  background: black;\n}\n.report-file {\n  display: block;\n  margin: 0 auto;\n  padding: 6px;\n}\n#app .reported-hours {\n  display: block;\n  margin: 4px auto;\n}\n#app .save-report {\n  display: block;\n  margin: 4px auto;\n}\n#app .project-hours {\n  min-width: 50px;\n  max-width: 10vw;\n}\n#app .project-status {\n  min-width: 130px;\n  max-width: 20vw;\n}\n.datepicker-wrapper {\n  padding: 4px;\n  background: #242229;\n  border-radius: 5px;\n  display: inline-flex;\n  flex-wrap: nowrap;\n  align-items: baseline;\n  margin: 4px;\n}\n.calendar-input {\n  background: #242229;\n  color: white;\n  padding: 4px;\n  border: none;\n}\n.classic-textarea {\n  background: white;\n  border-radius: 4px;\n  border: none;\n  color: black;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n}\n@media (max-width: 1200px) {\n.classic-textarea {\n    font-size: 15px;\n}\n}\n.tab-list-element {\n  padding: 2vw;\n}\n#app .filter-button {\n  margin: 5px;\n  background: #0FCACA;\n  color: white;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  height: 2em;\n  padding: 0 3vw;\n  margin-left: auto;\n}\n@media (max-width: 1200px) {\n#app .filter-button {\n    font-size: 15px;\n}\n}", ""]);
+exports.push([module.i, ".tab-list {\n  list-style-type: none;\n  padding: 5px 0 0 5px;\n  margin: 0;\n}\n.tab-list-element {\n  border-radius: 4px 4px 0 0;\n  padding: 4px;\n  color: white;\n  display: inline-block;\n  color: black;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  cursor: pointer;\n}\n@media (max-width: 1200px) {\n.tab-list-element {\n    font-size: 15px;\n}\n}\n.tab-list-element:hover {\n  background: #0FCACA;\n}\n.tab-list-section {\n  background: #444141;\n  border: 1px solid #444141;\n}\n.table-container {\n  position: relative;\n  min-height: 300px;\n}\n.table-header {\n  padding: 1vw 7px;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  background: #3C4346;\n  color: white;\n  text-align: center;\n}\n@media (max-width: 1200px) {\n.table-header {\n    font-size: 12px;\n}\n}\n.table {\n  margin: 8px auto;\n  border-collapse: collapse;\n}\n.table-cell {\n  color: black;\n  text-align: center;\n  padding: 1vw;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n}\n@media (max-width: 1200px) {\n.table-cell {\n    font-size: 12px;\n}\n}\n.table-cell:nth-child(even) {\n  background: #efeeee;\n}\n.header {\n  font-size: 2vw;\n  font-family: \"Exo 2\", sans-serif;\n  text-align: left;\n  font-family: Montserrat;\n  font-weight: bold;\n  letter-spacing: 0px;\n  color: black;\n  padding: 0 0 0 7vw;\n  display: inline-block;\n}\n@media (max-width: 1200px) {\n.header {\n    font-size: 23px;\n}\n}\n.header-under-navbar {\n  display: block;\n  margin-top: 4.5vw;\n  margin-top: 4.7vw;\n  padding: 0.9vw;\n}\n.blank-button {\n  background: transparent;\n  margin: 0;\n  padding: 0;\n  outline: none;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  color: black;\n  font-weight: bold;\n  border: none;\n  cursor: pointer;\n}\n@media (max-width: 1200px) {\n.blank-button {\n    font-size: 15px;\n}\n}\n.filter-form {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: flex-start;\n  padding: 5px;\n}\n.introductory-bar {\n  display: flex;\n  justify-content: space-between;\n  padding: 2vw;\n}\n.note {\n  background: #242229;\n  border: none;\n  border-radius: 5px;\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n  display: block;\n  margin: 3px auto;\n}\n@media (max-width: 1200px) {\n.note {\n    font-size: 16px;\n}\n}\n.note-label {\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n  display: block;\n  text-align: center;\n}\n@media (max-width: 1200px) {\n.note-label {\n    font-size: 16px;\n}\n}\n.form-caption {\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n  color: white;\n  padding: 5px;\n}\n@media (max-width: 1200px) {\n.form-caption {\n    font-size: 16px;\n}\n}\n.form-fieldset {\n  border: 2px solid black;\n  border-radius: 4px;\n  margin: 5px;\n}\n.filter-results-form {\n  padding: 5px;\n  background: black;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-evenly;\n}\n.employee-card {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100vw;\n  min-height: 100vh;\n  overflow-y: auto;\n  background: white;\n}\n.close-bar {\n  text-align: right;\n  padding: 5px;\n  background: black;\n}\n.report-file {\n  display: block;\n  margin: 0 auto;\n  padding: 6px;\n}\n#app .reported-hours {\n  display: block;\n  margin: 4px auto;\n}\n#app .save-report {\n  display: block;\n  margin: 4px auto;\n}\n#app .project-hours {\n  min-width: 50px;\n  max-width: 10vw;\n}\n#app .project-status {\n  min-width: 130px;\n  max-width: 20vw;\n}\n.datepicker-wrapper {\n  padding: 4px;\n  background: #242229;\n  border-radius: 5px;\n  display: inline-flex;\n  flex-wrap: nowrap;\n  align-items: baseline;\n  margin: 4px;\n}\n.calendar-input {\n  background: #242229;\n  color: white;\n  padding: 4px;\n  border: none;\n}\n.classic-textarea {\n  background: white;\n  border-radius: 4px;\n  border: none;\n  color: black;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n}\n@media (max-width: 1200px) {\n.classic-textarea {\n    font-size: 15px;\n}\n}\n.tab-list-element {\n  padding: 2vw;\n}\n#app .filter-button {\n  margin: 5px;\n  background: #0FCACA;\n  color: white;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  height: 2em;\n  padding: 0 3vw;\n  margin-left: auto;\n}\n@media (max-width: 1200px) {\n#app .filter-button {\n    font-size: 15px;\n}\n}", ""]);
 
 // exports
 
@@ -449,7 +449,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".table-container {\n  position: relative;\n  min-height: 300px;\n}\n.table-header {\n  padding: 1vw 7px;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  background: #3C4346;\n  color: white;\n  text-align: center;\n}\n@media (max-width: 1200px) {\n.table-header {\n    font-size: 12px;\n}\n}\n.table {\n  margin: 8px auto;\n  border-collapse: collapse;\n}\n.table-cell {\n  color: black;\n  text-align: center;\n  padding: 3px;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n}\n@media (max-width: 1200px) {\n.table-cell {\n    font-size: 12px;\n}\n}\n.table-cell:nth-child(even) {\n  background: #efeeee;\n}\n.blank-button {\n  background: transparent;\n  margin: 0;\n  padding: 0;\n  outline: none;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  color: black;\n  font-weight: bold;\n  border: none;\n  cursor: pointer;\n}\n@media (max-width: 1200px) {\n.blank-button {\n    font-size: 15px;\n}\n}\n.skills-list {\n  list-style-type: none;\n  padding: 0;\n  margin: 0;\n}\n.skills-list-element {\n  display: inline-block;\n  padding: 3px;\n  background: black;\n  color: white;\n  font-size: 1.1vw;\n  font-family: \"Exo 2\", sans-serif;\n  margin: 3px;\n  border-radius: 3px;\n}\n@media (max-width: 1200px) {\n.skills-list-element {\n    font-size: 13px;\n}\n}", ""]);
+exports.push([module.i, ".table-container {\n  position: relative;\n  min-height: 300px;\n}\n.table-header {\n  padding: 1vw 7px;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  background: #3C4346;\n  color: white;\n  text-align: center;\n}\n@media (max-width: 1200px) {\n.table-header {\n    font-size: 12px;\n}\n}\n.table {\n  margin: 8px auto;\n  border-collapse: collapse;\n}\n.table-cell {\n  color: black;\n  text-align: center;\n  padding: 1vw;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n}\n@media (max-width: 1200px) {\n.table-cell {\n    font-size: 12px;\n}\n}\n.table-cell:nth-child(even) {\n  background: #efeeee;\n}\n.blank-button {\n  background: transparent;\n  margin: 0;\n  padding: 0;\n  outline: none;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  color: black;\n  font-weight: bold;\n  border: none;\n  cursor: pointer;\n}\n@media (max-width: 1200px) {\n.blank-button {\n    font-size: 15px;\n}\n}\n.skills-list {\n  list-style-type: none;\n  padding: 0;\n  margin: 0;\n}\n.skills-list-element {\n  display: inline-block;\n  padding: 3px;\n  background: black;\n  color: white;\n  font-size: 1.1vw;\n  font-family: \"Exo 2\", sans-serif;\n  margin: 3px;\n  border-radius: 3px;\n}\n@media (max-width: 1200px) {\n.skills-list-element {\n    font-size: 13px;\n}\n}", ""]);
 
 // exports
 
@@ -468,7 +468,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".header {\n  font-size: 2vw;\n  font-family: \"Exo 2\", sans-serif;\n  text-align: left;\n  font-family: Montserrat;\n  font-weight: bold;\n  letter-spacing: 0px;\n  color: black;\n  padding: 0 0 0 4vw;\n  display: inline-block;\n}\n@media (max-width: 1200px) {\n.header {\n    font-size: 23px;\n}\n}\n.header-under-navbar {\n  display: block;\n  margin-top: 4.5vw;\n  margin-top: 4.7vw;\n  padding: 0.9vw;\n}\n.remove-rectangular-element-icon {\n  width: 1.8vw;\n  height: 1.8vw;\n}\n.rectangular-elements-list {\n  list-style-type: none;\n  padding: 4px;\n  margin: 0;\n}\n.rectangular-list-element {\n  padding: 5px;\n  display: inline-block;\n  margin: 5px;\n  background: black;\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n@media (max-width: 1200px) {\n.rectangular-list-element {\n    font-size: 16px;\n}\n}\n.textarea-container {\n  display: flex;\n  flex-wrap: nowrap;\n  border: 1px solid #E3E3E3;\n  border-radius: 4px;\n  align-items: stretch;\n}\n.textarea-label {\n  flex-basis: 15%;\n  background: #efeeee;\n  font-size: 1.1vw;\n  font-family: Montserrat, sans-serif;\n  color: black;\n  font-weight: bold;\n}\n@media (max-width: 1200px) {\n.textarea-label {\n    font-size: 12px;\n}\n}\n.textarea {\n  flex-basis: 85%;\n  color: black;\n  font-size: 1.3vw;\n  font-family: Montserrat, sans-serif;\n  border: none;\n}\n@media (max-width: 1200px) {\n.textarea {\n    font-size: 14px;\n}\n}\n.block-fieldset {\n  width: 100%;\n}\n.colored-button {\n  background: #00C8C8;\n  color: white;\n  padding: 0.7vw 10px;\n}\n.wide-button {\n  display: block;\n  width: 95%;\n  margin: 0 auto;\n}\n.classic-caption {\n  font-size: 1.5vw;\n  font-family: Montserrat, sans-serif;\n  letter-spacing: 0px;\n  color: #3C4346;\n  opacity: 1;\n  display: block;\n  text-align: left;\n  padding-left: 2vw;\n}\n@media (max-width: 1200px) {\n.classic-caption {\n    font-size: 22px;\n}\n}\n.new-employee-form {\n  position: fixed;\n  width: 100%;\n  height: 100vh;\n  overflow-y: auto;\n  top: 0;\n  left: 0;\n  background: white;\n  z-index: 2;\n}\n.header-bar {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 0.7vw;\n}\n.user-data {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n}", ""]);
+exports.push([module.i, ".header {\n  font-size: 2vw;\n  font-family: \"Exo 2\", sans-serif;\n  text-align: left;\n  font-family: Montserrat;\n  font-weight: bold;\n  letter-spacing: 0px;\n  color: black;\n  padding: 0 0 0 7vw;\n  display: inline-block;\n}\n@media (max-width: 1200px) {\n.header {\n    font-size: 23px;\n}\n}\n.header-under-navbar {\n  display: block;\n  margin-top: 4.5vw;\n  margin-top: 4.7vw;\n  padding: 0.9vw;\n}\n.remove-rectangular-element-icon {\n  width: 1.8vw;\n  height: 1.8vw;\n}\n.rectangular-elements-list {\n  list-style-type: none;\n  padding: 4px;\n  margin: 0;\n}\n.rectangular-list-element {\n  padding: 5px;\n  display: inline-block;\n  margin: 5px;\n  background: black;\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n}\n@media (max-width: 1200px) {\n.rectangular-list-element {\n    font-size: 16px;\n}\n}\n.textarea-container {\n  border: 1px solid black;\n  overflow: hidden;\n  margin: 2vw 0;\n  border-radius: 5px;\n}\n.textarea-label {\n  background: #efeeee;\n  font-size: 1.3vw;\n  font-family: Montserrat, sans-serif;\n  text-align: center;\n  padding: 1vw;\n  display: block;\n  color: black;\n  font-weight: bold;\n}\n@media (max-width: 1200px) {\n.textarea-label {\n    font-size: 15px;\n}\n}\n.textarea {\n  width: 100%;\n  color: black;\n  font-size: 1.3vw;\n  font-family: Montserrat, sans-serif;\n  border: none;\n  display: block;\n}\n@media (max-width: 1200px) {\n.textarea {\n    font-size: 14px;\n}\n}\n.block-fieldset {\n  width: 100%;\n}\n.colored-button {\n  background: #00C8C8;\n  color: white;\n  padding: 0.7vw 10px;\n}\n.wide-button {\n  display: block;\n  width: 95%;\n  margin: 0 auto;\n}\n.classic-caption {\n  font-size: 1.5vw;\n  font-family: Montserrat, sans-serif;\n  letter-spacing: 0px;\n  color: #3C4346;\n  opacity: 1;\n  display: block;\n  text-align: left;\n  padding-left: 2vw;\n}\n@media (max-width: 1200px) {\n.classic-caption {\n    font-size: 22px;\n}\n}\n.new-employee-form {\n  position: fixed;\n  width: 100%;\n  height: 100vh;\n  overflow-y: auto;\n  top: 0;\n  left: 0;\n  background: white;\n  z-index: 2;\n}\n.header-bar {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 0.7vw;\n}\n.user-data {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n}", ""]);
 
 // exports
 
@@ -2046,65 +2046,22 @@ var vue_property_decorator_1 = __webpack_require__(/*! vue-property-decorator */
 var LabeledSelect = /** @class */ (function (_super) {
     __extends(LabeledSelect, _super);
     function LabeledSelect() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.dynamicDisabledState = null;
-        _this.dynamicDisplayedValues = null;
-        _this.dynamicValues = null;
-        return _this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     LabeledSelect.prototype.emitData = function (event) {
         this.$emit('input', event.target.value);
     };
-    Object.defineProperty(LabeledSelect.prototype, "inputIsDisabled", {
-        get: function () {
-            return (this.dynamicDisabledState === null) ? this.isDisabled : this.dynamicDisabledState;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(LabeledSelect.prototype, "selectValues", {
-        get: function () {
-            return (this.dynamicValues === null) ? this.values : this.dynamicValues;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(LabeledSelect.prototype, "displayedSelectValues", {
-        get: function () {
-            return (this.dynamicDisplayedValues === null) ? this.displayedValues : this.dynamicDisplayedValues;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    LabeledSelect.prototype.created = function () {
-        if (this.identifier) {
-            this.$root.$on("modifyValues" + this.identifier, this.modifyValues);
-            this.$root.$on("modifyDisabledState" + this.identifier, this.modifyDisabledState);
-        }
-    };
-    LabeledSelect.prototype.modifyValues = function (values) {
-        if (values['displayed']) {
-            this.dynamicDisplayedValues = values['displayed'];
-        }
-        if (values['values']) {
-            this.dynamicValues = values['values'];
-        }
-    };
-    LabeledSelect.prototype.modifyDisabledState = function (state) {
-        this.dynamicDisabledState = state;
-    };
     __decorate([
         vue_property_decorator_1.Prop({
             type: Array,
-            required: false,
-            default: function () { return []; }
+            required: true,
         })
     ], LabeledSelect.prototype, "displayedValues", void 0);
     __decorate([
         vue_property_decorator_1.Prop({
             type: Array,
             required: false,
-            default: function () { return []; }
+            default: undefined
         })
     ], LabeledSelect.prototype, "values", void 0);
     __decorate([
@@ -2127,13 +2084,6 @@ var LabeledSelect = /** @class */ (function (_super) {
             default: false
         })
     ], LabeledSelect.prototype, "isDisabled", void 0);
-    __decorate([
-        vue_property_decorator_1.Prop({
-            type: [String, Number],
-            required: false,
-            default: undefined
-        })
-    ], LabeledSelect.prototype, "identifier", void 0);
     LabeledSelect = __decorate([
         vue_property_decorator_1.Component
     ], LabeledSelect);
@@ -2447,11 +2397,11 @@ var EmployeeCard = /** @class */ (function (_super) {
         });
     };
     EmployeeCard.prototype.getSkillId = function (skillName) {
-        var index = this.employeeSkillsList.findIndex(function (name) { return name == skillName; });
+        var index = this.employeeSkills.findIndex(function (name) { return name == skillName; });
         return this.employeeSkillsIds[index];
     };
     EmployeeCard.prototype.getPositionId = function (positionName) {
-        var index = this.employeePositionsList.findIndex(function (name) { return name == positionName; });
+        var index = this.employeePositions.findIndex(function (name) { return name == positionName; });
         return this.employeePositionsIds[index];
     };
     EmployeeCard.prototype.removePositionFromList = function (position) {
@@ -3085,7 +3035,10 @@ var NewEmployee = /** @class */ (function (_super) {
                                 this.showNotification(this.translations['employee_created_successfully']);
                                 break;
                             case 400:
-                                this.showNotification(this.translations['the_data_is_invalid']);
+                                this.showNotification(this.translations['the_data_is_invalid'], 'error');
+                                break;
+                            case 500:
+                                this.showNotification(this.translations['the_data_is_probably_ok_but_a_server_error_occured'], 'error');
                                 break;
                         }
                         return [2 /*return*/];
@@ -3102,11 +3055,12 @@ var NewEmployee = /** @class */ (function (_super) {
         this.$root.$emit('showNotification', { notificationText: text, notificationType: type, headerText: this.translations['information'] });
     };
     NewEmployee.prototype.getSkillId = function (skillName) {
-        var index = this.employeeSkillsList.findIndex(function (name) { return name == skillName; });
+        var index = this.employeeSkills.findIndex(function (name) { return name == skillName; });
+        alert(index);
         return this.employeeSkillsIds[index];
     };
     NewEmployee.prototype.getPositionId = function (positionName) {
-        var index = this.employeePositionsList.findIndex(function (name) { return name == positionName; });
+        var index = this.employeePositions.findIndex(function (name) { return name == positionName; });
         return this.employeePositionsIds[index];
     };
     NewEmployee.prototype.removePositionFromList = function (position) {
@@ -3569,30 +3523,28 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "div",
-    { ref: "container", staticClass: "labeled-input-container" },
+    "label",
+    { ref: "label", staticClass: "labeled-input-value-label" },
     [
-      _c("label", { ref: "label", staticClass: "labeled-input-value-label" }, [
-        _c(
-          "span",
-          { staticClass: "text-input-description" },
-          [_vm._t("default")],
-          2
-        ),
-        _vm._v(" "),
-        _c("input", {
-          ref: "text_input",
-          staticClass: "labeled-input-value",
-          attrs: {
-            disabled: _vm.isDisabled,
-            name: _vm.name,
-            required: _vm.inputIsRequired,
-            type: _vm.inputType
-          },
-          domProps: { value: _vm.value },
-          on: { input: _vm.modifyModel }
-        })
-      ])
+      _c(
+        "div",
+        { staticClass: "text-input-description" },
+        [_vm._t("default")],
+        2
+      ),
+      _vm._v(" "),
+      _c("input", {
+        ref: "text_input",
+        staticClass: "labeled-input-value",
+        attrs: {
+          disabled: _vm.isDisabled,
+          name: _vm.name,
+          required: _vm.inputIsRequired,
+          type: _vm.inputType
+        },
+        domProps: { value: _vm.value },
+        on: { input: _vm.modifyModel }
+      })
     ]
   )
 }
@@ -3618,43 +3570,41 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "described-select-container" }, [
-    _c("label", { staticClass: "select-label" }, [
-      _c("span", { staticClass: "select-description" }, [_vm._t("default")], 2),
-      _vm._v(" "),
-      _c(
-        "select",
-        {
-          ref: "select_value",
-          staticClass: "described-select",
-          attrs: { name: _vm.name, disabled: _vm.inputIsDisabled },
-          domProps: { value: _vm.value },
-          on: { input: _vm.emitData }
-        },
-        [
-          _c("option", { attrs: { value: "" } }, [_vm._v("---")]),
-          _vm._v(" "),
-          _vm._l(_vm.displayedSelectValues, function(value, index) {
-            return _vm.selectValues
-              ? _c("option", { domProps: { value: _vm.selectValues[index] } }, [
-                  _vm._v(_vm._s(value))
-                ])
-              : _vm._e()
-          }),
-          _vm._v(" "),
-          _vm._l(_vm.displayedSelectValues, function(value, index) {
-            return !_vm.selectValues
-              ? _c(
-                  "option",
-                  { domProps: { value: _vm.displayedSelectValues[index] } },
-                  [_vm._v(_vm._s(value))]
-                )
-              : _vm._e()
-          })
-        ],
-        2
-      )
-    ])
+  return _c("label", { staticClass: "select-label" }, [
+    _c("div", { staticClass: "select-description" }, [_vm._t("default")], 2),
+    _vm._v(" "),
+    _c(
+      "select",
+      {
+        ref: "select_value",
+        staticClass: "described-select",
+        attrs: { name: _vm.name, disabled: _vm.isDisabled },
+        domProps: { value: _vm.value },
+        on: { input: _vm.emitData }
+      },
+      [
+        _c("option", { attrs: { value: "" } }, [_vm._v("---")]),
+        _vm._v(" "),
+        _vm._l(_vm.displayedValues, function(value, index) {
+          return _vm.values
+            ? _c("option", { domProps: { value: _vm.values[index] } }, [
+                _vm._v(_vm._s(value))
+              ])
+            : _vm._e()
+        }),
+        _vm._v(" "),
+        _vm._l(_vm.displayedValues, function(value, index) {
+          return !_vm.values
+            ? _c(
+                "option",
+                { domProps: { value: _vm.displayedValues[index] } },
+                [_vm._v(_vm._s(value))]
+              )
+            : _vm._e()
+        })
+      ],
+      2
+    )
   ])
 }
 var staticRenderFns = []
@@ -21461,7 +21411,9 @@ var translations = {
             add_employee: "Dodaj pracownika",
             role: "Rola",
             note: "Notatka",
-            employee_created_successfully: "Pomyślnie utworzono użytkownika"
+            employee_created_successfully: "Pomyślnie utworzono użytkownika",
+            the_data_is_invalid: "Wprowadzono nieprawidłowe dane",
+            the_data_is_probably_ok_but_a_server_error_occured: "Wprowadzone dano najprawdopodobniej są poprawne, ale wystąpił błąd po stronie serwera"
         }
     }
 };

@@ -38,22 +38,20 @@
                {{__('client')}} : 
             </labeled-select>
             <labeled-select v-model="filterTaskId" name="task" 
-               v-bind:displayed-values="{{json_encode($tasks->pluck('name'),true)}}">
+               v-bind:displayed-values="{{json_encode($tasks->pluck($pluckColumnBy),true)}}">
                {{__('work_range')}} : 
             </labeled-select>
             <labeled-select v-model="filterStatusId" name="status_id"
                v-bind:values="{{json_encode($projectStatuses->pluck('id'), true)}}"
-               v-bind:displayed-values="{{json_encode($projectStatuses->pluck('name'), true)}}">
+               v-bind:displayed-values="{{json_encode($projectStatuses->pluck($pluckColumnBy), true)}}">
                {{__('project_status')}} : 
             </labeled-select>
-            <labeled-select v-model="filterMonth" class="shortened-select" name="month"
+            <labeled-select v-model="filterMonth"  name="month"
                v-bind:values="['01','02','03','04','05','06', '07', '08','09', '10', '11', '12']"
                v-bind:displayed-values="{{json_encode($months)}}">
                {{__('month')}} : 
             </labeled-select>
-          </div>
-          <div class="filter-controls">
-            <labeled-select v-model="filterYear" class="shortened-select" name="year"
+            <labeled-select v-model="filterYear" name="year"
                v-bind:displayed-values="{{json_encode($yearsRange)}}">
                {{__('year')}} : 
             </labeled-select>
@@ -98,7 +96,7 @@
                <td v-text="project['account']['full_name']" class="table-cell"></td>
                <td v-text="project['company_name']" class="table-cell"></td>
                <td v-text="project['should_be_finished_at']" class="table-cell"></td>
-               <td v-text="project['status']['name']" v-bind:class="{'finished-status' : checkProjectStatus(project)}" class="table-cell status-cell"></td>
+               <td v-text="project['status']['{{$pluckColumnBy}}']" v-bind:class="{'finished-status' : checkProjectStatus(project)}" class="table-cell status-cell"></td>
                <td v-text="project['project_comment']" class="table-cell"></td>
                @if(\Auth::user()->can_add_or_edit_projects)
                <td class="table-cell">
@@ -113,20 +111,18 @@
    <project-form 
       v-bind:client-ids="{{json_encode($clients->pluck('id'),true)}}"
       v-bind:client-names="{{json_encode($clients->pluck('name'),true)}}"
-      v-bind:tasks-names="{{json_encode($tasks->pluck('name'),true)}}"
+      v-bind:tasks-names="{{json_encode($tasks->pluck($pluckColumnBy),true)}}"
       v-bind:tasks-ids="{{json_encode($tasks->pluck('id'),true)}}"
-      v-bind:employees-names="{{json_encode($employees->pluck('full_name'),true)}}"
-      v-bind:employees-ids="{{json_encode($employees->pluck('id'),true)}}"
       v-bind:project-menager-names="{{json_encode($projectMenagers->pluck('full_name'), true)}}"
       v-bind:project-menager-ids="{{json_encode($projectMenagers->pluck('id'), true)}}"
       v-bind:accounts-names="{{json_encode($accounts->pluck('full_name'), true)}}"
       v-bind:accounts-ids="{{json_encode($accounts->pluck('id'), true)}}"
-      v-bind:work-range-options="{{json_encode($tasks->pluck('name'), true)}}"
+      v-bind:work-range-options="{{json_encode($tasks->pluck($pluckColumnBy), true)}}"
       v-bind:work-range-ids="{{json_encode($tasks->pluck('id'), true)}}"
       v-bind:payment-statuses-ids="{{json_encode($paymentStatuses->pluck('id'), true)}}"
-      v-bind:payment-statuses-values="{{json_encode($paymentStatuses->pluck('name'), true)}}"
+      v-bind:payment-statuses-values="{{json_encode($paymentStatuses->pluck($pluckColumnBy), true)}}"
       v-bind:project-statuses-ids="{{json_encode($projectStatuses->pluck('id'), true)}}"
-      v-bind:project-statuses-values="{{json_encode($projectStatuses->pluck('name'), true)}}"
+      v-bind:project-statuses-values="{{json_encode($projectStatuses->pluck($pluckColumnBy), true)}}"
       v-show="projectFormIsVisible"></project-form>
       <user-notification></user-notification>
    <x-slot name="scripts">

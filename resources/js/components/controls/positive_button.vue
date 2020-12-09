@@ -27,7 +27,7 @@
 	border: 1px solid #0FCACA;
     border-radius: 10px;
     opacity: 1;
-    @include responsive-font(1.5vw, 19px);
+    @include responsive-font(1.3vw, 17px);
     font-family:  Montserrat;
     font-weight:bold;
     letter-spacing: 0px;
@@ -36,6 +36,6 @@
     cursor:pointer;
     display: inline-flex;
     align-items: center;
-    padding: 0.5vw 1vw;
+    padding: 0.4vw 0.7vw;
 }
 </style>

@@ -11,10 +11,10 @@
         <caption v-text="translations['project_basic_data']" class="project-form-caption"></caption>
         <labeled-input v-model="projectName" name="project_name">{{translations['name']}} : </labeled-input>
         <labeled-select name="project_menager_id" v-model="projectMenagerID" v-bind:displayed-values="projectMenagerNames" v-bind:values="projectMenagerIds">
-          {{translations['project_menager']}} : 
+          {{translations['project_menager']}} 
        </labeled-select>
        <labeled-select name="account_id" v-model="accountID" v-bind:displayed-values="accountsNames" v-bind:values="accountsIds">
-          {{translations['account']}} : 
+          {{translations['account']}}
        </labeled-select>
     </fieldset>
 
@@ -27,35 +27,37 @@
           <ul class="stages-list">
               <li v-for="workStage in workStages"  class="stage-list-element">
                  <labeled-select name="work_stages[]" v-model="workRangeValues[workStage]" v-on:input="fetchEmployeesHavingDesiredSkill(workStage)" v-bind:values="tasksIds" v-bind:displayed-values="tasksNames" >
-                    {{translations['work_range']}} : 
+                    {{translations['work_range']}} 
                  </labeled-select>
-                 <div v-on:click="notifyUserWhyInputIsDisabled(workStage)" class="described-select-container">
-                    <label class="select-label" >
+                    <label v-on:click="notifyUserWhyInputIsDisabled(workStage)" class="select-label" >
                         <span v-text="translations['engaged_persons']" class="select-description"></span>
                         <select name="work_stage_engaged_persons[]" v-bind:disabled="disabledEmployeeInputs[workStage]" v-model="employeeWithDesiredSkill[workStage]"  class="described-select">
                             <option value="">---</option>
                             <option v-for="(value, index) in employeesWithDesiredSkillNames[workStage]" v-bind:value="employeesWithDesiredSkillIds[workStage][index]">{{value}}</option>
                         </select>
                     </label>
-                </div>
                  <labeled-input input-type="number" v-model="estimatedHours[workStage]" name="work_stage_estimated_number_of_hours[]">{{translations['estimated_number_of_hours']}} : </labeled-input>
                  <span class="datepicker-wrapper">
                      <span class="datepicker-description">
-                         {{translations['start_at']}} :
+                         {{translations['start_at']}}
                      </span>
-                     <datepicker input-class="calendar-input" name="work_stage_date_start[]" format="yyyy-MM-dd" v-model="startDates[workStage]" ></datepicker>
-                     <img src="/images/decoration/Icon awesome-calendar-alt.svg" alt="" class="calendar-icon">
+                     <span class="datepicker-bottom-container">
+                        <datepicker input-class="calendar-input" name="work_stage_date_start[]" format="yyyy-MM-dd" v-model="startDates[workStage]" ></datepicker>
+                        <img src="/images/decoration/Icon awesome-calendar-alt.svg" alt="" class="calendar-icon">
+                     </span>
                  </span>
                  <span class="datepicker-wrapper">
                      <span class="datepicker-description">
-                         {{translations['deadline']}} :
+                         {{translations['deadline']}}
                      </span>
-                     <datepicker input-class="calendar-input" format="yyyy-MM-dd" name="work_stage_dead_line_date[]" v-model="deadLineDates[workStage]" ></datepicker>
-                     <img src="/images/decoration/Icon awesome-calendar-alt.svg" alt="" class="calendar-icon">
+                     <span class="datepicker-bottom-container">
+                        <datepicker input-class="calendar-input" format="yyyy-MM-dd" name="work_stage_dead_line_date[]" v-model="deadLineDates[workStage]" ></datepicker>
+                        <img src="/images/decoration/Icon awesome-calendar-alt.svg" alt="" class="calendar-icon">
+                     </span>
                  </span>
                  <button type="button" v-on:click="removeWorkStage(workStage)" class="removal-button">
                   {{translations['remove_work_stage']}}
-                  <img class="button-icon" src="/images/decoration/icon_remove.svg"></img>
+                  <close-decoration class="button-icon"></close-decoration>
                  </button>
               </li>
           </ul>
@@ -75,15 +77,17 @@
                 <span class="datepicker-description">
                     {{translations['estimated_date_of_invoice']}} :
                 </span>
-                <datepicker input-class="calendar-input" name="payment_stage_dates[]" format="yyyy-MM-dd" v-model="paymentStageDates[paymentStage]" ></datepicker>
-                <img src="/images/decoration/Icon awesome-calendar-alt.svg" alt="" class="calendar-icon">
+                <span class="datepicker-bottom-container">
+                    <datepicker input-class="calendar-input" name="payment_stage_dates[]" format="yyyy-MM-dd" v-model="paymentStageDates[paymentStage]" ></datepicker>
+                    <img src="/images/decoration/Icon awesome-calendar-alt.svg" alt="" class="calendar-icon">
+                </span>
             </span>
             <labeled-select name="payment_status[]" v-model="paymentStageStatuses[paymentStage]" v-bind:displayed-values="paymentStatusesValues" v-bind:values="paymentStatusesIds">
                 {{translations['status']}} : 
             </labeled-select>
             <button type="button" v-on:click="removePaymentStage(paymentStage)" class="removal-button">
                 {{translations['remove_payment_stage']}}
-                <img class="button-icon" src="/images/decoration/icon_remove.svg"></img>
+                <close-decoration class="button-icon"></close-decoration>
             </button>
           </li>
         </ul>
@@ -94,44 +98,52 @@
             <expect-circle v-bind:label="translations['fetching_client_data']" ></expect-circle>
         </relative-shadow-container>
        <caption v-text="translations['client_data']" class="project-form-caption"></caption>
-       <labeled-input v-model="clientContactPerson" name="client_contact_person">{{translations['client_contact_person']}} : </labeled-input>
-       <labeled-input v-model="clientPhoneNumber" input-type="tel" name="client_phone_number">{{translations['client_phone_number']}} : </labeled-input>
-       <labeled-input input-type="email" v-model="clientEmail"  name="client_email">{{translations['client_email']}} : </labeled-input>
+       <labeled-input v-model="clientContactPerson" name="client_contact_person">{{translations['client_contact_person']}}</labeled-input>
+       <labeled-input v-model="clientPhoneNumber" input-type="tel" name="client_phone_number">{{translations['client_phone_number']}}</labeled-input>
+       <labeled-input input-type="email" v-model="clientEmail"  name="client_email">{{translations['client_email']}}</labeled-input>
        <labeled-select name="client_id" v-model="clientId" v-on:input="fetchClientsData" v-bind:displayed-values="clientNames" v-bind:values="clientIds">
           {{translations['client']}} : 
        </labeled-select>
-       <labeled-input v-model="taxIdentificationNumber" name="tax_identification_number">{{translations['tax_identification_number']}} : </labeled-input>
     </fieldset>
 
     <fieldset class="project-form-fieldset">
        <caption v-text="translations['invoice_data']" class="project-form-caption"></caption>
-       <labeled-input v-model="invoiceAddres" name="invoice_addres">{{translations['addres']}} : </labeled-input>
-       <labeled-input v-model="invoiceCompanyName" name="invoice_company_name">{{translations['company_name']}} : </labeled-input>
+       <labeled-input v-model="invoiceAddres" name="invoice_addres">{{translations['addres']}}</labeled-input>
+       <labeled-input v-model="invoiceCompanyName" name="invoice_company_name">{{translations['company_name']}}</labeled-input>
+       <labeled-input v-model="taxIdentificationNumber" name="tax_identification_number">{{translations['tax_identification_number']}}</labeled-input>
     </fieldset>
 
     <fieldset class="project-form-fieldset">
        <caption v-text="translations['summary']" class="project-form-caption"></caption>
-       <span class="read-only-box-container">
-          <span class="read-only-label" v-text="translations['total_cost']"></span>
-          <span class="read-only-content">
-              <span v-text="paymentSummary"></span>
-              <span v-text="translations['current_currency']"></span>
-          </span>
-       </span>
-        <span class="datepicker-wrapper">
-            <span class="datepicker-description">
-                {{translations['finish_date']}} :
+       <div class="summary-container">
+            <span class="read-only-box-container">
+                <span class="sub-container read-only-content read-only-label">
+                   <span v-text="translations['total_cost']"></span>
+                </span>
+                <span class="sub-container read-only-content money-ammount">
+                    <span>
+                        <span v-text="paymentSummary"></span>
+                        <span v-text="translations['current_currency']"></span>
+                    </span>
+                </span>
             </span>
-            <datepicker format="yyyy-MM-dd" input-class="calendar-input" v-model="finishDate"  name="finish_date"></datepicker>
-            <img src="/images/decoration/Icon awesome-calendar-alt.svg" alt="" class="calendar-icon">
-        </span>
-        <labeled-select name="project_status_id" v-model="projectStatusId" v-bind:displayed-values="projectStatusesValues" v-bind:values="projectStatusesIds">
-          {{translations['project_status']}} : 
-       </labeled-select>
-       <div class="textarea-container">
-          <label for="project-comment" v-text="translations['project_comment']" class="textarea-label"></label>
-          <textarea name="comment" v-model="projectComment" id="project-comment" class="textarea" cols="30" rows="10"></textarea>
-        </div>   
+                <span class="datepicker-wrapper">
+                    <span class="datepicker-description">
+                        {{translations['finish_date']}} :
+                    </span>
+                    <span class="datepicker-bottom-container">
+                        <datepicker format="yyyy-MM-dd" input-class="calendar-input" v-model="finishDate"  name="finish_date"></datepicker>
+                        <img src="/images/decoration/Icon awesome-calendar-alt.svg" alt="" class="calendar-icon">
+                    </span>
+                </span>
+                <labeled-select name="project_status_id" v-model="projectStatusId" v-bind:displayed-values="projectStatusesValues" v-bind:values="projectStatusesIds">
+                {{translations['project_status']}} : 
+            </labeled-select>
+        </div>
+        <div class="textarea-container">
+            <label for="project-comment" v-text="translations['project_comment']" class="textarea-label"></label>
+            <textarea name="comment" v-model="projectComment" id="project-comment" class="textarea" cols="30" rows="10"></textarea>
+        </div> 
     </fieldset>
     <button class="positive-button colored-button wide-button" v-text="translations['save']" type="submit"></button>
  </form>
@@ -147,9 +159,10 @@
   import Datepicker from 'vuejs-datepicker';
   import RelativeShadowContainer from '@jscomponents/decoration/relative_shadow_container.vue';
   import ExpectCircle from '@jscomponents/decoration/expect_circle.vue';
+  import CloseDecoration from '@jscomponents/decoration/close_decoration.vue';
   
 @Component({ components : {
-     LabeledInput, CloseButton, LabeledSelect, Multiselect, Datepicker, RelativeShadowContainer, ExpectCircle
+     LabeledInput, CloseButton, LabeledSelect, Multiselect, Datepicker, RelativeShadowContainer, ExpectCircle, CloseDecoration
  }})
 
   export default class ProjectForm extends Vue {
@@ -203,16 +216,6 @@
             type: Array,
             required: true,
     }) readonly tasksIds: number[];
-
-    @Prop({
-            type: Array,
-            required: true,
-    }) readonly employeesNames: string[];
-
-    @Prop({
-            type: Array,
-            required: true,
-    }) readonly employeesIds: number[];
 
      @Prop({
             type: Array,
@@ -345,6 +348,7 @@
             this.setEngagedPersonsInputState(true, workStage);
             return;
         }
+
 
         const requestData = {
 
@@ -560,15 +564,49 @@
   }
 </script>
 
-<style lang="scss" >
+<style lang="scss" scoped>
 
 @import '~sass/fonts';
 @import '~sass/components/rectangular_list';
 @import '~sass/components/removal_button';
 @import '~sass/components/labeled_wide_textarea';
 @import '~sass/components/read_only_box';
-@import '~sass/components/datepicker_wraper';
 @import '~sass/components/labeled_select';
+
+$margin-for-inputs : 10px 15px 10px 0;
+
+.read-only-box-container{
+    margin: $margin-for-inputs;
+}
+
+.summary-container{
+   display: flex;
+   justify-content: space-between;
+   align-content: stretch; 
+}
+
+.removal-button{
+    margin: $margin-for-inputs;
+}
+
+#app .datepicker-wrapper{
+    margin: $margin-for-inputs;
+}
+
+#app .select-label{
+    margin: $margin-for-inputs;
+}
+
+#app .labeled-input-value-label{
+    margin: $margin-for-inputs;
+}
+
+.stage-list-element{
+   display: flex;
+   flex-wrap: wrap;
+   align-items: stretch;
+   padding-bottom: 2vw;
+}
 
 #app .flickering-circle{
    background: #d0d7dc;
@@ -578,10 +616,14 @@
     @include responsive-font(1.1vw, 12px,Montserrat);
 }
 
+#app .header{
+    padding: 1vw 0 0 3vw;
+}
+
 .wide-button{
     display:block;
-    width:95%;
-    margin:0 auto;
+    width: 15%;
+    margin: 10px 10px 10px auto;
 }
 
 .relative-container{
@@ -602,7 +644,7 @@
 }
 
 .add-stage-button{
-    margin:5px;
+    margin:5px 0;
     display: block;
 }
 
@@ -613,15 +655,15 @@
     opacity: 1;
     display:block;
     text-align:left;
-    padding-left:2vw;
+    padding: 0.7vw 0
 }
 
 .project-form-fieldset{
-    padding: 1vw;
+    padding: 1vw 0.5vw 0.5vw 3vw;
+    border-bottom: 2px solid black;
 }
 
 .project-form{
-    padding: 10px;
     position:fixed;
     top:0;
     width:100%;
@@ -634,11 +676,8 @@
 .introductory-bar{
     display:flex;
     justify-content:space-between;
-    padding:5px;
-}
-
-.button-icon{
-  margin:0 10px;
+    align-items: center;
+    padding-right: 5px;
 }
 
 .colored-button{

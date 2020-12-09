@@ -65,7 +65,7 @@ table {
   font-weight: bold;
   letter-spacing: 0px;
   color: black;
-  padding: 0 0 0 4vw;
+  padding: 0 0 0 7vw;
   display: inline-block;
 }
 @media (max-width: 1200px) {
@@ -108,7 +108,7 @@ table {
 .table-cell {
   color: black;
   text-align: center;
-  padding: 3px;
+  padding: 1vw;
   font-size: 1.2vw;
   font-family: Montserrat, sans-serif;
 }
@@ -130,7 +130,7 @@ table {
 
 .introductory-container {
   background: #E5FEFE;
-  padding: 3vw;
+  padding: 3vw 0;
   margin: 3.8vw 0 5px;
 }
 

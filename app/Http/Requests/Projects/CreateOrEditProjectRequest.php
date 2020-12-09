@@ -7,6 +7,7 @@ use App\Rules\EmployeeIDBelongsToProjectMenager;
 use App\Rules\EmployeeIDBelongsToAccount;
 use App\Rules\SkillsMatchEmployee;
 use App\Models\Project;
+use Illuminate\Contracts\Validation\Validator;
 
 
 class CreateOrEditProjectRequest extends FormRequest
@@ -114,5 +115,6 @@ class CreateOrEditProjectRequest extends FormRequest
             'project_status_id.exists' => 'chosen_project_status_is_not_on_the_list'
         ];
     }
+
 
 }

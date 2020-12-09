@@ -287,12 +287,12 @@
     }
 
     getSkillId(skillName:string):number{
-      const index = this.employeeSkillsList.findIndex( name => name == skillName);
+      const index = this.employeeSkills.findIndex( name => name == skillName);
       return this.employeeSkillsIds[index];
     }
 
     getPositionId(positionName:string):number{
-      const index = this.employeePositionsList.findIndex( name => name == positionName);
+      const index = this.employeePositions.findIndex( name => name == positionName);
       return this.employeePositionsIds[index];
     }
 

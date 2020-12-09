@@ -23,22 +23,7 @@ class ProjectsController extends Controller
 {
     public function showProjects(Request $request, ProjectsListHandler $projectsListHandler){
         
-        $data = $projectsListHandler->handle($request);
-        
-        return view('main_panel.projects')->with([ //trzeba przerzucić
-            'title' => 'projects_list',
-            'description' => 'projects_list_description',
-            'clients' => $data['clients'],
-            'projects' => $data['projects'],
-            'projectMenagers' => $data['projectMenagers'],
-            'accounts' => $data['accounts'],
-            'paymentStatuses' => $data['paymentStatuses'],
-            'projectStatuses' => $data['projectStatuses'],
-            'tasks' => $data['tasks'],
-            'employees' => $data['employees'],
-            'months' => $data['months'],
-            'yearsRange' => $data['yearsRange']
-        ]);
+        return $projectsListHandler->handle($request);
     }
 
     public function addOrEditProject(CreateOrEditProjectRequest $request, AddOrEditProjectHandler $addOrEditProjectHandler){
@@ -66,7 +51,7 @@ class ProjectsController extends Controller
            'title' => 'projects_income',
            'description' => 'payments_and_invoices_list',
            'paymentStatuses' => PaymentStatus::all(),
-           'months' => Months::names[\App::getLocale()],
+           'months' => Months::getNames(),
            'yearsRange' => Company::getYearsRange()
         ]);
     }

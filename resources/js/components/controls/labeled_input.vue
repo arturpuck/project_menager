@@ -1,10 +1,8 @@
 <template>
- <div ref="container" class="labeled-input-container">
   <label ref="label" class="labeled-input-value-label">
-     <span class="text-input-description"><slot></slot></span>
+     <div class="text-input-description"><slot></slot></div>
      <input v-bind:disabled="isDisabled" v-bind:value="value" v-on:input="modifyModel"  ref="text_input" v-bind:name="name" :required="inputIsRequired" class="labeled-input-value"  v-bind:type="inputType">
   </label>
-</div>
 </template>
 
 <script lang="ts">
@@ -71,39 +69,41 @@
 @import '~sass/fonts';
 
 .labeled-input-value-label {
-    display: flex;
-    align-items: baseline;
+    display: inline-block;
     background: white;
-    border: 1px solid #E3E3E3;
+    border: 1px solid black;
     border-radius: 4px;
     color:#3C4346;
     margin: 5px;
-    position:relative;
-    height: 2em;
     font-weight:bold;
+    overflow:hidden;
+    min-width: min-content;
+    width: 20vw;
 }
 
 .text-input-description{
-  white-space: nowrap;
-  line-height:2em;
-  padding:0 10px;
-  background: #e9e9ea;
-  color: #3C4346;
-  opacity: 0.5;
-  font-weight:bold;
-   @include responsive-font(1.2vw, 15px,Montserrat);
+    white-space: nowrap;
+    display: block;
+    color: #3C4346;
+    padding: 0.5vw;
+    background: #e9e9ea;
+    opacity: 0.5;
+    font-weight: bold;
+    text-align: center;
+   @include responsive-font(1vw, 12px,Montserrat);
 }
 
 .labeled-input-value {
     background: white;
     border: none;
     border-bottom: 1px solid transparent;
-    @include responsive-font(1.2vw, 15px,Montserrat);
+    @include responsive-font(1.3vw, 16px,Montserrat);
     color: #3C4346;
-    width: 1%;
-    flex-grow:10;
     padding-left:4px;
     font-weight:bold;
+    width: 95%;
+    margin: 3px auto;
+    display: block;
 }
 
 .labeled-input-value:focus {
@@ -114,7 +114,6 @@
 .labeled-input-container{
     display:inline-block;
     min-width: 320px;
-    width: 20vw;
 }
   
 </style>

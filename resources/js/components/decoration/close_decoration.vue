@@ -1,18 +1,18 @@
 <template>
-<button ref="container" type="button" class="button-close-container">
-    <div class="button-close"></div>
-    <span v-text="description" class="button-description"></span>
-</button>
+<div class="close-decoration-container">
+    <div class="close-decoration"></div>
+    <span v-if="description" v-text="description" class="decoration-description"></span>
+</div>
 </template>
 
 <script>
 	export default {
-        name: 'close-button',
+        name: 'close-decoration',
 
         props : {
             description : {
                 required: false,
-                default:'close',
+                default:'',
                 type: String
             }
         }
@@ -22,7 +22,7 @@
 
 <style lang="scss">
 
-.button-close{
+.close-decoration{
     display: inline-block;
     background:black;
     width: 65%;
@@ -35,11 +35,11 @@
     clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
 }
 
-.button-close-container:hover .button-close{
+.close-decoration-container:hover .close-decoration{
         background:white;
 }
 
-.button-close-container{
+.close-decoration-container{
     position:relative;
     background:white;
     border-radius:50%;
@@ -47,8 +47,8 @@
     font-size: 0;
     min-width: 20px;
     min-height: 20px;
-    width: 2.3vw;
-    height: 2.3vw;
+    width: 1.8vw;
+    height: 1.8vw;
     cursor: pointer;
     display: inline-block;
     &:hover{
@@ -56,7 +56,7 @@
     }
 }
 
-.button-description{
+.decoration-description{
     position:absolute;
     top:-9999px;
     left:0;

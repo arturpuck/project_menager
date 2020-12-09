@@ -146,7 +146,9 @@ const translations:object = {
            add_employee: "Dodaj pracownika",
            role : "Rola",
            note : "Notatka",
-           employee_created_successfully : "Pomyślnie utworzono użytkownika"
+           employee_created_successfully : "Pomyślnie utworzono użytkownika",
+           the_data_is_invalid : "Wprowadzono nieprawidłowe dane",
+           the_data_is_probably_ok_but_a_server_error_occured : "Wprowadzone dano najprawdopodobniej są poprawne, ale wystąpił błąd po stronie serwera"
         }
        
     }
