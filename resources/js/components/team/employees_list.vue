@@ -115,14 +115,16 @@
    list-style-type: none;
    padding:0;
    margin:0;
+   max-width: 20vw;
 }
 
 .skills-list-element{
    display:inline-block;
+   white-space: nowrap;
    padding:3px;
-   background:black;
-   color:white;
-   @include responsive-font(1.1vw,13px);
+   background: white;
+   color: black;
+   @include responsive-font(1vw, 12px,Montserrat);
    margin:3px;
    border-radius: 3px;
 }

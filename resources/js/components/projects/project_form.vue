@@ -572,6 +572,7 @@
 @import '~sass/components/labeled_wide_textarea';
 @import '~sass/components/read_only_box';
 @import '~sass/components/labeled_select';
+@import '~sass/components/introductory_bar';
 
 $margin-for-inputs : 10px 15px 10px 0;
 
@@ -671,13 +672,6 @@ $margin-for-inputs : 10px 15px 10px 0;
     overflow-y:auto;
     background:#fbffff;
     max-height: 100vh;
-}
-
-.introductory-bar{
-    display:flex;
-    justify-content:space-between;
-    align-items: center;
-    padding-right: 5px;
 }
 
 .colored-button{

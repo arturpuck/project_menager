@@ -16,14 +16,19 @@ class CreateRolesTable extends Migration
     {
         Schema::create('roles', function (Blueprint $table) {
             $table->id();
-            $table->string('name',20);
+            $table->string('name',30);
+            $table->string('name_pl',30);
         });
 
         Role::insert([
-            ['name' => 'administrator'],
-            ['name' => 'project menager'],
-            ['name' => 'account'],
-            ['name' => 'team member'] 
+            ['name' => 'administrator',
+             'name_pl' => 'administrator'],
+            ['name' => 'project menager',
+            'name_pl' => 'menadżer projektów'],
+            ['name' => 'account',
+             'name_pl' => 'specjalista do spraw klientów'],
+            ['name' => 'team member',
+            'name_pl' => 'członek zespołu'] 
         ]);
     }
 

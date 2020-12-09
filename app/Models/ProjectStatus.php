@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\NamesForCurrentLanguage;
+use App\Casts\NameAttribute;
 
 class ProjectStatus extends Model
 {
-    use HasFactory;
+    use HasFactory, NamesForCurrentLanguage;
 
   protected  $fillable = [
       'name',
@@ -16,5 +18,9 @@ class ProjectStatus extends Model
 
   public $timestamps = false;
   protected $table = 'project_statuses';
+
+  protected $casts = [
+    'name' => NameAttribute::class,
+];
 
 }

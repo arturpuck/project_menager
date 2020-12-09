@@ -4,3 +4,15 @@
 @import '~sass/components/rectangular_list';
 @import '~sass/components/decoration/introductory_container';
 
+#app .introductory-container{
+    padding: 3vw 7vw;
+}
+
+#app .header{
+    padding: 0 0 1vw 7vw;
+}
+
+#app .header-under-navbar{
+    margin-top: 2.7vw;
+}
+

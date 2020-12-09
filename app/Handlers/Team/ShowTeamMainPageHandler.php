@@ -19,13 +19,13 @@ Class ShowTeamMainPageHandler {
             'title' => 'team_list_title',
             'description' => 'team_list_description',
             'projectReportStatuses' => ProjectReportStatus::all(),
-            'months' => Months::names[\App::getLocale()],
+            'months' => Months::getNames(),
             'yearsRange' => Company::getYearsRange(),
             'roles' => $roles,
             'positions' => Position::all(),
             'skills' => Skill::all(),
             'currentMonthAndPreviousNames' => Months::namesOfCurrentMonthAndPrevious(),
-            'currentMonthAndPreviousNumbers' => Months::numbersOfCurrentMonthAndPrevious()
+            'currentMonthAndPreviousNumbers' => Months::numbersOfCurrentMonthAndPrevious(),
         ]);
         
     }

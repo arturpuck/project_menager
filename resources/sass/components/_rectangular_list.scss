@@ -3,6 +3,7 @@
 .remove-rectangular-element-icon{
     width:1.8vw;
     height:1.8vw;
+    margin-left:1vw;
 }
 
 .rectangular-elements-list{
@@ -12,10 +13,16 @@
 }
 
 .rectangular-list-element{
-    padding:5px;
-    display:inline-block;
-    margin:5px;
-    background:black;
-    color:white;
-    @include responsive-font();
+    padding: 1vw;
+    display: inline-flex;
+    margin: 5px;
+    justify-content: space-between;
+    align-items: center;
+    background: #efeeee;
+    border-radius:5px;
+}
+
+.list-text{
+    color:black;
+    @include responsive-font(1.3vw, 16px,Montserrat);
 }

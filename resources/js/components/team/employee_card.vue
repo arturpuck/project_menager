@@ -63,19 +63,19 @@
      </table>
     </section>
     <section v-show="clockifyTabIsSelected">
-      <form method="POST" enctype='multipart/form-data' action="/report/store">
+      <form method="POST" enctype='multipart/form-data' class="clockify-form" action="/report/store">
           <input type="hidden" v-bind:value="employee.id" name="user_id">
           <input v-bind:value="csrfToken" type="hidden" name="_token">
-          <input type="file" class="report-file" name="clockify_report_file" >
-          <labeled-select name="report_for_month"  v-bind:displayed-values="clockifyAvailableMonthsNames" v-bind:values="clockifyAvailableMonthsNumbers">
+          <file-input class="clockify-report-element" v-bind:caption="translations['clockify_report_file']"></file-input>
+          <labeled-select class="clockify-report-element" name="report_for_month"  v-bind:displayed-values="clockifyAvailableMonthsNames" v-bind:values="clockifyAvailableMonthsNumbers">
             {{translations['month_report']}} :
           </labeled-select>
-          <labeled-input class="reported-hours" input-type="number" name="reported_hours">{{translations['hours_of_work']}}</labeled-input>
-          <positive-button class="save-report" type="submit">{{translations['save']}}</positive-button>
+          <labeled-input class="clockify-report-element" input-type="number" name="reported_hours">{{translations['hours_of_work']}}</labeled-input>
+          <positive-button class="save-report clockify-report-element" type="submit">{{translations['save']}}</positive-button>
       </form>
     </section>
     <section v-show="dataTabIsSelected">
-      <form>
+      <form class="employee-data-form">
         <labeled-input v-bind:is-disabled="ordinaryTeamMember" v-model="employee['full_name']" name="full_name" >{{translations['full_name']}} : </labeled-input>
         <labeled-input v-model="employee['email']" name="email">{{translations['email']}} : </labeled-input>
         <labeled-input v-model="employee['phone_number']" name="phone_number">{{translations['phone_number']}} : </labeled-input>
@@ -87,13 +87,15 @@
         <labeled-input v-model="employee['rate_per_hour_set_by_deal']" v-bind:is-disabled="ordinaryTeamMember" input-type="number" name="rate_per_hour_set_by_deal">{{translations['rate_per_hour_set_by_deal']}} : </labeled-input>
         <labeled-input v-model="employee['rate_per_month']" v-bind:is-disabled="ordinaryTeamMember" input-type="number" name="rate_per_month">{{translations['rate_per_month']}} : </labeled-input>
         <labeled-input v-model="employee['real_rate_per_hour']" v-if="!ordinaryTeamMember" input-type="number" name="real_rate_per_hour">{{translations['real_rate_per_hour']}} : </labeled-input>
-        <label for="note" v-text="translations['note']" class="note-label"></label>
-        <textarea v-model="employee['note']" id="note" class="note"  cols="20" rows="5"></textarea>
+        <div class="textarea-container">
+            <label for="employee-comment" v-text="translations['comment']" class="textarea-label"></label>
+            <textarea name="comment" v-model="employee['note']" id="employee-comment" class="textarea" cols="20" rows="5"></textarea>
+        </div> 
         <fieldset class="form-fieldset">
               <caption v-text="translations['positions']" class="form-caption"></caption>
               <ul class="rectangular-elements-list">
                 <li v-for="position in employeePositionsList" class="rectangular-list-element">
-                    {{position}}
+                   <span v-text="position" class="list-text"></span>
                     <close-button class="remove-rectangular-element-icon" v-bind:description="translations['close']" v-on:click.native="removePositionFromList(position)" /> 
                 </li>
               </ul>
@@ -103,7 +105,7 @@
               <caption v-text="translations['skills']" class="form-caption"></caption>
               <ul class="rectangular-elements-list">
                 <li v-for="skill in employeeSkillsList" class="rectangular-list-element">
-                    {{skill}}
+                   <span v-text="skill" class="list-text"></span>
                     <close-button class="remove-rectangular-element-icon" v-bind:description="translations['close']" v-on:click.native="removeSkillFromList(skill)" /> 
                 </li>
               </ul>
@@ -125,9 +127,10 @@
   import Datepicker from 'vuejs-datepicker';
   import LabeledSelect from '@jscomponents/controls/labeled_select.vue';
   import Multiselect from '@jscomponents/controls/multiselect.vue';
+  import FileInput from '@jscomponents/controls/file_input.vue';
 
   
-@Component({components : {CloseButton, Multiselect, LabeledInput, PositiveButton, Datepicker, LabeledSelect}})
+@Component({components : {CloseButton, Multiselect, LabeledInput, PositiveButton, Datepicker, LabeledSelect, FileInput}})
 
 
   export default class EmployeeCard extends Vue {
@@ -331,6 +334,8 @@
        this.employee = employee;
        this.loadEmployeePositions(employee);
        this.loadEmployeeSkills(employee);
+       this.clearProjectReportsFilters();
+       this.filterReports();
        this.showCard = true;
     }
 
@@ -398,6 +403,11 @@
     showNotification(text, type="no-error"){
          const header = type === "no-error" ? "information" : "error";
          this.$root.$emit('showNotification', {notificationText : text, notificationType : type, headerText : this.translations['information']});
+      }
+
+      clearProjectReportsFilters(){
+         this.filterMonth = '';
+         this.filterYear = new Date().getFullYear();
       }
 
    async filterReports(){
@@ -563,25 +573,56 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 @import '~sass/fonts';
 @import '~sass/components/tab_list';
 @import '~sass/components/table';
 @import '~sass/components/header';
 @import '~sass/components/blank_button';
+@import '~sass/components/introductory_bar';
+@import '~sass/components/labeled_wide_textarea';
+
+$margin-for-inputs : 10px 15px 10px 0;
+
+#app .rectangular-elements-list{
+    padding: 0 0 1vw 0;
+}
+
+#app .rectangualr-list-element{
+    margin: 5px 5px 5px 0;
+}
+
+#app .textarea-container{
+  margin: 2vw auto;
+  width: 70%;
+}
+
+.employee-data-form{
+  padding:0 0 0 7vw;
+}
+
+#app .clockify-report-element{
+  margin: $margin-for-inputs
+}
+
+.clockify-form{
+  display: flex;
+  justify-content: flex-start;
+  align-content: stretch;
+  padding: 1vw 0 1vw 7vw;
+}
+
+#app .header {
+    padding: 1vw 0 1vw 7vw;
+}
 
 .filter-form{
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  padding: 5px;
-}
-
-.introductory-bar{
-    display:flex;
-    justify-content:space-between;
-    padding:2vw;
+  padding: 0.5vw 0 0.5vw 7vw;
+  align-items: stretch;
 }
 
 .note{
@@ -602,15 +643,13 @@
 }
 
 .form-caption{
-  @include responsive-font();
-  color:white;
-  padding:5px;
+  @include responsive-font(1.4vw, 17px,Montserrat);
+  padding:1.2vw 0;
+  color:black;
 }
 
 .form-fieldset{
-  border: 2px solid black;
-  border-radius: 4px;
-  margin: 5px;
+  padding:1vw 0 0 0;
 }
 
 .filter-results-form{
@@ -626,7 +665,7 @@
     top:0;
     left:0;
     width:100vw;
-    min-height:100vh;
+    height:100vh;
     overflow-y: auto;
     background:white;
 }
@@ -643,14 +682,8 @@
   padding: 6px;
 }
 
-#app .reported-hours{
-    display: block;
-    margin: 4px auto;
-}
-
 #app .save-report{
-  display: block;
-  margin: 4px auto;
+  margin: $margin-for-inputs
 }
 
 #app .project-hours{
@@ -697,9 +730,7 @@
     background:#0FCACA;
     color:white;
     @include responsive-font(1.2vw, 15px,Montserrat);
-    height:2em;
     padding:0 3vw;
-    margin-left: auto;
   }
 
 

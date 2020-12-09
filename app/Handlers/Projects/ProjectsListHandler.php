@@ -12,7 +12,6 @@ use App\Models\PaymentStatus;
 use App\Models\ProjectStatus;
 use App\Helpers\Months;
 use App\Helpers\Company;
-use App\Helpers\PluckColumnBy;
 
 Class ProjectsListHandler {
 
@@ -37,8 +36,6 @@ Class ProjectsListHandler {
                           ->filterByPositions(['account'])
                           ->get();
 
-        $pluckColumnBy = PluckColumnBy::get();
-
                    return view('projects')->with([ 'clients' => Client::all(),
                                                   'projects' => Project::all(),
                                                   'projectMenagers' => $projectMenagers,
@@ -49,7 +46,6 @@ Class ProjectsListHandler {
                                                   'title' => 'projects_list',
                                                   'description' => 'projects_list_description',
                                                   'tasks' => Task::all(),
-                                                  'pluckColumnBy' => $pluckColumnBy,
                                                   'paymentStatuses' => PaymentStatus::all(),
                                                   'yearsRange' => Company::getYearsRange()]);
 

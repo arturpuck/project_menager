@@ -15973,7 +15973,8 @@ var translations = {
             note: "Notatka",
             employee_data_modified_successfully: "Pomyślnie zmodyfikowano dane pracownika",
             month_report: "Raport za miesiąc",
-            total_time_spent: "Całkowity czas"
+            total_time_spent: "Całkowity czas",
+            clockify_report_file: "Plik raportu clockify",
         },
         income: {
             you_have_to_select_some_status: "Płatność musi mieć przypisany jakiś status. Aktualizacja nieudana",
@@ -16000,6 +16001,9 @@ var translations = {
             employee_created_successfully: "Pomyślnie utworzono użytkownika",
             the_data_is_invalid: "Wprowadzono nieprawidłowe dane",
             the_data_is_probably_ok_but_a_server_error_occured: "Wprowadzone dano najprawdopodobniej są poprawne, ale wystąpił błąd po stronie serwera"
+        },
+        file_input: {
+            not_selected: "nie wybrano"
         }
     }
 };

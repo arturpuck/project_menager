@@ -23,7 +23,7 @@ class CreateTasksTable extends Migration
 
         Task::insert([
             ['name' => 'copywriting',
-             'name_pl' => 'tworzenie tekstów na potrzeby marketingu'],
+             'name_pl' => 'teksty na potrzeby marketingu'],
             ['name' => 'development',
               'name_pl' => 'rozbudowa',
             ],
