@@ -122,6 +122,7 @@ const translations:object = {
             month_report : "Raport za miesiąc",
             total_time_spent : "Całkowity czas",
             clockify_report_file : "Plik raportu clockify",
+            reported_time : "Raportowany czas",
         },
 
         income : {

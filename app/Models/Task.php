@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\NamesForCurrentLanguage;
-use App\Casts\NameAttribute;
 
 class Task extends Model
 {
@@ -18,7 +17,6 @@ class Task extends Model
   
     public $timestamps = false;
 
-    protected $casts = [
-        'name' => NameAttribute::class,
-    ];
+    protected $appends = ['name_in_current_language'];
+
 }

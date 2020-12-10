@@ -15957,6 +15957,7 @@ var translations = {
             month_report: "Raport za miesiąc",
             total_time_spent: "Całkowity czas",
             clockify_report_file: "Plik raportu clockify",
+            reported_time: "Raportowany czas",
         },
         income: {
             you_have_to_select_some_status: "Płatność musi mieć przypisany jakiś status. Aktualizacja nieudana",

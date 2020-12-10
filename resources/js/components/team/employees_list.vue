@@ -19,7 +19,7 @@
                <td v-text="employee['rate_per_hour_set_by_deal']" class="table-cell"></td>
                <td class="table-cell">
                   <ul class="skills-list">
-                     <li v-for="skill in employee.skills" v-text="skill.name" class="skills-list-element"></li>
+                     <li v-for="skill in employee.skills" v-text="skill.name_in_current_language" class="skills-list-element"></li>
                   </ul>
                </td>
                <td v-text="employee['note']" class="table-cell"></td>
@@ -91,7 +91,7 @@
         let positions = '';
 
         employee.positions.forEach(function(position){
-            positions += position.name + ', ';
+            positions += position.name_in_current_language + ', ';
         });
 
         return positions.slice(0,-2);

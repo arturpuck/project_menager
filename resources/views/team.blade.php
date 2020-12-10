@@ -7,11 +7,11 @@
       </positive-button>
     </div>
     <new-employee v-on:close="closeNewEmployeeForm" v-show="newEmployeeFormIsVisible"
-      v-bind:employee-positions="{{json_encode($positions->pluck('name'), true)}}"
+      v-bind:employee-positions="{{json_encode($positions->pluck('name_in_current_language'), true)}}"
       v-bind:employee-positions-ids="{{json_encode($positions->pluck('id'), true)}}"
-      v-bind:employee-skills="{{json_encode($skills->pluck('name'), true)}}"
+      v-bind:employee-skills="{{json_encode($skills->pluck('name_in_current_language'), true)}}"
       v-bind:employee-skills-ids="{{json_encode($skills->pluck('id'), true)}}"
-      v-bind:user-roles-values="{{json_encode($roles->pluck('name'), true)}}"
+      v-bind:user-roles-values="{{json_encode($roles->pluck('name_in_current_language'), true)}}"
       v-bind:user-roles-ids="{{json_encode($roles->pluck('id'), true)}}"
     ></new-employee>
     @endif
@@ -34,13 +34,13 @@
     <employees-list>
     </employees-list>
     <employee-card
-      v-bind:user-roles-values="{{json_encode($roles->pluck('name'), true)}}"
+      v-bind:user-roles-values="{{json_encode($roles->pluck('name_in_current_language'), true)}}"
       v-bind:user-roles-ids="{{json_encode($roles->pluck('id'), true)}}"
-      v-bind:project-report-statuses-values="{{json_encode($projectReportStatuses->pluck('name'), true)}}"
+      v-bind:project-report-statuses-values="{{json_encode($projectReportStatuses->pluck('name_in_current_language'), true)}}"
       v-bind:project-report-statuses-ids="{{json_encode($projectReportStatuses->pluck('id'), true)}}"
-      v-bind:employee-positions="{{json_encode($positions->pluck('name'), true)}}"
+      v-bind:employee-positions="{{json_encode($positions->pluck('name_in_current_language'), true)}}"
       v-bind:employee-positions-ids="{{json_encode($positions->pluck('id'), true)}}"
-      v-bind:employee-skills="{{json_encode($skills->pluck('name'), true)}}"
+      v-bind:employee-skills="{{json_encode($skills->pluck('name_in_current_language'), true)}}"
       v-bind:employee-skills-ids="{{json_encode($skills->pluck('id'), true)}}"
       v-bind:months="{{json_encode($months)}}"
       v-bind:clockify-available-months-names="{{json_encode($currentMonthAndPreviousNames, true)}}"

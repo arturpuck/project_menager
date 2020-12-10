@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\NamesForCurrentLanguage;
-use App\Casts\NameAttribute;
 
 class PaymentStatus extends Model
 {
@@ -17,8 +16,6 @@ class PaymentStatus extends Model
     ];
   
     public $timestamps = false;
+    protected $appends = ['name_in_current_language'];
 
-    protected $casts = [
-        'name' => NameAttribute::class,
-    ];
 }

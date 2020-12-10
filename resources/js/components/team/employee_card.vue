@@ -39,10 +39,14 @@
                <td v-text="projectNames[index]" class="table-cell"></td>
                <td v-text="taskRanges[index]" class="table-cell"></td>
                <td class="table-cell">
-                  <labeled-input input-type="number" class="project-hours" v-model="workTimesInReportedMonth[index]" name="project_reported_hours"></labeled-input>
+                  <labeled-input input-type="number" class="project-hours" v-model="workTimesInReportedMonth[index]" name="project_reported_hours">
+                    {{translations['reported_time']}}
+                  </labeled-input>
                </td>
                <td class="table-cell">
-                 <labeled-select name="account_id" class="project-status" v-model="workStatuses[index]" v-bind:displayed-values="projectReportStatusesValues" v-bind:values="projectReportStatusesIds"></labeled-select>
+                  <labeled-select name="account_id" class="project-status" v-model="workStatuses[index]" v-bind:displayed-values="projectReportStatusesValues" v-bind:values="projectReportStatusesIds">
+                     {{translations['status']}}
+                   </labeled-select>
                </td>
                <td class="table-cell">
                  <labeled-select name="report_for_month" v-model="userReportForMonth[index]"  v-bind:displayed-values="clockifyAvailableMonthsNames" v-bind:values="clockifyAvailableMonthsNumbers">
@@ -344,7 +348,7 @@
         if(this.employeePositionsList.length == 0){
 
            employee.positions.forEach(position => {
-           this.employeePositionsList.push(position.name);
+           this.employeePositionsList.push(position.name_in_current_language);
           });
 
         } 
@@ -355,7 +359,7 @@
         if(this.employeeSkillsList.length == 0){
 
            employee.skills.forEach(skill => {
-             this.employeeSkillsList.push(skill.name);
+             this.employeeSkillsList.push(skill.name_in_current_language);
           });
 
         } 
@@ -525,7 +529,7 @@
       project.task_stages.forEach(taskStage => {
         
         if(taskStage.user_id == this.employee.id){
-           taskList += `${taskStage.task.name}, `;
+           taskList += `${taskStage.task.name_in_current_language}, `;
         }
         
       });
@@ -584,6 +588,11 @@
 @import '~sass/components/labeled_wide_textarea';
 
 $margin-for-inputs : 10px 15px 10px 0;
+
+#app .textarea-container{
+  margin: 2vw auto;
+  width: 70%;
+}
 
 #app .rectangular-elements-list{
     padding: 0 0 1vw 0;
@@ -716,7 +725,7 @@ $margin-for-inputs : 10px 15px 10px 0;
 .classic-textarea{
   background: white;
   border-radius: 4px;
-  border:none;
+  border: 1px solid black;
   color: black;
   @include responsive-font(1.2vw, 15px,Montserrat);
 }

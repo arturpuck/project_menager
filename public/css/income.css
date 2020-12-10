@@ -108,7 +108,8 @@ table {
 .table-cell {
   color: black;
   text-align: center;
-  padding: 1vw;
+  vertical-align: middle;
+  padding: 0.5vw;
   font-size: 1.2vw;
   font-family: Montserrat, sans-serif;
 }

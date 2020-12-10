@@ -1,7 +1,7 @@
 <template>
-<div v-on:click="showList" tabindex="-1" v-on:blur="closeList" class="multiselect-container">
+<div v-on:click="showList" role="listbox" tabindex="-1" v-on:blur="closeList" class="multiselect-container">
     <slot></slot>
-    <span class="fas fa-plus"></span>
+   <img src="/images/decoration/Icon feather-plus-circle.svg" alt="">
     <div v-show="listIsVisible" class="options-list-container">
         <ul  class="multiselect-options-list">
              <li v-for="value in values" v-on:click="valueHasBeenAdded(value)" class="multiselect-option">{{value}}</li>
@@ -54,15 +54,23 @@
 }
 
 .multiselect-container{
-	position:relative;
+	position: relative;
     background: #242229;
-    @include responsive-font();
-    padding:4px;
-    border-radius:6px;
-    display:inline-block;
-    min-width:200px;
-    color:white;
-    margin:5px;
+    @include responsive-font(1.2vw, 15px,Montserrat);
+    border-radius: 5px;
+    cursor:pointer;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 200px;
+    margin: 5px;
+    padding: 1vw;
+    background: white;
+    color: black;
+    border: 1px solid black;
+    &:focus{
+        border: 1px solid black;
+    }
 }
 
 .multiselect-options-list{
@@ -72,12 +80,13 @@
 }
 
 .multiselect-option{
-    @include responsive-font();
-    color:white;
-    background:black;
+    @include responsive-font(1.1vw, 15px,Montserrat);
+    color:black;
+    background:white;
+    padding:0.5vw;
     cursor:pointer;
     &:hover{
-       background:rgb(5, 60, 238);
+       background:black;
        color:white;
     }
 }

@@ -21,14 +21,14 @@
         </labeled-select>
         <div class="textarea-container">
           <label for="note" v-text="translations['note']" class="textarea-label"></label>
-          <textarea name="comment" v-model="employeeNote" id="note" class="textarea" cols="30" rows="10"></textarea>
+          <textarea name="comment" v-model="employeeNote" id="note" class="textarea" cols="30" rows="5"></textarea>
         </div>   
       <fieldset class="block-fieldset">
          <caption v-text="translations['positions']" class="classic-caption"></caption>
           <ul class="rectangular-elements-list">
                 <multiselect v-on:added="addItemToPositionsList" v-bind:values="employeePositions" >{{translations['add_position']}}</multiselect> 
                 <li v-for="position in employeePositionsList" class="rectangular-list-element">
-                    {{position}}
+                    <span v-text="position" class="list-text"></span>
                     <close-button class="remove-rectangular-element-icon" v-bind:description="translations['close']" v-on:click.native="removePositionFromList(position)" /> 
                 </li>
               </ul>
@@ -38,12 +38,12 @@
               <ul class="rectangular-elements-list">
                 <multiselect v-on:added="addItemToSkillsList" v-bind:values="employeeSkills" >{{translations['add_skill']}}</multiselect> 
                 <li v-for="skill in employeeSkillsList" class="rectangular-list-element">
-                    {{skill}}
+                    <span v-text="skill" class="list-text"></span>
                     <close-button class="remove-rectangular-element-icon" v-bind:description="translations['close']" v-on:click.native="removeSkillFromList(skill)" /> 
                 </li>
               </ul>
       </fieldset>
-      <positive-button class="colored-button wide-button" v-on:click.native="createNewEmployee">{{translations['add_employee']}} </positive-button>
+      <positive-button class="colored-button button" v-on:click.native="createNewEmployee">{{translations['add_employee']}} </positive-button>
    </div>
 </form>
 </template>
@@ -186,7 +186,6 @@
 
     getSkillId(skillName:string):number{
       const index = this.employeeSkills.findIndex( name => name == skillName);
-      alert(index);
       return this.employeeSkillsIds[index];
     }
 
@@ -224,12 +223,17 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 @import '~sass/fonts';
 @import '~sass/components/header';
 @import '~sass/components/rectangular_list';
 @import '~sass/components/labeled_wide_textarea';
+
+#app .textarea-container{
+  margin:2vw auto;
+  width:70%;
+}
 
 .block-fieldset{
   width:100%;
@@ -241,10 +245,12 @@
     padding: 0.7vw 10px;
 }
 
-.wide-button {
-    display: block;
-    width: 95%;
-    margin: 0 auto;
+.button {
+   display: block;
+    width: 20vw;
+    min-width: min-content;
+    margin: 0 0 0 3vw;
+    white-space: nowrap;
 }
 
 .classic-caption{
@@ -273,12 +279,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.7vw;
-}
-
-.user-data{
-  display: flex;
-  flex-wrap:wrap;
-  justify-content: space-between;
 }
 
 </style>

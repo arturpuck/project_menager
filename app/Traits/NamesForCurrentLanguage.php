@@ -2,12 +2,12 @@
 
 namespace App\Traits;
 
+use App\Helpers\PluckColumnBy;
+
 trait NamesForCurrentLanguage {
 
-    public static function getNamesInCurrentLanguage(){
-        $currentLanguage = \App::getLocale();
-        $columnName = ($currentLanguage == 'en') ? 'name' : "name_$currentLanguage";
-
-        return static::select(\DB::raw("id, $columnName as name"))->get();
+    public function getNameInCurrentLanguageAttribute(){
+        $columnName = PluckColumnBy::get();
+        return $this->$columnName;
     }
 }

@@ -364,7 +364,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".fa-plus[data-v-49f9dc67] {\n  position: absolute;\n  right: 4px;\n}\n.fa-window-close[data-v-49f9dc67] {\n  float: right;\n}\n.multiselect-container[data-v-49f9dc67] {\n  position: relative;\n  background: #242229;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n  padding: 4px;\n  border-radius: 6px;\n  display: inline-block;\n  min-width: 200px;\n  color: white;\n  margin: 5px;\n}\n@media (max-width: 1200px) {\n.multiselect-container[data-v-49f9dc67] {\n    font-size: 16px;\n}\n}\n.multiselect-options-list[data-v-49f9dc67] {\n  list-style-type: none;\n  margin: 0;\n  padding: 0;\n}\n.multiselect-option[data-v-49f9dc67] {\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n  color: white;\n  background: black;\n  cursor: pointer;\n}\n@media (max-width: 1200px) {\n.multiselect-option[data-v-49f9dc67] {\n    font-size: 16px;\n}\n}\n.multiselect-option[data-v-49f9dc67]:hover {\n  background: #053cee;\n  color: white;\n}\n.options-list-container[data-v-49f9dc67] {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  width: 100%;\n  max-width: 50vh;\n  overflow-y: auto;\n  z-index: 2;\n  border: 1px solid black;\n  border-radius: 2px;\n}", ""]);
+exports.push([module.i, ".fa-plus[data-v-49f9dc67] {\n  position: absolute;\n  right: 4px;\n}\n.fa-window-close[data-v-49f9dc67] {\n  float: right;\n}\n.multiselect-container[data-v-49f9dc67] {\n  position: relative;\n  background: #242229;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  border-radius: 5px;\n  cursor: pointer;\n  display: inline-flex;\n  justify-content: space-between;\n  align-items: center;\n  min-width: 200px;\n  margin: 5px;\n  padding: 1vw;\n  background: white;\n  color: black;\n  border: 1px solid black;\n}\n@media (max-width: 1200px) {\n.multiselect-container[data-v-49f9dc67] {\n    font-size: 15px;\n}\n}\n.multiselect-container[data-v-49f9dc67]:focus {\n  border: 1px solid black;\n}\n.multiselect-options-list[data-v-49f9dc67] {\n  list-style-type: none;\n  margin: 0;\n  padding: 0;\n}\n.multiselect-option[data-v-49f9dc67] {\n  font-size: 1.1vw;\n  font-family: Montserrat, sans-serif;\n  color: black;\n  background: white;\n  padding: 0.5vw;\n  cursor: pointer;\n}\n@media (max-width: 1200px) {\n.multiselect-option[data-v-49f9dc67] {\n    font-size: 15px;\n}\n}\n.multiselect-option[data-v-49f9dc67]:hover {\n  background: black;\n  color: white;\n}\n.options-list-container[data-v-49f9dc67] {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  width: 100%;\n  max-width: 50vh;\n  overflow-y: auto;\n  z-index: 2;\n  border: 1px solid black;\n  border-radius: 2px;\n}", ""]);
 
 // exports
 
@@ -3207,13 +3207,18 @@ var render = function() {
     "div",
     {
       staticClass: "multiselect-container",
-      attrs: { tabindex: "-1" },
+      attrs: { role: "listbox", tabindex: "-1" },
       on: { click: _vm.showList, blur: _vm.closeList }
     },
     [
       _vm._t("default"),
       _vm._v(" "),
-      _c("span", { staticClass: "fas fa-plus" }),
+      _c("img", {
+        attrs: {
+          src: "/images/decoration/Icon feather-plus-circle.svg",
+          alt: ""
+        }
+      }),
       _vm._v(" "),
       _c(
         "div",
@@ -20734,6 +20739,7 @@ var translations = {
             month_report: "Raport za miesiąc",
             total_time_spent: "Całkowity czas",
             clockify_report_file: "Plik raportu clockify",
+            reported_time: "Raportowany czas",
         },
         income: {
             you_have_to_select_some_status: "Płatność musi mieć przypisany jakiś status. Aktualizacja nieudana",

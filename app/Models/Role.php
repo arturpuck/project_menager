@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\NamesForCurrentLanguage;
-use App\Casts\NameAttribute;
+use App\Helpers\PluckColumnBy;
 
 class Role extends Model
 {
@@ -16,8 +16,7 @@ class Role extends Model
         'name',
         'name_pl'
     ];
+    
+    protected $appends = ['name_in_current_language'];
 
-    protected $casts = [
-        'name' => NameAttribute::class,
-    ];
 }
