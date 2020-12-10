@@ -7,10 +7,14 @@
 
 
 #app .filter-button{
-    margin:5px;
+    margin: 1vw 1vw 1vw 0;
     background:#0FCACA;
     color:white;
     @include responsive-font(1.2vw, 15px,Montserrat);
-    height:2em;
     padding:0 3vw;
+    align-items: stretch;
+  }
+
+  #app .select-label{
+    margin: 1vw 1vw 1vw 0;
   }

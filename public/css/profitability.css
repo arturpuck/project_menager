@@ -125,8 +125,7 @@ table {
 .filter-form {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0 0 0 3vw;
+  padding: 0 0 0 7vw;
 }
 
 .introductory-container {
@@ -136,16 +135,20 @@ table {
 }
 
 #app .filter-button {
-  margin: 5px;
+  margin: 1vw 1vw 1vw 0;
   background: #0FCACA;
   color: white;
   font-size: 1.2vw;
   font-family: Montserrat, sans-serif;
-  height: 2em;
   padding: 0 3vw;
+  align-items: stretch;
 }
 @media (max-width: 1200px) {
   #app .filter-button {
     font-size: 15px;
   }
+}
+
+#app .select-label {
+  margin: 1vw 1vw 1vw 0;
 }

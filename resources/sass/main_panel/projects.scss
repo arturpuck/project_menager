@@ -60,3 +60,9 @@
 .finished-status{
   color:#5CC52D;
 }
+
+.error-list-element{
+  color:white;
+  @include responsive-font(1.3vw, 16px,Montserrat);
+  background: crimson;
+}

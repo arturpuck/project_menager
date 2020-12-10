@@ -13,11 +13,10 @@ class SkillsMatchEmployee implements Rule
      * @return void
      */
     
-    private array $skillIds;
-    private array $userIds;
-    private string $errorMessage;
+    private $skillIds;
+    private $userIds;
 
-    public function __construct(array $skillIds, array $userIds)
+    public function __construct($skillIds, $userIds)
     {
         $this->skillIds = $skillIds;
         $this->userIds = $userIds;
@@ -32,8 +31,11 @@ class SkillsMatchEmployee implements Rule
      */
     public function passes($attribute, $value)
     {
+        if(!is_array($this->skillIds) || !is_array($this->userIds)){
+            return false;
+        }
+        
         if(count($this->skillIds) !== count($this->userIds)){
-           $this->errorMessage = 'number_of_skills_must_be_equal_to_number_of_users';
            return false;
         }
 
@@ -47,7 +49,6 @@ class SkillsMatchEmployee implements Rule
                                                    ->exists();
 
             if(!$userHasSuchSkill){
-                $this->errorMessage = 'skills_where_assigned_to_an_incorrect_user';
                 return false;
             }
         }
@@ -63,6 +64,6 @@ class SkillsMatchEmployee implements Rule
      */
     public function message()
     {
-        return $this->errorMessage;
+        'skills_do_not_match_chosen_employees';
     }
 }

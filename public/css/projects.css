@@ -320,3 +320,15 @@ table {
 .finished-status {
   color: #5CC52D;
 }
+
+.error-list-element {
+  color: white;
+  font-size: 1.3vw;
+  font-family: Montserrat, sans-serif;
+  background: crimson;
+}
+@media (max-width: 1200px) {
+  .error-list-element {
+    font-size: 16px;
+  }
+}
