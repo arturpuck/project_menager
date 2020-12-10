@@ -1,6 +1,6 @@
 <template>
 <form class="new-employee-form">
-   <div class="header-bar">
+   <div class="introductory-bar">
      <h2 v-text="translations['add_new_employee']" class="header"></h2>
      <close-button v-on:click.native="hideForm"></close-button>
    </div>
@@ -229,10 +229,19 @@
 @import '~sass/components/header';
 @import '~sass/components/rectangular_list';
 @import '~sass/components/labeled_wide_textarea';
+@import '~sass/components/introductory_bar';
+
+.user-data{
+  padding-left: 3vw;
+}
 
 #app .textarea-container{
   margin:2vw auto;
   width:70%;
+}
+
+#app .header{
+  padding: 1vw 0 1vw 3vw;
 }
 
 .block-fieldset{
@@ -249,7 +258,7 @@
    display: block;
     width: 20vw;
     min-width: min-content;
-    margin: 0 0 0 3vw;
+    margin: 0;
     white-space: nowrap;
 }
 

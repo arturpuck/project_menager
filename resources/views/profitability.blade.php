@@ -1,6 +1,6 @@
 <x-base title="{{$title}}" description="{{$description}}">
 <div class="introductory-container">
-   <h1 class="header header-under-navbar">{{__('projects_profitability')}}</h1>
+   <h1 class="header">{{__('projects_profitability')}}</h1>
 </div>
     
 

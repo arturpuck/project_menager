@@ -9,10 +9,14 @@
 }
 
 #app .header{
-    padding: 0 0 1vw 7vw;
+    padding: 1vw 0 1vw 7vw;
 }
 
 #app .header-under-navbar{
     margin-top: 2.7vw;
+}
+
+.header-extra-margin{
+    margin-top: calc(60px + 1vw);
 }
 

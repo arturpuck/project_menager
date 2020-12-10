@@ -14,8 +14,11 @@
       v-bind:user-roles-values="{{json_encode($roles->pluck('name_in_current_language'), true)}}"
       v-bind:user-roles-ids="{{json_encode($roles->pluck('id'), true)}}"
     ></new-employee>
+    <h1 class="header">{{__('team_members_list')}}</h1>
+    @else
+    <h1 class="header header-extra-margin">{{__('team_members_list')}}</h1>
     @endif
-    <h1 class="header header-under-navbar">{{__('team_members_list')}}</h1>
+   
     @if(Session::has('succesMessage'))
        <div class="success-message">{{__(Session::get('succesMessage'))}}</div>
    @endif
