@@ -37,6 +37,14 @@ Class FilterProjectsHandler {
             $this->projectsRepository->filterByYear($year);
          }
 
+         if($projectMenagerID = $request->get('project_menager_id')){
+            $this->projectsRepository->filterByProjectMenagerId($projectMenagerID);
+         }
+
+         if($accountID = $request->get('account_id')){
+            $this->projectsRepository->filterByAccountId($accountID);
+         }
+
          $projects =  $this->projectsRepository->with(['employees', 
                                                       'paymentStages', 
                                                       'taskStages', 

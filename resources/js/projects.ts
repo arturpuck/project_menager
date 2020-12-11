@@ -70,7 +70,9 @@ new Vue({
               'filterTaskId',
               'filterStatusId',
               'filterMonth',
-              'filterYear'
+              'filterYear',
+              'filterProjectMenager',
+              'filterAccount'
           ];
 
           const paramsNames = {
@@ -78,7 +80,9 @@ new Vue({
             filterTaskId : 'task_id',
             filterStatusId : 'status_id',
             filterMonth : 'month',
-            filterYear : 'year'
+            filterYear : 'year',
+            filterProjectMenager : 'project_menager_id',
+            filterAccount : 'account_id'
           }
           let query = '';
 
@@ -94,14 +98,6 @@ new Vue({
        async filterProjects(){
 
        this.fetchingProjectsInProgress = true;
-
-            const requestBody = {
-                client_id: this.filterClientId,
-                task_id: this.filterTaskId,
-                status_id: this.filterStatusId,
-                month: this.filterMonth,
-                year: this.filterYear
-            };
 
             const queryParams = this.buildFilterQuery();
 

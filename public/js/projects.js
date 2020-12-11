@@ -20522,14 +20522,18 @@ new vue_1.default({
                 'filterTaskId',
                 'filterStatusId',
                 'filterMonth',
-                'filterYear'
+                'filterYear',
+                'filterProjectMenager',
+                'filterAccount'
             ];
             var paramsNames = {
                 filterClientId: 'client_id',
                 filterTaskId: 'task_id',
                 filterStatusId: 'status_id',
                 filterMonth: 'month',
-                filterYear: 'year'
+                filterYear: 'year',
+                filterProjectMenager: 'project_menager_id',
+                filterAccount: 'account_id'
             };
             var query = '';
             filterPropertiesNames.forEach(function (value) {
@@ -20541,18 +20545,11 @@ new vue_1.default({
         },
         filterProjects: function () {
             return __awaiter(this, void 0, void 0, function () {
-                var requestBody, queryParams, requestData, response, _a, responseBody;
+                var queryParams, requestData, response, _a, responseBody;
                 return __generator(this, function (_b) {
                     switch (_b.label) {
                         case 0:
                             this.fetchingProjectsInProgress = true;
-                            requestBody = {
-                                client_id: this.filterClientId,
-                                task_id: this.filterTaskId,
-                                status_id: this.filterStatusId,
-                                month: this.filterMonth,
-                                year: this.filterYear
-                            };
                             queryParams = this.buildFilterQuery();
                             requestData = {
                                 method: 'GET',
