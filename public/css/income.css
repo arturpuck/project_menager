@@ -134,11 +134,20 @@ table {
   color: white;
   font-size: 1.2vw;
   font-family: Montserrat, sans-serif;
-  height: 2em;
+  align-items: center;
+  display: inline-flex;
   padding: 0 3vw;
 }
 @media (max-width: 1200px) {
   #app .filter-button {
     font-size: 15px;
   }
+}
+
+#app .header {
+  padding: calc(60px + 2vw) 0 2vw 7vw;
+}
+
+#app .filter-form {
+  align-content: stretch;
 }

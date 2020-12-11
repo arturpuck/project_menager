@@ -326,6 +326,7 @@ table {
   font-size: 1.3vw;
   font-family: Montserrat, sans-serif;
   background: crimson;
+  padding: 0.7vw;
 }
 @media (max-width: 1200px) {
   .error-list-element {

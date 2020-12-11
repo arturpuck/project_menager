@@ -26,7 +26,7 @@ class ProjectsController extends Controller
         return $projectsListHandler->handle($request);
     }
 
-    public function addOrEditProject(CreateOrEditProjectRequest $request, AddOrEditProjectHandler $addOrEditProjectHandler){
+    public function addOrEditProject(Request $request, AddOrEditProjectHandler $addOrEditProjectHandler){
 
           return $addOrEditProjectHandler->handle($request);
     }

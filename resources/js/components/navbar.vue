@@ -92,6 +92,7 @@
     left:0;
     width:100%;
     background:#0FCACA;
+    z-index: 2;
 }
 
 .logout-form{

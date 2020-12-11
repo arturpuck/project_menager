@@ -26,13 +26,15 @@ class EmployeeIDBelongsToAccount implements Rule
      */
     public function passes($attribute, $value)
     {
-        return User::whereHas('positions', function($query) use ($value){
+        return User::where('id',intval($value))->where(function($query) use ($value){
 
-            $query->where('name', 'account');
+            $query->whereHas('role', function($query){
+                $query->where('name', 'account');
+            })->orWhereHas('positions', function($query){
+                $query->where('name', 'account');
+            });
             
-        })->orWhereHas('role', function($query){
-             $query->where('name', 'account');
-        })->exists();
+        })->exists(); 
     }
 
     /**

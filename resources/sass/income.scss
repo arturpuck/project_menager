@@ -9,6 +9,15 @@
     background:#0FCACA;
     color:white;
     @include responsive-font(1.2vw, 15px,Montserrat);
-    height:2em;
+    align-items: center;
+    display: inline-flex;
     padding:0 3vw;
+  }
+
+  #app .header{
+    padding: calc(60px + 2vw) 0 2vw 7vw;
+  }
+
+  #app .filter-form{
+    align-content: stretch;
   }

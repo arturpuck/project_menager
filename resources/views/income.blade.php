@@ -1,5 +1,5 @@
 <x-base title="{{$title}}" description="{{$description}}">
-    <h1 class="header header-under-navbar">{{__('projects_income')}}</h1>
+    <h1 class="header">{{__('projects_income')}}</h1>
 
    <form class="filter-form">
       @csrf
@@ -41,7 +41,7 @@
                <td  class="table-cell">
                     <labeled-select v-on:input="editPaymentStatus(index)" v-model="paymentStatusesIds[index]" name="payment_status"
                     v-bind:values="{{json_encode($paymentStatuses->pluck('id'),true)}}"    
-                    v-bind:displayed-values="{{json_encode($paymentStatuses->pluck('name'),true)}}">
+                    v-bind:displayed-values="{{json_encode($paymentStatuses->pluck('name_in_current_language'),true)}}">
                             {{__('status')}} : 
                     </labeled-select>
                </td>

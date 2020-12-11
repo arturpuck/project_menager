@@ -64,6 +64,6 @@ class SkillsMatchEmployee implements Rule
      */
     public function message()
     {
-        'skills_do_not_match_chosen_employees';
+        return 'skills_do_not_match_chosen_employees';
     }
 }

@@ -3,9 +3,8 @@
 namespace App\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
-use App\Models\User;
 
-class EmployeeIDBelongsToProjectMenager implements Rule
+class ProjectNameIsUnique implements Rule
 {
     /**
      * Create a new rule instance.
@@ -14,7 +13,7 @@ class EmployeeIDBelongsToProjectMenager implements Rule
      */
     public function __construct()
     {
-        
+        //
     }
 
     /**
@@ -26,16 +25,7 @@ class EmployeeIDBelongsToProjectMenager implements Rule
      */
     public function passes($attribute, $value)
     {
-        return User::where('id',intval($value))->where(function($query) use ($value){
-
-            $query->whereHas('role', function($query){
-                $query->where('name', 'project menager');
-            })->orWhereHas('positions', function($query){
-                $query->where('name', 'project menager');
-            });
-            
-        })->exists();
-        
+        //
     }
 
     /**
@@ -45,6 +35,6 @@ class EmployeeIDBelongsToProjectMenager implements Rule
      */
     public function message()
     {
-        return 'this_employee_is_not_a_project_menager';
+        return 'The validation error message.';
     }
 }

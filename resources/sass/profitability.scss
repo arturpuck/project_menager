@@ -12,9 +12,12 @@
     color:white;
     @include responsive-font(1.2vw, 15px,Montserrat);
     padding:0 3vw;
-    align-items: stretch;
+    align-items: center;
+    display: inline-flex;
   }
 
   #app .select-label{
     margin: 1vw 1vw 1vw 0;
   }
+
+  

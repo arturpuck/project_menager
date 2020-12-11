@@ -7,10 +7,22 @@ use App\Models\Project;
 use App\Models\TaskStage;
 use App\Models\PaymentStage;
 use App\Models\Client;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 Class AddOrEditProjectHandler {
 
-    public function handle(CreateOrEditProjectRequest $request){
+    public function handle(Request $request){
+
+        $projectID = intval($request->get('project_id'));
+        $rules = CreateOrEditProjectRequest::getRules($request->get('work_stages'),
+        $request->get('work_stage_engaged_persons'), $projectID);
+        $messages = CreateOrEditProjectRequest::messages;
+        $validator = Validator::make($request->all(),$rules,$messages);
+        
+        if($validator->fails()){
+            return back()->withErrors(($validator));
+        }
         
         if(!$request->get('client_id')){
             $client = new Client();
