@@ -4,8 +4,10 @@ namespace App\Http\Requests\Team;
 
 use Illuminate\Foundation\Http\FormRequest;
 use App\Rules\MonthOfReport;
+use App\Rules\YearWhenCompanyExisted;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Validation\Rule;
 
 class CreateOrEditProjectReportRequest extends FormRequest
 {
@@ -40,6 +42,7 @@ class CreateOrEditProjectReportRequest extends FormRequest
             'time' => ['required', 'numeric', 'min:0', 'max:540'],
             'status_id' => ['required', 'exists:project_statuses,id'],
             'update_month' => ['required', new MonthOfReport()],
+            'report_for_year' => ['nullable', Rule::requiredIf(!\Auth::user()->is_ordinary_team_member), new YearWhenCompanyExisted()],
             'comment' => ['nullable', 'max:1000']
         ];
     }

@@ -30,6 +30,7 @@
             <th v-text="translations['time']" class="table-header"></th>
             <th v-text="translations['status']" class="table-header"></th>
             <th v-text="translations['update_month']" class="table-header"></th>
+            <th v-if="!ordinaryTeamMember" v-text="translations['update_year']" class="table-header"></th>
             <th v-text="translations['total_time_spent']" class="table-header"></th>
             <th v-text="translations['comment']" class="table-header"></th>
             <th v-text="translations['action']" class="table-header"></th>
@@ -51,6 +52,11 @@
                <td class="table-cell">
                  <labeled-select name="report_for_month" v-model="userReportForMonth[index]"  v-bind:displayed-values="clockifyAvailableMonthsNames" v-bind:values="clockifyAvailableMonthsNumbers">
                     {{translations['month_report']}} :
+                 </labeled-select>
+               </td>
+               <td v-if="!ordinaryTeamMember" class="table-cell">
+                 <labeled-select name="report_for_year" v-model="userReportForYear[index]"  v-bind:displayed-values="yearsRange">
+                    {{translations['update_year']}} :
                  </labeled-select>
                </td>
                <td class="table-cell">
@@ -234,6 +240,7 @@
     private employeePositionsList :string[] = [];
     private employeeSkillsList :string[] = [];
     private totalTimeSpent :object = {};
+    private userReportForYear = {};
 
     showReportsTab(){
       this.selectedTab = 'report-tab';
@@ -477,6 +484,10 @@
             comment : this.reportComments[index],
             employee_id : this.employee.id
          };
+
+         if(!this.ordinaryTeamMember){
+            requestBody['report_for_year'] = this.userReportForYear[index];
+         }
          
          const requestData = {
                method : 'PATCH',

@@ -2449,6 +2449,7 @@ var EmployeeCard = /** @class */ (function (_super) {
         _this.employeePositionsList = [];
         _this.employeeSkillsList = [];
         _this.totalTimeSpent = {};
+        _this.userReportForYear = {};
         return _this;
     }
     EmployeeCard.prototype.showReportsTab = function () {
@@ -2670,6 +2671,9 @@ var EmployeeCard = /** @class */ (function (_super) {
                             comment: this.reportComments[index],
                             employee_id: this.employee.id
                         };
+                        if (!this.ordinaryTeamMember) {
+                            requestBody['report_for_year'] = this.userReportForYear[index];
+                        }
                         requestData = {
                             method: 'PATCH',
                             headers: {
@@ -4269,6 +4273,15 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
+              !_vm.ordinaryTeamMember
+                ? _c("th", {
+                    staticClass: "table-header",
+                    domProps: {
+                      textContent: _vm._s(_vm.translations["update_year"])
+                    }
+                  })
+                : _vm._e(),
+              _vm._v(" "),
               _c("th", {
                 staticClass: "table-header",
                 domProps: {
@@ -4398,6 +4411,39 @@ var render = function() {
                     ],
                     1
                   ),
+                  _vm._v(" "),
+                  !_vm.ordinaryTeamMember
+                    ? _c(
+                        "td",
+                        { staticClass: "table-cell" },
+                        [
+                          _c(
+                            "labeled-select",
+                            {
+                              attrs: {
+                                name: "report_for_year",
+                                "displayed-values": _vm.yearsRange
+                              },
+                              model: {
+                                value: _vm.userReportForYear[index],
+                                callback: function($$v) {
+                                  _vm.$set(_vm.userReportForYear, index, $$v)
+                                },
+                                expression: "userReportForYear[index]"
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                    " +
+                                  _vm._s(_vm.translations["update_year"]) +
+                                  " :\n                 "
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      )
+                    : _vm._e(),
                   _vm._v(" "),
                   _c("td", { staticClass: "table-cell" }, [
                     _vm._v(
@@ -21670,6 +21716,7 @@ var translations = {
             time: "Raportowany czas",
             status: "Status",
             update_month: "Miesiąc aktualizacji",
+            update_year: "Rok aktualizacji",
             comment: "Komentarz",
             action: "Akcja",
             month: "miesiąc",

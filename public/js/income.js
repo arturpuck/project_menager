@@ -15948,6 +15948,7 @@ var translations = {
             time: "Raportowany czas",
             status: "Status",
             update_month: "Miesiąc aktualizacji",
+            update_year: "Rok aktualizacji",
             comment: "Komentarz",
             action: "Akcja",
             month: "miesiąc",

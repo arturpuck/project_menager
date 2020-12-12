@@ -14,7 +14,14 @@ Class CreateOrEditProjectReportHandler{
         $currentYear = intval(date('Y'));
         $currentMonth = date('m');
         $reportForMonth = $request->get('update_month');
-        $updateYear = (($reportForMonth == 12) and ($currentMonth == 1)) ? $currentYear - 1 : $currentYear;
+
+        if(\Auth::user()->is_ordinary_team_member){
+            $updateYear = (($reportForMonth == 12) and ($currentMonth == 1)) ? $currentYear - 1 : $currentYear;
+        }
+        else{
+            $updateYear = $request->get('report_for_year');
+        }
+        
         $updateDate = $updateYear.'-'.$reportForMonth.'-28';
 
           ProjectReport::updateOrCreate(
