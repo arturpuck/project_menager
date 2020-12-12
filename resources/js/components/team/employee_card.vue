@@ -74,6 +74,9 @@
           <labeled-select class="clockify-report-element" name="report_for_month"  v-bind:displayed-values="clockifyAvailableMonthsNames" v-bind:values="clockifyAvailableMonthsNumbers">
             {{translations['month_report']}} :
           </labeled-select>
+          <labeled-select v-if="!ordinaryTeamMember" class="clockify-report-element" name="report_for_year"  v-bind:displayed-values="yearsRange" >
+            {{translations['year']}} :
+          </labeled-select>
           <labeled-input class="clockify-report-element" input-type="number" name="reported_hours">{{translations['hours_of_work']}}</labeled-input>
           <positive-button class="save-report clockify-report-element" type="submit">{{translations['save']}}</positive-button>
       </form>

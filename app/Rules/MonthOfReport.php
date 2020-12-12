@@ -5,7 +5,7 @@ namespace App\Rules;
 use Illuminate\Contracts\Validation\Rule;
 use App\Helpers\Months;
 
-class MonthNumberEqualsToCurrentOrPrevious implements Rule
+class MonthOfReport implements Rule
 {
     /**
      * Create a new rule instance.
@@ -26,7 +26,9 @@ class MonthNumberEqualsToCurrentOrPrevious implements Rule
      */
     public function passes($attribute, $value)
     {
-        return in_array($value, Months::numbersOfCurrentMonthAndPrevious());
+        return \Auth::user()->is_ordinary_team_member ? 
+               in_array($value, Months::numbersOfCurrentMonthAndPrevious()) : 
+               in_array($value, Months::getAlMonthsParsedNumbers());
     }
 
     /**
@@ -36,6 +38,6 @@ class MonthNumberEqualsToCurrentOrPrevious implements Rule
      */
     public function message()
     {
-        return 'the_selected_month_is_invalid_you_can_choose_only_current_or_previous_one';
+        return 'the_selected_month_is_invalid_you';
     }
 }

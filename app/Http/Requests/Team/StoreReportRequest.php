@@ -4,7 +4,8 @@ namespace App\Http\Requests\Team;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
-use App\Rules\MonthNumberEqualsToCurrentOrPrevious;
+use App\Rules\MonthOfReport;
+use App\Rules\YearWhenCompanyExisted;
 
 class StoreReportRequest extends FormRequest
 {
@@ -38,7 +39,8 @@ class StoreReportRequest extends FormRequest
             'user_id' => ['required', 'exists:users,id'],
             'clockify_report_file' => ['required', 'file'],
             'reported_hours' => ['required', 'numeric', 'min:0', 'max:540'],
-            'report_for_month' => ['required', new MonthNumberEqualsToCurrentOrPrevious()]
+            'report_for_month' => ['required', new MonthOfReport()],
+            'report_for_year' => ['nullable',new YearWhenCompanyExisted()]
         ];
     }
 
@@ -52,6 +54,7 @@ class StoreReportRequest extends FormRequest
             'reported_hours.required' => 'reported_hours_are_missing',
             'reported_hours.numeric' => 'reported_hours_must_contain_numeric_value',
             'reported_hours.min' => 'reported_hours_must_be_greather_than_zero',
+            'report_for_month.required' => 'month_report_is_required',
             'reported_hours.max' => 'reported_hours_exceed_540_hours'
         ];
     }

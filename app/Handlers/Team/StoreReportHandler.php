@@ -16,9 +16,16 @@ Class StoreReportHandler {
             $userID = $request->get('user_id');
             $user = User::find($userID);
             $reportForMonth = $request->get('report_for_month');
-            $currentMonth = date('m');
-            $currentYear = date('Y');
-            $reportForYear = (($currentMonth == 1) and ($reportForMonth == 12)) ? ($currentYear - 1) : $currentYear;
+
+            if(\Auth::user()->is_ordinary_team_member){
+              $currentMonth = date('m');
+              $currentYear = date('Y');
+              $reportForYear = (($currentMonth == 1) and ($reportForMonth == 12)) ? ($currentYear - 1) : $currentYear;
+            }
+            else{
+              $reportForYear = $request->get('report_for_year');
+            }
+            
             $fixedDayJustForColumnPurposes = '28';
 
             if($clockifyReport = $user->clockifyReport($reportForMonth, $reportForYear)->get()->first()){

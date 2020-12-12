@@ -4514,6 +4514,26 @@ var render = function() {
                 ]
               ),
               _vm._v(" "),
+              !_vm.ordinaryTeamMember
+                ? _c(
+                    "labeled-select",
+                    {
+                      staticClass: "clockify-report-element",
+                      attrs: {
+                        name: "report_for_year",
+                        "displayed-values": _vm.yearsRange
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n            " +
+                          _vm._s(_vm.translations["year"]) +
+                          " :\n          "
+                      )
+                    ]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
               _c(
                 "labeled-input",
                 {

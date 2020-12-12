@@ -14,8 +14,7 @@ Class ShowTeamMainPageHandler {
     public function handle(){
        
         $roles = \Auth::user()->is_admin ? Role::all() : Role::where('name', '<>', 'administrator')->get();
-
-        return view('team')->with([
+        $data = [
             'title' => 'team_list_title',
             'description' => 'team_list_description',
             'projectReportStatuses' => ProjectReportStatus::all(),
@@ -23,10 +22,13 @@ Class ShowTeamMainPageHandler {
             'yearsRange' => Company::getYearsRange(),
             'roles' => $roles,
             'positions' => Position::all(),
-            'skills' => Skill::all(),
-            'currentMonthAndPreviousNames' => Months::namesOfCurrentMonthAndPrevious(),
-            'currentMonthAndPreviousNumbers' => Months::numbersOfCurrentMonthAndPrevious(),
-        ]);
+            'skills' => Skill::all()
+        ];
+
+        $data['currentUserMonthsNames'] = \Auth::user()->is_ordinary_team_member ? Months::namesOfCurrentMonthAndPrevious() : Months::getNames();
+        $data['currentUserMonthNumbers'] =  \Auth::user()->is_ordinary_team_member ? Months::numbersOfCurrentMonthAndPrevious() : Months::getAlMonthsParsedNumbers();
+
+        return view('team')->with($data);
         
     }
 }

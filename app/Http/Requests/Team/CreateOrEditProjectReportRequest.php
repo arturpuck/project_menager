@@ -3,7 +3,7 @@
 namespace App\Http\Requests\Team;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Rules\MonthNumberEqualsToCurrentOrPrevious;
+use App\Rules\MonthOfReport;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
 
@@ -39,7 +39,7 @@ class CreateOrEditProjectReportRequest extends FormRequest
             'project_id' => ['required', 'exists:projects,id'],
             'time' => ['required', 'numeric', 'min:0', 'max:540'],
             'status_id' => ['required', 'exists:project_statuses,id'],
-            'update_month' => ['required', new MonthNumberEqualsToCurrentOrPrevious()],
+            'update_month' => ['required', new MonthOfReport()],
             'comment' => ['nullable', 'max:1000']
         ];
     }
