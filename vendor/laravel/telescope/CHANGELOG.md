@@ -1,6 +1,33 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/telescope/compare/v4.2.0...4.x)
+## [Unreleased](https://github.com/laravel/telescope/compare/v4.3.3...4.x)
+
+
+## [v4.3.3 (2020-12-08)](https://github.com/laravel/telescope/compare/v4.3.2...v4.3.3)
+
+### Fixed
+- Revert "[4.x] Updated db command for clearing tables" ([#993](https://github.com/laravel/telescope/pull/993))
+
+
+## [v4.3.2 (2020-12-08)](https://github.com/laravel/telescope/compare/v4.3.1...v4.3.2)
+
+### Changed
+- Updated db command for clearing tables ([#991](https://github.com/laravel/telescope/pull/991))
+
+
+## [v4.3.1 (2020-11-05)](https://github.com/laravel/telescope/compare/v4.3.0...v4.3.1)
+
+### Fixed
+- Fix for database migrations publishing path ([#979](https://github.com/laravel/telescope/pull/979))
+
+
+## [v4.3.0 (2020-11-03)](https://github.com/laravel/telescope/compare/v4.2.0...v4.3.0)
+
+### Added
+- PHP 8 Support ([#977](https://github.com/laravel/telescope/pull/977))
+
+### Changed
+- Consolidate database directory ([#975](https://github.com/laravel/telescope/pull/975))
 
 
 ## [v4.2.0 (2020-10-20)](https://github.com/laravel/telescope/compare/v4.1.0...v4.2.0)
