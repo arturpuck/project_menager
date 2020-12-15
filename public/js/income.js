@@ -15948,6 +15948,7 @@ var translations = {
             time: "Raportowany czas",
             status: "Status",
             update_month: "Miesiąc aktualizacji",
+            server_error_occured_while_fetching_reports: "Podczas pobierania danych raportów wystąpił błąd po stronie serwera",
             update_year: "Rok aktualizacji",
             comment: "Komentarz",
             action: "Akcja",
@@ -15977,6 +15978,13 @@ var translations = {
             total_time_spent: "Całkowity czas",
             clockify_report_file: "Plik raportu clockify",
             reported_time: "Raportowany czas",
+            clockify_report_file_name: "Nazwa pliku raportu",
+            fetching_reports: "Pobieram raporty",
+            password: "Hasło",
+            new_password: "Nowe hasło",
+            new_password_confirmation: "Potwierdzenie nowego hasła",
+            current_password: "Bieżące hasło",
+            password_changed_successfully: "Pomyślnie zmieniono hasło"
         },
         income: {
             you_have_to_select_some_status: "Płatność musi mieć przypisany jakiś status. Aktualizacja nieudana",

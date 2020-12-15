@@ -25,7 +25,7 @@
 
     @Prop({
             type: String,
-            required: true,
+            required: false,
     }) readonly name: string;
 
     @Prop({

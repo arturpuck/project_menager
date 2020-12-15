@@ -449,7 +449,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".tab-list[data-v-62fd67da] {\n  list-style-type: none;\n  padding: 1vw 0 1vw 7vw;\n  margin: 0;\n}\n.tab-list-element[data-v-62fd67da] {\n  border-radius: 4px 4px 0 0;\n  padding: 4px;\n  color: white;\n  display: inline-block;\n  color: black;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  cursor: pointer;\n}\n@media (max-width: 1200px) {\n.tab-list-element[data-v-62fd67da] {\n    font-size: 15px;\n}\n}\n.tab-list-element[data-v-62fd67da]:hover {\n  background: #0FCACA;\n}\n.tab-list-section[data-v-62fd67da] {\n  background: #444141;\n  border: 1px solid #444141;\n}\n.table-container[data-v-62fd67da] {\n  position: relative;\n  min-height: 300px;\n}\n.table-header[data-v-62fd67da] {\n  padding: 1vw 7px;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  background: #3C4346;\n  color: white;\n  text-align: center;\n}\n@media (max-width: 1200px) {\n.table-header[data-v-62fd67da] {\n    font-size: 12px;\n}\n}\n.table[data-v-62fd67da] {\n  margin: 8px auto;\n  border-collapse: collapse;\n}\n.table-cell[data-v-62fd67da] {\n  color: black;\n  text-align: center;\n  vertical-align: middle;\n  padding: 0.5vw;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n}\n@media (max-width: 1200px) {\n.table-cell[data-v-62fd67da] {\n    font-size: 12px;\n}\n}\n.table-cell[data-v-62fd67da]:nth-child(even) {\n  background: #efeeee;\n}\n.header[data-v-62fd67da] {\n  font-size: 2vw;\n  font-family: \"Exo 2\", sans-serif;\n  text-align: left;\n  font-family: Montserrat;\n  font-weight: bold;\n  letter-spacing: 0px;\n  color: black;\n  padding: 0 0 0 7vw;\n  display: inline-block;\n}\n@media (max-width: 1200px) {\n.header[data-v-62fd67da] {\n    font-size: 23px;\n}\n}\n.header-under-navbar[data-v-62fd67da] {\n  display: block;\n  margin-top: 4.5vw;\n  margin-top: 4.7vw;\n  padding: 0.9vw;\n}\n.blank-button[data-v-62fd67da] {\n  background: transparent;\n  margin: 0;\n  padding: 0;\n  outline: none;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  color: black;\n  font-weight: bold;\n  border: none;\n  cursor: pointer;\n}\n@media (max-width: 1200px) {\n.blank-button[data-v-62fd67da] {\n    font-size: 15px;\n}\n}\n.introductory-bar[data-v-62fd67da] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding-right: 5px;\n}\n.textarea-container[data-v-62fd67da] {\n  border: 1px solid black;\n  overflow: hidden;\n  margin: 2vw 0;\n  border-radius: 5px;\n}\n.textarea-label[data-v-62fd67da] {\n  background: #efeeee;\n  font-size: 1.3vw;\n  font-family: Montserrat, sans-serif;\n  text-align: center;\n  padding: 1vw;\n  display: block;\n  color: black;\n  font-weight: bold;\n}\n@media (max-width: 1200px) {\n.textarea-label[data-v-62fd67da] {\n    font-size: 15px;\n}\n}\n.textarea[data-v-62fd67da] {\n  width: 100%;\n  color: black;\n  font-size: 1.3vw;\n  font-family: Montserrat, sans-serif;\n  border: none;\n  display: block;\n}\n@media (max-width: 1200px) {\n.textarea[data-v-62fd67da] {\n    font-size: 14px;\n}\n}\n#app .textarea-container[data-v-62fd67da] {\n  margin: 2vw auto;\n  width: 70%;\n}\n#app .rectangular-elements-list[data-v-62fd67da] {\n  padding: 0 0 1vw 0;\n}\n#app .rectangualr-list-element[data-v-62fd67da] {\n  margin: 5px 5px 5px 0;\n}\n#app .textarea-container[data-v-62fd67da] {\n  margin: 2vw auto;\n  width: 70%;\n}\n.employee-data-form[data-v-62fd67da] {\n  padding: 0 0 0 7vw;\n}\n#app .clockify-report-element[data-v-62fd67da] {\n  margin: 10px 15px 10px 0;\n}\n.clockify-form[data-v-62fd67da] {\n  display: flex;\n  justify-content: flex-start;\n  align-content: stretch;\n  padding: 1vw 0 1vw 7vw;\n}\n#app .header[data-v-62fd67da] {\n  padding: 1vw 0 1vw 7vw;\n}\n.filter-form[data-v-62fd67da] {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: flex-start;\n  padding: 0.5vw 0 0.5vw 7vw;\n  align-items: stretch;\n}\n.note[data-v-62fd67da] {\n  background: #242229;\n  border: none;\n  border-radius: 5px;\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n  display: block;\n  margin: 3px auto;\n}\n@media (max-width: 1200px) {\n.note[data-v-62fd67da] {\n    font-size: 16px;\n}\n}\n.note-label[data-v-62fd67da] {\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n  display: block;\n  text-align: center;\n}\n@media (max-width: 1200px) {\n.note-label[data-v-62fd67da] {\n    font-size: 16px;\n}\n}\n.form-caption[data-v-62fd67da] {\n  font-size: 1.4vw;\n  font-family: Montserrat, sans-serif;\n  padding: 1.2vw 0;\n  color: black;\n}\n@media (max-width: 1200px) {\n.form-caption[data-v-62fd67da] {\n    font-size: 17px;\n}\n}\n.form-fieldset[data-v-62fd67da] {\n  padding: 1vw 0 0 0;\n}\n.filter-results-form[data-v-62fd67da] {\n  padding: 5px;\n  background: black;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-evenly;\n}\n.employee-card[data-v-62fd67da] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100vw;\n  height: 100vh;\n  overflow-y: auto;\n  background: white;\n}\n.close-bar[data-v-62fd67da] {\n  text-align: right;\n  padding: 5px;\n  background: black;\n}\n.report-file[data-v-62fd67da] {\n  display: block;\n  margin: 0 auto;\n  padding: 6px;\n}\n#app .save-report[data-v-62fd67da] {\n  margin: 10px 15px 10px 0;\n}\n#app .project-hours[data-v-62fd67da] {\n  min-width: 50px;\n  max-width: 10vw;\n}\n#app .project-status[data-v-62fd67da] {\n  min-width: 130px;\n  max-width: 20vw;\n}\n.datepicker-wrapper[data-v-62fd67da] {\n  padding: 4px;\n  background: #242229;\n  border-radius: 5px;\n  display: inline-flex;\n  flex-wrap: nowrap;\n  align-items: baseline;\n  margin: 4px;\n}\n.calendar-input[data-v-62fd67da] {\n  background: #242229;\n  color: white;\n  padding: 4px;\n  border: none;\n}\n.classic-textarea[data-v-62fd67da] {\n  background: white;\n  border-radius: 4px;\n  border: 1px solid black;\n  color: black;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n}\n@media (max-width: 1200px) {\n.classic-textarea[data-v-62fd67da] {\n    font-size: 15px;\n}\n}\n.tab-list-element[data-v-62fd67da] {\n  padding: 2vw;\n}\n#app .filter-button[data-v-62fd67da] {\n  margin: 5px;\n  background: #0FCACA;\n  color: white;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  padding: 0 3vw;\n}\n@media (max-width: 1200px) {\n#app .filter-button[data-v-62fd67da] {\n    font-size: 15px;\n}\n}", ""]);
+exports.push([module.i, ".tab-list[data-v-62fd67da] {\n  list-style-type: none;\n  padding: 1vw 0 1vw 7vw;\n  margin: 0;\n}\n.tab-list-element[data-v-62fd67da] {\n  border-radius: 4px 4px 0 0;\n  padding: 4px;\n  color: white;\n  display: inline-block;\n  color: black;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  cursor: pointer;\n}\n@media (max-width: 1200px) {\n.tab-list-element[data-v-62fd67da] {\n    font-size: 15px;\n}\n}\n.tab-list-element[data-v-62fd67da]:hover {\n  background: #0FCACA;\n}\n.tab-list-section[data-v-62fd67da] {\n  background: #444141;\n  border: 1px solid #444141;\n}\n.table-container[data-v-62fd67da] {\n  position: relative;\n  min-height: 300px;\n}\n.table-header[data-v-62fd67da] {\n  padding: 1vw 7px;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  background: #3C4346;\n  color: white;\n  text-align: center;\n}\n@media (max-width: 1200px) {\n.table-header[data-v-62fd67da] {\n    font-size: 12px;\n}\n}\n.table[data-v-62fd67da] {\n  margin: 8px auto;\n  border-collapse: collapse;\n}\n.table-cell[data-v-62fd67da] {\n  color: black;\n  text-align: center;\n  vertical-align: middle;\n  padding: 0.5vw;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n}\n@media (max-width: 1200px) {\n.table-cell[data-v-62fd67da] {\n    font-size: 12px;\n}\n}\n.table-cell[data-v-62fd67da]:nth-child(even) {\n  background: #efeeee;\n}\n.header[data-v-62fd67da] {\n  font-size: 2vw;\n  font-family: \"Exo 2\", sans-serif;\n  text-align: left;\n  font-family: Montserrat;\n  font-weight: bold;\n  letter-spacing: 0px;\n  color: black;\n  padding: 0 0 0 7vw;\n  display: inline-block;\n}\n@media (max-width: 1200px) {\n.header[data-v-62fd67da] {\n    font-size: 23px;\n}\n}\n.header-under-navbar[data-v-62fd67da] {\n  display: block;\n  margin-top: 4.5vw;\n  margin-top: 4.7vw;\n  padding: 0.9vw;\n}\n.blank-button[data-v-62fd67da] {\n  background: transparent;\n  margin: 0;\n  padding: 0;\n  outline: none;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  color: black;\n  font-weight: bold;\n  border: none;\n  cursor: pointer;\n}\n@media (max-width: 1200px) {\n.blank-button[data-v-62fd67da] {\n    font-size: 15px;\n}\n}\n.introductory-bar[data-v-62fd67da] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding-right: 5px;\n}\n.textarea-container[data-v-62fd67da] {\n  border: 1px solid black;\n  overflow: hidden;\n  margin: 2vw 0;\n  border-radius: 5px;\n}\n.textarea-label[data-v-62fd67da] {\n  background: #efeeee;\n  font-size: 1.3vw;\n  font-family: Montserrat, sans-serif;\n  text-align: center;\n  padding: 1vw;\n  display: block;\n  color: black;\n  font-weight: bold;\n}\n@media (max-width: 1200px) {\n.textarea-label[data-v-62fd67da] {\n    font-size: 15px;\n}\n}\n.textarea[data-v-62fd67da] {\n  width: 100%;\n  color: black;\n  font-size: 1.3vw;\n  font-family: Montserrat, sans-serif;\n  border: none;\n  display: block;\n}\n@media (max-width: 1200px) {\n.textarea[data-v-62fd67da] {\n    font-size: 14px;\n}\n}\n#app .textarea-container[data-v-62fd67da] {\n  margin: 2vw auto;\n  width: 70%;\n}\n#app .rectangular-elements-list[data-v-62fd67da] {\n  padding: 0 0 1vw 0;\n}\n#app .rectangualr-list-element[data-v-62fd67da] {\n  margin: 5px 5px 5px 0;\n}\n#app .textarea-container[data-v-62fd67da] {\n  margin: 2vw auto;\n  width: 70%;\n}\n.employee-data-form[data-v-62fd67da] {\n  padding: 0 0 0 7vw;\n}\n.relative-container[data-v-62fd67da] {\n  position: relative;\n}\n#app .clockify-report-element[data-v-62fd67da] {\n  margin: 10px 15px 10px 0;\n}\n.clockify-form[data-v-62fd67da] {\n  display: flex;\n  justify-content: flex-start;\n  align-content: stretch;\n  padding: 1vw 0 1vw 7vw;\n}\n#app .header[data-v-62fd67da] {\n  padding: 1vw 0 1vw 7vw;\n}\n.filter-form[data-v-62fd67da] {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: flex-start;\n  padding: 0.5vw 0 0.5vw 7vw;\n  align-items: stretch;\n}\n.note[data-v-62fd67da] {\n  background: #242229;\n  border: none;\n  border-radius: 5px;\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n  display: block;\n  margin: 3px auto;\n}\n@media (max-width: 1200px) {\n.note[data-v-62fd67da] {\n    font-size: 16px;\n}\n}\n.note-label[data-v-62fd67da] {\n  color: white;\n  font-size: 1.2vw;\n  font-family: \"Exo 2\", sans-serif;\n  display: block;\n  text-align: center;\n}\n@media (max-width: 1200px) {\n.note-label[data-v-62fd67da] {\n    font-size: 16px;\n}\n}\n.form-caption[data-v-62fd67da] {\n  font-size: 1.4vw;\n  font-family: Montserrat, sans-serif;\n  padding: 1.2vw 0;\n  color: black;\n}\n@media (max-width: 1200px) {\n.form-caption[data-v-62fd67da] {\n    font-size: 17px;\n}\n}\n.form-fieldset[data-v-62fd67da] {\n  padding: 1vw 0 0 0;\n}\n.filter-results-form[data-v-62fd67da] {\n  padding: 5px;\n  background: black;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-evenly;\n}\n.employee-card[data-v-62fd67da] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100vh;\n  overflow-y: auto;\n  z-index: 2;\n  overflow-y: auto;\n  background: white;\n}\n.close-bar[data-v-62fd67da] {\n  text-align: right;\n  padding: 5px;\n  background: black;\n}\n.report-file[data-v-62fd67da] {\n  display: block;\n  margin: 0 auto;\n  padding: 6px;\n}\n#app .save-report[data-v-62fd67da] {\n  margin: 10px 15px 10px 0;\n}\n#app .project-hours[data-v-62fd67da] {\n  min-width: 50px;\n  max-width: 10vw;\n}\n#app .project-status[data-v-62fd67da] {\n  min-width: 130px;\n  max-width: 20vw;\n}\n.datepicker-wrapper[data-v-62fd67da] {\n  padding: 4px;\n  background: #242229;\n  border-radius: 5px;\n  display: inline-flex;\n  flex-wrap: nowrap;\n  align-items: baseline;\n  margin: 4px;\n}\n.calendar-input[data-v-62fd67da] {\n  background: #242229;\n  color: white;\n  padding: 4px;\n  border: none;\n}\n.classic-textarea[data-v-62fd67da] {\n  background: white;\n  border-radius: 4px;\n  border: 1px solid black;\n  color: black;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n}\n@media (max-width: 1200px) {\n.classic-textarea[data-v-62fd67da] {\n    font-size: 15px;\n}\n}\n.tab-list-element[data-v-62fd67da] {\n  padding: 2vw;\n}\n#app .filter-button[data-v-62fd67da] {\n  margin: 5px;\n  background: #0FCACA;\n  color: white;\n  font-size: 1.2vw;\n  font-family: Montserrat, sans-serif;\n  padding: 0 3vw;\n}\n@media (max-width: 1200px) {\n#app .filter-button[data-v-62fd67da] {\n    font-size: 15px;\n}\n}", ""]);
 
 // exports
 
@@ -2090,7 +2090,7 @@ var LabeledInput = /** @class */ (function (_super) {
     __decorate([
         vue_property_decorator_1.Prop({
             type: String,
-            required: true,
+            required: false,
         })
     ], LabeledInput.prototype, "name", void 0);
     __decorate([
@@ -2426,6 +2426,8 @@ var vuejs_datepicker_1 = __importDefault(__webpack_require__(/*! vuejs-datepicke
 var labeled_select_vue_1 = __importDefault(__webpack_require__(/*! @jscomponents/controls/labeled_select.vue */ "./resources/js/components/controls/labeled_select.vue"));
 var multiselect_vue_1 = __importDefault(__webpack_require__(/*! @jscomponents/controls/multiselect.vue */ "./resources/js/components/controls/multiselect.vue"));
 var file_input_vue_1 = __importDefault(__webpack_require__(/*! @jscomponents/controls/file_input.vue */ "./resources/js/components/controls/file_input.vue"));
+var relative_shadow_container_vue_1 = __importDefault(__webpack_require__(/*! @jscomponents/decoration/relative_shadow_container.vue */ "./resources/js/components/decoration/relative_shadow_container.vue"));
+var expect_circle_vue_1 = __importDefault(__webpack_require__(/*! @jscomponents/decoration/expect_circle.vue */ "./resources/js/components/decoration/expect_circle.vue"));
 var EmployeeCard = /** @class */ (function (_super) {
     __extends(EmployeeCard, _super);
     function EmployeeCard() {
@@ -2450,17 +2452,118 @@ var EmployeeCard = /** @class */ (function (_super) {
         _this.employeeSkillsList = [];
         _this.totalTimeSpent = {};
         _this.userReportForYear = {};
+        _this.employeeClockifyReports = {};
+        _this.fetchingClockifyReportsInProgress = false;
+        _this.newPassword = '';
+        _this.newPasswordConfirmation = '';
+        _this.currentPassword = '';
         return _this;
     }
+    EmployeeCard.prototype.changeEmployeePassword = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var requestBody, requestData, response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        requestBody = {
+                            password: this.newPassword,
+                            password_confirmation: this.newPasswordConfirmation,
+                            employee_id: this.employee['id']
+                        };
+                        if (!this.admin) {
+                            requestBody['current_password'] = this.currentPassword;
+                        }
+                        requestData = {
+                            method: 'PATCH',
+                            body: JSON.stringify(requestBody),
+                            headers: {
+                                'X-CSRF-TOKEN': this.csrfToken,
+                                'Content-type': 'application/json; charset=UTF-8'
+                            }
+                        };
+                        return [4 /*yield*/, fetch("/employee/change/password", requestData)];
+                    case 1:
+                        response = _a.sent();
+                        switch (response.status) {
+                            case 200:
+                                this.showNotification(this.translations['password_changed_successfully']);
+                                break;
+                            case 400:
+                                this.showNotification(this.translations['the_data_is_invalid'], 'error');
+                                break;
+                            case 500:
+                                this.showNotification(this.translations['the_data_is_probably_ok_but_a_server_error_occured '], 'error');
+                                break;
+                            default:
+                                this.showNotification(this.translations['undefined_error'], 'error');
+                                break;
+                        }
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    EmployeeCard.prototype.getReportMonth = function (date) {
+        var monthIndex = parseInt(date.split('-')[1]) - 1;
+        return this.months[monthIndex];
+    };
+    EmployeeCard.prototype.getReportYear = function (date) {
+        return date.split('-')[0];
+    };
     EmployeeCard.prototype.showReportsTab = function () {
         this.selectedTab = 'report-tab';
         this.filterReports();
     };
     EmployeeCard.prototype.showClockifyTab = function () {
+        this.showCurrentClockifyReports();
         this.selectedTab = 'clockify-tab';
     };
     EmployeeCard.prototype.showDataTab = function () {
         this.selectedTab = 'data-tab';
+    };
+    EmployeeCard.prototype.showCurrentClockifyReports = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var requestData, response, _a, responseBody;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        this.fetchingClockifyReportsInProgress = true;
+                        requestData = {
+                            method: 'GET',
+                            headers: {
+                                'X-CSRF-TOKEN': this.csrfToken
+                            }
+                        };
+                        return [4 /*yield*/, fetch("/employee/clockify/reports?employee_id=" + this.employee.id, requestData)];
+                    case 1:
+                        response = _b.sent();
+                        _a = response.status;
+                        switch (_a) {
+                            case 200: return [3 /*break*/, 2];
+                            case 400: return [3 /*break*/, 4];
+                            case 500: return [3 /*break*/, 5];
+                        }
+                        return [3 /*break*/, 6];
+                    case 2: return [4 /*yield*/, response.json()];
+                    case 3:
+                        responseBody = _b.sent();
+                        this.employeeClockifyReports = responseBody;
+                        return [3 /*break*/, 7];
+                    case 4:
+                        this.showNotification(this.translations['the_selected_employee_is_invalid_probably_does_not_exist_anymore'], 'error');
+                        return [3 /*break*/, 7];
+                    case 5:
+                        this.showNotification(this.translations['server_error_occured_while_fetching_reports'], 'error');
+                        return [3 /*break*/, 7];
+                    case 6:
+                        this.showNotification(this.translations['undefined_error'], 'error');
+                        return [3 /*break*/, 7];
+                    case 7:
+                        this.fetchingClockifyReportsInProgress = false;
+                        return [2 /*return*/];
+                }
+            });
+        });
     };
     EmployeeCard.prototype.saveEmployeeData = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -2640,7 +2743,6 @@ var EmployeeCard = /** @class */ (function (_super) {
                         if (responseBody.length == 0) {
                             this.showNotification(this.translations['no_results_have_been_foound_for_your_authentication_level']);
                         }
-                        console.log(responseBody);
                         this.loadProjectReports(responseBody);
                         return [3 /*break*/, 7];
                     case 4:
@@ -2852,7 +2954,8 @@ var EmployeeCard = /** @class */ (function (_super) {
         })
     ], EmployeeCard.prototype, "admin", void 0);
     EmployeeCard = __decorate([
-        vue_property_decorator_1.Component({ components: { CloseButton: close_button_vue_1.default, Multiselect: multiselect_vue_1.default, LabeledInput: labeled_input_vue_1.default, PositiveButton: positive_button_vue_1.default, Datepicker: vuejs_datepicker_1.default, LabeledSelect: labeled_select_vue_1.default, FileInput: file_input_vue_1.default } })
+        vue_property_decorator_1.Component({ components: { CloseButton: close_button_vue_1.default, Multiselect: multiselect_vue_1.default, LabeledInput: labeled_input_vue_1.default, PositiveButton: positive_button_vue_1.default, Datepicker: vuejs_datepicker_1.default,
+                LabeledSelect: labeled_select_vue_1.default, FileInput: file_input_vue_1.default, RelativeShadowContainer: relative_shadow_container_vue_1.default, ExpectCircle: expect_circle_vue_1.default } })
     ], EmployeeCard);
     return EmployeeCard;
 }(vue_property_decorator_1.Vue));
@@ -4108,7 +4211,7 @@ var render = function() {
     [
       _c(
         "div",
-        { staticClass: "introductory-bar" },
+        { staticClass: "introductory-bar employee-card-header" },
         [
           _c("h2", {
             staticClass: "header",
@@ -4336,9 +4439,9 @@ var render = function() {
                         },
                         [
                           _vm._v(
-                            "\n                    " +
+                            "\n                        " +
                               _vm._s(_vm.translations["reported_time"]) +
-                              "\n                  "
+                              "\n                      "
                           )
                         ]
                       )
@@ -4369,9 +4472,9 @@ var render = function() {
                         },
                         [
                           _vm._v(
-                            "\n                     " +
+                            "\n                        " +
                               _vm._s(_vm.translations["status"]) +
-                              "\n                   "
+                              "\n                      "
                           )
                         ]
                       )
@@ -4402,9 +4505,9 @@ var render = function() {
                         },
                         [
                           _vm._v(
-                            "\n                    " +
+                            "\n                        " +
                               _vm._s(_vm.translations["month_report"]) +
-                              " :\n                 "
+                              " :\n                    "
                           )
                         ]
                       )
@@ -4434,9 +4537,9 @@ var render = function() {
                             },
                             [
                               _vm._v(
-                                "\n                    " +
+                                "\n                        " +
                                   _vm._s(_vm.translations["update_year"]) +
-                                  " :\n                 "
+                                  " :\n                    "
                               )
                             ]
                           )
@@ -4447,9 +4550,9 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", { staticClass: "table-cell" }, [
                     _vm._v(
-                      "\n                 " +
+                      "\n                    " +
                         _vm._s(_vm.totalTimeSpent[index]) +
-                        "\n               "
+                        "\n                  "
                     )
                   ]),
                   _vm._v(" "),
@@ -4512,9 +4615,30 @@ var render = function() {
               value: _vm.clockifyTabIsSelected,
               expression: "clockifyTabIsSelected"
             }
-          ]
+          ],
+          staticClass: "relative-container"
         },
         [
+          _c(
+            "relative-shadow-container",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.fetchingClockifyReportsInProgress,
+                  expression: "fetchingClockifyReportsInProgress"
+                }
+              ]
+            },
+            [
+              _c("expect-circle", {
+                attrs: { label: _vm.translations["fetching_reports"] }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
           _c(
             "form",
             {
@@ -4599,8 +4723,77 @@ var render = function() {
               )
             ],
             1
-          )
-        ]
+          ),
+          _vm._v(" "),
+          _c("table", { staticClass: "table" }, [
+            _c("thead", [
+              _c("th", {
+                staticClass: "table-header",
+                domProps: {
+                  textContent: _vm._s(_vm.translations["reported_time"])
+                }
+              }),
+              _vm._v(" "),
+              _c("th", {
+                staticClass: "table-header",
+                domProps: {
+                  textContent: _vm._s(
+                    _vm.translations["clockify_report_file_name"]
+                  )
+                }
+              }),
+              _vm._v(" "),
+              _c("th", {
+                staticClass: "table-header",
+                domProps: { textContent: _vm._s(_vm.translations["month"]) }
+              }),
+              _vm._v(" "),
+              _c("th", {
+                staticClass: "table-header",
+                domProps: { textContent: _vm._s(_vm.translations["year"]) }
+              })
+            ]),
+            _vm._v(" "),
+            _c(
+              "tbody",
+              _vm._l(_vm.employeeClockifyReports, function(report) {
+                return _c("tr", { staticClass: "table-row" }, [
+                  _c("td", {
+                    staticClass: "table-cell",
+                    domProps: { textContent: _vm._s(report["reported_hours"]) }
+                  }),
+                  _vm._v(" "),
+                  _c("td", {
+                    staticClass: "table-cell",
+                    domProps: {
+                      textContent: _vm._s(report["report_file_name"])
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("td", {
+                    staticClass: "table-cell",
+                    domProps: {
+                      textContent: _vm._s(
+                        _vm.getReportMonth(report["report_date"])
+                      )
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("td", {
+                    staticClass: "table-cell",
+                    domProps: {
+                      textContent: _vm._s(
+                        _vm.getReportYear(report["report_date"])
+                      )
+                    }
+                  })
+                ])
+              }),
+              0
+            )
+          ])
+        ],
+        1
       ),
       _vm._v(" "),
       _c(
@@ -4906,6 +5099,83 @@ var render = function() {
                   nativeOn: {
                     click: function($event) {
                       return _vm.saveEmployeeData($event)
+                    }
+                  }
+                },
+                [_vm._v(_vm._s(_vm.translations["save"]) + " ")]
+              ),
+              _vm._v(" "),
+              _c(
+                "fieldset",
+                { staticClass: "form-fieldset" },
+                [
+                  _c("caption", {
+                    staticClass: "form-caption",
+                    domProps: {
+                      textContent: _vm._s(_vm.translations["password"])
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "labeled-input",
+                    {
+                      attrs: { "input-type": "password" },
+                      model: {
+                        value: _vm.newPassword,
+                        callback: function($$v) {
+                          _vm.newPassword = $$v
+                        },
+                        expression: "newPassword"
+                      }
+                    },
+                    [_vm._v(_vm._s(_vm.translations["new_password"]))]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "labeled-input",
+                    {
+                      attrs: { "input-type": "password" },
+                      model: {
+                        value: _vm.newPasswordConfirmation,
+                        callback: function($$v) {
+                          _vm.newPasswordConfirmation = $$v
+                        },
+                        expression: "newPasswordConfirmation"
+                      }
+                    },
+                    [
+                      _vm._v(
+                        _vm._s(_vm.translations["new_password_confirmation"])
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  !_vm.admin
+                    ? _c(
+                        "labeled-input",
+                        {
+                          attrs: { "input-type": "password" },
+                          model: {
+                            value: _vm.currentPassword,
+                            callback: function($$v) {
+                              _vm.currentPassword = $$v
+                            },
+                            expression: "currentPassword"
+                          }
+                        },
+                        [_vm._v(_vm._s(_vm.translations["current_password"]))]
+                      )
+                    : _vm._e()
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "positive-button",
+                {
+                  nativeOn: {
+                    click: function($event) {
+                      return _vm.changeEmployeePassword($event)
                     }
                   }
                 },
@@ -21716,6 +21986,7 @@ var translations = {
             time: "Raportowany czas",
             status: "Status",
             update_month: "Miesiąc aktualizacji",
+            server_error_occured_while_fetching_reports: "Podczas pobierania danych raportów wystąpił błąd po stronie serwera",
             update_year: "Rok aktualizacji",
             comment: "Komentarz",
             action: "Akcja",
@@ -21745,6 +22016,13 @@ var translations = {
             total_time_spent: "Całkowity czas",
             clockify_report_file: "Plik raportu clockify",
             reported_time: "Raportowany czas",
+            clockify_report_file_name: "Nazwa pliku raportu",
+            fetching_reports: "Pobieram raporty",
+            password: "Hasło",
+            new_password: "Nowe hasło",
+            new_password_confirmation: "Potwierdzenie nowego hasła",
+            current_password: "Bieżące hasło",
+            password_changed_successfully: "Pomyślnie zmieniono hasło"
         },
         income: {
             you_have_to_select_some_status: "Płatność musi mieć przypisany jakiś status. Aktualizacja nieudana",

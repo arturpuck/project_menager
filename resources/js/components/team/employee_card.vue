@@ -1,6 +1,6 @@
 <template>
 <div v-show="showCard" class="employee-card">
-    <div class="introductory-bar">
+    <div class="introductory-bar employee-card-header">
         <h2 v-text="employee['full_name']" class="header"></h2>
         <close-button v-bind:description="translations['close']" v-on:click.native="closeCard" />
     </div>
@@ -22,57 +22,59 @@
           </labeled-select>
           <positive-button v-on:click.native="filterReports" class="filter-button" >{{translations['filter_reports']}}</positive-button>
         </form>
-
-        <table class="table">
-         <thead>
-            <th v-text="translations['project']" class="table-header"></th>
-            <th v-text="translations['range']" class="table-header"></th>
-            <th v-text="translations['time']" class="table-header"></th>
-            <th v-text="translations['status']" class="table-header"></th>
-            <th v-text="translations['update_month']" class="table-header"></th>
-            <th v-if="!ordinaryTeamMember" v-text="translations['update_year']" class="table-header"></th>
-            <th v-text="translations['total_time_spent']" class="table-header"></th>
-            <th v-text="translations['comment']" class="table-header"></th>
-            <th v-text="translations['action']" class="table-header"></th>
-         </thead>
-         <tbody>
-           <tr class="table-row" v-for="index in numberOfDisplayedReports">
-               <td v-text="projectNames[index]" class="table-cell"></td>
-               <td v-text="taskRanges[index]" class="table-cell"></td>
-               <td class="table-cell">
-                  <labeled-input input-type="number" class="project-hours" v-model="workTimesInReportedMonth[index]" name="project_reported_hours">
-                    {{translations['reported_time']}}
-                  </labeled-input>
-               </td>
-               <td class="table-cell">
-                  <labeled-select name="account_id" class="project-status" v-model="workStatuses[index]" v-bind:displayed-values="projectReportStatusesValues" v-bind:values="projectReportStatusesIds">
-                     {{translations['status']}}
-                   </labeled-select>
-               </td>
-               <td class="table-cell">
-                 <labeled-select name="report_for_month" v-model="userReportForMonth[index]"  v-bind:displayed-values="clockifyAvailableMonthsNames" v-bind:values="clockifyAvailableMonthsNumbers">
-                    {{translations['month_report']}} :
-                 </labeled-select>
-               </td>
-               <td v-if="!ordinaryTeamMember" class="table-cell">
-                 <labeled-select name="report_for_year" v-model="userReportForYear[index]"  v-bind:displayed-values="yearsRange">
-                    {{translations['update_year']}} :
-                 </labeled-select>
-               </td>
-               <td class="table-cell">
-                 {{totalTimeSpent[index]}}
-               </td>
-               <td class="table-cell">
-                 <textarea v-model="reportComments[index]" class="classic-textarea"></textarea>
-               </td>
-               <td class="table-cell">
-                  <button v-on:click="saveProjectReportSettings(index)" class="blank-button">{{translations['save']}}</button>
-               </td>
-           </tr>
-         </tbody>
-     </table>
+            <table class="table">
+            <thead>
+                <th v-text="translations['project']" class="table-header"></th>
+                <th v-text="translations['range']" class="table-header"></th>
+                <th v-text="translations['time']" class="table-header"></th>
+                <th v-text="translations['status']" class="table-header"></th>
+                <th v-text="translations['update_month']" class="table-header"></th>
+                <th v-if="!ordinaryTeamMember" v-text="translations['update_year']" class="table-header"></th>
+                <th v-text="translations['total_time_spent']" class="table-header"></th>
+                <th v-text="translations['comment']" class="table-header"></th>
+                <th v-text="translations['action']" class="table-header"></th>
+            </thead>
+            <tbody>
+              <tr class="table-row" v-for="index in numberOfDisplayedReports">
+                  <td v-text="projectNames[index]" class="table-cell"></td>
+                  <td v-text="taskRanges[index]" class="table-cell"></td>
+                  <td class="table-cell">
+                      <labeled-input input-type="number" class="project-hours" v-model="workTimesInReportedMonth[index]" name="project_reported_hours">
+                        {{translations['reported_time']}}
+                      </labeled-input>
+                  </td>
+                  <td class="table-cell">
+                      <labeled-select name="account_id" class="project-status" v-model="workStatuses[index]" v-bind:displayed-values="projectReportStatusesValues" v-bind:values="projectReportStatusesIds">
+                        {{translations['status']}}
+                      </labeled-select>
+                  </td>
+                  <td class="table-cell">
+                    <labeled-select name="report_for_month" v-model="userReportForMonth[index]"  v-bind:displayed-values="clockifyAvailableMonthsNames" v-bind:values="clockifyAvailableMonthsNumbers">
+                        {{translations['month_report']}} :
+                    </labeled-select>
+                  </td>
+                  <td v-if="!ordinaryTeamMember" class="table-cell">
+                    <labeled-select name="report_for_year" v-model="userReportForYear[index]"  v-bind:displayed-values="yearsRange">
+                        {{translations['update_year']}} :
+                    </labeled-select>
+                  </td>
+                  <td class="table-cell">
+                    {{totalTimeSpent[index]}}
+                  </td>
+                  <td class="table-cell">
+                    <textarea v-model="reportComments[index]" class="classic-textarea"></textarea>
+                  </td>
+                  <td class="table-cell">
+                      <button v-on:click="saveProjectReportSettings(index)" class="blank-button">{{translations['save']}}</button>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
     </section>
-    <section v-show="clockifyTabIsSelected">
+    <section class="relative-container" v-show="clockifyTabIsSelected">
+        <relative-shadow-container v-show="fetchingClockifyReportsInProgress">
+          <expect-circle v-bind:label="translations['fetching_reports']"></expect-circle>
+        </relative-shadow-container>
       <form method="POST" enctype='multipart/form-data' class="clockify-form" action="/report/store">
           <input type="hidden" v-bind:value="employee.id" name="user_id">
           <input v-bind:value="csrfToken" type="hidden" name="_token">
@@ -86,6 +88,22 @@
           <labeled-input class="clockify-report-element" input-type="number" name="reported_hours">{{translations['hours_of_work']}}</labeled-input>
           <positive-button class="save-report clockify-report-element" type="submit">{{translations['save']}}</positive-button>
       </form>
+      <table class="table">
+         <thead>
+            <th v-text="translations['reported_time']" class="table-header"></th>
+            <th v-text="translations['clockify_report_file_name']" class="table-header"></th>
+            <th v-text="translations['month']" class="table-header"></th>
+            <th v-text="translations['year']" class="table-header"></th>
+         </thead>
+         <tbody>
+           <tr class="table-row" v-for="report in employeeClockifyReports">
+             <td v-text="report['reported_hours']" class="table-cell"></td>
+             <td v-text="report['report_file_name']" class="table-cell"></td>
+             <td v-text="getReportMonth(report['report_date'])" class="table-cell"></td>
+             <td v-text="getReportYear(report['report_date'])" class="table-cell"></td>
+           </tr>
+         </tbody>
+      </table>
     </section>
     <section v-show="dataTabIsSelected">
       <form class="employee-data-form">
@@ -125,6 +143,13 @@
              <multiselect v-on:added="addItemToSkillsList" v-bind:values="employeeSkills" >{{translations['add_skill']}}</multiselect> 
         </fieldset>
         <positive-button v-on:click.native="saveEmployeeData">{{translations['save']}} </positive-button>
+        <fieldset class="form-fieldset">
+          <caption v-text="translations['password']" class="form-caption"></caption>
+          <labeled-input v-model="newPassword" input-type="password" >{{translations['new_password']}}</labeled-input>
+          <labeled-input v-model="newPasswordConfirmation" input-type="password" >{{translations['new_password_confirmation']}}</labeled-input>
+          <labeled-input v-if="!admin" v-model="currentPassword" input-type="password" >{{translations['current_password']}}</labeled-input>
+        </fieldset>
+        <positive-button v-on:click.native="changeEmployeePassword">{{translations['save']}} </positive-button>
       </form>
     </section>
 </div>
@@ -141,9 +166,12 @@
   import LabeledSelect from '@jscomponents/controls/labeled_select.vue';
   import Multiselect from '@jscomponents/controls/multiselect.vue';
   import FileInput from '@jscomponents/controls/file_input.vue';
+  import RelativeShadowContainer from '@jscomponents/decoration/relative_shadow_container.vue';
+  import ExpectCircle from '@jscomponents/decoration/expect_circle.vue';
 
   
-@Component({components : {CloseButton, Multiselect, LabeledInput, PositiveButton, Datepicker, LabeledSelect, FileInput}})
+@Component({components : {CloseButton, Multiselect, LabeledInput, PositiveButton, Datepicker, 
+LabeledSelect, FileInput, RelativeShadowContainer, ExpectCircle}})
 
 
   export default class EmployeeCard extends Vue {
@@ -241,6 +269,64 @@
     private employeeSkillsList :string[] = [];
     private totalTimeSpent :object = {};
     private userReportForYear = {};
+    private employeeClockifyReports = {};
+    private fetchingClockifyReportsInProgress:boolean = false;
+    private newPassword:string = '';
+    private newPasswordConfirmation:string = '';
+    private currentPassword:string = '';
+
+   async changeEmployeePassword(){
+
+         const requestBody = {
+           password : this.newPassword,
+           password_confirmation : this.newPasswordConfirmation,
+           employee_id : this.employee['id']
+         };
+
+         if(!this.admin){
+           requestBody['current_password'] = this.currentPassword;
+         }
+
+         const requestData = {
+            method : 'PATCH',
+            body : JSON.stringify(requestBody),
+            headers : {
+              'X-CSRF-TOKEN' : this.csrfToken,
+              'Content-type': 'application/json; charset=UTF-8'
+            }   
+          };
+
+          const response = await fetch(`/employee/change/password`,requestData);
+
+          switch (response.status){
+
+            case 200:
+              this.showNotification(this.translations['password_changed_successfully']);
+            break;
+
+            case 400:
+              this.showNotification(this.translations['the_data_is_invalid'], 'error');
+            break;
+
+            case 500:
+              this.showNotification(this.translations['the_data_is_probably_ok_but_a_server_error_occured '], 'error');
+            break;
+
+            default:
+              this.showNotification(this.translations['undefined_error'], 'error');
+            break;
+              
+          }
+   }
+
+    getReportMonth(date:string):string{
+        const monthIndex = parseInt(date.split('-')[1]) - 1;
+        return this.months[monthIndex];
+    }
+
+    getReportYear(date:string):string{
+        return date.split('-')[0];
+    }
 
     showReportsTab(){
       this.selectedTab = 'report-tab';
@@ -248,11 +334,49 @@
     }
 
     showClockifyTab(){
+      this.showCurrentClockifyReports();
       this.selectedTab = 'clockify-tab';
     }
 
     showDataTab(){
        this.selectedTab = 'data-tab';
+    }
+
+    async showCurrentClockifyReports(){
+
+      this.fetchingClockifyReportsInProgress = true;
+
+      const requestData = {
+            method : 'GET',
+            headers : {
+              'X-CSRF-TOKEN' : this.csrfToken
+            }
+               
+      };
+
+      const response = await fetch(`/employee/clockify/reports?employee_id=${this.employee.id}`,requestData);
+
+        switch(response.status){
+
+            case 200:
+              const responseBody = await response.json();
+              this.employeeClockifyReports = responseBody;
+            break;
+
+            case 400:
+              this.showNotification(this.translations['the_selected_employee_is_invalid_probably_does_not_exist_anymore'], 'error');
+            break;
+
+            case 500:
+              this.showNotification(this.translations['server_error_occured_while_fetching_reports'], 'error');
+            break;
+
+            default:
+              this.showNotification(this.translations['undefined_error'], 'error');
+            break;
+        }
+
+       this.fetchingClockifyReportsInProgress = false;
     }
 
   async saveEmployeeData(){
@@ -455,7 +579,7 @@
                       if(responseBody.length == 0){
                           this.showNotification(this.translations['no_results_have_been_foound_for_your_authentication_level'])
                       }
-                      console.log(responseBody);
+                      
                       this.loadProjectReports(responseBody);
                     break;
 
@@ -625,6 +749,10 @@ $margin-for-inputs : 10px 15px 10px 0;
   padding:0 0 0 7vw;
 }
 
+.relative-container{
+  position:relative;
+}
+
 #app .clockify-report-element{
   margin: $margin-for-inputs
 }
@@ -687,8 +815,10 @@ $margin-for-inputs : 10px 15px 10px 0;
     position:fixed;
     top:0;
     left:0;
-    width:100vw;
+    width:100%;
     height:100vh;
+    overflow-y:auto;
+    z-index: 2;
     overflow-y: auto;
     background:white;
 }

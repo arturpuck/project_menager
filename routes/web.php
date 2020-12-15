@@ -65,6 +65,12 @@ Route::middleware(['auth'])->group(function(){
       Route::get('/team', 'TeamController@showList')
             ->name('list');
 
+     Route::get('/employee/clockify/reports', 'TeamController@getEmployeeClockifyReports')
+            ->name('clockify.reports');
+
+     Route::patch('/employee/change/password', 'TeamController@changeEmployeePassword')
+            ->name('change.password');
+
       Route::get('/team/get-all', 'TeamController@getAll')
             ->name('get.all');
 

@@ -9,6 +9,8 @@ use App\Http\Requests\Team\CreateOrEditProjectReportRequest;
 use App\Http\Requests\Team\UpdateEmployeeDataRequest;
 use App\Http\Requests\Team\GetEmployeesWithDesiredSkillRequest;
 use App\Http\Requests\Team\CreateNewEmployeeRequest;
+use App\Http\Requests\Team\GetUserClockifyReportsRequest;
+use App\Http\Requests\Team\ChangeEmployeePasswordRequest;
 use App\Handlers\Team\StoreReportHandler;
 use App\Handlers\Team\CreateOrEditProjectReportHandler;
 use App\Handlers\Team\ShowEmployeesListHandler;
@@ -17,6 +19,8 @@ use App\Handlers\Team\UpdateEmployeeDataHandler;
 use App\Handlers\Team\GetEmployeesWithDesiredSkillHandler;
 use App\Handlers\Team\ShowTeamMainPageHandler;
 use App\Handlers\Team\CreateNewEmployeeHandler;
+use App\Handlers\Team\GetUserClockifyReportHandler;
+use App\Handlers\Team\ChangeEmployeePasswordHandler;
 use Symfony\Component\HttpFoundation\Response;
 
 
@@ -52,5 +56,13 @@ class TeamController extends Controller
 
    public function createNewEmployee(CreateNewEmployeeRequest $request, CreateNewEmployeeHandler $newEmployeeHandler){
         return $newEmployeeHandler->handle($request);
+   }
+
+   public function getEmployeeClockifyReports(GetUserClockifyReportsRequest $request, GetUserClockifyReportHandler $clockifyReportsHandler){
+       return $clockifyReportsHandler->handle($request);
+   }
+
+   public function changeEmployeePassword(ChangeEmployeePasswordRequest $request, ChangeEmployeePasswordHandler $changeEmployeePasswordHandler){
+       return $changeEmployeePasswordHandler->handle($request);
    }
 }

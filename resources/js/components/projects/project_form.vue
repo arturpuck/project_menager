@@ -2,7 +2,7 @@
  <form method="POST" action="/add-project" class="project-form">
     <input v-bind:value="csrfToken" type="hidden" name="_token">
     <input v-if="projectId" type="hidden" v-bind:value="projectId" name="project_id">
-    <div class="introductory-bar">
+    <div class="introductory-bar offset-bar">
         <h2 v-text="translations['adding_project']" class="header"></h2>
         <close-button v-bind:description="translations['close']" v-on:click.native="closeForm" />
     </div>
@@ -672,6 +672,7 @@ $margin-for-inputs : 10px 15px 10px 0;
     overflow-y:auto;
     background:#fbffff;
     max-height: 100vh;
+    z-index:2;
 }
 
 .colored-button{
