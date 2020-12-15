@@ -44,8 +44,7 @@ new Vue({
                 const requestData = {
                    method : 'GET',
                    headers : {
-                      'X-CSRF-TOKEN' : this.csrfToken,
-                      'Content-type': 'application/json; charset=UTF-8'
+                      'X-CSRF-TOKEN' : this.csrfToken
                    }
                    
                 };
@@ -76,7 +75,6 @@ new Vue({
                     case 200:
                        const responseBody = await response.json();
                        this.employees = responseBody;
-                       console.log(responseBody);
                        this.loadProjectsProfitabilityData(responseBody);
                     break;
                 }
@@ -99,8 +97,8 @@ new Vue({
           
     },
 
-    countCurrentProfits(index:number){
-          return this.realIncomes[index] - this.projectCosts[index];
+    countCurrentProfits(index:number):number{
+          return parseFloat((this.realIncomes[index] - this.projectCosts[index]).toFixed(2));
     },
 
     resetTable(){
@@ -113,16 +111,16 @@ new Vue({
         this.projectedIncomes = [];
     },
 
-    countProjectProjectedIncome(paymentStages){
+    countProjectProjectedIncome(paymentStages):number{
         let totalIncome:number = 0;
 
         paymentStages.forEach(function(paymentStage){
                 totalIncome += paymentStage.ammount;
         });
-        return totalIncome;
+        return parseFloat(totalIncome.toFixed(2));
     },
 
-    countProjectRealIncome(paymentStages){
+    countProjectRealIncome(paymentStages):number{
         let totalIncome:number = 0;
 
         paymentStages.forEach(function(paymentStage){
@@ -131,20 +129,19 @@ new Vue({
                 totalIncome += paymentStage.ammount;
             }  
         });
-        return totalIncome;
+        return parseFloat(totalIncome.toFixed(2));
     },
 
-    countProjectCost(projectReports){
+    countProjectCost(projectReports):number{
         let totalCost:number = 0;
 
         projectReports.forEach(function(projectReport){
             totalCost += (projectReport.time_spent * projectReport.employee.real_rate_per_hour);
         })
         
-        return totalCost;
+        return parseFloat(totalCost.toFixed(2));
     }
-
-        
+     
    },
 
    created(){
