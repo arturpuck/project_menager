@@ -184,6 +184,7 @@ table {
 .table {
   margin: 8px auto;
   border-collapse: collapse;
+  border: 1px solid black;
 }
 
 .table-cell {
@@ -201,6 +202,10 @@ table {
 }
 .table-cell:nth-child(even) {
   background: #efeeee;
+}
+
+.table-row {
+  border-bottom: 1px solid black;
 }
 
 .datepicker-wrapper {
